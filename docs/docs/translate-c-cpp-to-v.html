@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>注释 · V语言中文文档</title>
+        <title>转换C/C++到V · V语言中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,10 +66,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="functions.html" />
+    <link rel="next" href="hot-reloading.html" />
     
     
-    <link rel="prev" href="hello-world.html" />
+    <link rel="prev" href="limited-operator-overloading.html" />
     
 
     
@@ -142,7 +142,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="comments.html">
+        <li class="chapter " data-level="1.3" data-path="comments.html">
             
                 <a href="comments.html">
             
@@ -545,7 +545,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.34" data-path="translate-c-cpp-to-v.html">
+        <li class="chapter active" data-level="1.34" data-path="translate-c-cpp-to-v.html">
             
                 <a href="translate-c-cpp-to-v.html">
             
@@ -614,7 +614,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >注释</a>
+        <a href="." >转换C/C++到V</a>
     </h1>
 </div>
 
@@ -629,15 +629,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x6CE8;&#x91CA;"><b></b>&#x6CE8;&#x91CA;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x6CE8;&#x91CA;"><a name="&#x6CE8;&#x91CA;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6CE8;&#x91CA;" class="plugin-anchor" href="#&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x91CA;</h2>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x8F6C;&#x6362;cc&#x4EE3;&#x7801;&#x5230;v&#x8BED;&#x8A00;"><b></b>&#x8F6C;&#x6362;C/C++&#x4EE3;&#x7801;&#x5230;V&#x8BED;&#x8A00;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x8F6C;&#x6362;cc&#x4EE3;&#x7801;&#x5230;v&#x8BED;&#x8A00;"><a name="&#x8F6C;&#x6362;cc&#x4EE3;&#x7801;&#x5230;v&#x8BED;&#x8A00;" class="anchor-navigation-ex-anchor" href="#&#x8F6C;&#x6362;cc&#x4EE3;&#x7801;&#x5230;v&#x8BED;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8F6C;&#x6362;cc&#x4EE3;&#x7801;&#x5230;v&#x8BED;&#x8A00;" class="plugin-anchor" href="#&#x8F6C;&#x6362;cc&#x4EE3;&#x7801;&#x5230;v&#x8BED;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x6362;C/C++&#x4EE3;&#x7801;&#x5230;V&#x8BED;&#x8A00;</h2>
 <hr>
-<p>V&#x8BED;&#x8A00;&#x7684;&#x6CE8;&#x91CA;&#x4E2D;&#x89C4;&#x4E2D;&#x77E9;&#xFF0C;&#x548C;&#x4F17;&#x591A;&#x8BED;&#x8A00;&#x4E00;&#x6837;&#x3002;</p>
-<pre><code>// &#x5355;&#x884C;&#x6CE8;&#x91CA;
+<p>V&#x53EF;&#x4EE5;&#x5C06;&#x60A8;&#x7684;C/C++&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x4E3A;&#x4EBA;&#x7C7B;&#x53EF;&#x8BFB;&#x7684;V&#x8BED;&#x8A00;&#x4EE3;&#x7801;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7A0B;&#x5E8F; <code>test.cpp</code>:</p>
+<pre><code>#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
 
-/* &#x591A;&#x884C;&#x6CE8;&#x91CA;
-   /* &#x5D4C;&#x5957;&#x6CE8;&#x91CA; */
-*/
-</code></pre>
+int main() {
+        std::vector&lt;std::string&gt; s;
+        s.push_back(&quot;V is &quot;);
+        s.push_back(&quot;awesome&quot;);
+        std::cout &lt;&lt; s.size() &lt;&lt; std::endl;
+        return 0;
+}
+</code></pre><p>&#x8FD0;&#x884C;&#x547D;&#x4EE4; v translate test.cpp,&#x7136;&#x540E;V&#x5C06;&#x751F;&#x6210;&#x6587;&#x4EF6;<code>test.v</code>:</p>
+<pre><code>fn main {
+        mut s := []string
+    s &lt;&lt; &apos;V is &apos;
+    s &lt;&lt; &apos;awesome&apos;
+    println(s.len)
+}
+</code></pre><blockquote>
+<p>An online C/C++ to V translator is coming soon.</p>
+<p>&#x6458;&#x5F55;&#x81EA;V&#x8BED;&#x8A00;&#x4F5C;&#x8005;Alex</p>
+</blockquote>
+
                                 
                                 </section>
                             
@@ -664,12 +681,12 @@
 
             
                 
-                <a href="hello-world.html" class="navigation navigation-prev " aria-label="Previous page: Hello World">
+                <a href="limited-operator-overloading.html" class="navigation navigation-prev " aria-label="Previous page: 运算符重载">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="functions.html" class="navigation navigation-next " aria-label="Next page: 函数">
+                <a href="hot-reloading.html" class="navigation navigation-next " aria-label="Next page: 热更新">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -680,7 +697,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"注释","level":"1.3","depth":1,"next":{"title":"函数","level":"1.4","depth":1,"path":"functions.md","ref":"functions.md","articles":[]},"previous":{"title":"Hello World","level":"1.2","depth":1,"path":"hello-world.md","ref":"hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"comments.md","mtime":"2019-07-18T09:14:40.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T09:14:52.402Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"转换C/C++到V","level":"1.34","depth":1,"next":{"title":"热更新","level":"1.35","depth":1,"path":"hot-reloading.md","ref":"hot-reloading.md","articles":[]},"previous":{"title":"运算符重载","level":"1.33","depth":1,"path":"limited-operator-overloading.md","ref":"limited-operator-overloading.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"translate-c-cpp-to-v.md","mtime":"2019-07-18T09:14:42.395Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T09:14:52.402Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>注释 · V语言中文文档</title>
+        <title>内存管理 · V语言中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,10 +66,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="functions.html" />
+    <link rel="next" href="defer.html" />
     
     
-    <link rel="prev" href="hello-world.html" />
+    <link rel="prev" href="testing.html" />
     
 
     
@@ -142,7 +142,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="comments.html">
+        <li class="chapter " data-level="1.3" data-path="comments.html">
             
                 <a href="comments.html">
             
@@ -467,7 +467,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.28" data-path="memory-manage.html">
+        <li class="chapter active" data-level="1.28" data-path="memory-manage.html">
             
                 <a href="memory-manage.html">
             
@@ -614,7 +614,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >注释</a>
+        <a href="." >内存管理</a>
     </h1>
 </div>
 
@@ -629,14 +629,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x6CE8;&#x91CA;"><b></b>&#x6CE8;&#x91CA;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x6CE8;&#x91CA;"><a name="&#x6CE8;&#x91CA;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6CE8;&#x91CA;" class="plugin-anchor" href="#&#x6CE8;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x91CA;</h2>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x5185;&#x5B58;&#x7BA1;&#x7406;memory-management"><b></b>&#x5185;&#x5B58;&#x7BA1;&#x7406;(Memory management)</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x5185;&#x5B58;&#x7BA1;&#x7406;memory-management"><a name="&#x5185;&#x5B58;&#x7BA1;&#x7406;memory-management" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5B58;&#x7BA1;&#x7406;memory-management"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5185;&#x5B58;&#x7BA1;&#x7406;memory-management" class="plugin-anchor" href="#&#x5185;&#x5B58;&#x7BA1;&#x7406;memory-management"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5B58;&#x7BA1;&#x7406;(Memory management)</h2>
 <hr>
-<p>V&#x8BED;&#x8A00;&#x7684;&#x6CE8;&#x91CA;&#x4E2D;&#x89C4;&#x4E2D;&#x77E9;&#xFF0C;&#x548C;&#x4F17;&#x591A;&#x8BED;&#x8A00;&#x4E00;&#x6837;&#x3002;</p>
-<pre><code>// &#x5355;&#x884C;&#x6CE8;&#x91CA;
+<p>Vlang&#x4E2D;&#x6CA1;&#x6709;&#x5783;&#x573E;&#x6536;&#x96C6;&#x6216;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x6E05;&#x7406;&#x5B83;&#x80FD;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x6BD4;&#x5982;:</p>
+<pre><code>fn draw_text(s string, x, y int) {
+    ...
+}
 
-/* &#x591A;&#x884C;&#x6CE8;&#x91CA;
-   /* &#x5D4C;&#x5957;&#x6CE8;&#x91CA; */
-*/
+fn draw_scene() {
+    ... 
+    draw_text(&apos;hello $name1&apos;, 10, 10)
+    draw_text(&apos;hello $name2&apos;, 100, 10)
+    draw_text(strings.repeat(&apos;X&apos;, 10000), 10, 50)
+    ... 
+}
+</code></pre><p>&#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x4F1A;&#x8F6C;&#x4E49;<code>draw_text</code>&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x51FD;&#x6570;&#x9000;&#x51FA;&#x65F6;&#x4F1A;&#x6E05;&#x9664;&#x5B83;&#x4EEC;&#x3002;</p>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x524D;&#x4E24;&#x4E2A;&#x8C03;&#x7528;&#x6839;&#x672C;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x3002; &#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5F88;&#x5C0F;&#xFF0C;V&#x5C06;&#x4E3A;&#x5B83;&#x4EEC;&#x4F7F;&#x7528;&#x9884;&#x5206;&#x914D;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x66F4;&#x590D;&#x6742;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x3002; &#x8FD9;&#x5C06;&#x5F88;&#x5FEB;&#x4FEE;&#x590D;&#x3002;</p>
+<p>V&#x5C06;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x68C0;&#x6D4B;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x5E76;&#x62A5;&#x544A;&#x5B83;&#x4EEC;&#x3002; &#x8981;&#x6E05;&#x7406;&#xFF08;&#x4F8B;&#x5982;&#xFF09;&#x6570;&#x7EC4;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;<code>free()</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>numbers := [0; 1000000] 
+...
+numbers.free()
 </code></pre>
                                 
                                 </section>
@@ -664,12 +677,12 @@
 
             
                 
-                <a href="hello-world.html" class="navigation navigation-prev " aria-label="Previous page: Hello World">
+                <a href="testing.html" class="navigation navigation-prev " aria-label="Previous page: 测试">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="functions.html" class="navigation navigation-next " aria-label="Next page: 函数">
+                <a href="defer.html" class="navigation navigation-next " aria-label="Next page: Defer">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -680,7 +693,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"注释","level":"1.3","depth":1,"next":{"title":"函数","level":"1.4","depth":1,"path":"functions.md","ref":"functions.md","articles":[]},"previous":{"title":"Hello World","level":"1.2","depth":1,"path":"hello-world.md","ref":"hello-world.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"comments.md","mtime":"2019-07-18T09:14:40.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T09:14:52.402Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内存管理","level":"1.28","depth":1,"next":{"title":"Defer","level":"1.29","depth":1,"path":"defer.md","ref":"defer.md","articles":[]},"previous":{"title":"测试","level":"1.27","depth":1,"path":"testing.md","ref":"testing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"memory-manage.md","mtime":"2019-07-18T09:14:41.755Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T09:14:52.402Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
