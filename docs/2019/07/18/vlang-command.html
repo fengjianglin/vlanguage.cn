@@ -18,10 +18,14 @@
     <link rel="dns-prefetch" href="https://vlanguage.cn">
     <!--SEO-->
 
-    <meta name="keywords" content>
+    <meta name="keywords" content="vlanguage">
 
 
-    <meta name="description" content>
+    <meta name="description" content="
+
+
+                    
+                    6月26日，vlang官网(https://vlang.io)已更新版本到0.1.3,同时发布了linux...">
 
 
 
@@ -33,7 +37,7 @@
     <!--Title-->
 
 
-<title>Archives: 2019 | V语言中文社区</title>
+<title>循序渐进:V语言0.1.3版本更新,vlang命令介绍 | V语言中文社区</title>
 
 
     <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
@@ -127,143 +131,127 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-     <div class="timebox">
-          <div class="timeline">
-              <ul>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="循序渐进:V语言0.1.3版本更新,vlang命令介绍">
+            
+	            循序渐进:V语言0.1.3版本更新,vlang命令介绍
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/前沿资讯/">前沿资讯</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
                 
+                    <a class="tag-link" href="/tags/vlanguage/">vlanguage</a>
                 
-                    
-                    
-                        
-                            
-                            <h2>2019</h2>
-                        
-                        
-                          <li>
-                        
-                            <h3>
-                              18<span>07</span>
-                            </h3>
-                            <a href="/2019/07/18/vlang-command.html" title="循序渐进:V语言0.1.3版本更新,vlang命令介绍" target="_blank">循序渐进:V语言0.1.3版本更新,vlang命令介绍</a>
-                        </li>
-                    
-                
-                    
-                    
-                        
-                        
-                          <li>
-                        
-                            <h3>
-                              18<span>07</span>
-                            </h3>
-                            <a href="/2019/07/18/vlanguage-source.html" title="千呼万唤始出来:V语言终于开源上线啦" target="_blank">千呼万唤始出来:V语言终于开源上线啦</a>
-                        </li>
-                    
-                
-              </ul>
-          </div>
-    </div>
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/18</span>
+        </span>
+        
+    
 </div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div class="content" style="max-width: 100%;">
+
+                    
+                    <p>6月26日，vlang官网(<a href="https://vlang.io" target="_blank">https://vlang.io</a>)已更新版本到<code>0.1.3</code>,同时发布了linux平台及macOS平台编译好的二进制文件供下载，windows平台暂无，不久会发布。</p><p>该版本修复了vlang之前编译会报错的<code>+=</code>、<code>*=</code>等运算符，同时也更新了v命令，现整理v命令如下：</p><p>1.直接运行<kbd>v</kbd>，将进入交互式编程环境(<code>REPL</code>)</p><p><img src="https://image.v-lang.cn/MjAxOS8wNi8yNi9hMTIzNmM0NTVlODQ0YmY1OTVkZWVmYWMzMTNhNTIyYy5wbmc=" style="width: 100%;"></p><p>2.编译<code>.v</code>文件</p><p><kbd>v file.v</kbd></p>
+<p>这里将<code>file.v</code>文件编译为二进制可执行文件<code>file</code>，如需运行，请在执行<code>./file</code>。</p>
+<p>默认情况下，生成的可执行文件的名称和<code>.v</code>文件名相同，如果在编译时修改，可执行<kbd>v -o &lt;程序名&gt; file.v</kbd></p>
+<p>3.编译并运行<code>.v</code>文件</p>
+<p><kbd>v run file.v</kbd></p>
+<p>4.细心的同学会发现，每次编译完<code>.v</code>文件后，不仅会生成二进制可执行文件，同时还会生成一个<code>file.dSYM</code>的文件夹，对于有洁癖的同学来说时难以忍受的，其实只要运行以下命令就会只生成纯粹的可执行文件，不会生成“烦人”的<code>file.dSYM</code>文件夹</p>
+<p><kbd>v -prod file.v</kbd></p>
+<p>P.S:以上<code>-o</code>、<code>-prod</code>参数可以混合使用������</p><p>以上内容若有不足之处，欢迎朋友们指正！</p>
+                    
+
+
+                </div>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/07/18/vlanguage-source.html" class="next-post btn btn-default" title='千呼万唤始出来:V语言终于开源上线啦'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">千呼万唤始出来:V语言终于开源上线啦</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
 
 
 
                 </main>
                 
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
     <div class="widget">
-        <h3 class="title">Search</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-                    <button type="button" class="search-form-submit" id="search-local">Search</button>
-                
-                
-                    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Google Search"><button type="submit" class="search-form-submit">Google</button><input type="hidden" name="sitesearch" value="https://vlanguage.cn"></form>
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
-
+        <h3 class="title">Table of Contents</h3>
         
-        
-    <div class="widget">
-        <h3 class="title">Notification</h3>
-        <div class="notification">
-            <p>
-  <strong>V编程语言</strong>
-</p>
-<p>
-    简洁、快速、安全的编译型语言，用于开发易维护的软件
-</p>
-        </div>
-    </div>
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Categories</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前沿资讯/"><i class="fa" aria-hidden="true">前沿资讯</i></a><span class="category-list-count">2</span></li></ul>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Archives</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/"><i class="fa" aria-hidden="true">2019/07</i></a><span class="archive-list-count">2</span></li></ul>
-    </div>
-
-
-        
-        
-  <div class="widget">
-    <h3 class="title">Tag Cloud</h3>
-    <div class="content tag-cloud">
-        
-            <a href="/tags/vlanguage/" style="font-size: 10px;">vlanguage</a>
+            <p>None</p>
         
     </div>
-  </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Friends</h3>
-        <div class="content friends-link">
-        
-            <a href="https://uzshare.com" class="fa" target="_blank">UzShare</a>
-        
-            <a href="https://uzzz.org" class="fa" target="_blank">Uzzz</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
+</aside>
 
                 
             </div>
@@ -300,8 +288,6 @@
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 
