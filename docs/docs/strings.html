@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>变量 · V语言中文文档</title>
+        <title>字符串 · V语言中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,10 +66,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="basic-types.html" />
+    <link rel="next" href="arrays.html" />
     
     
-    <link rel="prev" href="functions.html" />
+    <link rel="prev" href="basic-types.html" />
     
 
     
@@ -168,7 +168,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="variables.html">
+        <li class="chapter " data-level="1.5" data-path="variables.html">
             
                 <a href="variables.html">
             
@@ -194,7 +194,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="strings.html">
+        <li class="chapter active" data-level="1.7" data-path="strings.html">
             
                 <a href="strings.html">
             
@@ -250,7 +250,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >变量</a>
+        <a href="." >字符串</a>
     </h1>
 </div>
 
@@ -265,21 +265,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x53D8;&#x91CF;"><b></b>&#x53D8;&#x91CF;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x53D8;&#x91CF;"><a name="&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53D8;&#x91CF;" class="plugin-anchor" href="#&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53D8;&#x91CF;</h2>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;strings"><b></b>&#x5B57;&#x7B26;&#x4E32;(Strings)</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x5B57;&#x7B26;&#x4E32;strings"><a name="&#x5B57;&#x7B26;&#x4E32;strings" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;strings"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B57;&#x7B26;&#x4E32;strings" class="plugin-anchor" href="#&#x5B57;&#x7B26;&#x4E32;strings"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;(Strings)</h2>
 <hr>
 <pre><code>fn main() {
     name := &apos;Bob&apos;
-    age := 20
-    large_number := i64(9999999999)
-    println(name)
-    println(age)
-    println(large_number)
-}
-</code></pre><p>&#x4F7F;&#x7528;<code>:=</code>&#x58F0;&#x660E;&#x548C;&#x521D;&#x59CB;&#x5316;&#x53D8;&#x91CF;&#x3002; &#x8FD9;&#x662F;&#x5728;V&#x8BED;&#x8A00;&#x4E2D;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x7684; <strong>&#x552F;&#x4E00;</strong>&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x53D8;&#x91CF;&#x59CB;&#x7EC8;&#x5177;&#x6709;&#x521D;&#x59CB;&#x503C;&#x3002;</p>
-<p>&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4ECE;&#x53F3;&#x4FA7;&#x7684;&#x503C;&#x63A8;&#x65AD;&#x51FA;&#x6765;&#x7684;&#x3002;&#x8981;&#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF1A;&#x8868;&#x8FBE;&#x5F0F; <code>T(v)</code>&#x5C06;&#x503C; <code>v</code>&#x8F6C;&#x6362;&#x4E3A;&#x7C7B;&#x578B; <code>T</code>&#x3002;</p>
-<p>&#x4E0E;&#x5927;&#x591A;&#x6570;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E0D;&#x540C;&#xFF0C;V&#x8BED;&#x8A00;&#x4E2D;&#x53EA;&#x5141;&#x8BB8;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x3002; &#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#xFF08;&#x6A21;&#x5757;&#x7EA7;&#x522B;&#xFF09;&#x53D8;&#x91CF;&#x3002;</p>
-<p><strong>V&#x8BED;&#x8A00;&#x4E2D;&#x6CA1;&#x6709;&#x5168;&#x5C40;&#x53D8;&#x91CF;</strong>&#x3002;</p>
+    println(&apos;Hello, $name!&apos;)
+    println(name.len)
 
+    bobby := name + &apos;by&apos; // + is used to concatenate strings 
+    println(bobby) // ==&gt; &quot;Bobby&quot;  
+
+    println(bobby.substr(1, 3)) // ==&gt; &quot;ob&quot;  
+    // println(bobby[1:3]) // This syntax will most likely replace the substr() method   
+}
+</code></pre><p>&#x5728;V&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x3002; &#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;&#x4F7F;&#x7528;UTF-8&#x7F16;&#x7801;&#x3002;</p>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740; <code>substr</code> &#x51FD;&#x6570;&#x975E;&#x5E38;&#x6709;&#x6548;&#xFF1A;&#x4E0D;&#x6267;&#x884C;&#x590D;&#x5236;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5206;&#x914D;&#x3002;</p>
+<p>&#x8FDE;&#x63A5;&#x8FD0;&#x7B97;&#x7B26;<code>+</code>&#x9700;&#x8981;&#x4E24;&#x8FB9;&#x90FD;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x5982;&#x679C;age&#x662F;int&#xFF0C;&#x5219;<strong>&#x4E0D;&#x7F16;&#x8BD1;</strong>&#x6B64;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
+<pre><code>println(&apos;age = &apos; + age)
+</code></pre><p>&#x5FC5;&#x987B;&#x5148;&#x5C06;<code>age</code>&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;:</p>
+<pre><code>println(&apos;age = &apos; + age.str())
+</code></pre><p>&#x6216;&#x4F7F;&#x7528;<code>$</code>&#x7B26;&#x53F7;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x63D2;&#x5165;:</p>
+<pre><code>println(&apos;age = $age&apos;)
+</code></pre><p>&#x6216;&#x8005;&#x5C06; <code>age</code>&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x7ED9;<code>println</code>(<strong>*&#x6B64;&#x65B9;&#x6CD5;&#x5C1A;&#x672A;&#x5B9E;&#x73B0;</strong>):</p>
+<pre><code>println(&apos;age = &apos;, age) // TODO: not implemented yet
+</code></pre>
                                 
                                 </section>
                             
@@ -306,12 +315,12 @@
 
             
                 
-                <a href="functions.html" class="navigation navigation-prev " aria-label="Previous page: 函数">
+                <a href="basic-types.html" class="navigation navigation-prev " aria-label="Previous page: 基本类型">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="basic-types.html" class="navigation navigation-next " aria-label="Next page: 基本类型">
+                <a href="arrays.html" class="navigation navigation-next " aria-label="Next page: 数组">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -322,7 +331,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"变量","level":"1.5","depth":1,"next":{"title":"基本类型","level":"1.6","depth":1,"path":"basic-types.md","ref":"basic-types.md","articles":[]},"previous":{"title":"函数","level":"1.4","depth":1,"path":"functions.md","ref":"functions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"variables.md","mtime":"2019-07-18T07:47:50.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T07:47:56.660Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"字符串","level":"1.7","depth":1,"next":{"title":"数组","level":"1.8","depth":1,"path":"arrays.md","ref":"arrays.md","articles":[]},"previous":{"title":"基本类型","level":"1.6","depth":1,"path":"basic-types.md","ref":"basic-types.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"strings.md","mtime":"2019-07-18T07:47:50.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T07:47:56.660Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
