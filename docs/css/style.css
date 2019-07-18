@@ -327,7 +327,7 @@ pre {
   color: #505050;
   line-height: 4em;
   display: block;
-  padding: 0 21px;
+  padding: 0 21px 0 0;
 }
 .main-navigation .menu li:hover > a {
   color: #e67e22;
@@ -382,6 +382,11 @@ pre {
 .main-navigation .navbar-header i:hover {
   color: #e67e22;
 }
+.main-navigation #main-menu {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 /*====================================================
     main post area
 ====================================================*/
