@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+  
+  
+  
+  
+  phpcms v9语言包位置
+  
+  1、phpcms\languages\zh-cn&nbsp;&nbsp;&nbsp; 中文语言包
+  
+  2、phpcms...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>phpcms v9教程：语言包详解 | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="phpcms v9教程：语言包详解">
+            
+	            phpcms v9教程：语言包详解
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/02/17</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/buzhang1314/article/details/50681557&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/buzhang1314/article/details/50681557&quot;}">  
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div class="htmledit_views" id="content_views"> 
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">phpcms v9语言包位置</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">1、phpcms\languages\zh-cn&nbsp;&nbsp;&nbsp; 中文语言包</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">2、phpcms\languages\en&nbsp;&nbsp;&nbsp; 英文语言包</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">phpcms v9语言包建立</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">在phpcms v9二次开发之模型类的应用，讲到了足球等级的模型类的应用，现在为其添加一个中文语言包，其步骤如下：</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">1、phpcms\languages\zh-cn&nbsp; 目录下新建一个文件level.lang.php，注意“level”与模块名称相对应。</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">2、在level.lang.php写上如下代码：</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&lt;?php</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">$LANG['level_name']&nbsp;&nbsp; = '等级';</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">$LANG['edit_level']&nbsp;&nbsp;&nbsp; = '编辑等级';</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">$LANG['operations_manage']&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp; '管理操作';</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">$LANG['allselect']&nbsp;&nbsp;&nbsp; = '全选';</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">$LANG['level_deleted']&nbsp;&nbsp; = '等级批量删除完成！';</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">?&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">到此，一个语言包就建立完了，真的很简单，接下来我我来看一下它的应用。</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">phpcms v9语言包应用</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">模块语言包一般是用在与之相应的模块的</span>
+  <a href="http://www.moke8.com/phpcms/" rel="noopener" style="color:rgb(51,51,51);text-decoration:none;font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;" target="_blank">phpcms v9模板</a>
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">上，好比一个局部变量，系统语言包适用所有模块模板，就像全局变量一样。下面是足球级别后台列表模板代码片断：</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&lt;thead&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&nbsp; &lt;tr&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&nbsp;&nbsp;&nbsp; &lt;th width="50" align="center"&gt;&lt;input type="checkbox" value="" id="check_box" οnclick="selectall('id[]');"&gt;&lt;?php echo L('allselect')?&gt;&lt;/th&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&nbsp;&nbsp;&nbsp; &lt;th&nbsp; align="center"&gt;id&lt;/th&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&nbsp;&nbsp;&nbsp; &lt;th&nbsp; align="center"&gt;&lt;?php echo L('level_name')?&gt;&lt;/th&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&nbsp;&nbsp;&nbsp; &lt;th&nbsp; align="center"&gt;&lt;?php echo L('operations_manage')?&gt;&lt;/th&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&nbsp; &lt;/tr&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">&lt;/thead&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">我们上面定义的语言包中"$LANG['level_name'] = '等级';"，就是作为函数“ L('level_name')”的参数，其输出的数据为“等级”。</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">如上面的列表模板片断其对应的网页如截图红色框：</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <img alt="\" src="http://www.moke8.com/data/attachment/portal/201511/29/143517au0nqumnhwhunyzi.jpg" style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;width:381px;">
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">当然，我们也不一定非要建立语言包，非正式的话也可以直接赋与参数，如：</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">“&lt;th&nbsp; align="center"&gt;&lt;?php echo L('level_name')?&gt;&lt;/th&gt;”，可以写成“&lt;th&nbsp; align="center"&gt;&lt;?php echo L("等级")?&gt;&lt;/th&gt;”,甚至可以更直接写成&lt;th&nbsp; align="center"&gt;等级&lt;/th&gt;</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">phpcms v9语言包的作用</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">上面说过，语包的写法和其它替代写法，当然，参数字节小的话可以直接给L()函数赋与参数，但是如果参数字节太大呢？这样在模板上就显得凌乱了。语言包一经定义，可以重复在多个模板上使用。前面也提到，甚至可以不用语言包和“L()"函，直接写，不过不建议这样，一般来说不会有什么问题，但我在调试过程中偶尔也会出现一些意想不到的乱码。显然语言的作用有：</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">1、开发国际版CMS</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">2、使模板整洁美观</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">3、方便模板修改，减少工作量</span>
+  <br style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">
+  <span style="font-family:'宋体', Arial, Helvetica, sans-serif;font-size:14px;line-height:25px;">4、杜绝因为编码而引起的乱码问题<br><br><br></span> 
+  <h2><br></h2> 
+  <h2>联系qq-2：<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1006511390&amp;site=qq&amp;menu=yes" rel="noopener" target="_blank">1006511390</a>(点击进行咨询)</h2> 
+ </div> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/04/29/lqs745920569_51282333.html" class="pre-post btn btn-default" title='phpcms v9 切换 英文语言包'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">phpcms v9 切换 英文语言包</span>
+        </a>
+    
+    
+        <a href="/2015/12/03/qwertyu1234_50163847.html" class="next-post btn btn-default" title='SPIR-V 研究：编译器基本原理（一）'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">SPIR-V 研究：编译器基本原理（一）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">联系qq-2：1006511390(点击进行咨询)</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

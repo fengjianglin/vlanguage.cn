@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+  
+   
+   2019/6/23，v语言的首个可用0.0.12版本发布了。这是一名全新的语言，集合了go的简单和rust的安全的特性；用于开发可维护软件的简单、快速、安全...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>全新语言-v语言 | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="全新语言-v语言">
+            
+	            全新语言-v语言
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/06/24</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/itpika/article/details/93473857&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/itpika/article/details/93473857&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div class="htmledit_views" id="content_views"> 
+  <blockquote> 
+   <p><span style="color:#86ca5e;">2019/6/23，v语言的首个可用0.0.12版本发布了。这是一名全新的语言，集合了go的简单和rust的安全的特性；用于开发可维护软件的简单、快速、安全的编译语言。不过它的整体风格和go类似，代码风格简单，熟悉的go的朋友可以很快上手。不过刚发布，还需要很长一段时间的温养。</span></p> 
+  </blockquote> 
+  <p><span>官方地址</span><span style="color:#86ca5e;">：</span><a href="https://vlang.io/" rel="noopener" data-token="1be79f6443b46ec1237b920f15358e90" target="_blank">https://vlang.io</a></p> 
+  <p>github地址：<a href="https://github.com/vlang/v" rel="noopener" data-token="bed31290801405c5fcb4a538dfcf70e2" target="_blank">https://github.com/vlang/v</a>&nbsp;(安装方法github首页有详细说明)</p> 
+  <p>中文网已经出来了：<a href="https://www.v-lang.cn/" rel="noopener" data-token="e78512e00bdadeeca1127e34d0e4741d" target="_blank">https://www.v-lang.cn/</a></p> 
+  <h3>简单说一下V的特性：</h3> 
+  <ul>
+   <li><span style="color:#f33b45;">快速编译</span></li> 
+  </ul>
+  <ol>
+   <li><span style="color:#3399ea;">&nbsp;&nbsp;V每CPU核心每秒编译约120万行代码。</span></li> 
+   <li><span style="color:#3399ea;">&nbsp;&nbsp;V也可以调用C，编译速度下降到≈100k行/秒/CPU。</span></li> 
+  </ol>
+  <ul>
+   <li><span style="color:#f33b45;">安全</span></li> 
+  </ul>
+  <ol>
+   <li>&nbsp;<span style="color:#3399ea;">&nbsp;没有空</span></li> 
+   <li><span style="color:#3399ea;">&nbsp;&nbsp;没有全局变量(意味着变量都是在函数体中声明)</span></li> 
+   <li><span style="color:#3399ea;">&nbsp;&nbsp;没有未定义的行为</span></li> 
+   <li><span style="color:#3399ea;">&nbsp;&nbsp;没有变量跟踪</span></li> 
+   <li><span style="color:#3399ea;">&nbsp;&nbsp;边界检查</span></li> 
+   <li><span style="color:#3399ea;">可选的结果类型</span></li> 
+   <li><span style="color:#3399ea;">支持泛型</span></li> 
+   <li><span style="color:#3399ea;">默认不可变的变量</span></li> 
+   <li><span style="color:#3399ea;">默认纯函数</span></li> 
+   <li><span style="color:#3399ea;">默认不可变的结构体</span></li> 
+  </ol>
+  <ul>
+   <li><span style="color:#f33b45;">性能：</span></li> 
+  </ul>
+  <ol>
+   <li><span style="color:#3399ea;">和C一样快</span></li> 
+   <li><span style="color:#3399ea;">操作C没有任何成本</span></li> 
+   <li><span style="color:#3399ea;">没有运行时反射的内置序列化</span></li> 
+   <li><span style="color:#3399ea;">最少量的分配</span></li> 
+   <li><span style="color:#3399ea;">可以编译程序到没有任何依赖关系的本地二进制文件:一个简单的web服务器只有65 KB</span></li> 
+  </ol>
+  <ul>
+   <li><span style="color:#f33b45;">用于构建可维护程序的简单语</span></li> 
+  </ul>
+  <ol>
+   <li><span style="color:#3399ea;">您可以在半小时内浏览文档来学习整个语言。(目前提供的标准库还不多，毕竟刚发布)</span></li> 
+   <li><span style="color:#3399ea;">尽管很简单，但是它为开发人员提供了很多功能。任何你能用其他语言做的事情，你都可以用V来做。(这句话，貌似每个语言都会这么讲....)</span></li> 
+  </ol>
+  <p>&nbsp;</p> 
+  <ul>
+   <li><span style="color:#f33b45;">400kb编译器，零在制品依赖</span></li> 
+  </ul>
+  <ol>
+   <li><span style="color:#3399ea;">整个语言及其标准库都小于400kb。V是用V写的，你可以在0。4秒内完成。(到今年年底，这个数字将降至≈0.15秒。)</span></li> 
+  </ol>
+  <ul>
+   <li><span style="color:#f33b45;">热代码重载</span></li> 
+  </ul>
+  <ol>
+   <li><span style="color:#3399ea;">立即获得更改，而无需重新编译。</span></li> 
+   <li><span style="color:#3399ea;">由于您也不必在每次编译之后都进入正在处理的状态，这可以节省大量宝贵的开发时间。</span></li> 
+  </ol>
+  <p>&nbsp;</p> 
+  <ul>
+   <li><span style="color:#f33b45;">强大的图形库</span></li> 
+  </ul>
+  <ol>
+   <li><span style="color:#3399ea;">构建在GDI+/Cocoa绘图之上的跨平台绘图库，以及一个基于OpenGL的图形库，用于更复杂的2D/3D应用程序，它还具有以下特性:</span></li> 
+   <li><span style="color:#3399ea;">加载复杂的三维对象与纹理在制品</span></li> 
+   <li><span style="color:#3399ea;">摄像头(移动，环顾四周)wip</span></li> 
+   <li><span style="color:#3399ea;">骨骼动画在制品</span></li> 
+   <li><span style="color:#3399ea;">计划使用DirectX、Vulkan和Metal支持。（图形库的一个简单例子是<a href="https://github.com/vlang/v/blob/master/examples/tetris" rel="noopener" data-token="46dcbb355f6cfaf34d75bdb267c8c926" target="_blank">tetris.v</a>（就是俄罗斯方块）</span></li> 
+  </ol>
+  <ul>
+   <li><span style="color:#f33b45;">本机跨平台GUI库</span></li> 
+   <li><span style="color:#f33b45;">容易交叉编译</span></li> 
+  </ul>
+  <ol>
+   <li><span style="color:#3399ea;">交叉编译您的软件只需运行v -os windows。或者v -os linux。不需要额外的步骤，即使是GUI和图形应用程序!(目前只在macOS上编译macOS软件。)</span></li> 
+  </ol>
+  <ul>
+   <li><span style="color:#f33b45;">无痛部署和依赖关系管理</span></li> 
+  </ul>
+  <p><span>大致特性就是这些，不过等这些功能完善，还是需要不少时间，这些特性也可以说是V以后的目标。</span></p> 
+  <p><span>V语言还比较新，目前稍微关注一下，功能完善和生态发展等都还需要时间</span></p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+ </div> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/06/24/csdnnews_93550448.html" class="pre-post btn btn-default" title='V 语言强势登顶 GitHub TOP1，欲取 Go 而代之？'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V 语言强势登顶 GitHub TOP1，欲取 Go 而代之？</span>
+        </a>
+    
+    
+        <a href="/2019/06/23/wyyyh9458_93377612.html" class="next-post btn btn-default" title='vlang,v语言'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">vlang,v语言</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">简单说一下V的特性：</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

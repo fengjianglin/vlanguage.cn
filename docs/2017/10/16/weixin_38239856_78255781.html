@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+   
+   
+    
+   
+  二、信号量集（system v ipc）
+    信号量集就是数组，数组里的每个元素都是信号量的类型
+    1、获取键值
+       ...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>【C语言】【unix c】信号量集（system v ipc） | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【C语言】【unix c】信号量集（system v ipc）">
+            
+	            【C语言】【unix c】信号量集（system v ipc）
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/10/16</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/weixin_38239856/article/details/78255781&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/weixin_38239856/article/details/78255781&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div id="content_views" class="markdown_views prism-atom-one-dark"> 
+  <!-- flowchart 箭头图标 勿删 --> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/> 
+  </svg> 
+  <pre class="prettyprint"><code class=" hljs cpp">二、信号量集（system v ipc）
+    信号量集就是数组，数组里的每个元素都是信号量的类型
+    <span class="hljs-number">1</span>、获取键值
+        ftok(<span class="hljs-number">3</span>)
+    <span class="hljs-number">2</span>、使用键值获取信号量集的id
+        semget(<span class="hljs-number">2</span>)
+            <span class="hljs-preprocessor">#include &lt;sys/types.h&gt;</span>
+            <span class="hljs-preprocessor">#include &lt;sys/ipc.h&gt;</span>
+            <span class="hljs-preprocessor">#include &lt;sys/sem.h&gt;</span>
+            <span class="hljs-keyword">int</span> semget(key_t key, <span class="hljs-keyword">int</span> nsems, <span class="hljs-keyword">int</span> semflg);
+                功能：获取信号量集的id
+                参数：
+                key：ftok（<span class="hljs-number">3</span>）的返回值
+                nsems：指定了信号量集中的元素的个数
+            semflg：
+                IPC_CREAT
+                IPC_EXCL
+            mode：指定信号量集的权限
+            返回值：非负整数 是信号量集的id
+        -<span class="hljs-number">1</span> 错误errno被设置
+    <span class="hljs-number">3</span>、设置信号量集中的信号量的初值或者获取信号量的值
+        semctl(<span class="hljs-number">2</span>)
+            <span class="hljs-preprocessor">#include &lt;sys/types.h&gt;</span>
+            <span class="hljs-preprocessor">#include &lt;sys/ipc.h&gt;</span>
+            <span class="hljs-preprocessor">#include &lt;sys/sem.h&gt;</span>
+            <span class="hljs-keyword">int</span> semctl(<span class="hljs-keyword">int</span> semid, <span class="hljs-keyword">int</span> semnum, <span class="hljs-keyword">int</span> cmd, ...);
+                功能：信号量的控制操作（得到一个信号量集标识符或创建一个信号量集对象并返回信号量集标识符）
+                参数：
+                    semid:指定了信号量集
+                    semnum:指定了信号量在数组中的下标
+                    cmd：指定了对信号量的控制操作命令
+                        GETVAL：第几个信号的semval值  
+                        SETVAL:设置第几个信号量的semval值为arg，val。 <span class="hljs-number">0</span>
+                    ...:这个参数有没有，多少个取决于cmd
+                返回值：成功 返回一个正数
+                        失败 -<span class="hljs-number">1</span> errno返回
+
+                需要自定义：
+                    <span class="hljs-keyword">union</span> semun {
+                        <span class="hljs-keyword">int</span>              val;    <span class="hljs-comment">/* Value for SETVAL */</span>
+                        <span class="hljs-keyword">struct</span> semid_ds *buf;    <span class="hljs-comment">/* Buffer for IPC_STAT, IPC_SET */</span>
+                        <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>  *<span class="hljs-built_in">array</span>;  <span class="hljs-comment">/* Array for GETALL, SETALL */</span>
+                        <span class="hljs-keyword">struct</span> seminfo  *__buf;  <span class="hljs-comment">/* Buffer for IPC_INFO (Linux-specific) */</span>
+                    };
+
+    <span class="hljs-number">4</span>、对指定的信号量对指定的信号量加法或者减法操作
+        semop(<span class="hljs-number">2</span>)
+            <span class="hljs-preprocessor">#include &lt;sys/types.h&gt;</span>
+            <span class="hljs-preprocessor">#include &lt;sys/ipc.h&gt;</span>
+            <span class="hljs-preprocessor">#include &lt;sys/sem.h&gt;</span>
+            <span class="hljs-keyword">int</span> semop(<span class="hljs-keyword">int</span> semid, <span class="hljs-keyword">struct</span> sembuf *sops, <span class="hljs-keyword">unsigned</span> nsops);
+                功能：信号量操作
+                参数：
+                    semid：指定了信号量集
+                    sops：指定了对某个信号量的具体操作
+                    nsops：指定了要操作的信号量的个数
+                返回值：<span class="hljs-number">0</span> 成功
+                      -<span class="hljs-number">1</span> 错误 errno被设置
+
+                操作定义在这个结构体中：
+                    <span class="hljs-keyword">struct</span> sembuf{
+                        <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span> sem_num;  <span class="hljs-comment">/* semaphore number */</span>
+                        <span class="hljs-keyword">short</span>          sem_op;   <span class="hljs-comment">/* semaphore operation */</span>
+                        <span class="hljs-keyword">short</span>          sem_flg;  <span class="hljs-comment">/* operation flags */</span>
+                    }
+
+                    sem_flg：
+                        SEM_UNDO：进程终止自动撤销
+                        IPC_NOWAIT：
+                    sem_num：指定了要操作的信号量在数组的下标
+                    sem_op：指定了操作的类型
+                        操作类型分为<span class="hljs-number">3</span>种：
+                            &gt;<span class="hljs-number">0</span>: semval+sem_op demval做加法
+                            =<span class="hljs-number">0</span>：
+                            &lt;<span class="hljs-number">0</span>：
+                            semval&gt;|sem_op|:这个操作立即执行，
+                            semval&lt;|sem_op|
+                            申请的资源数&gt;可用资源数，IPC_NOWAIT 非阻塞
+                                                sem_flg=<span class="hljs-number">0</span> 阻塞等待资源时间
+
+    举例说明：使用信号量集实现进程间的通信
+    两个进程 PA.C(设置信号量的值，每隔<span class="hljs-number">3</span>s semval的值减一) PB.C（每隔<span class="hljs-number">1</span>s获取信号量的值）
+    PA.c:
+        <span class="hljs-preprocessor">#include &lt;stdio.h&gt;</span>
+        <span class="hljs-preprocessor">#include &lt;sys/types.h&gt;</span>
+        <span class="hljs-preprocessor">#include &lt;sys/ipc.h&gt;</span>
+        <span class="hljs-preprocessor">#include &lt;sys/sem.h&gt;</span>
+        <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">union</span> semun{
+            <span class="hljs-keyword">int</span> val;
+        }semun_t;
+
+        <span class="hljs-keyword">int</span> main(<span class="hljs-keyword">void</span>){
+            key_t key;
+            <span class="hljs-keyword">struct</span> sembuf sb={<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>,IPC_NOWAIT};
+            semun_t arg;
+            <span class="hljs-comment">//获取键值</span>
+            key=ftok(<span class="hljs-string">"."</span>,<span class="hljs-number">31</span>);
+            <span class="hljs-keyword">if</span>(key==-<span class="hljs-number">1</span>){
+                perror(<span class="hljs-string">"ftok"</span>);
+                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+            }
+            <span class="hljs-comment">//使用键值获取信号量集的id</span>
+            <span class="hljs-keyword">int</span> semid=semget(key,<span class="hljs-number">1</span>,IPC_CREAT|<span class="hljs-number">0664</span>);
+            <span class="hljs-keyword">if</span>(semid==-<span class="hljs-number">1</span>){
+                perror(<span class="hljs-string">"semget"</span>);
+                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+            }
+            arg.val=<span class="hljs-number">5</span>;
+            <span class="hljs-comment">//设置信号量的初值</span>
+            <span class="hljs-keyword">int</span> ctl=semctl(semid,<span class="hljs-number">0</span>,SETVAL,arg);
+            <span class="hljs-keyword">if</span>(ctl==-<span class="hljs-number">1</span>){
+                perror(<span class="hljs-string">"semctl"</span>);
+                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+            }
+            <span class="hljs-comment">//每隔三秒第一个信号量的值减1</span>
+            <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+                sleep(<span class="hljs-number">3</span>);
+                <span class="hljs-keyword">int</span> op=semop(semid,&amp;sb,<span class="hljs-number">1</span>);
+                <span class="hljs-keyword">if</span>(op==-<span class="hljs-number">1</span>){
+                    perror(<span class="hljs-string">"semop"</span>);
+                    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+                }
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        }
+
+    PB.c:
+        <span class="hljs-preprocessor">#include &lt;stdio.h&gt;</span>
+        <span class="hljs-preprocessor">#include &lt;sys/types.h&gt;</span>
+        <span class="hljs-preprocessor">#include &lt;sys/ipc.h&gt;</span>
+        <span class="hljs-preprocessor">#include &lt;sys/sem.h&gt;</span>
+
+        <span class="hljs-keyword">int</span> main(<span class="hljs-keyword">void</span>){
+            key_t key;
+            <span class="hljs-comment">//获取键值</span>
+            key=ftok(<span class="hljs-string">"."</span>,<span class="hljs-number">31</span>);
+            <span class="hljs-keyword">if</span>(key==-<span class="hljs-number">1</span>){
+                perror(<span class="hljs-string">"ftok"</span>);
+                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+            }
+            <span class="hljs-comment">//使用键值获取信号量集的id</span>
+            <span class="hljs-keyword">int</span> semid=semget(key,<span class="hljs-number">1</span>,IPC_CREAT|<span class="hljs-number">0664</span>);
+            <span class="hljs-keyword">if</span>(semid==-<span class="hljs-number">1</span>){
+                perror(<span class="hljs-string">"semget"</span>);
+                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+            }
+            <span class="hljs-comment">//每隔一秒取一次信号量的值</span>
+            <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>){
+                sleep(<span class="hljs-number">1</span>);
+                <span class="hljs-keyword">int</span> val=semctl(semid,<span class="hljs-number">0</span>,GETVAL);
+                <span class="hljs-keyword">if</span>(val==-<span class="hljs-number">1</span>){
+                    perror(<span class="hljs-string">"semctl"</span>);
+                    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+                }
+                <span class="hljs-built_in">printf</span>(<span class="hljs-string">"semval=%d\n"</span>,val);
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        }
+</code></pre> 
+ </div> 
+ <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet"> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/01/zoomdy_83620580.html" class="pre-post btn btn-default" title='RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上）'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上）</span>
+        </a>
+    
+    
+        <a href="/2016/04/29/lqs745920569_51282333.html" class="next-post btn btn-default" title='phpcms v9 切换 英文语言包'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">phpcms v9 切换 英文语言包</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>None</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

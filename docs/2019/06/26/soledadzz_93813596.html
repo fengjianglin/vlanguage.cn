@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+  
+   
+   
+    这个结合了 Go 和 Rust 特性的新语言 V，正式发布了首个可用版本。
+   
+   
+   
+   长久以来，编程语言在语法、语义和标准库等...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>V 语言强势登顶 GitHub TOP1，欲取 Go 而代之？ | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="V 语言强势登顶 GitHub TOP1，欲取 Go 而代之？">
+            
+	            V 语言强势登顶 GitHub TOP1，欲取 Go 而代之？
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/06/26</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/soledadzz/article/details/93813596&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/soledadzz/article/details/93813596&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div class="htmledit_views" id="content_views"> 
+  <div class="rich_media_content" id="js_content"> 
+   <blockquote class="js_blockquote_wrap">
+    <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;">这个结合了 Go 和 Rust 特性的新语言 V，正式发布了首个可用版本。</span></p>
+   </blockquote>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"><img class="rich_pages" style="letter-spacing:.544px;text-align:center;" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/Pn4Sm0RsAuhqhqCxysMmyTDGpiaXuGJOOb3Afa2VnVAxJZIHdMTqfJl9TlkiaAjeicg8NzgIYbm1kHfclXBgCuVQA/640?wx_fmt=jpeg" alt="640?wx_fmt=jpeg"></span></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:1px;line-height:normal;text-align:right;"><br></p>
+   <p style="min-height:1em;letter-spacing:.544px;margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;color:rgb(77,78,78);"><span style="letter-spacing:1px;font-size:15px;">长久以来，编程语言在语法、语义和标准库等方面都存在着千差万别，使得程序员在选择时不得不面临着差异化等难题。自然选择下，就会有旧语言的淘汰（<span style="letter-spacing:1px;font-size:15px;">PHP 是个</span>意外，至今还存在）和新语言的诞生。</span><span style="letter-spacing:1px;font-size:15px;">在 JetBrains 最新发布的《2019 开发人员生态系统现状》报告中，Java、Python、C/C#、JavaScript 等主流的编程语言在历经实践考验后依然是开发者们的心头好。</span></span></p>
+   <p style="min-height:1em;letter-spacing:.544px;margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);"><br></span></p>
+   <p style="min-height:1em;letter-spacing:.544px;margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);">而本文的主角 V 语言，在千呼万唤之后，终于于近日开源了，并正式发布了首个可用版本（预构建的二进制文件也即将推出）！<span style="color:rgb(77,78,78);font-size:15px;letter-spacing:1px;">其一经发布，便强势登顶 GitHub TOP1，引来开发者们的热议围观。</span></span></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"><br></span></p>
+   <p style="text-align:center;margin-left:8px;"><strong><img class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/Pn4Sm0RsAuhqhqCxysMmyTDGpiaXuGJOO3Txr8XE1qohTtMKPod6eraORoTPTKbC6qDLvnGFM3bc9NECknSaLWg/640?wx_fmt=png" alt="640?wx_fmt=png"></strong></p>
+   <p style="min-height:1em;letter-spacing:.544px;line-height:1.75em;text-align:center;margin-left:8px;"><strong><span style="color:rgb(136,136,136);font-size:14px;">（https://github.com/vlang/v/releases/tag/v0.0.12）</span></strong><span style="font-size:15px;letter-spacing:1px;"></span><br></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"><br></span></p>
+   <p style="min-height:1em;letter-spacing:.544px;line-height:1.75em;margin-left:8px;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);">根据介绍，V 是一种新型的静态编译型语言，可以“快速编译、安全且和 C/C++ 转换”，其提供了方便、快捷、安全的编程语言和工具包，还能够很好地服务于区块链技术。</span></p>
+   <p style="text-align:center;"><img class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_gif/Pn4Sm0RsAuhqhqCxysMmyTDGpiaXuGJOOSKm6GkWFHwKvFduiatDdH6Jibryib5cMGmexoibmAOXtpdhaM4L6Ol7ftQ/640?wx_fmt=gif" alt="640?wx_fmt=gif"></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"></span></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="color:rgb(77,78,78);letter-spacing:1px;"><span style="color:rgb(77,78,78);font-size:15px;">V 语言作者 Reishi Saza 就表示，它是一种非常简单的语言，看官方文档 30 分钟就能完全掌握。而且，</span><span style="color:rgb(77,78,78);font-size:15px;">其编译器只有 400KB，无任何第三方依赖。</span></span></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"><br></span></p>
+   <p style="min-height:1em;letter-spacing:.544px;line-height:1.75em;text-align:center;margin-left:8px;"><span style="letter-spacing:1px;font-size:14px;color:rgb(136,136,136);"><img style="width:388px;" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/Pn4Sm0RsAuhqhqCxysMmyTDGpiaXuGJOOEe2tX3vJxCXlGuZibXNabKCNxic7pq6wWN5bXooAiaPy9phjoJicWIUreg/640?wx_fmt=jpeg" alt="640?wx_fmt=jpeg"></span></p>
+   <p style="min-height:1em;letter-spacing:.544px;line-height:1.75em;text-align:center;margin-left:8px;"><span style="font-size:14px;color:rgb(136,136,136);">（作者展示的应用示例：V 语言建立的 macOS Demo）</span></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><br></p>
+   <p style="min-height:1em;letter-spacing:.544px;margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);">V 的核心 CPU 每秒可以编译大约 120 万行代码，这种速度是通过生成的机器代码和强大的模块化来实现的，但是目前仅支持 x64/Mach-O，预计到今年年底才能足够稳定。而在性能表现上，V 可以做到和 C 一样快，且能够翻译整个 C 或 C++ 项目，实现高达 400x 的编译速度。</span></p>
+   <pre class="output_wrapper" style="font-size:16px;color:rgb(62,62,62);line-height:1.6;letter-spacing:0px;font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"></pre>
+   <pre><code class="hljs go" style="margin-left:2px;line-height:18px;font-size:14px;letter-spacing:0px;font-family:Consolas, Inconsolata, Courier, monospace;color:rgb(169,183,198);background:rgb(40,43,46);">std::vector&lt;std::string&gt;&nbsp;s;s.push_back("V&nbsp;is&nbsp;");s.push_back("awesome");std::cout&nbsp;&lt;&lt;&nbsp;s.size();mut&nbsp;s&nbsp;:=&nbsp;[]s&nbsp;&lt;&lt;&nbsp;'V&nbsp;is&nbsp;'s&nbsp;&lt;&lt;&nbsp;'awesome'println(s.len)<br>s.push_back(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">"V&nbsp;is&nbsp;"</span>);<br>s.push_back(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">"awesome"</span>);<br>std::cout&nbsp;&lt;&lt;&nbsp;s.size();<br><br>mut&nbsp;s&nbsp;:=&nbsp;[]<br>s&nbsp;&lt;&lt;&nbsp;<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">'V&nbsp;is&nbsp;'</span><br>s&nbsp;&lt;&lt;&nbsp;<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">'awesome'</span><br><span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">println</span>(s.<span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">len</span>)<br></code></pre>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"></span></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);">目前，整个 V 语言及其标准库小于 400 KB，开发者在 0.4 秒内就可以构建它。并且到今年年底，这个数字还将下降到大约 0.15 秒。</span></p>
+   <p style="margin-left:8px;min-height:1em;letter-spacing:.544px;line-height:1.75em;"><br></p>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);">此外，开发者们还在官网上放出了部分示例代码。更多编译器函数介绍可参见官方网站：https://vlang.io/。</span><br></p>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);"><br></span></p>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);">1、数据库访问：</span><span style="font-size:15px;letter-spacing:1px;"></span></p>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"><br></span></p>
+   <pre class="output_wrapper" style="font-size:16px;color:rgb(62,62,62);line-height:1.6;letter-spacing:0px;font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"></pre>
+   <pre><code class="hljs go" style="margin-left:2px;line-height:18px;font-size:14px;letter-spacing:0px;font-family:Consolas, Inconsolata, Courier, monospace;color:rgb(169,183,198);background:rgb(40,43,46);">struct&nbsp;User&nbsp;{&nbsp;/*&nbsp;...&nbsp;*/&nbsp;}struct&nbsp;Post&nbsp;{&nbsp;/*&nbsp;...&nbsp;*/&nbsp;}struct&nbsp;DB&nbsp;&nbsp;&nbsp;{&nbsp;/*&nbsp;...&nbsp;*/&nbsp;}struct&nbsp;Repo&nbsp;&lt;T&gt;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;db&nbsp;DB}fn&nbsp;new_repo&lt;T&gt;(db&nbsp;DB)&nbsp;Repo&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Repo&lt;T&gt;{db:&nbsp;db}}fn&nbsp;(r&nbsp;Repo)&nbsp;find_by_id(id&nbsp;int)&nbsp;T?&nbsp;{&nbsp;//&nbsp;`?`&nbsp;means&nbsp;the&nbsp;function&nbsp;returns&nbsp;an&nbsp;optional&nbsp;&nbsp;&nbsp;&nbsp;table_name&nbsp;:=&nbsp;T.name&nbsp;//&nbsp;in&nbsp;this&nbsp;example&nbsp;getting&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;type&nbsp;gives&nbsp;us&nbsp;the&nbsp;table&nbsp;name&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r.db.query_one&lt;T&gt;('select&nbsp;*&nbsp;from&nbsp;$table_name&nbsp;where&nbsp;id&nbsp;=&nbsp;?',&nbsp;id)}fn&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;db&nbsp;:=&nbsp;new_db()&nbsp;&nbsp;&nbsp;&nbsp;users_repo&nbsp;:=&nbsp;new_repo&lt;User&gt;(db)&nbsp;&nbsp;&nbsp;&nbsp;posts_repo&nbsp;:=&nbsp;new_repo&lt;Post&gt;(db)&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;:=&nbsp;users_repo.find_by_id(1)&nbsp;or&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eprintln('User&nbsp;not&nbsp;found')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;post&nbsp;:=&nbsp;posts_repo.find_by_id(1)&nbsp;or&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eprintln('Post&nbsp;not&nbsp;found')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;&nbsp;&nbsp;}}&nbsp;<span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">/*&nbsp;...&nbsp;*/</span>&nbsp;}<br><span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">struct</span>&nbsp;Post&nbsp;{&nbsp;<span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">/*&nbsp;...&nbsp;*/</span>&nbsp;}<br><span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">struct</span>&nbsp;DB&nbsp;&nbsp;&nbsp;{&nbsp;<span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">/*&nbsp;...&nbsp;*/</span>&nbsp;}<br><br><span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">struct</span>&nbsp;Repo&nbsp;&lt;T&gt;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;db&nbsp;DB<br>}<br><br>fn&nbsp;new_repo&lt;T&gt;(db&nbsp;DB)&nbsp;Repo&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">return</span>&nbsp;Repo&lt;T&gt;{db:&nbsp;db}<br>}<br><br>fn&nbsp;(r&nbsp;Repo)&nbsp;find_by_id(id&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">int</span>)&nbsp;T?&nbsp;{&nbsp;<span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">//&nbsp;`?`&nbsp;means&nbsp;the&nbsp;function&nbsp;returns&nbsp;an&nbsp;optional</span><br>&nbsp;&nbsp;&nbsp;&nbsp;table_name&nbsp;:=&nbsp;T.name&nbsp;<span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">//&nbsp;in&nbsp;this&nbsp;example&nbsp;getting&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;type&nbsp;gives&nbsp;us&nbsp;the&nbsp;table&nbsp;name</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">return</span>&nbsp;r.db.query_one&lt;T&gt;(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">'select&nbsp;*&nbsp;from&nbsp;$table_name&nbsp;where&nbsp;id&nbsp;=&nbsp;?'</span>,&nbsp;id)<br>}<br><br>fn&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;db&nbsp;:=&nbsp;new_db()<br>&nbsp;&nbsp;&nbsp;&nbsp;users_repo&nbsp;:=&nbsp;new_repo&lt;User&gt;(db)<br>&nbsp;&nbsp;&nbsp;&nbsp;posts_repo&nbsp;:=&nbsp;new_repo&lt;Post&gt;(db)<br>&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;:=&nbsp;users_repo.find_by_id(<span class="hljs-number" style="font-size:inherit;line-height:inherit;color:rgb(174,135,250);">1</span>)&nbsp;or&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eprintln(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">'User&nbsp;not&nbsp;found'</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">return</span><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;post&nbsp;:=&nbsp;posts_repo.find_by_id(<span class="hljs-number" style="font-size:inherit;line-height:inherit;color:rgb(174,135,250);">1</span>)&nbsp;or&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eprintln(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">'Post&nbsp;not&nbsp;found'</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">return</span><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}&nbsp;<br></code></pre>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"><br></span></p>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;color:rgb(77,78,78);">2、网络开发：</span><span style="font-size:15px;letter-spacing:1px;"></span><br><span style="font-size:15px;letter-spacing:1px;"></span></p>
+   <p style="margin-left:8px;line-height:1.75em;"><br></p>
+   <pre class="output_wrapper" style="font-size:16px;color:rgb(62,62,62);line-height:1.6;letter-spacing:0px;font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"></pre>
+   <pre><code class="hljs go" style="margin-left:2px;line-height:18px;font-size:14px;letter-spacing:0px;font-family:Consolas, Inconsolata, Courier, monospace;color:rgb(169,183,198);background:rgb(40,43,46);">struct&nbsp;Story&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;string}//&nbsp;Fetches&nbsp;top&nbsp;HN&nbsp;stories&nbsp;in&nbsp;8&nbsp;coroutines&nbsp;fn&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;resp&nbsp;:=&nbsp;http.get('https://hacker-news.firebaseio.com/v0/topstories.json')?&nbsp;&nbsp;&nbsp;&nbsp;ids&nbsp;:=&nbsp;json.decode([]int,&nbsp;resp.body)?&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;cursor&nbsp;:=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;_&nbsp;in&nbsp;0..8&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;go&nbsp;fn()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lock&nbsp;{&nbsp;//&nbsp;Without&nbsp;this&nbsp;lock&nbsp;the&nbsp;program&nbsp;will&nbsp;not&nbsp;compile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;cursor&nbsp;&gt;=&nbsp;ids.len&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;:=&nbsp;ids[cursor]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp&nbsp;:=&nbsp;http.get('https://hacker-news.firebaseio.com/v0/item/$id.json')?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;story&nbsp;:=&nbsp;json.decode(Story,&nbsp;resp.body)?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println(story.title)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}()&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;runtime.wait()&nbsp;//&nbsp;Waits&nbsp;for&nbsp;all&nbsp;coroutines&nbsp;to&nbsp;finish&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">string</span><br>}<br><br><span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">//&nbsp;Fetches&nbsp;top&nbsp;HN&nbsp;stories&nbsp;in&nbsp;8&nbsp;coroutines&nbsp;</span><br>fn&nbsp;main()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;resp&nbsp;:=&nbsp;http.get(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">'https://hacker-news.firebaseio.com/v0/topstories.json'</span>)?<br>&nbsp;&nbsp;&nbsp;&nbsp;ids&nbsp;:=&nbsp;json.decode([]<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">int</span>,&nbsp;resp.body)?<br>&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;cursor&nbsp;:=&nbsp;<span class="hljs-number" style="font-size:inherit;line-height:inherit;color:rgb(174,135,250);">0</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">for</span>&nbsp;_&nbsp;in&nbsp;<span class="hljs-number" style="font-size:inherit;line-height:inherit;color:rgb(174,135,250);">0..8</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">go</span>&nbsp;fn()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">for</span>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lock&nbsp;{&nbsp;<span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">//&nbsp;Without&nbsp;this&nbsp;lock&nbsp;the&nbsp;program&nbsp;will&nbsp;not&nbsp;compile&nbsp;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">if</span>&nbsp;cursor&nbsp;&gt;=&nbsp;ids.<span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">len</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">break</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;:=&nbsp;ids[cursor]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor++<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp&nbsp;:=&nbsp;http.get(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">'https://hacker-news.firebaseio.com/v0/item/$id.json'</span>)?&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;story&nbsp;:=&nbsp;json.decode(Story,&nbsp;resp.body)?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">println</span>(story.title)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}()<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;runtime.wait()&nbsp;<span class="hljs-comment" style="font-size:inherit;line-height:inherit;color:rgb(128,128,128);">//&nbsp;Waits&nbsp;for&nbsp;all&nbsp;coroutines&nbsp;to&nbsp;finish&nbsp;</span><br>}&nbsp;<br></code></pre>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;"><br></span></p>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;color:rgb(77,78,78);letter-spacing:1px;">当然，目前V 语言的开发仍处于早期阶段，很多方面还不够完善，尤其是内存管理上还面临着与 Go 和 Rust 同样繁琐的生命期管理问题，但对比 C++ 等手动和半自动的管理方式还是更省心一些的。</span></p>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;color:rgb(77,78,78);letter-spacing:1px;">那么开发者们怎么看？</span></p>
+   <blockquote class="js_blockquote_wrap">
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;">@三川走刀口：还是要得到开发者认可，但是对于安卓开发好像没用？</span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;"><br></span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;">@淡定的龙哥：Go语言同父异母的弟弟？</span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;"><br></span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;">@Heisenber哥：语言特性只是一方面，生态也很重要。</span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;"><br></span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;">@王的凝视：这个新语言提出来是为了解决什么问题？每种语言都有适合场景，如果没有合适场景迟早也要被淘汰。</span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;"><br></span></p>
+    <p style="margin-left:8px;line-height:1.75em;"><span style="letter-spacing:1px;font-size:14px;">@楚小欢：执行效率比C高应该不可能，C现在都被认为是汇编语言，本身语义也十分接近汇编。别的语言只要有高级点的特性，效率就不可能超过C。</span></p>
+   </blockquote>
+   <p style="margin-left:8px;line-height:1.75em;"><span style="font-size:15px;letter-spacing:1px;">总之，这个新生的 V 语言还是需要不断的发展，得到开发者的广泛应用才能焕发生机，也才能有望助力程序员做到真正的“人剑合一”。</span></p> 
+  </div> 
+ </div> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/06/27/yihuliunian_93874487.html" class="pre-post btn btn-default" title='V 语言强势登顶 GitHub TOP1，难道要取 Go 而代之？'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V 语言强势登顶 GitHub TOP1，难道要取 Go 而代之？</span>
+        </a>
+    
+    
+        <a href="/2019/06/26/SchopenhauerZhang_93709649.html" class="next-post btn btn-default" title='V语言（Vlang）初探'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V语言（Vlang）初探</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>None</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

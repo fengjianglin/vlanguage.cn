@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+   
+   
+    
+   
+  磨刀霍霍向vlang 
+  工欲善其事必先利其器。在开始v语言相关语法知识学习之前，我们首先需要部署好vlang的运行环境。目前vlang...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Centos下安装vlang运行环境-新手必看 | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Centos下安装vlang运行环境-新手必看">
+            
+	            Centos下安装vlang运行环境-新手必看
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/03</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/weixin_42512337/article/details/94554250&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/weixin_42512337/article/details/94554250&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div id="content_views" class="markdown_views prism-atom-one-dark"> 
+  <!-- flowchart 箭头图标 勿删 --> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/> 
+  </svg> 
+  <h2><a id="vlang_2"></a>磨刀霍霍向vlang</h2> 
+  <p>工欲善其事必先利其器。在开始v语言相关语法知识学习之前，我们首先需要部署好vlang的运行环境。目前vlang语言只支持linux和mac系统，笔者本人选择使用Centos，下面是基本的安装部署步骤：</p> 
+  <ul> 
+   <li>安装clang编译器</li> 
+   <li>下载v语言源码</li> 
+   <li>修改默认编译器</li> 
+   <li>编译源码</li> 
+   <li>建立软链接</li> 
+   <li>测试安装结果</li> 
+   <li>源码更新</li> 
+  </ul> 
+  <p>现在我们对上述安装步骤展开具体介绍。</p> 
+  <h4><a id="1_clang_16"></a>1. 安装clang编译器</h4> 
+  <p>为了能编译v语言，需要先安装对应的编译器，目前比较流行的编译器有clang或者GCC，笔者这里选择使用clang。Clang是一个支持C语言、C++、Objective-C语言的轻量级编译器。</p> 
+  <ul> 
+   <li>首先检查当前Centos环境是否有安装clang编译器</li> 
+  </ul> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost iris<span class="token punctuation">]</span># which clang
+<span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>which<span class="token punctuation">:</span> no clang <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>bin<span class="token punctuation">:</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>sbin<span class="token punctuation">:</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token punctuation">:</span><span class="token operator">/</span>usr<span class="token operator">/</span>sbin<span class="token punctuation">:</span><span class="token operator">/</span>bin<span class="token punctuation">:</span><span class="token operator">/</span>sbin<span class="token punctuation">:</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>go<span class="token operator">/</span>bin<span class="token punctuation">:</span><span class="token operator">/</span>mnt<span class="token operator">/</span>hgfs<span class="token operator">/</span>go<span class="token operator">/</span>bin<span class="token punctuation">:</span><span class="token operator">/</span>home<span class="token operator">/</span>iris<span class="token operator">/</span><span class="token punctuation">.</span>local<span class="token operator">/</span>bin<span class="token punctuation">:</span><span class="token operator">/</span>home<span class="token operator">/</span>iris<span class="token operator">/</span>bin<span class="token punctuation">)</span>
+</code></pre> 
+  <ul> 
+   <li>如上表示没有安装clang编译器，可通过yum进行安装</li> 
+  </ul> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost iris<span class="token punctuation">]</span># yum install <span class="token operator">-</span>y clang
+已加载插件：fastestmirror<span class="token punctuation">,</span> langpacks
+Loading mirror speeds <span class="token keyword">from</span> cached hostfile
+ <span class="token operator">*</span> base<span class="token punctuation">:</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+ <span class="token operator">*</span> extras<span class="token punctuation">:</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+ <span class="token operator">*</span> updates<span class="token punctuation">:</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+软件包 clang<span class="token operator">-</span><span class="token number">3.4</span><span class="token number">.2</span><span class="token operator">-</span><span class="token number">9.</span>el7<span class="token punctuation">.</span>x86_64 已安装并且是最新版本
+无须任何处理
+</code></pre> 
+  <ul> 
+   <li>查看clang版本</li> 
+  </ul> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost iris<span class="token punctuation">]</span># clang <span class="token operator">-</span>v
+clang version <span class="token number">3.4</span><span class="token number">.2</span> <span class="token punctuation">(</span>tags<span class="token operator">/</span><span class="token constant">RELEASE_34</span><span class="token operator">/</span>dot2<span class="token operator">-</span>final<span class="token punctuation">)</span>
+Target<span class="token punctuation">:</span> x86_64<span class="token operator">-</span>redhat<span class="token operator">-</span>linux<span class="token operator">-</span>gnu
+Thread model<span class="token punctuation">:</span> posix
+Found candidate <span class="token constant">GCC</span> installation<span class="token punctuation">:</span> <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>lib<span class="token operator">/</span>gcc<span class="token operator">/</span>x86_64<span class="token operator">-</span>redhat<span class="token operator">-</span>linux<span class="token operator">/</span><span class="token number">4.8</span><span class="token number">.2</span>
+Found candidate <span class="token constant">GCC</span> installation<span class="token punctuation">:</span> <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>lib<span class="token operator">/</span>gcc<span class="token operator">/</span>x86_64<span class="token operator">-</span>redhat<span class="token operator">-</span>linux<span class="token operator">/</span><span class="token number">4.8</span><span class="token number">.5</span>
+Found candidate <span class="token constant">GCC</span> installation<span class="token punctuation">:</span> <span class="token operator">/</span>usr<span class="token operator">/</span>lib<span class="token operator">/</span>gcc<span class="token operator">/</span>x86_64<span class="token operator">-</span>redhat<span class="token operator">-</span>linux<span class="token operator">/</span><span class="token number">4.8</span><span class="token number">.2</span>
+Found candidate <span class="token constant">GCC</span> installation<span class="token punctuation">:</span> <span class="token operator">/</span>usr<span class="token operator">/</span>lib<span class="token operator">/</span>gcc<span class="token operator">/</span>x86_64<span class="token operator">-</span>redhat<span class="token operator">-</span>linux<span class="token operator">/</span><span class="token number">4.8</span><span class="token number">.5</span>
+Selected <span class="token constant">GCC</span> installation<span class="token punctuation">:</span> <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>lib<span class="token operator">/</span>gcc<span class="token operator">/</span>x86_64<span class="token operator">-</span>redhat<span class="token operator">-</span>linux<span class="token operator">/</span><span class="token number">4.8</span><span class="token number">.5</span>
+</code></pre> 
+  <h4><a id="2_V_47"></a>2. 下载V语言源码</h4> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost iris<span class="token punctuation">]</span># git clone https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>vlang<span class="token operator">/</span>v
+正克隆到 <span class="token string">'V'</span><span class="token operator">...</span>
+remote<span class="token punctuation">:</span> Enumerating objects<span class="token punctuation">:</span> <span class="token number">39</span><span class="token punctuation">,</span> done<span class="token punctuation">.</span>
+remote<span class="token punctuation">:</span> Counting objects<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">39</span><span class="token operator">/</span><span class="token number">39</span><span class="token punctuation">)</span><span class="token punctuation">,</span> done<span class="token punctuation">.</span>
+remote<span class="token punctuation">:</span> Compressing objects<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">28</span><span class="token operator">/</span><span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">,</span> done<span class="token punctuation">.</span>
+remote<span class="token punctuation">:</span> Total <span class="token number">1924</span> <span class="token punctuation">(</span>delta <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> reused <span class="token number">29</span> <span class="token punctuation">(</span>delta <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pack<span class="token operator">-</span>reused <span class="token number">1885</span>
+接收对象中<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">1924</span><span class="token operator">/</span><span class="token number">1924</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1.23</span>MiB <span class="token operator">|</span> <span class="token number">247.00</span> KiB<span class="token operator">/</span>s<span class="token punctuation">,</span> done<span class="token punctuation">.</span>
+处理 delta 中<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">1115</span><span class="token operator">/</span><span class="token number">1115</span><span class="token punctuation">)</span><span class="token punctuation">,</span> done<span class="token punctuation">.</span>
+</code></pre> 
+  <h4><a id="3__58"></a>3. 修改默认编译器</h4> 
+  <p>这里先修改编译器为clang，否则后面编译源码的时候可能会出错。</p> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost iris<span class="token punctuation">]</span># cd <span class="token operator">/</span>usr<span class="token operator">/</span>bin
+<span class="token punctuation">[</span>root@localhost bin<span class="token punctuation">]</span># rm cc
+rm<span class="token punctuation">:</span> 是否删除符号链接 <span class="token string">"cc"</span><span class="token operator">?</span> y
+<span class="token punctuation">[</span>root@localhost bin<span class="token punctuation">]</span># ln <span class="token operator">-</span>s clang cc
+</code></pre> 
+  <h4><a id="4__66"></a>4. 编译源码</h4> 
+  <p>进入到vlang语言对应的下载目录下，通过make命令编译源码。</p> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost iris<span class="token punctuation">]</span># cd v
+<span class="token punctuation">[</span>root@localhost v<span class="token punctuation">]</span># make
+rm <span class="token operator">-</span>f v<span class="token punctuation">.</span>c v vprod
+curl <span class="token operator">-</span>Os https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>raw<span class="token punctuation">.</span>githubusercontent<span class="token punctuation">.</span>com<span class="token operator">/</span>vlang<span class="token operator">/</span>vc<span class="token operator">/</span>master<span class="token operator">/</span>v<span class="token punctuation">.</span>c
+cc <span class="token operator">-</span>march<span class="token operator">=</span>native <span class="token operator">-</span>std<span class="token operator">=</span>gnu11 <span class="token operator">-</span>w <span class="token operator">-</span>o v v<span class="token punctuation">.</span>c
+<span class="token punctuation">.</span><span class="token operator">/</span>v <span class="token operator">-</span>o v compiler
+rm v<span class="token punctuation">.</span>c
+<span class="token constant">V</span> has been successfully built
+</code></pre> 
+  <h4><a id="5__78"></a>5. 建立软链接</h4> 
+  <p>软链接ln是Linux中的一个重要命令，作用是为某一个文件在另外一个位置建立一个不同的链接，其本质是实现文件的共享。通过软链接，当我们需要在其他目录使相同的文件时，不需要在每一个需要的目录下都放一个相同的文件，只需要在某个固定的目录放上该文件，然后在其它的目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。</p> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost iris<span class="token punctuation">]</span># ln <span class="token operator">-</span>s <span class="token operator">/</span>home<span class="token operator">/</span>iris<span class="token operator">/</span>v<span class="token operator">/</span>v <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>bin<span class="token operator">/</span>v
+</code></pre> 
+  <p>这里 /home/iris/v/v 表示步骤 5 中编译成功后生成v.exe文件，/usr/local/bin/v 为我们需要使用v.exe 的共享位置。</p> 
+  <h4><a id="6__84"></a>6. 测试安装结果</h4> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost v<span class="token punctuation">]</span># cd examples
+<span class="token punctuation">[</span>root@localhost examples<span class="token punctuation">]</span># ls
+game_of_life   json<span class="token punctuation">.</span>v           news_fetcher<span class="token punctuation">.</span>v      tetris
+hello_world    links_scraper<span class="token punctuation">.</span>v  rune<span class="token punctuation">.</span>v              VCasino
+hello_world<span class="token punctuation">.</span>v  log<span class="token punctuation">.</span>v            terminal_control<span class="token punctuation">.</span>v  word_counter
+<span class="token punctuation">[</span>root@localhost examples<span class="token punctuation">]</span># v run hello_world<span class="token punctuation">.</span>v
+<span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span> running hello_world <span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span>
+Hello<span class="token punctuation">,</span> World<span class="token operator">!</span>
+</code></pre> 
+  <h4><a id="7__95"></a>7. 更新源码</h4> 
+  <pre><code class="prism language-javascript"><span class="token punctuation">[</span>root@localhost v<span class="token punctuation">]</span># git pull origin master
+来自 https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>vlang<span class="token operator">/</span>v
+ <span class="token operator">*</span> branch            master     <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token constant">FETCH_HEAD</span>
+Already up<span class="token operator">-</span>to<span class="token operator">-</span>date<span class="token punctuation">.</span>
+<span class="token punctuation">[</span>root@localhost v<span class="token punctuation">]</span># make
+rm <span class="token operator">-</span>f v<span class="token punctuation">.</span>c v vprod
+curl <span class="token operator">-</span>Os https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>raw<span class="token punctuation">.</span>githubusercontent<span class="token punctuation">.</span>com<span class="token operator">/</span>vlang<span class="token operator">/</span>vc<span class="token operator">/</span>master<span class="token operator">/</span>v<span class="token punctuation">.</span>c
+cc <span class="token operator">-</span>march<span class="token operator">=</span>native <span class="token operator">-</span>std<span class="token operator">=</span>gnu11 <span class="token operator">-</span>w <span class="token operator">-</span>o v v<span class="token punctuation">.</span>c
+<span class="token punctuation">.</span><span class="token operator">/</span>v <span class="token operator">-</span>o v compiler
+rm v<span class="token punctuation">.</span>c
+<span class="token constant">V</span> has been successfully built
+</code></pre> 
+  <h2><a id="_109"></a>后记</h2> 
+  <p>以上就是vlang运行环境全部的安装配置过程。笔者发现在安装过程中有时候执行make命令会报错，除了没有修改默认编译器这个原因之外，有时候可能是源码本身的问题，通过更新源码步骤后重新make就能成功。下一章开始我们将正式开始进入vlang语言的语法学习，一起来感受vlang的魅力吧！</p> 
+ </div> 
+ <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet"> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/04/u013604145_94598562.html" class="pre-post btn btn-default" title='V 语言中文文档'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V 语言中文文档</span>
+        </a>
+    
+    
+        <a href="/2019/07/02/csdnnews_94508510.html" class="next-post btn btn-default" title='GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选...'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选...</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">磨刀霍霍向vlang</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">1. 安装clang编译器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">2. 下载V语言源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">3. 修改默认编译器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">4. 编译源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">5. 建立软链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">6. 测试安装结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">7. 更新源码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">后记</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

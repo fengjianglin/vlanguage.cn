@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+   
+   
+    
+   
+  V 语言 – 数据结构.Map 
+  V语言现在还在开发阶段，所以还有很多不成熟的地方。比如其中的map，还只是一个原型。下面我做一个简单...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>V 语言 -- 数据结构.Map | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="V 语言 -- 数据结构.Map">
+            
+	            V 语言 -- 数据结构.Map
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/02</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/liaodong2010/article/details/94438815&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/liaodong2010/article/details/94438815&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div id="content_views" class="markdown_views prism-atom-one-dark"> 
+  <!-- flowchart 箭头图标 勿删 --> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/> 
+  </svg> 
+  <h1><a id="V____Map_0"></a>V 语言 – 数据结构.Map</h1> 
+  <p>V语言现在还在开发阶段，所以还有很多不成熟的地方。比如其中的map，还只是一个原型。下面我做一个简单的分析。</p> 
+  <h2><a id="_4"></a>结构体定义</h2> 
+  <pre><code class="prism language-go">module builtin
+
+<span class="token keyword">struct</span> <span class="token keyword">map</span> <span class="token punctuation">{</span>
+	<span class="token comment">// cap int</span>
+	<span class="token comment">// keys []string</span>
+	<span class="token comment">// table byteptr</span>
+	<span class="token comment">// keys_table *string</span>
+	<span class="token comment">// table *Entry</span>
+	element_size <span class="token builtin">int</span>
+	<span class="token comment">// collisions []Entry</span>
+pub<span class="token punctuation">:</span>
+	entries      <span class="token punctuation">[</span><span class="token punctuation">]</span>Entry
+	is_sorted    <span class="token builtin">bool</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> Entry <span class="token punctuation">{</span>
+pub<span class="token punctuation">:</span>
+	key <span class="token builtin">string</span>
+	val voidptr
+	<span class="token comment">// linked list for collisions</span>
+	<span class="token comment">// next *Entry</span>
+<span class="token punctuation">}</span>
+</code></pre> 
+  <p>可以看到，map的结构十分简单，只包含三个成员</p> 
+  <ul> 
+   <li>element_size: 元素大小</li> 
+   <li>entries: 实体集合</li> 
+   <li>is_sorted: 是否排序</li> 
+  </ul> 
+  <p>其中的is_sorted这个属性比较有意思，说明在方法里面会排序，用到排序则很有可能与提高查找效率有关。</p> 
+  <p>下面再来看方法。</p> 
+  <h2><a id="_41"></a>方法</h2> 
+  <p>对于一个map来说，用的最多的无非是插入元素和获取元素。</p> 
+  <h3><a id="_44"></a>插入元素</h3> 
+  <pre><code class="prism language-go"><span class="token comment">// 插入一个元素</span>
+fn <span class="token punctuation">(</span>m mut <span class="token keyword">map</span><span class="token punctuation">)</span> <span class="token function">_set</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">,</span> val voidptr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	e <span class="token operator">:=</span> m<span class="token punctuation">.</span><span class="token function">new_entry</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> val<span class="token punctuation">)</span> 
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		entry <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+		<span class="token keyword">if</span> entry<span class="token punctuation">.</span>key <span class="token operator">==</span> key <span class="token punctuation">{</span>
+			<span class="token comment">// e := Entry2{key: key, val: val}</span>
+			m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> e
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	m<span class="token punctuation">.</span>entries <span class="token operator">&lt;&lt;</span> e<span class="token comment">// m.new_entry(key, val)</span>
+	m<span class="token punctuation">.</span>is_sorted <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre> 
+  <p>插入元素的过程可以描述为：</p> 
+  <ol> 
+   <li>创建一个元素</li> 
+   <li>遍历查找键是否重复</li> 
+   <li>如果重复，则赋值</li> 
+   <li>如果没重复，则添加到末尾</li> 
+  </ol> 
+  <p>不难看出，插入用到了遍历，其时间复杂度为O(n)，是一种很低效的算法。在后续有很大的优化空间。</p> 
+  <h3><a id="_72"></a>查找元素</h3> 
+  <pre><code class="prism language-go"><span class="token comment">// 获取元素</span>
+fn <span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">)</span> <span class="token function">get</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">,</span> out voidptr<span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> m<span class="token punctuation">.</span>is_sorted <span class="token punctuation">{</span>
+		<span class="token comment">// println('\n\nget "$key" sorted')</span>
+		m<span class="token punctuation">.</span><span class="token function">bs</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span><span class="token punctuation">,</span> out<span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token boolean">true</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		entry <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+		<span class="token keyword">if</span> entry<span class="token punctuation">.</span>key <span class="token operator">==</span> key <span class="token punctuation">{</span>
+			C<span class="token punctuation">.</span><span class="token function">memcpy</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> entry<span class="token punctuation">.</span>val<span class="token punctuation">,</span> m<span class="token punctuation">.</span>element_size<span class="token punctuation">)</span>
+			<span class="token keyword">return</span> <span class="token boolean">true</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 二分查找</span>
+fn <span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">)</span> <span class="token function">bs</span><span class="token punctuation">(</span>query <span class="token builtin">string</span><span class="token punctuation">,</span> start<span class="token punctuation">,</span> end <span class="token builtin">int</span><span class="token punctuation">,</span> out voidptr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// println('bs "$query" $start -&gt; $end')</span>
+	mid <span class="token operator">:=</span> start <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>end <span class="token operator">-</span> start<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> end <span class="token operator">-</span> start <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		last <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>end<span class="token punctuation">]</span>
+		C<span class="token punctuation">.</span><span class="token function">memcpy</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> last<span class="token punctuation">.</span>val<span class="token punctuation">,</span> m<span class="token punctuation">.</span>element_size<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> end <span class="token operator">-</span> start <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+		first <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>start<span class="token punctuation">]</span>
+		C<span class="token punctuation">.</span><span class="token function">memcpy</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> first<span class="token punctuation">.</span>val<span class="token punctuation">,</span> m<span class="token punctuation">.</span>element_size<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> mid <span class="token operator">&gt;=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	mid_msg <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>mid<span class="token punctuation">]</span>
+	<span class="token comment">// println('mid.key=$mid_msg.key')</span>
+	<span class="token keyword">if</span> query <span class="token operator">&lt;</span> mid_msg<span class="token punctuation">.</span>key <span class="token punctuation">{</span>
+		m<span class="token punctuation">.</span><span class="token function">bs</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> start<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> out<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	m<span class="token punctuation">.</span><span class="token function">bs</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> end<span class="token punctuation">,</span> out<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> 
+  <p>查找的流程可以描述为：</p> 
+  <ul> 
+   <li>判断是否已经排序</li> 
+   <li>如果未排序则遍历查找</li> 
+   <li>如果已排序则二分查找(排序方法需要显式调用)</li> 
+  </ul> 
+  <p>查找过程用到了二分查找(O(lgn))，和遍历(O(n))，但是大部分时候，开发者不会对map显式排序，所以真正起作用的是遍历操作，也是十分低效。</p> 
+  <h2><a id="_127"></a>改进及评价</h2> 
+  <ol> 
+   <li>map模块显然很不成熟，其结构和算法有很大改进空间。</li> 
+   <li>如果采用数组作为存储容器，则至少也可以达到查找： O(lgn) -&gt; 排序O(lgn) + 二分查找 O(lgn)， 插入O(lgn) -&gt; 查重O(lgn) + 插入O(1)。否则数据量稍大会非常慢。</li> 
+   <li>如果采用Hash实现，则可达到O(1) + O(1)的速度，不过这要看v语言的开发者如何取舍。</li> 
+   <li>v语言当前还无法用于生产环境，尝鲜可以，但正式环境还不可用。其语言特性很有吸引力，但现在的完成度还不高，到稳定可用估计还需要些时日。</li> 
+  </ol> 
+ </div> 
+ <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet"> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/02/csdnnews_94508510.html" class="pre-post btn btn-default" title='GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选...'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选...</span>
+        </a>
+    
+    
+        <a href="/2019/07/01/BEYONDMA_94349691.html" class="next-post btn btn-default" title='GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-text">V 语言 – 数据结构.Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">结构体定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">插入元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">查找元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">改进及评价</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

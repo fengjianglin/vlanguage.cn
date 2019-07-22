@@ -1,0 +1,587 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+  
+   
+   
+  作者 |&nbsp;beyondma 
+  本文精选自 CSDN 博客，已获作者授权 
+  最近 V 语言在千呼万唤之后，终于迎来开源，并正式发布了首...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选... | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选...">
+            
+	            GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选...
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/02</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/csdnnews/article/details/94508510&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/csdnnews/article/details/94508510&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div class="htmledit_views" id="content_views"> 
+  <p style="margin-left:8px;"><img alt="640?wx_fmt=gif" class="__bg_gif rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_gif/Pn4Sm0RsAujHRSdcX3IznHduusnhVrSgibxlHEaKkBO8A7UcDdDzAnMIA2ZLfuoUKKJrwSA8HPTejcSLotzprZw/640?wx_fmt=gif"></p> 
+  <p style="margin-left:8px;"><span style="color:#888888;"><img alt="640?wx_fmt=jpeg" class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/Pn4Sm0RsAujMxHQBNG282I1Lbn9HMWVwQUdx0tA9mW8LiaFl35NadjFAweOVMmQiaic81kcDwGnQh471MMgYWzcGg/640?wx_fmt=jpeg"></span></p> 
+  <p style="margin-left:8px;"><span style="color:#888888;">作者 |&nbsp;beyondma</span></p> 
+  <p style="margin-left:8px;"><span style="color:#888888;">本文精选自 CSDN 博客，已获作者授权</span></p> 
+  <p style="margin-left:8px;">最近 V 语言在千呼万唤之后，终于迎来开源，并<a href="http://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&amp;mid=2650723182&amp;idx=1&amp;sn=2199db14010879e83508b2ec56445527&amp;chksm=bea6a2bd89d12bab3be59896aa1ef13ef82bc9daa71205d4c7a290edd4c67e7f16dd8ac5ddd6&amp;scene=21#wechat_redirect" rel="noopener" data-token="e6ea66ea149e0d454a50258aca1f2adb" target="_blank">正式发布了首个可用版本</a>。其一经推出，便强势登顶GitHub的榜首，引来各方热议。目前V已经可以实现自我编译迭代，笔者大致了解了一下V语言，主要有如下一些特性：</p> 
+  <p>&nbsp;</p> 
+  <ul>
+   <li> <p style="margin-left:8px;">快速编译：V的CPU核心每秒编译约120万行代码；V也可以调用C，编译速度下降到≈100k行/秒/CPU；</p> </li> 
+   <li> <p style="margin-left:8px;">安全策略：没有空；没有全局变量（意味着变量都是在函数体中声明）；没有未定义的行为；</p> </li> 
+   <li> <p style="margin-left:8px;">性能：和C一样快，操作C没有任何成本，不支持运行时反射，编译器只有400K，整个语言及其标准库都小于400kb；V目前是用V写的，你可以在0.4秒内完成（到今年年底，这个数字将降至≈0.15秒）；</p> </li> 
+   <li> <p style="margin-left:8px;">强大的图形能力：支持在GDI+/Cocoa绘图之上的跨平台绘图库，以及一个基于OpenGL的图形库，以支持加载复杂的三维对象与纹理。</p> </li> 
+  </ul>
+  <p>&nbsp;</p> 
+  <p style="margin-left:8px;">由于曾经做过一段时间的DIRECTX的开发，V语言对于图形能力的特性宣传最吸引笔者的注意。所以我到其官网及Github上学习了一下相关内容，按照编译运行了一下俄罗斯方块的例程，接下来向大家做一下分享。</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="text-align:center;"><img alt="640?wx_fmt=gif" class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_gif/Pn4Sm0RsAugntDr35hRZcXrBpiadmEJsQU4A5A6mwu4hFrJdSaMx9zf7No6YXVSkZC6cZdUh4xRkZlLa02dIPAA/640?wx_fmt=gif"></p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p><strong><img alt="640?wx_fmt=png" class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/Pn4Sm0RsAugo5SicrbBWhBdrvsmIrWNwHklazcTAqHwNiakxwcrlNUFmx9RjNGxR0ghGKMoO9ubibCib9CHYkkT2HA/640?wx_fmt=png"></strong></p> 
+  <p style="margin-left:8px;"><strong>安装V语言</strong></p> 
+  <p>&nbsp;</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;">如果只是HELLO WORLD程序是非常简单的，只需要按照https://vlang.io官网的标准步骤来执行即可。而如果使用其图形处理能力笔者目前只在UBANTU平台测试成功——下面均是以UBANTU为例来说明。</p> 
+  <p>&nbsp;</p> 
+  <p style="margin-left:8px;">首先将整个项目克隆下来，再make即可：</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <pre>
+
+&nbsp;</pre> 
+  <pre>
+<code style="margin-left:2px;">&nbsp;git&nbsp;clone&nbsp;https://github.com/vlang/v&nbsp;cd&nbsp;v&nbsp;make
+&nbsp;<span style="color:#f82375;">cd</span>&nbsp;v
+&nbsp;make
+</code></pre> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;">如果报curl command not found，则执行以下命令安装curl：</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <pre>
+
+&nbsp;</pre> 
+  <pre>
+<code style="margin-left:2px;">sudo&nbsp;apt&nbsp;install&nbsp;curl
+</code></pre> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;">接下来再建立软链接：</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <pre>
+
+&nbsp;</pre> 
+  <pre>
+<code style="margin-left:2px;">sudo&nbsp;ln&nbsp;-s&nbsp;/home/machao/v/v&nbsp;/usr/local/bin/v
+</code></pre> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;">然后运行v就能进到v语言的命令行了。而如果要运行俄罗斯方块还需要以下这些库的支持：</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <pre>
+
+&nbsp;</pre> 
+  <pre>
+<code style="margin-left:2px;">sudo&nbsp;apt&nbsp;install&nbsp;libglfw3&nbsp;libglfw3-dev&nbsp;libfreetype6-dev&nbsp;libcurl3-dev
+</code></pre> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p><strong><img alt="640?wx_fmt=png" class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/Pn4Sm0RsAugo5SicrbBWhBdrvsmIrWNwH79IdgwBuCldKPGDicPyLfzel3DBo8Odgd8VbbYiaUZG3qBz5DRhEbmgg/640?wx_fmt=png"></strong></p> 
+  <p style="margin-left:8px;"><strong>运行俄罗斯方块</strong></p> 
+  <p style="margin-left:8px;">&nbsp; &nbsp; &nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p style="margin-left:8px;">接下来cd tetris，进入到俄罗斯方块的目录，先使用gedit tetris.v。来看一下v语言的代码样例，其主要部分如下：</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <pre>
+
+&nbsp;</pre> 
+  <pre>
+<code style="margin-left:2px;">fn&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;glfw.init()//实始化类&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;game&nbsp;:=&nbsp;&amp;Game{gg:&nbsp;0}&nbsp;//&nbsp;TODO&nbsp;&nbsp;&nbsp;&nbsp;game.parse_tetros()&nbsp;&nbsp;&nbsp;&nbsp;game.init_game()&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;window&nbsp;:=&nbsp;glfw.create_window(glfw.WinCfg&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;WinWidth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;WinHeight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;'V&nbsp;Tetris'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ptr:&nbsp;game&nbsp;//&nbsp;glfw&nbsp;user&nbsp;pointer&nbsp;&nbsp;&nbsp;&nbsp;})&nbsp;&nbsp;&nbsp;&nbsp;window.make_context_current()&nbsp;&nbsp;&nbsp;&nbsp;window.onkeydown(key_down)//注册事件&nbsp;&nbsp;&nbsp;&nbsp;gg.init()&nbsp;&nbsp;&nbsp;&nbsp;game.gg&nbsp;=&nbsp;gg.new_context(gg.Cfg&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;WinWidth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;WinHeight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use_ortho:&nbsp;true&nbsp;//&nbsp;This&nbsp;is&nbsp;needed&nbsp;for&nbsp;2D&nbsp;drawing&nbsp;&nbsp;&nbsp;&nbsp;})&nbsp;&nbsp;&nbsp;&nbsp;go&nbsp;game.run()&nbsp;//&nbsp;Run&nbsp;the&nbsp;game&nbsp;loop&nbsp;in&nbsp;a&nbsp;new&nbsp;thread&nbsp;&nbsp;&nbsp;&nbsp;gl.clear()&nbsp;//&nbsp;For&nbsp;some&nbsp;reason&nbsp;this&nbsp;is&nbsp;necessary&nbsp;to&nbsp;avoid&nbsp;an&nbsp;intial&nbsp;flickering&nbsp;&nbsp;&nbsp;&nbsp;gl.clear_color(255,&nbsp;255,&nbsp;255,&nbsp;255)&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gl.clear()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gl.clear_color(255,&nbsp;255,&nbsp;255,&nbsp;255)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.draw_scene()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.swap_buffers()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glfw.wait_events()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;window.should_close()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.destroy()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glfw.terminate()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;}}fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;move_right(dx&nbsp;int)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Reached&nbsp;left/right&nbsp;edge&nbsp;or&nbsp;another&nbsp;tetro?&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;:=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;TetroSize;&nbsp;i++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tetro&nbsp;:=&nbsp;g.tetro[i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;:=&nbsp;tetro.y&nbsp;+&nbsp;g.pos_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;:=&nbsp;tetro.x&nbsp;+&nbsp;g.pos_x&nbsp;+&nbsp;dx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row&nbsp;:=&nbsp;g.field[y]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;row[x]&nbsp;!=&nbsp;0&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Do&nbsp;not&nbsp;move&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;g.pos_x&nbsp;+=&nbsp;dx}fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;delete_completed_lines()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;y&nbsp;:=&nbsp;FieldHeight;&nbsp;y&nbsp;&gt;=&nbsp;1;&nbsp;y--&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.delete_completed_line(y)&nbsp;&nbsp;&nbsp;&nbsp;}}fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;delete_completed_line(y&nbsp;int)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;:=&nbsp;1;&nbsp;x&nbsp;&lt;=&nbsp;FieldWidth;&nbsp;x++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;:=&nbsp;g.field[y]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;f[x]&nbsp;==&nbsp;0&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Move&nbsp;everything&nbsp;down&nbsp;by&nbsp;1&nbsp;position&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;yy&nbsp;:=&nbsp;y&nbsp;-&nbsp;1;&nbsp;yy&nbsp;&gt;=&nbsp;1;&nbsp;yy--&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;x&nbsp;:=&nbsp;1;&nbsp;x&nbsp;&lt;=&nbsp;FieldWidth;&nbsp;x++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;a&nbsp;:=&nbsp;g.field[yy&nbsp;+&nbsp;1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;b&nbsp;:=&nbsp;g.field[yy]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[x]&nbsp;=&nbsp;b[x]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;}}//&nbsp;Place&nbsp;a&nbsp;new&nbsp;tetro&nbsp;on&nbsp;topfn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;generate_tetro()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;g.pos_y&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;g.pos_x&nbsp;=&nbsp;FieldWidth&nbsp;/&nbsp;2&nbsp;-&nbsp;TetroSize&nbsp;/&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;g.tetro_idx&nbsp;=&nbsp;rand.next(BTetros.len)&nbsp;&nbsp;&nbsp;&nbsp;g.rotation_idx&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;g.get_tetro()}//&nbsp;Get&nbsp;the&nbsp;right&nbsp;tetro&nbsp;from&nbsp;cachefn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;get_tetro()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;idx&nbsp;:=&nbsp;g.tetro_idx&nbsp;*&nbsp;TetroSize&nbsp;*&nbsp;TetroSize&nbsp;+&nbsp;g.rotation_idx&nbsp;*&nbsp;TetroSize&nbsp;&nbsp;&nbsp;&nbsp;g.tetro&nbsp;=&nbsp;g.tetros_cache.slice(idx,&nbsp;idx&nbsp;+&nbsp;TetroSize)}fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;drop_tetro()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;:=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;TetroSize;&nbsp;i++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tetro&nbsp;:=&nbsp;g.tetro[i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;:=&nbsp;tetro.x&nbsp;+&nbsp;g.pos_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;:=&nbsp;tetro.y&nbsp;+&nbsp;g.pos_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Remember&nbsp;the&nbsp;color&nbsp;of&nbsp;each&nbsp;block&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO:&nbsp;g.field[y][x]&nbsp;=&nbsp;g.tetro_idx&nbsp;+&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;row&nbsp;:=&nbsp;g.field[y]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row[x]&nbsp;=&nbsp;g.tetro_idx&nbsp;+&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;}}fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_tetro()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;:=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;TetroSize;&nbsp;i++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tetro&nbsp;:=&nbsp;g.tetro[i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.draw_block(g.pos_y&nbsp;+&nbsp;tetro.y,&nbsp;g.pos_x&nbsp;+&nbsp;tetro.x,&nbsp;g.tetro_idx&nbsp;+&nbsp;1)&nbsp;&nbsp;&nbsp;&nbsp;}}fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_block(i,&nbsp;j,&nbsp;color_idx&nbsp;int)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;g.gg.draw_rect((j&nbsp;-&nbsp;1)&nbsp;*&nbsp;BlockSize,&nbsp;(i&nbsp;-&nbsp;1)&nbsp;*&nbsp;BlockSize,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlockSize&nbsp;-&nbsp;1,&nbsp;BlockSize&nbsp;-&nbsp;1,&nbsp;Colors[color_idx])}fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_field()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;:=&nbsp;1;&nbsp;i&nbsp;&lt;&nbsp;FieldHeight&nbsp;+&nbsp;1;&nbsp;i++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;j&nbsp;:=&nbsp;1;&nbsp;j&nbsp;&lt;&nbsp;FieldWidth&nbsp;+&nbsp;1;&nbsp;j++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;:=&nbsp;g.field[i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;f[j]&nbsp;&gt;&nbsp;0&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.draw_block(i,&nbsp;j,&nbsp;f[j])&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;}}fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_scene()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;g.draw_tetro()&nbsp;&nbsp;&nbsp;&nbsp;g.draw_field()}fn&nbsp;parse_binary_tetro(t&nbsp;int)&nbsp;[]Block&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;res&nbsp;:=&nbsp;[Block{}&nbsp;;&nbsp;4]&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;cnt&nbsp;:=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;horizontal&nbsp;:=&nbsp;t&nbsp;==&nbsp;9//&nbsp;special&nbsp;case&nbsp;for&nbsp;the&nbsp;horizontal&nbsp;line&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;:=&nbsp;0;&nbsp;i&nbsp;&lt;=&nbsp;3;&nbsp;i++&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Get&nbsp;ith&nbsp;digit&nbsp;of&nbsp;t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;:=&nbsp;int(math.pow(10,&nbsp;3&nbsp;-&nbsp;i))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;digit&nbsp;:=&nbsp;int(t&nbsp;/&nbsp;p)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;%=&nbsp;p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Convert&nbsp;the&nbsp;digit&nbsp;to&nbsp;binary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;j&nbsp;:=&nbsp;3;&nbsp;j&nbsp;&gt;=&nbsp;0;&nbsp;j--&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bin&nbsp;:=&nbsp;digit&nbsp;%&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digit&nbsp;/=&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;bin&nbsp;==&nbsp;1&nbsp;||&nbsp;(horizontal&nbsp;&amp;&amp;&nbsp;i&nbsp;==&nbsp;TetroSize&nbsp;-&nbsp;1)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO:&nbsp;res[cnt].x&nbsp;=&nbsp;j&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;res[cnt].y&nbsp;=&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;point&nbsp;:=&nbsp;&amp;res[cnt]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point.x&nbsp;=&nbsp;j&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point.y&nbsp;=&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnt++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;res}//&nbsp;TODO:&nbsp;this&nbsp;exposes&nbsp;the&nbsp;unsafe&nbsp;C&nbsp;interface,&nbsp;clean&nbsp;upfn&nbsp;key_down(wnd&nbsp;voidptr,&nbsp;key,&nbsp;code,&nbsp;action,&nbsp;mods&nbsp;int)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;action&nbsp;!=&nbsp;2&nbsp;&amp;&amp;&nbsp;action&nbsp;!=&nbsp;1&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Fetch&nbsp;the&nbsp;game&nbsp;object&nbsp;stored&nbsp;in&nbsp;the&nbsp;user&nbsp;pointer&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;game&nbsp;:=&nbsp;&amp;Game(glfw.get_window_user_pointer(wnd))&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;key&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;glfw.KEY_ESCAPE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glfw.set_should_close(wnd,&nbsp;true)&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;glfw.KeyUp:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Rotate&nbsp;the&nbsp;tetro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.rotation_idx++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;game.rotation_idx&nbsp;==&nbsp;TetroSize&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.rotation_idx&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.get_tetro()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;game.pos_x&nbsp;&lt;&nbsp;0&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.pos_x&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;glfw.KeyLeft:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.move_right(-1)&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;glfw.KeyRight:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.move_right(1)&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;glfw.KeyDown:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.move_tetro()&nbsp;//&nbsp;drop&nbsp;faster&nbsp;when&nbsp;the&nbsp;player&nbsp;presses&nbsp;&lt;down&gt;&nbsp;&nbsp;&nbsp;&nbsp;}}<span style="color:#808080;">//实始化类</span>
+&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;game&nbsp;:=&nbsp;&amp;Game{gg:&nbsp;<span style="color:#ae87fa;">0</span>}&nbsp;<span style="color:#808080;">//&nbsp;TODO</span>
+&nbsp;&nbsp;&nbsp;&nbsp;game.parse_tetros()
+&nbsp;&nbsp;&nbsp;&nbsp;game.init_game()
+&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;window&nbsp;:=&nbsp;glfw.create_window(glfw.WinCfg&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;WinWidth
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;WinHeight
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;<span style="color:#eedc70;">'V&nbsp;Tetris'</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ptr:&nbsp;game&nbsp;<span style="color:#808080;">//&nbsp;glfw&nbsp;user&nbsp;pointer</span>
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;window.make_context_current()
+&nbsp;&nbsp;&nbsp;&nbsp;window.onkeydown(key_down)<span style="color:#808080;">//注册事件</span>
+&nbsp;&nbsp;&nbsp;&nbsp;gg.init()
+&nbsp;&nbsp;&nbsp;&nbsp;game.gg&nbsp;=&nbsp;gg.new_context(gg.Cfg&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;WinWidth
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;WinHeight
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use_ortho:&nbsp;<span style="color:#ae87fa;">true</span>&nbsp;<span style="color:#808080;">//&nbsp;This&nbsp;is&nbsp;needed&nbsp;for&nbsp;2D&nbsp;drawing</span>
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">go</span>&nbsp;game.run()&nbsp;<span style="color:#808080;">//&nbsp;Run&nbsp;the&nbsp;game&nbsp;loop&nbsp;in&nbsp;a&nbsp;new&nbsp;thread</span>
+&nbsp;&nbsp;&nbsp;&nbsp;gl.clear()&nbsp;<span style="color:#808080;">//&nbsp;For&nbsp;some&nbsp;reason&nbsp;this&nbsp;is&nbsp;necessary&nbsp;to&nbsp;avoid&nbsp;an&nbsp;intial&nbsp;flickering</span>
+&nbsp;&nbsp;&nbsp;&nbsp;gl.clear_color(<span style="color:#ae87fa;">255</span>,&nbsp;<span style="color:#ae87fa;">255</span>,&nbsp;<span style="color:#ae87fa;">255</span>,&nbsp;<span style="color:#ae87fa;">255</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gl.clear()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gl.clear_color(<span style="color:#ae87fa;">255</span>,&nbsp;<span style="color:#ae87fa;">255</span>,&nbsp;<span style="color:#ae87fa;">255</span>,&nbsp;<span style="color:#ae87fa;">255</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.draw_scene()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.swap_buffers()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glfw.wait_events()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;window.should_close()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.destroy()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glfw.terminate()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(<span style="color:#ae87fa;">0</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;move_right(dx&nbsp;<span style="color:#f82375;">int</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Reached&nbsp;left/right&nbsp;edge&nbsp;or&nbsp;another&nbsp;tetro?</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;i&nbsp;:=&nbsp;<span style="color:#ae87fa;">0</span>;&nbsp;i&nbsp;&lt;&nbsp;TetroSize;&nbsp;i++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tetro&nbsp;:=&nbsp;g.tetro[i]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;:=&nbsp;tetro.y&nbsp;+&nbsp;g.pos_y
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;:=&nbsp;tetro.x&nbsp;+&nbsp;g.pos_x&nbsp;+&nbsp;dx
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row&nbsp;:=&nbsp;g.field[y]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;row[x]&nbsp;!=&nbsp;<span style="color:#ae87fa;">0</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Do&nbsp;not&nbsp;move</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">return</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;g.pos_x&nbsp;+=&nbsp;dx
+}
+
+fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;delete_completed_lines()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;y&nbsp;:=&nbsp;FieldHeight;&nbsp;y&nbsp;&gt;=&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;y--&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.delete_completed_line(y)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;delete_completed_line(y&nbsp;<span style="color:#f82375;">int</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;x&nbsp;:=&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;x&nbsp;&lt;=&nbsp;FieldWidth;&nbsp;x++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;:=&nbsp;g.field[y]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;f[x]&nbsp;==&nbsp;<span style="color:#ae87fa;">0</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">return</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Move&nbsp;everything&nbsp;down&nbsp;by&nbsp;1&nbsp;position</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;yy&nbsp;:=&nbsp;y&nbsp;-&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;yy&nbsp;&gt;=&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;yy--&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;x&nbsp;:=&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;x&nbsp;&lt;=&nbsp;FieldWidth;&nbsp;x++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;a&nbsp;:=&nbsp;g.field[yy&nbsp;+&nbsp;<span style="color:#ae87fa;">1</span>]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;b&nbsp;:=&nbsp;g.field[yy]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[x]&nbsp;=&nbsp;b[x]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+<span style="color:#808080;">//&nbsp;Place&nbsp;a&nbsp;new&nbsp;tetro&nbsp;on&nbsp;top</span>
+fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;generate_tetro()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;g.pos_y&nbsp;=&nbsp;<span style="color:#ae87fa;">0</span>
+&nbsp;&nbsp;&nbsp;&nbsp;g.pos_x&nbsp;=&nbsp;FieldWidth&nbsp;/&nbsp;<span style="color:#ae87fa;">2</span>&nbsp;-&nbsp;TetroSize&nbsp;/&nbsp;<span style="color:#ae87fa;">2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;g.tetro_idx&nbsp;=&nbsp;rand.next(BTetros.<span style="color:#f82375;">len</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;g.rotation_idx&nbsp;=&nbsp;<span style="color:#ae87fa;">0</span>
+&nbsp;&nbsp;&nbsp;&nbsp;g.get_tetro()
+}
+
+<span style="color:#808080;">//&nbsp;Get&nbsp;the&nbsp;right&nbsp;tetro&nbsp;from&nbsp;cache</span>
+fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;get_tetro()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;idx&nbsp;:=&nbsp;g.tetro_idx&nbsp;*&nbsp;TetroSize&nbsp;*&nbsp;TetroSize&nbsp;+&nbsp;g.rotation_idx&nbsp;*&nbsp;TetroSize
+&nbsp;&nbsp;&nbsp;&nbsp;g.tetro&nbsp;=&nbsp;g.tetros_cache.slice(idx,&nbsp;idx&nbsp;+&nbsp;TetroSize)
+}
+
+fn&nbsp;(g&nbsp;mut&nbsp;Game)&nbsp;drop_tetro()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;i&nbsp;:=&nbsp;<span style="color:#ae87fa;">0</span>;&nbsp;i&nbsp;&lt;&nbsp;TetroSize;&nbsp;i++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tetro&nbsp;:=&nbsp;g.tetro[i]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;:=&nbsp;tetro.x&nbsp;+&nbsp;g.pos_x
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;:=&nbsp;tetro.y&nbsp;+&nbsp;g.pos_y
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Remember&nbsp;the&nbsp;color&nbsp;of&nbsp;each&nbsp;block</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;<span style="color:inherit;">TODO:</span>&nbsp;g.field[y][x]&nbsp;=&nbsp;g.tetro_idx&nbsp;+&nbsp;1</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;row&nbsp;:=&nbsp;g.field[y]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row[x]&nbsp;=&nbsp;g.tetro_idx&nbsp;+&nbsp;<span style="color:#ae87fa;">1</span>
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_tetro()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;i&nbsp;:=&nbsp;<span style="color:#ae87fa;">0</span>;&nbsp;i&nbsp;&lt;&nbsp;TetroSize;&nbsp;i++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tetro&nbsp;:=&nbsp;g.tetro[i]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.draw_block(g.pos_y&nbsp;+&nbsp;tetro.y,&nbsp;g.pos_x&nbsp;+&nbsp;tetro.x,&nbsp;g.tetro_idx&nbsp;+&nbsp;<span style="color:#ae87fa;">1</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_block(i,&nbsp;j,&nbsp;color_idx&nbsp;<span style="color:#f82375;">int</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;g.gg.draw_rect((j&nbsp;-&nbsp;<span style="color:#ae87fa;">1</span>)&nbsp;*&nbsp;BlockSize,&nbsp;(i&nbsp;-&nbsp;<span style="color:#ae87fa;">1</span>)&nbsp;*&nbsp;BlockSize,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlockSize&nbsp;-&nbsp;<span style="color:#ae87fa;">1</span>,&nbsp;BlockSize&nbsp;-&nbsp;<span style="color:#ae87fa;">1</span>,&nbsp;Colors[color_idx])
+}
+
+fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_field()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;i&nbsp;:=&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;i&nbsp;&lt;&nbsp;FieldHeight&nbsp;+&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;i++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;j&nbsp;:=&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;j&nbsp;&lt;&nbsp;FieldWidth&nbsp;+&nbsp;<span style="color:#ae87fa;">1</span>;&nbsp;j++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;:=&nbsp;g.field[i]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;f[j]&nbsp;&gt;&nbsp;<span style="color:#ae87fa;">0</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.draw_block(i,&nbsp;j,&nbsp;f[j])
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+
+fn&nbsp;(g&nbsp;&amp;Game)&nbsp;draw_scene()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;g.draw_tetro()
+&nbsp;&nbsp;&nbsp;&nbsp;g.draw_field()
+}
+
+fn&nbsp;parse_binary_tetro(t&nbsp;<span style="color:#f82375;">int</span>)&nbsp;[]Block&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;res&nbsp;:=&nbsp;[Block{}&nbsp;;&nbsp;<span style="color:#ae87fa;">4</span>]
+&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;cnt&nbsp;:=&nbsp;<span style="color:#ae87fa;">0</span>
+&nbsp;&nbsp;&nbsp;&nbsp;horizontal&nbsp;:=&nbsp;t&nbsp;==&nbsp;<span style="color:#ae87fa;">9</span><span style="color:#808080;">//&nbsp;special&nbsp;case&nbsp;for&nbsp;the&nbsp;horizontal&nbsp;line</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;i&nbsp;:=&nbsp;<span style="color:#ae87fa;">0</span>;&nbsp;i&nbsp;&lt;=&nbsp;<span style="color:#ae87fa;">3</span>;&nbsp;i++&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Get&nbsp;ith&nbsp;digit&nbsp;of&nbsp;t</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;:=&nbsp;<span style="color:#f82375;">int</span>(math.pow(<span style="color:#ae87fa;">10</span>,&nbsp;<span style="color:#ae87fa;">3</span>&nbsp;-&nbsp;i))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;digit&nbsp;:=&nbsp;<span style="color:#f82375;">int</span>(t&nbsp;/&nbsp;p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;%=&nbsp;p
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Convert&nbsp;the&nbsp;digit&nbsp;to&nbsp;binary</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">for</span>&nbsp;j&nbsp;:=&nbsp;<span style="color:#ae87fa;">3</span>;&nbsp;j&nbsp;&gt;=&nbsp;<span style="color:#ae87fa;">0</span>;&nbsp;j--&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bin&nbsp;:=&nbsp;digit&nbsp;%&nbsp;<span style="color:#ae87fa;">2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digit&nbsp;/=&nbsp;<span style="color:#ae87fa;">2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;bin&nbsp;==&nbsp;<span style="color:#ae87fa;">1</span>&nbsp;||&nbsp;(horizontal&nbsp;&amp;&amp;&nbsp;i&nbsp;==&nbsp;TetroSize&nbsp;-&nbsp;<span style="color:#ae87fa;">1</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;<span style="color:inherit;">TODO:</span>&nbsp;res[cnt].x&nbsp;=&nbsp;j</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;res[cnt].y&nbsp;=&nbsp;i</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;point&nbsp;:=&nbsp;&amp;res[cnt]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point.x&nbsp;=&nbsp;j
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point.y&nbsp;=&nbsp;i
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnt++
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">return</span>&nbsp;res
+}
+
+<span style="color:#808080;">//&nbsp;<span style="color:inherit;">TODO:</span>&nbsp;this&nbsp;exposes&nbsp;the&nbsp;unsafe&nbsp;C&nbsp;interface,&nbsp;clean&nbsp;up</span>
+fn&nbsp;key_down(wnd&nbsp;voidptr,&nbsp;key,&nbsp;code,&nbsp;action,&nbsp;mods&nbsp;<span style="color:#f82375;">int</span>)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;action&nbsp;!=&nbsp;<span style="color:#ae87fa;">2</span>&nbsp;&amp;&amp;&nbsp;action&nbsp;!=&nbsp;<span style="color:#ae87fa;">1</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">return</span>
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Fetch&nbsp;the&nbsp;game&nbsp;object&nbsp;stored&nbsp;in&nbsp;the&nbsp;user&nbsp;pointer</span>
+&nbsp;&nbsp;&nbsp;&nbsp;mut&nbsp;game&nbsp;:=&nbsp;&amp;Game(glfw.get_window_user_pointer(wnd))
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">switch</span>&nbsp;key&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">case</span>&nbsp;glfw.KEY_ESCAPE:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glfw.set_should_close(wnd,&nbsp;<span style="color:#ae87fa;">true</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">case</span>&nbsp;glfw.KeyUp:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#808080;">//&nbsp;Rotate&nbsp;the&nbsp;tetro</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.rotation_idx++
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;game.rotation_idx&nbsp;==&nbsp;TetroSize&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.rotation_idx&nbsp;=&nbsp;<span style="color:#ae87fa;">0</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.get_tetro()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">if</span>&nbsp;game.pos_x&nbsp;&lt;&nbsp;<span style="color:#ae87fa;">0</span>&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.pos_x&nbsp;=&nbsp;<span style="color:#ae87fa;">1</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">case</span>&nbsp;glfw.KeyLeft:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.move_right(<span style="color:#ae87fa;">-1</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">case</span>&nbsp;glfw.KeyRight:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.move_right(<span style="color:#ae87fa;">1</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f82375;">case</span>&nbsp;glfw.KeyDown:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;game.move_tetro()&nbsp;<span style="color:#808080;">//&nbsp;drop&nbsp;faster&nbsp;when&nbsp;the&nbsp;player&nbsp;presses&nbsp;&lt;down&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;">我们看到这个程序是在这行代码window.onkeydown(key_down)来进行事件注册的，其渲染是在draw_scene函数进行渲染的。</p> 
+  <p>&nbsp;</p> 
+  <p style="margin-left:8px;">使用v run tetris.v命令就能看到以下的效果了。左边是debug窗口，右边是程序效果：</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;text-align:center;"><img alt="640?wx_fmt=gif" class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_gif/Pn4Sm0RsAugntDr35hRZcXrBpiadmEJsQU3ribTm0KVMrEDtVMrvdOXY6icNoLyZVEpNptLcP9JcAJ59PhdmlpLsg/640?wx_fmt=gif"></p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;">后面笔者还会继续关注V语言的发展，为大家带来第一手的教程分享。</p> 
+  <p style="margin-left:8px;">&nbsp;</p> 
+  <p style="margin-left:8px;"><span style="color:#888888;">CSDN博客原文：https://blog.csdn.net/BEYONDMA/article/details/94349691，欢迎大家入驻 CSDN 博客。</span></p> 
+  <blockquote> 
+   <p style="margin-left:0pt;"><span style="color:#f33b45;"><strong>国家认证的Python工程师有哪些能力要求？</strong></span></p> 
+   <p style="margin-left:0pt;"><strong><a href="https://edu.csdn.net/topic/python115?utm_source=csdn_bw" rel="noopener" target="_blank"><span style="color:#f33b45;"><u><u>https://edu.csdn.net/topic/python115?utm_source=csdn_bw</u></u></span></a></strong></p> 
+  </blockquote> 
+  <p style="margin-left:8px;"><span style="color:#888888;">【END】</span></p> 
+  <p style="margin-left:8px;text-align:center;"><img alt="640?wx_fmt=jpeg" class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/Pn4Sm0RsAuhUdTAica5phfXw2KUETyn15wswg9nGJu7qc63ib3hEy4NKdsDTEOP4fG3a726nVeQsDicWhjN8owP0A/640?wx_fmt=jpeg"></p> 
+  <p style="margin-left:8px;"><strong><strong>&nbsp;热 文</strong>&nbsp;推 荐&nbsp;</strong></p> 
+  <p style="margin-left:8px;"><span style="color:#0052ff;"><a target="_blank" href="https://blog.csdn.net/csdnnews/article/details/94417433" rel="nofollow" data-token="d169ebfa19538eec3fc52f04e83da188">微软为何痛失移动操作系统？</a></span></p> 
+  <p style="margin-left:8px;"><span style="color:#0052ff;"><a target="_blank" href="https://blog.csdn.net/csdnsevenn/article/details/94416768" rel="nofollow" data-token="c14c249b9ab6cbab729e5a537520b2cc">漫画：一文学会面试中常问的 IO 问题！</a></span></p> 
+  <p style="margin-left:8px;"><span style="color:#0052ff;"><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&amp;mid=2650723456&amp;idx=1&amp;sn=f21e22e044acd9df1357ef63dc009a66&amp;chksm=bea6a55389d12c45d2ef844a846d232f587feba86b9aac4d036c14657a98ea844a2df4f71dce&amp;scene=21#wechat_redirect" rel="noopener" data-token="145dc1e77471a68e3fedaba74335c6b2" target="_blank">☞</a></span><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&amp;mid=2650723609&amp;idx=1&amp;sn=fc70f1ad309d5160d77cc7d2e081fdeb&amp;chksm=bea6a4ca89d12ddc0811748fee08e54980155ef65c2b646e4e012715286eca77ed491a2c70fd&amp;scene=21#wechat_redirect" rel="noopener" data-token="defe7c12c34ae08d381e0cb1422e910b" target="_blank">库克回应乔纳森离职；微信新版本取消“语音转文字”功能；Mac Pro生产迁至中国 | 极客头条</a></p> 
+  <p style="margin-left:8px;"><span style="color:#0052ff;"><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&amp;mid=2650723456&amp;idx=1&amp;sn=f21e22e044acd9df1357ef63dc009a66&amp;chksm=bea6a55389d12c45d2ef844a846d232f587feba86b9aac4d036c14657a98ea844a2df4f71dce&amp;scene=21#wechat_redirect" rel="noopener" data-token="145dc1e77471a68e3fedaba74335c6b2" target="_blank">☞</a></span><a target="_blank" href="https://blog.csdn.net/csdnnews/article/details/94508471" rel="nofollow" data-token="5325c27f6e6e8ac752cf65c8d9a43b3b">程序员们如何破局 5G？</a></p> 
+  <p style="margin-left:8px;"><span style="color:#0052ff;"><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjAwODM4MA==&amp;mid=2650723456&amp;idx=1&amp;sn=f21e22e044acd9df1357ef63dc009a66&amp;chksm=bea6a55389d12c45d2ef844a846d232f587feba86b9aac4d036c14657a98ea844a2df4f71dce&amp;scene=21#wechat_redirect" rel="noopener" data-token="145dc1e77471a68e3fedaba74335c6b2" target="_blank">☞</a></span><a target="_blank" href="https://blog.csdn.net/csdnnews/article/details/94508491" rel="nofollow" data-token="7790b8a24b019b756c337f6213b1c4b4">软件为什么会沦为遗留系统？</a></p> 
+  <p style="margin-left:8px;"><a target="_blank" href="https://blog.csdn.net/csdnsevenn/article/details/94416761" rel="nofollow" data-token="47f7f439c223522c275a3dae1acb5a03">因为有了 TA，搞定行业应用开发，不怕不怕啦！</a></p> 
+  <p style="margin-left:8px;"><a target="_blank" href="https://blog.csdn.net/Blockchain_lemon/article/details/94367338" rel="nofollow" data-token="61a57061a97c95598c6cf9a3f24d08a9">除了V神,17个以太坊大会讲师的演讲精华都在这儿了！</a></p> 
+  <p style="margin-left:8px;"><a href="http://mp.weixin.qq.com/s?__biz=MzA3MjY1MTQwNQ==&amp;mid=2649828695&amp;idx=1&amp;sn=a86005ef27736f551db95850e64bbe37&amp;chksm=871e8ab5b06903a3329401d0cfeb4a7bdc145af3ba5551d9f6158fbc6432fa1e4e5179ca9934&amp;scene=21#wechat_redirect" rel="noopener" target="_blank"><span style="color:#0052ff;">☞2019年技术盘点容器篇（二）：听腾讯云讲讲踏入成熟期的容器技术&nbsp;| 程序员硬核评测</span></a></p> 
+  <p style="margin-left:8px;"><a href="http://mp.weixin.qq.com/s?__biz=MzU5MjEwMTE2OQ==&amp;mid=2247487042&amp;idx=1&amp;sn=0895bbae4223e44742b231a07db2e167&amp;chksm=fe25a41cc9522d0aece05262f46b5b09c8c8d9cd53f2f7a247f98a738b8f9cfde5b8274090f0&amp;scene=21#wechat_redirect" rel="noopener" target="_blank"><span style="color:#0052ff;">☞50行Python代码，获取公众号全部文章</span></a></p> 
+  <p style="margin-left:8px;"><a target="_blank" href="https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/94415665" rel="nofollow" data-token="72949a0b5f98400fc4e3b898954ad67e">不写一行代码，也能玩转Kaggle竞赛？</a></p> 
+  <p style="margin-left:8px;"><span style="color:#0052ff;"><span style="color:#0052ff;"><a href="http://mp.weixin.qq.com/s?__biz=MzA5MjcxNjc2Ng==&amp;mid=2650560337&amp;idx=1&amp;sn=437c83704bbdb18d3a522aadd606e981&amp;chksm=88601ce0bf1795f6d519b968f9448d34d7b5a7fc48e09aabcb32e079d9bda4413936a605b4eb&amp;scene=21#wechat_redirect" rel="noopener" target="_blank"><span style="color:#0052ff;">☞马云曾经偶像，终于把阿里留下的1400亿败光了！</span></a></span></span></p> 
+  <p style="margin-left:8px;"><img alt="640?wx_fmt=gif" class="__bg_gif" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_gif/Pn4Sm0RsAujr9dOtwUGfl03zJzLBRXbZs8g1RcNcLr7qm5qEy419tofZ8dq1sIW75xZwq2K4zIzcTtaDOy4OTg/640?wx_fmt=gif" width="45"><strong><strong>点击阅读原文，输入关键词，即可搜索您想要的 CSDN 文章。</strong></strong></p> 
+  <p><img alt="640?wx_fmt=png" class="has" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/Pn4Sm0RsAuhpplm16ibb8iaib7RoGQ5iaHEdvAd0o9e1LlUGA2k0Yib222agOxzweXhahA9GuzJcGBg0dA4DzlibxRqw/640?wx_fmt=png">你点的每个“在看”，我都认真当成了喜欢</p> 
+ </div> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/03/weixin_42512337_94554250.html" class="pre-post btn btn-default" title='Centos下安装vlang运行环境-新手必看'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">Centos下安装vlang运行环境-新手必看</span>
+        </a>
+    
+    
+        <a href="/2019/07/02/liaodong2010_94438815.html" class="next-post btn btn-default" title='V 语言 -- 数据结构.Map'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V 语言 -- 数据结构.Map</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>None</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+  
+  
+  
+   
+   
+    
+   
+  SPIR-V 研究：编译器基本原理（一） 
+  前面转过两篇关于SPIR-V 中间语言的介绍；接下来笔者准备深入学习一下SPIR-V的标...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>SPIR-V 研究：编译器基本原理（一） | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SPIR-V 研究：编译器基本原理（一）">
+            
+	            SPIR-V 研究：编译器基本原理（一）
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2015/12/03</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/qwertyu1234/article/details/50163847&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/qwertyu1234/article/details/50163847&quot;}">  
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div id="content_views" class="markdown_views prism-atom-one-dark"> 
+  <!-- flowchart 箭头图标 勿删 --> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/> 
+  </svg> 
+  <h1 id="spir-v-研究编译器基本原理一">SPIR-V 研究：编译器基本原理（一）</h1> 
+  <p>前面转过两篇关于SPIR-V 中间语言的介绍；接下来笔者准备深入学习一下SPIR-V的标准。根据标准，<strong>SPIR-V是以一种二进制格式存在的，并且函数还是以控制流图CFG的形式存在；数据结构也保留了高级语言里的层级关系</strong>。（<a href="https://en.wikipedia.org/wiki/Standard_Portable_Intermediate_Representation" rel="noopener" data-token="95d978ce05a8595456b37d1feec6312b" target="_blank">https://en.wikipedia.org/wiki/Standard_Portable_Intermediate_Representation</a>） <br> 这样做的目的是为了更好的在目标平台上进行优化；同时Khronos也放出了官方标准的开源编译器<a href="https://github.com/KhronosGroup/glslang" rel="noopener" data-token="32d40121da8ab6bf7b538a7b6d69f8ee" target="_blank">Glslang</a>。 所以，为了更好的了解SPIR-V，我们有必要先温习一下编译器的基本原理，特别是前端的词法分析、语法分析、语义分析和中间语言生成。</p> 
+  <hr> 
+  <h2 id="编译器基本结构">编译器基本结构</h2> 
+  <p>下图是一个一般编译器的编译高级语言的过程。 <br> <img src="https://uzshare.com/_p?https://img-blog.csdn.net/20151203172900409" alt="这里写图片描述" title> <br> 基本上就是预处理（比如C/C++里宏汇编），编译并汇编（每个源码文件都生成对应的.o文件，这时的代码是relocatable的），链接生成可执行文件（linker，把许多.o文件以及用到的库函数.lib文件合并并作全局优化），最后OS的加载器会加载可执行文件并运行之（Windows上是PE格式，Linux上市ELF格式）。具体细节可以参考<a href="http://www.amazon.com/Linkers-Kaufmann-Software-Engineering-Programming/dp/1558604960" rel="noopener" data-token="63ca939f50070d47746a49caa2ce60ef" target="_blank">Linkers and Loaders</a> 这本书。</p> 
+  <p>下面我们重点看编译器的结构。 <br> <img src="https://uzshare.com/_p?https://img-blog.csdn.net/20151203173049347" alt="这里写图片描述" title> <br> 这是一般编译器的结构，主要分前端和后端，以中间语言生成为界限。前端主要是分析语法语义并生成代码的中间表示，这主要包括lexer 和 parser，以及语义分析；后端主要是生成目标机器代码，包括分析并优化，寄存器分配等。 <br> 下图是编译器的主要编译过程（phase）。 <br> <img src="https://uzshare.com/_p?https://img-blog.csdn.net/20151203172941801" alt="这里写图片描述" title> <br> <strong>这里我们研究的目标SPIR-V就是一种标准化的中间语言表示。</strong>所以我们更关心的是前端的研究，这也是编译器里比较成熟，相对简单的部分。以前的OpenGL里，GLSL写成的Shader是高级语言（相当于C++)，OpenGL的驱动会把它编译成显卡GPU对应的机器码。所以各家会有不同的中间表示；Vulkan会统一标准用SPIR-V了。 <br> <img src="https://uzshare.com/_p?https://img-blog.csdn.net/20151203173018532" alt="这里写图片描述" title></p> 
+  <h2 id="计算机语言">计算机语言</h2> 
+  <p>计算机科学里的语言可以看作是一个字母表（alphabet ）上的某些有限长字符串的集合；这一般可以包含无限多个字符串，也就是无限集合（Infinite Sets）。这里有限长字符串就是“sentences”；sentences是word（或token）组成，它有一定的结构；token则是letter由一定规则组成；letter个数是有限的，它们全部取自字母表（alphabet ）。 <br> 这是个有层次的定义。</p> 
+  <table> 
+   <thead> 
+    <tr> 
+     <th align="left">Layer</th> 
+     <th align="right">分析对象</th> 
+     <th align="center">组成元素</th> 
+    </tr> 
+   </thead> 
+   <tbody>
+    <tr> 
+     <td align="left">词法（Lexical structure ）</td> 
+     <td align="right">token</td> 
+     <td align="center">letter</td> 
+    </tr> 
+    <tr> 
+     <td align="left">语法（Syntactic structure）</td> 
+     <td align="right">sentences</td> 
+     <td align="center">token</td> 
+    </tr> 
+    <tr> 
+     <td align="left">语义（Semantics）</td> 
+     <td align="right">语法树</td> 
+     <td align="center"></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <p>语言是有一定的语法规则的（grammar）。而grammar是一组有限的规则的集合；计算机语言里的grammar是不同于一般自然语言的语法，它可以构造出所有可能的sentences。所以这是一个利用有限规则来产生无限的合法语句的问题。 <br> 而grammar又可以用正则表达式来定义；比如GLSL的语法<a href="https://github.com/KhronosGroup/glslang/blob/master/glslang/MachineIndependent/glslang.y" rel="noopener" data-token="3d4bb4e553cc1dec0168a0f09ae8181a" target="_blank">glslang.y</a>。</p> 
+ </div> 
+ <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet"> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/02/17/buzhang1314_50681557.html" class="pre-post btn btn-default" title='phpcms v9教程：语言包详解'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">phpcms v9教程：语言包详解</span>
+        </a>
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spir-v-研究编译器基本原理一"><span class="toc-text">SPIR-V 研究：编译器基本原理（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#编译器基本结构"><span class="toc-text">编译器基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机语言"><span class="toc-text">计算机语言</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

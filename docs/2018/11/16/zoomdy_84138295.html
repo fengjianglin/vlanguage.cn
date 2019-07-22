@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+   
+   
+    
+   
+  原文出处：https://mp.weixin.qq.com/s/Ln4qBYvSsgRvdiK1IJqI6Q 
+   
+   随着国内第一...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（下） | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（下）">
+            
+	            RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（下）
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/16</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/zoomdy/article/details/84138295&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/zoomdy/article/details/84138295&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div id="content_views" class="markdown_views prism-atom-one-dark"> 
+  <!-- flowchart 箭头图标 勿删 --> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/> 
+  </svg> 
+  <p>原文出处：<a href="https://mp.weixin.qq.com/s/Ln4qBYvSsgRvdiK1IJqI6Q" rel="noopener" data-token="4dc1b6aee8fbb65082a38f7dcdf3dea0" target="_blank">https://mp.weixin.qq.com/s/Ln4qBYvSsgRvdiK1IJqI6Q</a></p> 
+  <blockquote> 
+   <p>随着国内第一本RISC-V中文书籍《手把手教你设计CPU——RISC-V处理器篇》正式上市，越来越多的爱好者开始使用开源的蜂鸟E203 RISC-V处理核，很多初学者留言询问有关RISC-V工具链使用的问题，因此本公众号将开始陆续发表若干篇有关RISC-V软件工具链使用的文章，包括：</p> 
+   <ul> 
+    <li><a href="https://blog.csdn.net/zoomdy/article/details/83614651" rel="noopener" data-token="b2a336cab61c2029c84b4fd62c246628" target="_blank">RISC-V嵌入式开发准备篇1：编译过程简介</a></li> 
+    <li><a href="https://blog.csdn.net/zoomdy/article/details/83614703" rel="noopener" data-token="90d30379fd810c6f6b395a078259f6ea" target="_blank">RISC-V嵌入式开发准备篇2：嵌入式开发的特点介绍</a></li> 
+    <li><a href="https://blog.csdn.net/zoomdy/article/details/83620254" rel="noopener" data-token="afd6fdbdcc74f7f46c1cde788c19a466" target="_blank">RISC-V嵌入式开发入门篇1：RISC-V GCC工具链的介绍</a></li> 
+    <li><a href="https://blog.csdn.net/zoomdy/article/details/83620580" rel="noopener" data-token="8835db3212f10b41254b6f65a74eb478" target="_blank">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上）</a></li> 
+    <li><a href="https://blog.csdn.net/zoomdy/article/details/83657042" rel="noopener" data-token="0cd0bece7a750640d0752b0c64684be3" target="_blank">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（中）</a></li> 
+    <li><a href="https://blog.csdn.net/zoomdy/article/details/84138295" rel="noopener" data-token="c41b4154e0359a0d7220be74339d859b" target="_blank">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（下）</a></li> 
+    <li>RISC-V嵌入式开发上手篇：基于HBird-E-SDK平台的软件开发与运行</li> 
+    <li>RISC-V嵌入式开发实践篇：运行开源蜂鸟E200 MCU更多示例程序</li> 
+    <li>RISC-V嵌入式开发新奇篇：基于Windows Eclipse IDE的软件开发与运行</li> 
+    <li>RISC-V嵌入式开发升华篇：基于开源蜂鸟E200 MCU移植RTOS</li> 
+   </ul> 
+  </blockquote> 
+  <p>在本号之前发表的文章<a href="https://blog.csdn.net/zoomdy/article/details/83614651" rel="noopener" data-token="b2a336cab61c2029c84b4fd62c246628" target="_blank">《编译过程简介》</a>中介绍了C/C++语言如何被编译成为汇编语言，而本文将介绍如何直接使用RISC-V架构的汇编语言进行程序设计。</p> 
+  <p>《RISC-V汇编语言程序设计》——分成上中下三篇，本篇是下篇。继续关注公众号可查询上中两篇的内容。</p> 
+  <p>上篇：<a href="https://blog.csdn.net/zoomdy/article/details/83620580" rel="noopener" data-token="8835db3212f10b41254b6f65a74eb478" target="_blank">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上）</a></p> 
+  <p>中篇：<a href="https://blog.csdn.net/zoomdy/article/details/83657042" rel="noopener" data-token="0cd0bece7a750640d0752b0c64684be3" target="_blank">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（中）</a></p> 
+  <p>注：本文节选自《RISC-V架构与嵌入式开发快速入门》（即将出版）。</p> 
+  <h3><a id="161__GCC_27"></a>1.6.1 GCC内联汇编简述</h3> 
+  <p>由于本文介绍的是GCC的RISC-V工具链，因此在C/C++程序中嵌入汇编程序遵循GCC内联汇编（inline asm ）语法规则，其格式有如下部分组成：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/201811161408456.png" alt="在这里插入图片描述"></p> 
+  <p>分别简述如下：</p> 
+  <ul> 
+   <li>“关键字asm”，为GCC的关键字，表示进行内联汇编操作。</li> 
+  </ul> 
+  <p>注意：也可以使用前后各带两个下划线的asm__，_asm_是GCC 关键字asm 的宏定义。</p> 
+  <ul> 
+   <li>“关键字volatile”，或者_volatile_。_volatile_或volatile 是可选的，如果添加了该关键字，则要求编译器对后续括号内添加汇编程序不进行任何优化以保持其原状；如果没有添加此关键字，则编译器可能会将某些汇编指令优化掉。</li> 
+  </ul> 
+  <p>注意：也可以使用_volatile_，__volatile是GCC 关键字volatile 的宏定义。</p> 
+  <ul> 
+   <li>“汇编指令列表”，即需要嵌入的汇编指令，每条指令必须被双引号括起来（作为字符串），两条指令之前必须以“\n”或者“；”作为分隔符，如果没有添加分隔符的两个字符串将会被合并成为一个字符串。</li> 
+  </ul> 
+  <p>注意：“汇编指令列表”中的编写语法和普通的汇编程序编写一样，可以在其中定义标签（Label）、定义对齐(.align n )、定义段(.section name )等。</p> 
+  <ul> 
+   <li>“输出操作数”，用来指定当前内联汇编程序的输出操作符列表。</li> 
+  </ul> 
+  <p>有关“输出操作数”部分的详细介绍，请参见第1.6.2节。</p> 
+  <ul> 
+   <li>“输入操作数”，用来指定当前内联汇编语句的输入操作符列表。</li> 
+  </ul> 
+  <p>有关“输入操作数”部分的详细介绍，请参见第1.6.2节。</p> 
+  <ul> 
+   <li>“可能影响的寄存器或存储器”，用于告知编译器当前内联汇编语句可能会对某些寄存器或内存进行修改，使得编译器在优化时将其因素考虑进去。</li> 
+  </ul> 
+  <p>有关“可能影响的寄存器或存储器”部分的详细介绍，请参见第1.6.3节。</p> 
+  <p>综上，一个典型的完整内联汇编程序格式如下：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181116140954931.png" alt="在这里插入图片描述"></p> 
+  <p>后续章节将进行进一步详述。</p> 
+  <h3><a id="162__GCC_68"></a>1.6.2 GCC内联汇编“输出操作数”和“输入操作数”部分</h3> 
+  <p>由于C/C++中使用的是抽象层次较高的变量或者表达式，如下所示：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181116141030577.png" alt="在这里插入图片描述"></p> 
+  <p>而汇编指令中直接操作的是寄存器，以RISC-V指令集为例，一个加法指令的汇编指令如下：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181116141104972.png" alt="在这里插入图片描述"></p> 
+  <p>那么，当在C/C++程序中添加了汇编程序之时，程序员如何将其所需要操作的C/C++变量与汇编指令的操作数对应起来呢？那就需要使用到GCC内联汇编的“输出操作数”和“输入操作数”部分来指定。</p> 
+  <p>GCC内联汇编语法的“输入操作数”和“输出操作数”部分用来指定当前内联汇编程序的输入和输出操作符列表。其遵循如下语法：</p> 
+  <ul> 
+   <li>每一个输入或者输出操作符都由3部分组成，分别为：</li> 
+  </ul> 
+  <p>（1）方括号[]中的符号名，用于将内联汇编程序中使用的操作数（由%[字符]指定）和此操作符（由[字符]指定）通过同名“字符”绑定起来。</p> 
+  <p>— 除了使用“%[字符]”中明确的符号命名指定之外，还可以使用“%数字”的方式进行隐含指定。“数字”从0开始，依次表示输出操作数和输入操作数。譬如：假设包含“输出操作数”列表中有2个操作数，“输入操作数”列表中有2个操作数，则汇编程序中%0表示第一个输出操作数，%1表示第二个输出操作数，%2表示第一个输入操作数，%3表示第二个输入操作数。</p> 
+  <p>（2）引号中的限制字符串，用于约束此操作数变量的属性，常用的约束如：</p> 
+  <p>— 字母“r”代表使用编译器自动分配的寄存器来存储该操作数变量；字母“m”代表使用内存地址来存储该操作数变量。如果同时指明“rm”则编译器自动选择最优方案。</p> 
+  <p>— 对于“输出操作数”而言，等号“=”代表输出变量用作输出，原来的值会被新值替换；加号“+”代表输出变量不仅作为输出，还作为输入。注意：此约束对不适用于“输入操作数”。</p> 
+  <p>（3）圆括号（）中的C/C++变量或者表达式。</p> 
+  <ul> 
+   <li>输出操作符之间需使用逗号分割。</li> 
+  </ul> 
+  <p>为了便于读者理解上述语法，请读者参见第1.6.4节和1.6.5中的实例。</p> 
+  <h3><a id="163__GCC_100"></a>1.6.3 GCC内联汇编“可能影响的寄存器或存储器”部分</h3> 
+  <p>如果内联汇编中的某个指令会更新某些寄存器的值，则必须在asm中第三个冒号后的“可能影响的寄存器或存储器”中显示的指定出这些寄存器，从而通知GCC编译器让其不再假定之前存入这些寄存器中的值依然合法。指定出这些寄存器由逗号分隔开，每个寄存器由引号包含住，如下所示：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181116141223338.png" alt="在这里插入图片描述"></p> 
+  <p>注意：对于那些已经由“输入操作数”和“输出操作数”部分约束指定了的变量，由于编译器自动分配寄存器，因此编译器知道哪些寄存器会被更新，所有程序员无需担心这部分寄存器，不用在“可能影响的寄存器或存储器”进行显示的指定。</p> 
+  <p>如果内联汇编中的某个指令会以无法预料的形式修改了存储器中的值，则必须在asm中第三个冒号后的“可能影响的寄存器或存储器”中显示的加上“memory”，从而通知GCC编译器不要将存储器中的值暂存在处理器的通用寄存器中。</p> 
+  <p>为了便于读者理解上述语法，请读者参见第1.6.4节和1.6.5节中的实例。</p> 
+  <h3><a id="164__GCC_112"></a>1.6.4 GCC内联汇编参考实例一</h3> 
+  <p>以下结合第1.6.2节中描述的“add”汇编示例给出一个完整的实例，代码如下：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181116141310318.jpg" alt="在这里插入图片描述"></p> 
+  <p>从上述示例可以看出，通过使用“输出操作数”和“输入操作数”部分的指定，可以将C/C++中的变量或者表达式映射到汇编指令中充当操作数进行操作。在此过程中，程序员无需关心真正执行的汇编指令具体使用的寄存器索引是什么（譬如到底是x1，还是x2等等），编译器会根据引号中指定的操作数约束按照编译优化的原则来分配合理的寄存器索引号。因此，程序员仅仅需要关心操作数和变量的映射，无需关心操作数会映射到处理器具体的哪个通用寄存器，使得软件程序员能够从底层硬件的细节中被解放出来。</p> 
+  <h3><a id="165__GCC_120"></a>1.6.5 GCC内联汇编参考实例二</h3> 
+  <p>RISC-V架构中定义的CSR寄存器由于需要使用特殊的CSR指令进行访问，如果在C/C++程序中需要使用CSR寄存器，只能够采用内嵌汇编（CSR指令）的方式才能够对CSR寄存器进行操作。以下是在C语言中调用RISC-V的CSR读或者写汇编指令访问CSR寄存器的一个实例，代码如下：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181116141412107.jpg" alt="在这里插入图片描述"></p> 
+  <h3><a id="166___126"></a>1.6.6 小结</h3> 
+  <p>GCC内联汇编语法的规则比较复杂，信息量很大。本文由于限于篇幅，仅对其最基本的语法和示例进行介绍，以帮助读者能够看懂并且编写简单的C/C++内联汇编程序。感兴趣的读者可以自行查阅完整的GNU C/C++内联汇编语法手册了解更多详情。</p> 
+  <h2><a id="17__CC_130"></a>1.7 在汇编中调用C/C++函数</h2> 
+  <p>除了在C/C++程序中内嵌汇编程序之外，还可以在汇编程序中调用C/C++函数。这种情形在实际的工程中使用也很常见，由于C/C++语言构造的函数非常普遍，在某些以汇编程序为主体的程序中也会调用C/C++的函数。</p> 
+  <p>在介绍C/C++函数调用之前，需要先介绍应用程序二进制接口（Abstract Binary Interface，ABI），ABI描述了应用程序和操作系统之间，应用和它的库之间，或者应用的组成部分之间的接口。ABI涵盖了各种细节，如：</p> 
+  <ul> 
+   <li> <p>数据类型的大小、布局和对齐;</p> </li> 
+   <li> <p>函数调用约定（控制着函数的参数如何传送以及如何接受返回值），例如，是所有的参数都通过栈传递，还是部分参数通过寄存器传递；哪个寄存器用于哪个函数参数；通过栈传递的第一个函数参数是最先push到栈上还是最后；</p> </li> 
+   <li> <p>系统调用的编码和一个应用如何向操作系统进行系统调用；</p> </li> 
+   <li> <p>以及在一个完整的操作系统ABI中，目标文件的二进制格式、程序库等等。</p> </li> 
+  </ul> 
+  <p>其中，函数调用约定决定了函数调用时参数传递和函数返回结果的规则，有关RISC-V架构ABI的函数调用约定，请参见附录A中的图A-1。</p> 
+  <p>对于RISC-V汇编程序而言，在汇编程序中调用C/C++语言函数，必须遵照ABI所定义的函数调用规则，即，函数参数由寄存器a0-a7所传递，函数返回由寄存器a0-a1所指定，一个具体的示例代码如下：</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181116141527889.jpg" alt="在这里插入图片描述"></p> 
+  <h2><a id="18___151"></a>1.8 总结</h2> 
+  <p>汇编语言由于是一种低级语言，因此抽象层次较低，程序编写难度较大，在实际的工作中，更多的情形是能够阅读理解某些现有的汇编代码，或者编写比较简单的汇编程序。</p> 
+  <p>由于本文介绍的RISC-V工具链基于的是GCC工具链，因此RISC-V汇编程序也遵循GNU汇编语法规则，完整的GNU汇编语法手册长达数百页，介绍了大量的伪操作和语法，但是大多数的语法并不常用。本文由于限于篇幅，仅对RISC-V汇编常用的语法进行简要介绍，以帮助读者初步认识RISC-V汇编语言程序、能够看懂并且编写简单而基本的汇编程序。如果对于RISC-V汇编编程进阶感兴趣的读者可以自行查阅RISC-V汇编语言的完整的GNU汇编语法手册了解更多详情。</p> 
+  <p>《RISC-V汇编语言程序设计》——分成上中下三篇，本篇是下篇。继续关注公众号可查询上中两篇的内容。</p> 
+  <p>上篇：<a href="https://blog.csdn.net/zoomdy/article/details/83620580" rel="noopener" data-token="8835db3212f10b41254b6f65a74eb478" target="_blank">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上）</a></p> 
+  <p>中篇：<a href="https://blog.csdn.net/zoomdy/article/details/83657042" rel="noopener" data-token="0cd0bece7a750640d0752b0c64684be3" target="_blank">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（中）</a></p> 
+  <h1><a id="_165"></a>更多信息</h1> 
+  <p>感兴趣的读者可以通过下面二维码关注公众号“硅农亚历山大”，了解Verilog、IC设计、CPU、RISC-V和人工智能AI相关的更多设计技巧和经验分享，注意：由于干货太多，请自备茶水。</p> 
+  <p><img src="https://uzshare.com/_p?https://img-blog.csdn.net/20180316133249635" alt="在这里插入图片描述"></p> 
+ </div> 
+ <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet"> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/03/03/tangyaya8_88090018.html" class="pre-post btn btn-default" title='编译器自举'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">编译器自举</span>
+        </a>
+    
+    
+        <a href="/2018/11/12/attilax_83996805.html" class="next-post btn btn-default" title='Atitit 编程语言的分类 v2 目录 1.1. 基于代数划分 第一代。。。第三代。。4gl。。5gl自然语言 1 1.2. 按照编程范式分类 . 命令式语言 .函数式语言...逻辑式语言'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">Atitit 编程语言的分类 v2 目录 1.1. 基于代数划分 第一代。。。第三代。。4gl。。5gl自然语言 1 1.2. 按照编程范式分类 . 命令式语言 .函数式语言...逻辑式语言</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">1.6.1 GCC内联汇编简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">1.6.2 GCC内联汇编“输出操作数”和“输入操作数”部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">1.6.3 GCC内联汇编“可能影响的寄存器或存储器”部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">1.6.4 GCC内联汇编参考实例一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">1.6.5 GCC内联汇编参考实例二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">1.6.6 小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">1.7 在汇编中调用C/C++函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">1.8 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-text">更多信息</span></a>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
