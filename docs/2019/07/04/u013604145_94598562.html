@@ -1,0 +1,1396 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+   
+   
+    
+   
+  
+  
+   文章目录
+   
+    
+    
+     介绍
+     Hello World
+     注释
+     函数 Fu...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>V 语言中文文档 | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="V 语言中文文档">
+            
+	            V 语言中文文档
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/04</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/u013604145/article/details/94598562&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/u013604145/article/details/94598562&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div id="content_views" class="markdown_views prism-atom-one-dark"> 
+  <!-- flowchart 箭头图标 勿删 --> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/> 
+  </svg> 
+  <p></p>
+  <div class="toc">
+   <h3>文章目录</h3>
+   <ul>
+    <li><a href="#_1" rel="nofollow"></a></li>
+    <ul>
+     <li><a href="#_2" rel="nofollow" data-token="87f13e6aa1b7b9c71df1a65e26f2a432">介绍</a></li>
+     <li><a href="#Hello_World_8" rel="nofollow" data-token="50cb00260261b26a649e3825533b9788">Hello World</a></li>
+     <li><a href="#_24" rel="nofollow" data-token="ecfa37c7d6d79f3ef6d1e64190b628a1">注释</a></li>
+     <li><a href="#_Functions_34" rel="nofollow" data-token="2650537426f3b5a7c58352ad82d85925">函数 Functions</a></li>
+     <li><a href="#_55" rel="nofollow" data-token="3dae51b816980e22fc0aa4078b39ee53">变量</a></li>
+     <li><a href="#_101" rel="nofollow" data-token="c27917fcb99f7ba0545bd620cedf4b9f">基本类型</a></li>
+     <ul>
+      <li><a href="#_Strings_114" rel="nofollow" data-token="20411eb9ef1538affc0d28a0bd68ecf5">字符串 Strings</a></li>
+     </ul>
+     <li><a href="#_Arrays_139" rel="nofollow" data-token="545af3e14ec1c6411d9a761d3dc398d6">数组 Arrays</a></li>
+     <li><a href="#Map_165" rel="nofollow" data-token="5c5657dae8b7393aae164469db7907da">Map</a></li>
+     <li><a href="#IF__179" rel="nofollow" data-token="0f0a4fd17bd16d8b558df95d028f9086">IF 用法</a></li>
+     <li><a href="#_in_198" rel="nofollow" data-token="77e6cb1401ae5b9b2a64607a94a74db5">运算符 in</a></li>
+     <li><a href="#_FOR_220" rel="nofollow" data-token="8deb75bf484ce8a530e93d37e5982933">循环语句 FOR</a></li>
+     <li><a href="#Switch_273" rel="nofollow" data-token="1d1c88e788b73d42cf29fa37cd301888">Switch</a></li>
+     <li><a href="#Structs__291" rel="nofollow" data-token="8d01d5b9c9481c5c70c69d022b40f948">Structs 结构体</a></li>
+     <ul>
+      <li><a href="#_326" rel="nofollow" data-token="e49022c1bdf3ce6f82e9cd8e0a14a8e4">结构体-访问修饰符</a></li>
+      <li><a href="#_364" rel="nofollow" data-token="ac10870120c0c65a24bc50447af6513c">结构体-方法</a></li>
+     </ul>
+     <li><a href="#_386" rel="nofollow" data-token="6c9962a4c6eec40939cf20d89a7c8935">纯函数</a></li>
+     <li><a href="#_Constants_433" rel="nofollow" data-token="e879afbbe269761acadb342f9e6d4e30">常量 Constants</a></li>
+     <li><a href="#_Modules_478" rel="nofollow" data-token="dafea3b9fdc58bfdf540b0f7448fe423">模块 Modules</a></li>
+     <li><a href="#_Interfaces_519" rel="nofollow" data-token="009c8e52aae2f4db40c94f486b7e7a63">接口 Interfaces</a></li>
+     <li><a href="#_549" rel="nofollow" data-token="c170328485d084fd76571b7bd87c91bd">枚举</a></li>
+     <li><a href="#___562" rel="nofollow" data-token="5dfbf42dad928888b10655bcc420f0da">可选类型 和 错误处理</a></li>
+     <li><a href="#_Generics_7_620" rel="nofollow" data-token="17703ff9f1bf51a4f6ef925c2d62660e">范型 Generics （预计7月上线）</a></li>
+     <li><a href="#_645" rel="nofollow" data-token="d847f466e9d826d697d20a100c574633">并发</a></li>
+     <li><a href="#JSON__650" rel="nofollow" data-token="da00932e06afc687cc79ed71a07e13b6">JSON 解析</a></li>
+     <li><a href="#_671" rel="nofollow" data-token="b107cea520769a57c6318d8b828509c2">单元测试</a></li>
+     <li><a href="#_686" rel="nofollow" data-token="5e3c5acca0acf93f9ba614c07fe766f2">内存管理</a></li>
+     <li><a href="#_Defer_714" rel="nofollow" data-token="3bc0e3c976a55b0a8c3ac975e226aa1d">延迟 Defer</a></li>
+     <li><a href="#vfmt_717" rel="nofollow" data-token="ed787db1ad7ef95fb5b9815d113e491a">vfmt</a></li>
+    </ul>
+    <li><a href="#_720" rel="nofollow" data-token="1bb87e96062f0160c924e76d86416b42">进阶内容</a></li>
+    <ul>
+     <li><a href="#VC__722" rel="nofollow" data-token="f530af5a6ef429e3d8bd35c3d17c8d97">V语言中调用C 函数</a></li>
+     <li><a href="#if_750" rel="nofollow" data-token="6f22610e6d5f97eea475b422fb995bec">预编译if语句</a></li>
+     <li><a href="#_764" rel="nofollow" data-token="00b687219a1c61617c1475a2dc57069a">代码反射</a></li>
+     <li><a href="#_790" rel="nofollow" data-token="f8aed8b85eaaef98447a2f0eca93b712">有限的运算符重载</a></li>
+     <li><a href="#_831" rel="nofollow" data-token="7d032554666b0eea6f4dfd7a11e98c42">内联汇编</a></li>
+     <li><a href="#_CCV_844" rel="nofollow" data-token="2e72d7c0581bef829ac663f8a9ca4d30">将 C/C++翻译成V</a></li>
+     <li><a href="#_881" rel="nofollow" data-token="6368ad2a9467c20c05009e81e63a9da5">热门代码重加载</a></li>
+     <li><a href="#_mac__win_883" rel="nofollow" data-token="2580dc837daf3391b418900e1e079d29">交叉编译 (mac 编译打包 win程序)</a></li>
+     <li><a href="#Vshell_6_894" rel="nofollow" data-token="6f542e996f7d1dc9b1aceca27004bb55">V中的跨平台shell脚本 (6月下旬)</a></li>
+     <li><a href="#1_922" rel="nofollow" data-token="f359ff1b05aba7534a55ce8953285d53">附录1：关键字</a></li>
+     <li><a href="#2_949" rel="nofollow" data-token="c6e47496ee58e4866e0231c956451eb6">附录2：运算符</a></li>
+    </ul>
+   </ul>
+  </div>
+  <p></p> 
+  <h1><a id="_1"></a></h1> 
+  <h2><a id="_2"></a>介绍</h2> 
+  <p>V是一种静态类型的编译编程语言，用于构建可维护的软件。<br> 它与Go类似，也受到Oberon，Rust，Swift的影响。<br> V是一种非常简单的语言。通过这个文档将花费你大约半个小时，到最后你将学习几乎整个语言。<br> 尽管很简单，但它为开发人员提供了很多动力。你可以用其他语言做任何事情，你可以用V做。（官方文档入口：<a href="https://vlang.io/docs#option%EF%BC%89" rel="noopener" data-token="853c8cad40633813625281a9e2d68ea1" target="_blank">https://vlang.io/docs#option）</a></p> 
+  <h2><a id="Hello_World_8"></a>Hello World</h2> 
+  <pre><code>    //hello.v
+    fn main() {
+        println('hello world')
+    }
+</code></pre> 
+  <ul> 
+   <li>和 c语言一样，main 为程序入口函数</li> 
+   <li>fn 声明函数，函数的返回值类型在 名称() 的后面，此处不返回任何内容所以忽略；</li> 
+   <li>println 是为数不多的内置函数之一，作为标准输出;</li> 
+   <li>fn main()函数也可以被忽略，方便在编写小程序应用中，或者脚本，或者学习语言时带来方便；这样代表’Hello World’可以这么写</li> 
+  </ul> 
+  <pre><code>    //hello.v
+    println('hello world')
+</code></pre> 
+  <h2><a id="_24"></a>注释</h2> 
+  <pre><code>    // 单行注释
+    
+    /* 
+        这是多行注释
+        /* 它可以嵌套 */
+    */
+</code></pre> 
+  <h2><a id="_Functions_34"></a>函数 Functions</h2> 
+  <pre><code>fn main() {
+	println(add(77, 33))
+	println(sub(100, 50))
+}
+
+fn add(x int, y int) int {
+	return x + y
+}
+
+fn sub(x, y int) int {
+	return x - y
+}
+</code></pre> 
+  <ul> 
+   <li>再次声明，返回值的类型在 名称的后面,</li> 
+   <li>和Go 和 C 一样，函数不能重载，这也简化了代码，提高了可维护性和可读性</li> 
+   <li>函数的使用可以在声明之前：例如上面， add 和 sub 在main 之后声明，也可以被 main 调用。对于 V 语言，所有声明都是如此，并且不需要头文件或考虑文件和声明的顺序。</li> 
+  </ul> 
+  <h2><a id="_55"></a>变量</h2> 
+  <pre><code>    name := 'Bob' 
+    age := 20
+    large_number := i64(9999999999)
+    println(name)
+    println(age)
+    println(large_number) 
+    
+</code></pre> 
+  <ul> 
+   <li>变量的声明和初始化 使用 := ;这是V语言声明变量的唯一方式，这也意味着变量的初始化始终具有初始值。</li> 
+   <li>变量的类型是右侧的值推断出来的。要强制使用其他类型，请使用强制类型转换；表达式 T(v) 将值 v 转换为 T类型</li> 
+   <li>与大多数语言不同，V 只允许在函数中定义变量，不允许使用全局（模块级别）变量，没有全局状态。</li> 
+  </ul> 
+  <pre><code>    mut age := 20
+    println(age)
+    age = 21
+    println(age)
+</code></pre> 
+  <ul> 
+   <li>【mut】改变变量的值，使用 = 符号。在V语言中，默认情况下变量是不可改变的，为了得到一个允许被修改的变量，你必须在声明时，用 mut来修饰。 
+    <ul> 
+     <li>您可以将上面例子的 mut 删除过后编译试试。</li> 
+     <li>请注意 := 和 =之间的区别；:=用于声明和初始化，=用于赋值</li> 
+     <li>请看如下3例错误示例</li> 
+    </ul> </li> 
+  </ul> 
+  <pre><code>    fn main() {
+    	age = 21 //这段代码在V语言中是编译不通过的，因为age未声明变量。
+    }
+</code></pre> 
+  <pre><code>    fn main() {
+    	age := 21 //此段代码也不会被编译通过，因为未使用的变量会导致编译错误
+    }
+</code></pre> 
+  <pre><code>    fn main() {
+    	a := 10 
+    	if true {
+    		a := 20 //与大多数语言不同，不允许使用已被声明的变量在局部变量。
+    		//声明已在父作用域中使用的变量名，将导致编译错误。
+    	} 
+    }
+
+</code></pre> 
+  <h2><a id="_101"></a>基本类型</h2> 
+  <ul> 
+   <li>bool 布尔类型</li> 
+   <li>string 字符串类型</li> 
+   <li>i8 i16 i32 i64 i128 (soon)</li> 
+   <li>u8 u16 u32 u64 u128 (soon)</li> 
+   <li>byte // 是 u8 的别名</li> 
+   <li>int // 是 i32 的别名,与C,Go不同，int 始终为 32字节</li> 
+   <li>rune // 是 i32 的别名,表示Unicode代码点</li> 
+   <li>f32 f64</li> 
+   <li>byteptr</li> 
+   <li>voidptr</li> 
+  </ul> 
+  <h3><a id="_Strings_114"></a>字符串 Strings</h3> 
+  <pre><code>   name := 'Bob' 
+   println('Hello, $name!')  // `$` 用与字符串内引入变量
+   println(name.len) //字符串长度
+   
+   bobby := name + 'by' // 通过 + 拼接字符串
+   println(bobby) // ==&gt; "Bobby"  
+   
+   println(bobby.substr(1, 3)) // 字符串截取 ==&gt; "ob"  
+   // println(bobby[1:3]) // 这种写法很可能会替换 substr 方法 
+</code></pre> 
+  <ul> 
+   <li>V语言中，字符串是只读字节数组，字符串数据使用UTF-8编码。</li> 
+   <li>单引号和双引号都可以用于表示字符串（TODO：暂时不支持双引号）。为了保持一致，vfmt 请将双引号转换为单引号，除非字符串包含单引号。</li> 
+   <li>字符串是不可变的，这代表 substring 函数非常有影响：不执行复制，不需要额外的分配。</li> 
+   <li>V语言中，所有运算符必须在两侧都具有相同类型的值。如果有一个int 类型的变量 age:</li> 
+  </ul> 
+  <pre><code>    println('age = ' + age) //此段代码将无法编译通过，需改为如下
+    
+    println('age = ' + age.str()) //将 age 转换为 string ,或者使用
+    
+    println('age = $age') //字符串引入变量的方式
+</code></pre> 
+  <h2><a id="_Arrays_139"></a>数组 Arrays</h2> 
+  <pre><code>nums := [1, 2, 3]
+println(nums)
+println(nums[1]) // ==&gt; "2" 
+
+mut names := ['John']
+names &lt;&lt; 'Peter' //数组中添加元素
+names &lt;&lt; 'Sam' 
+// names &lt;&lt; 10  //这里将编译不通过，因为 names 是一个字符串数组
+println(names.len) // ==&gt; "3"  
+println('Alex' in names) // ==&gt; "false" 判断变量是否在数组中
+
+// 我们也可以预先分配一定数量的元素
+nr_ids := 50
+mut ids := [0 ; nr_ids] // 这里将创建 包含50个0的数组
+</code></pre> 
+  <ul> 
+   <li>数组的类型由第一个元素决定 
+    <ul> 
+     <li>[1,2,3] 是int数组 ([]int)。</li> 
+     <li>[‘a’,‘b’] 是一个字符串数组 ([]string)</li> 
+     <li>所有元素必须相同类型，[1,‘a’] 将编译不通过</li> 
+    </ul> </li> 
+   <li>数组的追加， &lt;&lt; 将一个值附加到数组末尾的运算符</li> 
+   <li>数组长度，arr.len 字段。注意：len是一个只读字段，用户无法修改。</li> 
+   <li>是否包含：val in arr ；如果arr包含val返回 true。</li> 
+  </ul> 
+  <h2><a id="Map_165"></a>Map</h2> 
+  <pre><code>mut m := map[string]int{} // 现在 map的键值只能为 string 类型， 
+m['one'] = 1 //设置值
+println(m['one']) // ==&gt; "1"  //获取值
+println(m['bad_key']) // ==&gt; "0"  //不包含返回 0 
+// TODO: 这是实现 key 是否存在的方法
+
+numbers := { // TODO: 这种语法暂时没有实现
+	'one': 1,
+	'two': 2,
+} 
+</code></pre> 
+  <h2><a id="IF__179"></a>IF 用法</h2> 
+  <p>if 语句非常简单，与大多数其他语言类似。</p> 
+  <p>与其他类C语言不同，条件周围没有括号，并且始终需要大括号。</p> 
+  <ul> 
+   <li>if 可以用作表达式(类似3位运算符)：</li> 
+  </ul> 
+  <pre><code>num := 777
+s := if num % 2 == 0 {
+	'even'
+}
+else {
+	'odd'
+}
+println(s) // ==&gt; "odd"
+</code></pre> 
+  <h2><a id="_in_198"></a>运算符 in</h2> 
+  <ul> 
+   <li>in 用于检测 数组中是否包含 某元素</li> 
+  </ul> 
+  <pre><code>    nums := [1, 2, 3]
+    println(1 in nums) // ==&gt; true 
+</code></pre> 
+  <ul> 
+   <li>in 拓展用法，可以编写更清晰的布尔判断逻辑</li> 
+  </ul> 
+  <pre><code>//标准写法
+if parser.token == .plus || parser.token == .minus || parser.token == .div || parser.token == .mult {
+	... 
+} 
+
+//优化后写法
+if parser.token in [.plus, .minus, .div, .mult] {
+	... 
+} 
+// V 语言在这样的表达式中有做优化，上面两个语句会生成相同的机器码，不会创建任何数组
+
+</code></pre> 
+  <h2><a id="_FOR_220"></a>循环语句 FOR</h2> 
+  <p>V 语言只有一种循环方法：for</p> 
+  <ul> 
+   <li>数组的循环： 使用 for value in arr 的方式循环取数组中的元素；如果需要索引，可以使用 for index,value in arr的方式代替</li> 
+  </ul> 
+  <pre><code>numbers := [1, 2, 3, 4, 5]
+for num in numbers {
+	println(num)
+}
+names := ['Sam', 'Peter']
+for i, name in names {
+	println('$i) $name')  // Output: 0) Sam
+}                             //         1) Peter
+
+</code></pre> 
+  <ul> 
+   <li>数组循环时，value是只读的，如果要在循环时修改数组，必须使用索引：</li> 
+  </ul> 
+  <pre><code>mut numbers := [1, 2, 3, 4, 5]
+for i, num in numbers {
+	println(num)
+	numbers[i] = 0
+}
+</code></pre> 
+  <ul> 
+   <li>类似while的循环方式实现:这种循环方式类似其他语言的 while 循环。一但条件不满足，循环停止，同样，条件周围不需要使用(),代码块总需要{}</li> 
+  </ul> 
+  <pre><code>mut sum := 0
+mut i := 0
+for i &lt;= 100 {
+	sum += i
+	i++
+}
+println(sum) // ==&gt; "5050" 
+
+</code></pre> 
+  <ul> 
+   <li>循环的条件可以省去，这样循环会出现无限循环</li> 
+  </ul> 
+  <pre><code>    mut num := 0
+    for {
+    	num++
+    	if num &gt;= 10 {
+    		break 
+    	} 
+    }
+    println(num) // ==&gt; "10" 
+
+</code></pre> 
+  <ul> 
+   <li>传统的 for i 循环:同其他语言风格一样。他比 while形式更安全，因为后者很容易忘记更新计数器并陷入无限循环 
+    <ul> 
+     <li>这里的 i 无需 mut 修饰，因为在这里 默认会被定义为 mut 类型的</li> 
+    </ul> </li> 
+  </ul> 
+  <pre><code>    for i := 0; i &lt; 10; i++ {
+    	println(i)
+    }
+</code></pre> 
+  <h2><a id="Switch_273"></a>Switch</h2> 
+  <pre><code>    os := 'windows' 
+    print('V is running on ')
+    switch os {
+    case 'darwin':
+    	println('macOS.')
+    case 'linux':
+    	println('Linux.')
+    default:
+    	println(os) 
+    }
+    // TODO: replace with match expressions | 用匹配表达式替换
+</code></pre> 
+  <p>switch语句是编写if - else语句序列的较短方式。它运行第一种情况，其值等于条件表达式。</p> 
+  <blockquote> 
+   <p>注意：与C不同，每个代码块的末尾都不需要 break。</p> 
+  </blockquote> 
+  <h2><a id="Structs__291"></a>Structs 结构体</h2> 
+  <ul> 
+   <li>简单使用</li> 
+  </ul> 
+  <pre><code>    struct Point {
+    	x int
+    	y int 
+    } 
+    
+    p := Point{
+    	x: 10 
+    	y: 20 
+    } 
+    println(p.x) // 访问结构体对象的某字段
+</code></pre> 
+  <ul> 
+   <li>结构体的内存是在堆上分配，需要获取结构体指针，使用 &amp;前缀:</li> 
+  </ul> 
+  <pre><code>    pointer := &amp;Point{10, 10}  // 字段少于3的结构体的简化初始化方式
+    println(pointer.x) // 指针访问结构体属性方式与默认的方式相同 
+</code></pre> 
+  <ul> 
+   <li>V 语言没有子类，但它支持嵌入式结构：</li> 
+  </ul> 
+  <pre><code>    // TODO: 这个功能将与6月末实施
+    struct Button {
+    	Widget
+    	title string
+    }
+    
+    button := new_button('Click me')
+    button.set_pos(x, y)
+    
+    // 没有潜入式，我们需要这么做
+    button.widget.set_pos(x,y)
+</code></pre> 
+  <h3><a id="_326"></a>结构体-访问修饰符</h3> 
+  <p>结构字段默认是私有的和不可变的（使结构也是不可变的）。<br> 他们可以被 pub(可被访问的)和mut(可被修改的) 修饰。总共有5种可能的选择：</p> 
+  <pre><code>    struct Foo {
+    	a int     // 私有的 不可变的 (default) 
+    mut: 
+    	b int     // 私有的 可变的
+    	c int     // (你可以一次列出，相同访问修饰符的字段)   
+    pub: 
+    	d int     // 公开的，不可变的
+    pub mut: 
+    	e int     // 公开的，但仅在父模块中可变 
+    pub mut mut: 
+    	f int 	  // 公开的，父模块内部和外部都可变 
+    }                 // (不建议使用，这就是为什么它如此冗长的原因) 
+</code></pre> 
+  <ul> 
+   <li>例子，string 在 builtin 模块中定义的类型：</li> 
+  </ul> 
+  <pre><code>struct string {
+	str byteptr
+pub:
+	len int
+}
+
+// 很容易看出 string 内容是不可变的
+</code></pre> 
+  <ul> 
+   <li>错误示例：</li> 
+  </ul> 
+  <pre><code>fn main() {
+	str := 'hello' 
+	len := str.len // OK  
+	str.len++      // 编译出错
+}
+//具有字符串数据的字节指针根本无法在外部builtin访问。 len字段是公开的，但不是可变的。
+</code></pre> 
+  <h3><a id="_364"></a>结构体-方法</h3> 
+  <p>V 没有 class概念，但是我们可以在结构体上定义方法。<br> 方法是具有特殊行参的函数。特殊行参 放在 fn关键字 和方法名之间的参数列表中。</p> 
+  <ul> 
+   <li>简单示例（can_register 方法具有 User 类型的 特殊行参 u）： 
+    <ul> 
+     <li>不和其他语言一样，使用 self 或 this ，而是使用短名称，当然最好一个字母长</li> 
+    </ul> </li> 
+  </ul> 
+  <pre><code>struct User {
+	age int 
+} 
+
+fn (u User) can_register() bool {
+	return u.age &gt; 16 
+} 
+
+user := User{age: 10} 
+println(user.can_register()) // ==&gt; "false"  
+
+user2 := User{age: 20} 
+println(user2.can_register()) // ==&gt; "true"  
+
+</code></pre> 
+  <h2><a id="_386"></a>纯函数</h2> 
+  <p>V语言的函数默认是纯函数，也就是函数的输出结果只依赖输入的参数，并且没有其它的影响。<br> 因为V语言没有全局变量，且所有的参数默认都是只读的，即使传入的引用也是默认只读的。<br> 然后V语言并不纯的函数式语言。我们可以通过mut来修饰行参数，使得可以被修改：</p> 
+  <pre><code>struct User {
+mut:
+	is_registered bool 
+} 
+
+fn (u mut User) register() {
+	u.is_registered = true 
+} 
+
+mut user := User{} 
+println(user.is_registered) // ==&gt; "false"  
+user.register() 
+println(user.is_registered) // ==&gt; "true" 
+
+</code></pre> 
+  <ul> 
+   <li>如上示例：特殊行参(这里被修饰了第一个参数) 被mut 修饰，为可变的。因此 register() 可以更改用户对象。 
+    <ul> 
+     <li>当然也适用于函数的普通参数,示例如下:</li> 
+    </ul> </li> 
+  </ul> 
+  <pre><code>fn multiply_by_2(arr mut []int) {
+	for i := 0; i &lt; arr.len; i++ {
+		arr[i] *= 2
+	}
+}
+mut nums := [1, 2, 3]
+multiply_by_2(mut nums)
+println(nums) // ==&gt; "[2, 4, 6]"
+</code></pre> 
+  <blockquote> 
+   <p>注意1：您必须在执行函数之前 声明一个 mut 的nums 变量。这清楚的表明被调用的函数将要修改该值！</p> 
+  </blockquote> 
+  <ul> 
+   <li>最好使用返回值而不是修改参数。修改参数只应在应用程序的性能关键部分中完成，以减少分配和复制。 
+    <ul> 
+     <li>使用user.register()或user = register(user) 代替register(mut user)</li> 
+    </ul> </li> 
+  </ul> 
+  <pre><code>fn register(u User) User { 
+	return { u | is_registered: true } 
+}
+
+user = register(user) 
+
+</code></pre> 
+  <h2><a id="_Constants_433"></a>常量 Constants</h2> 
+  <p>常量声明为const。它们只能在模块级别上（函数body外）定义。<br> 常量名称必须大写。这有助于将它们与变量区分开来<br> 永远不能改变常量值。</p> 
+  <ul> 
+   <li>简单使用</li> 
+  </ul> 
+  <pre><code>    
+    const (
+    	PI    = 3.14
+    	World = '世界'
+    ) 
+    
+    println(PI)
+    println(World)
+
+</code></pre> 
+  <ul> 
+   <li>复杂类型的常量定义(这相对大多数语言更灵活)</li> 
+  </ul> 
+  <pre><code>    struct Color {
+            r int
+            g int
+            b int
+    }
+    
+    fn (c Color) str() string { return '{$c.r, $c.g, $c.b}' } //重写 str方法
+    
+    fn rgb(r, g, b int) Color { return Color{r: r, g: g, b: b} }
+    
+    const (
+            Numbers = [1, 2, 3]
+    
+            Red  = Color{r: 255, g: 0, b: 0} //结构体常量
+            Blue = rgb(0, 0, 255)//结构体常量
+    )
+    
+    println(Numbers)
+    println(Red)
+    println(Blue)
+
+</code></pre> 
+  <blockquote> 
+   <p>不支持使用全局变量，因此这种方式显得非常有必要</p> 
+  </blockquote> 
+  <h2><a id="_Modules_478"></a>模块 Modules</h2> 
+  <p>V 语言是一个模块化的语言。鼓励创建可重用的模块，而且创建模块也非常简单。</p> 
+  <ul> 
+   <li>新模块创建，请创建一个包含你模块名的目录 和 .v 代码文件：</li> 
+  </ul> 
+  <pre><code>cd ~/code/modules
+mkdir mymodule
+vim mymodule/mymodule.v
+</code></pre> 
+  <pre><code>// mymodule.v
+
+module mymodule
+
+// 要用 pub修饰符修饰，外部才能访问该 模块函数
+pub fn say_hi() {
+	println('hello from mymodule!')
+}
+
+</code></pre> 
+  <ul> 
+   <li> <p>模块的编译：</p> 
+    <ul> 
+     <li>您可以在 你定义好的 模块目录下创建 更多的 .v模块文件</li> 
+     <li>构建命令 v -lib ~/code/modules/mymodule ，然后就可以在代码中使用它</li> 
+    </ul> </li> 
+   <li> <p>模块的使用：</p> </li> 
+  </ul> 
+  <pre><code>    module main
+    
+    import mymodule
+    
+    fn main() {
+    	mymodule.say_hi()
+    }
+</code></pre> 
+  <pre><code>请注意，每次调用外部函数时都必须指定模块。这看起来似乎很冗长，但它使代码更易读，更容易理解，因为它始终清楚的表达出从哪个模块调用哪个函数。特别是在大型代码库中。
+模块名称应短，不超过10个字符。模块不允许循环依赖。
+您可以在任何地方创建模块 ,所有的模块都将静态编译到单一的可执行程序中。
+</code></pre> 
+  <h2><a id="_Interfaces_519"></a>接口 Interfaces</h2> 
+  <ul> 
+   <li>简单使用： 
+    <blockquote> 
+     <p>类型通过实现接口同名的方法（注意返回值也相同类型）。和Go语言一样,V语言也是隐式接口，类型不需要显式实现接口，没有“implements”关键字。</p> 
+    </blockquote> </li> 
+  </ul> 
+  <pre><code>    struct Dog {}
+    struct Cat {}
+    
+    fn (d Dog) speak() string { 
+    	return 'woof'
+    } 
+    
+    fn (c Cat) speak() string { 
+    	return 'meow' 
+    } 
+    
+    interface Speaker {
+    	speak() string
+    }
+    
+    fn perform(s Speaker) { 
+    	println(s.speak())
+    } 
+    
+    dog := Dog{} 
+    cat := Cat{} 
+    perform(dog) // ==&gt; "woof" 
+    perform(cat) // ==&gt; "meow" 
+    
+</code></pre> 
+  <h2><a id="_549"></a>枚举</h2> 
+  <pre><code>enum Color {
+	red green blue 
+} 
+
+mut color := Color.red
+// 下面的写法要注意了，V语言知道 color的类型为Color，所以这个地方不需要使用 Color.green
+color = .green 
+println(color) // ==&gt; "1"  TODO: print "green"?  
+</code></pre> 
+  <h2><a id="___562"></a>可选类型 和 错误处理</h2> 
+  <p>V语言针对函数返回值增加了一个可选的属性，这样可以用于处理失败的情况</p> 
+  <ul> 
+   <li>可以用最小工作量来升级一个可选类型返回的函数：只需要在 返回值类型声明的前面添加一个 ?,这样就可以区别错误和真正的返回值。 
+    <ul> 
+     <li>当然如果你不需要返回错误，可以简单的使用 return None;（TODO：None尚未实现）</li> 
+    </ul> </li> 
+  </ul> 
+  <blockquote> 
+   <p>这是处理V中错误的主要手段。函数的返回值依然是值，但是错误处理要简洁很多。</p> 
+  </blockquote> 
+  <pre><code>struct User {
+	id int 
+	name string
+} 
+
+struct Repo {
+	users []User 
+} 
+
+fn new_repo() Repo {
+	return Repo {
+		users: [User{1, 'Andrew'}, User {2, 'Bob'}, User {10, 'Charles'}]
+	}
+} 
+
+fn (r Repo) find_user_by_id(id int) ?User { 
+	for user in r.users {
+		if user.id == id {
+			// V 自动将其包装为 Option 类型  
+			return user 
+		} 
+	} 
+	return error('User $id not found') 
+} 
+
+fn main() {
+	repo := new_repo() 
+	user := repo.find_user_by_id(10) or { // Option类型必须使用 `or` 的代码块hold住；
+		return  // `or` 代码块必须以， return ,break,或 continue 关键字结束 
+	} 
+	println(user.id) // ==&gt; "10"  
+	println(user.name) // ==&gt; 'Charles'
+}
+</code></pre> 
+  <ul> 
+   <li>当然，错误还可以继续传播：</li> 
+  </ul> 
+  <pre><code>resp := http.get(url)?
+println(resp.body)
+</code></pre> 
+  <blockquote> 
+   <p>上面例子中，http.get return ?http.Response 的可选类型，如果错误发生，将传播到调用函数，这里是导致main函数抛出异常。<br> 上面代码是下面代码的简写：</p> 
+  </blockquote> 
+  <pre><code>resp := http.get(url) or {
+	panic(err)
+}
+println(resp.body)
+
+</code></pre> 
+  <h2><a id="_Generics_7_620"></a>范型 Generics （预计7月上线）</h2> 
+  <p>为了方便阅读, 允许使用 ⟨⟩ 来代替 &lt;&gt;. vfmt 自动替换 ⟨⟩ 为&lt;&gt; .</p> 
+  <pre><code>struct Repo⟨T⟩ {
+	db DB
+}
+
+fn new_repo⟨T⟩(db DB) Repo⟨T⟩ {
+	return Repo⟨T⟩{db: db}
+}
+
+// 这是一个范型函数. V 语言可以使用任意类型的范型  
+fn (r Repo⟨T⟩) find_by_id(id int) ?T {  
+	table_name := T.name // 在此示例中，获取类型的名称会得到表明 
+	return r.db.query_one⟨T⟩('select * from $table_name where id = ?', id)
+}
+
+db := new_db()
+users_repo := new_repo⟨User⟩(db)
+posts_repo := new_repo⟨Post⟩(db)
+user := users_repo.find_by_id(1)? 
+post := posts_repo.find_by_id(1)? 
+</code></pre> 
+  <h2><a id="_645"></a>并发</h2> 
+  <p>并发模型与Go非常相似。要foo()同时运行，只需调用它go foo()，便会在新的系统线程执行该函数 .<br> 很快 将实现 goroutines 和 scheduler 。</p> 
+  <h2><a id="JSON__650"></a>JSON 解析</h2> 
+  <p>JSON 在今天已经非常流行，这也是为什么要内置json支持的原因。</p> 
+  <ul> 
+   <li>json.decode 函数的第一个参数是要解码的类型，第二个参数是 json字符串。</li> 
+   <li>json 用于生成json 编码和解码的代码，不使用运行时反射，这也会带来更好的性能。</li> 
+  </ul> 
+  <pre><code>struct User {
+	name string
+	age  int 
+	foo  Foo    [skip]  //使用 skip 来跳过某些字段
+} 
+
+data := '{ "name": "Frodo", "age": 25 }'
+user := json.decode(User, data) or {
+	eprintln('Failed to decode json')
+	return 
+} 
+println(user.name)
+println(user.age) 
+
+</code></pre> 
+  <h2><a id="_671"></a>单元测试</h2> 
+  <p>所有的单元测试都必须放在 *<em>test.v 文件中，并且测试函数必须使用 test</em> 开头方式命名。</p> 
+  <ul> 
+   <li>若要运行 测试文件 hello_test.v 用来测试某整个模块，请执行命令 v test mymodule</li> 
+  </ul> 
+  <pre><code>// hello.v 
+fn hello() string {
+	return 'Hello world'
+} 
+
+// hello_test.v 
+fn test_hello() {
+    assert hello() == 'Hello world'
+} 
+</code></pre> 
+  <h2><a id="_686"></a>内存管理</h2> 
+  <p>V语言没有自动内存回收（GC）和引用计数，V语言会在编译阶段完成必要的清理工作。例如：</p> 
+  <pre><code>fn draw_text(s string, x, y int) {
+	...
+}
+
+fn draw_scene() {
+	... 
+	draw_text('hello $name1', 10, 10)
+	draw_text('hello $name2', 100, 10)
+	draw_text(strings.repeat('X', 10000), 10, 50)
+	... 
+}
+</code></pre> 
+  <blockquote> 
+   <p>字符串 string 生命周期不会超出 draw_text 函数，因此当函数执行完时，它们将会被清除。实际上,前面两次调用根本不会导致任何分配，因为这两个字符串很小，V语言会使用提前准备好的缓冲区构造字符串。</p> 
+  </blockquote> 
+  <ul> 
+   <li> <p>对于更复杂的情况，需要手动内存管理，我们将很快实现解决。</p> </li> 
+   <li> <p>V 将在运行时检测并报告内存泄露，例如：要清除数组，请使用 free() 方法：</p> </li> 
+  </ul> 
+  <pre><code>   numbers := [0; 1000000] 
+   ...
+   numbers.free() 
+
+</code></pre> 
+  <h2><a id="_Defer_714"></a>延迟 Defer</h2> 
+  <ul> 
+   <li>TODO</li> 
+  </ul> 
+  <h2><a id="vfmt_717"></a>vfmt</h2> 
+  <ul> 
+   <li>TODO</li> 
+  </ul> 
+  <h1><a id="_720"></a>进阶内容</h1> 
+  <h2><a id="VC__722"></a>V语言中调用C 函数</h2> 
+  <pre><code>#flag -lsqlite3
+
+#include "sqlite3.h"
+
+struct C.sqlite3 
+struct C.sqlite3_stmt 
+
+fn C.sqlite3_column_int(C.sqlite_stmt, int) int 
+
+fn main() {
+	path := 'sqlite3_users.db' 
+	db := &amp;C.sqlite3{} 
+	C.sqlite3_open(path.cstr(), &amp;db)
+
+	query := 'select count(*) from users' 
+	stmt := &amp;C.sqlite3_stmt{} 
+	C.sqlite3_prepare_v2(db, query.cstr(), - 1, &amp;stmt, 0)
+	C.sqlite3_step(stmt) 
+	nr_users := C.sqlite3_column_int(res, 0)
+	C.sqlite3_finalize(res)
+	println(nr_users) 
+} 
+
+</code></pre> 
+  <ul> 
+   <li>C strings 可以转换为 “string（cstring）”的V字符串</li> 
+  </ul> 
+  <h2><a id="if_750"></a>预编译if语句</h2> 
+  <p>预编译 使用 $if 。现在它只能用于检测操作系统。</p> 
+  <pre><code>$if windows {
+	println('Windows')  
+}  
+$if linux {
+	println('Linux') 
+} 
+$if mac {
+	println('macOS') 
+}
+</code></pre> 
+  <h2><a id="_764"></a>代码反射</h2> 
+  <p>有内置的 json支持已经是很不错的选择，但是V还允许使用者为任意添加高效的序列化程序。</p> 
+  <pre><code>// TODO: 计划6月上线
+fn decode&lt;T&gt;(data string) T {
+        mut result := T{}
+        for field in T.fields {
+                if field.typ == 'string' {
+                        result.$field = get_string(data, field.name)
+                } else if field.typ == 'int' {
+                        result.$field = get_int(data, field.name)
+                }
+        }
+        return result
+}
+
+// 生成:
+fn decode_User(data string) User {
+        mut result := User{}
+        result.name = get_string(data, 'name')
+        result.age = get_int(data, 'age')
+        return result
+}
+</code></pre> 
+  <h2><a id="_790"></a>有限的运算符重载</h2> 
+  <p>运算符重载违背了V的简单性和可预测性的理念。但由于科学和图形应用程序属于V域，因此为了提高可读性，运算符重载非常重要:</p> 
+  <blockquote> 
+   <p>a.add(b).add(c.mul(d))比 a + b + c * d 可读性差得多了。</p> 
+  </blockquote> 
+  <pre><code>struct Vec {
+	x int
+	y int
+}
+
+fn (a Vec) str() string { 
+	return '{$a.x, $a.y}' 
+}
+
+fn (a Vec) + (b Vec) Vec {
+	return Vec {
+		a.x + b.x, 
+		a.y + b.y 
+	}
+}
+
+fn (a Vec) - (b Vec) Vec {
+	return Vec {
+		a.x - b.x, 
+		a.y - b.y
+	}
+}
+
+fn main() { 
+	a := Vec{2, 3}
+	b := Vec{4, 5}
+	println(a + b) // ==&gt; "{6, 8}"  
+	println(a - b) // ==&gt; "{-2, -2}"  
+} 
+</code></pre> 
+  <ul> 
+   <li>为了提高安全性和可维护性，运算符重载 有几个局限性： 
+    <ul> 
+     <li>只能使用 +,=,* ,/ 运算符的重载</li> 
+     <li>不允许运算符重载函数内调用其他函数</li> 
+     <li>运算符重载函数无法修改其参数</li> 
+     <li>运算符函数的两个参数必须具有相同类型，（同V中所有运算符一样,str+num =&gt; error）</li> 
+    </ul> </li> 
+  </ul> 
+  <h2><a id="_831"></a>内联汇编</h2> 
+  <p>TODO 尚未实现</p> 
+  <pre><code>fn main() {
+	a := 10
+	asm x64 {
+		mov eax, [a]
+		add eax, 10
+		mov [a], eax
+	}
+}
+</code></pre> 
+  <h2><a id="_CCV_844"></a>将 C/C++翻译成V</h2> 
+  <p>TODO: 将C翻译为V将于6月上市。C ++到V将于今年晚些时候推出</p> 
+  <blockquote> 
+   <p>V可以将您的C / C ++代码转换为可读的V代码。让我们先创建一个简单的程序test.cpp</p> 
+  </blockquote> 
+  <pre><code>#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+int main() {
+        std::vector&lt;std::string&gt; s;
+        s.push_back("V is ");
+        s.push_back("awesome");
+        std::cout &lt;&lt; s.size() &lt;&lt; std::endl;
+        return 0;
+}
+</code></pre> 
+  <blockquote> 
+   <p>允许命令 v translate test.cpp 将会得到 test.v:</p> 
+  </blockquote> 
+  <pre><code>fn main {
+        mut s := []
+	s &lt;&lt; 'V is '
+	s &lt;&lt; 'awesome'
+	println(s.len) 
+} 
+
+</code></pre> 
+  <blockquote> 
+   <p>一个在线C / C ++到V的翻译即将推出.</p> 
+  </blockquote> 
+  <ul> 
+   <li>什么时候应该翻译C代码，什么时候应该从V调用C代码？ 
+    <ul> 
+     <li>如果您有经过良好编写且经过良好测试的C代码，那么您当然可以直接从V调用此C代码</li> 
+     <li>将其翻译为V有以下几个优点： 
+      <ul> 
+       <li>如果您计划开发该代码库，那么现在您可以使用一种语言编写所有内容，这样可以更安全，更容易开发</li> 
+       <li>交叉编译(mac 编译打包 win程序)变得更加容易。您根本不必担心它。</li> 
+       <li>没有更多的构建标志和包含文件。</li> 
+      </ul> </li> 
+    </ul> </li> 
+  </ul> 
+  <h2><a id="_881"></a>热门代码重加载</h2> 
+  <p>TODO</p> 
+  <h2><a id="_mac__win_883"></a>交叉编译 (mac 编译打包 win程序)</h2> 
+  <ul> 
+   <li> <p>要交叉编译项目，只需简单执行命令:</p> 
+    <ul> 
+     <li>v -os windows .</li> 
+     <li>v -os linux .</li> 
+    </ul> 
+    <blockquote> 
+     <p>（暂时无法对macOS进行交叉编译。）</p> 
+    </blockquote> </li> 
+   <li> <p>如果您没有任何C依赖项，那就是您需要做的。即使在使用ui模块或图形应用程序编译GUI应用程序时也可以使用 gg。</p> </li> 
+   <li> <p>您需要安装Clang，LLD链接器，并下载包含库和包含Windows和Linux文件的zip文件。V将为您提供链接。</p> </li> 
+  </ul> 
+  <h2><a id="Vshell_6_894"></a>V中的跨平台shell脚本 (6月下旬)</h2> 
+  <ul> 
+   <li> <p>V可以用作Bash的替代方案来编写部署脚本，构建脚本等。</p> </li> 
+   <li> <p>使用V的优势在于语言的简单性和可预测性以及跨平台支持。“V脚本”在类Unix系统和Windows上运行。</p> </li> 
+   <li> <p>使用#v指令启动程序。它将使os 模块中的所有函数全局化（您可以使用ls() <a href="http://xn--os-bf3ck82gsoa.ls" rel="noopener" data-token="d255ec55d1df311d40165029587148a4" target="_blank">来代替os.ls</a>() ）例如：</p> </li> 
+  </ul> 
+  <pre><code>    #v 
+    
+    rm('build/*') 
+    // 效果同:  
+    for file in ls('build/') {
+    	rm(file) 
+    } 
+    
+    mv('*.v', 'build/') 
+    // 效果同:  
+    for file in ls('.') {
+    	if file.ends_with('.v') { 
+    		mv(file, 'build/') 
+    	} 
+    } 
+</code></pre> 
+  <blockquote> 
+   <p>现在您可以像普通的V程序一样编译它，并获得可以在任何地方部署和运行的可执行文件： v deploy.v &amp;&amp; ./deploy<br> (当然也可以使用传统脚本运行方式来允许它： v run deploy.v)</p> 
+  </blockquote> 
+  <h2><a id="1_922"></a>附录1：关键字</h2> 
+  <p>V 拥有22个关键字</p> 
+  <pre><code>break 
+const  
+continue 
+defer 
+else 
+enum 
+fn
+for
+go
+goto
+if
+import
+in 
+interface 
+match 
+module 
+mut 
+or 
+pub 
+return
+struct
+type 
+</code></pre> 
+  <h2><a id="2_949"></a>附录2：运算符</h2> 
+  <ul> 
+   <li> <p>运算符</p> 
+    <table> 
+     <thead> 
+      <tr> 
+       <th>运算符</th> 
+       <th align="right">含义</th> 
+       <th align="center">支持类型</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td>+</td> 
+       <td align="right">sum</td> 
+       <td align="center">integers, floats, strings</td> 
+      </tr> 
+      <tr> 
+       <td>-</td> 
+       <td align="right">difference</td> 
+       <td align="center">integers, floats</td> 
+      </tr> 
+      <tr> 
+       <td>*</td> 
+       <td align="right">product</td> 
+       <td align="center">integers, floats</td> 
+      </tr> 
+      <tr> 
+       <td>/</td> 
+       <td align="right">quotient</td> 
+       <td align="center">integers, floats</td> 
+      </tr> 
+      <tr> 
+       <td>%</td> 
+       <td align="right">remainder</td> 
+       <td align="center">integers</td> 
+      </tr> 
+      <tr> 
+       <td>&amp;</td> 
+       <td align="right">bitwise AND</td> 
+       <td align="center">integers</td> 
+      </tr> 
+      <tr> 
+       <td>｜</td> 
+       <td align="right">bitwise OR</td> 
+       <td align="center">integers, floats</td> 
+      </tr> 
+      <tr> 
+       <td>^</td> 
+       <td align="right">bitwise XOR</td> 
+       <td align="center">integers</td> 
+      </tr> 
+      <tr> 
+       <td>&lt;&lt;</td> 
+       <td align="right">left shift</td> 
+       <td align="center">integer &lt;&lt; unsigned integer</td> 
+      </tr> 
+      <tr> 
+       <td>&gt;&gt;</td> 
+       <td align="right">right shift</td> 
+       <td align="center">integer &gt;&gt; unsigned integer</td> 
+      </tr> 
+     </tbody> 
+    </table></li> 
+   <li> <p>运算符优先级</p> </li> 
+  </ul> 
+  <table> 
+   <thead> 
+    <tr> 
+     <th>优先级</th> 
+     <th align="center">运算符</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td>5</td> 
+     <td align="center">* / % &lt;&lt; &gt;&gt; &amp;</td> 
+    </tr> 
+    <tr> 
+     <td>4</td> 
+     <td align="center">+ - ｜ ^</td> 
+    </tr> 
+    <tr> 
+     <td>3</td> 
+     <td align="center">== != &lt; &lt;= &gt; &gt;=</td> 
+    </tr> 
+    <tr> 
+     <td>2</td> 
+     <td align="center">&amp;&amp;</td> 
+    </tr> 
+    <tr> 
+     <td>1</td> 
+     <td align="center">｜｜</td> 
+    </tr> 
+   </tbody> 
+  </table>
+  <ul> 
+   <li>赋值运算符 
+    <blockquote> 
+     <p>+=   -=   *=   /=   %=   &amp;=   |=   ^=   &gt;&gt;=   &lt;&lt;=</p> 
+    </blockquote> </li> 
+  </ul> 
+ </div> 
+ <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet"> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/09/BEYONDMA_94978528.html" class="pre-post btn btn-default" title='持续排名GITHUB榜首的V语言竟是C++的孪生兄弟-V版毁灭战士值得点赞'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">持续排名GITHUB榜首的V语言竟是C++的孪生兄弟-V版毁灭战士值得点赞</span>
+        </a>
+    
+    
+        <a href="/2019/07/01/BEYONDMA_94349691.html" class="next-post btn btn-default" title='GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">文章目录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">Hello World</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">函数 Functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">基本类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">字符串 Strings</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">数组 Arrays</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">Map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">IF 用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">运算符 in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">循环语句 FOR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">Switch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">Structs 结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">结构体-访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">结构体-方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">纯函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">常量 Constants</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">模块 Modules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">接口 Interfaces</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">可选类型 和 错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">范型 Generics （预计7月上线）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">并发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">JSON 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">延迟 Defer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">vfmt</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-text">进阶内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">V语言中调用C 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">预编译if语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">代码反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">有限的运算符重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">内联汇编</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">将 C/C++翻译成V</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">热门代码重加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">交叉编译 (mac 编译打包 win程序)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">V中的跨平台shell脚本 (6月下旬)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">附录1：关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">附录2：运算符</span></a>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

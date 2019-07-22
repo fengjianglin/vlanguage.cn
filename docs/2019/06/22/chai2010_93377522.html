@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+  
+   
+   
+   
+   V语言今天正式，欢迎访问V语言中文网：https://vlang-zh.cn/
+   
+   Hello, world
+   在线运行：ht...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>V语言正式开源 | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="V语言正式开源">
+            
+	            V语言正式开源
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/06/22</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/chai2010/article/details/93377522&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/chai2010/article/details/93377522&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div class="htmledit_views" id="content_views"> 
+  <div class="rich_media_content" id="js_content"> 
+   <pre class="output_wrapper" style="font-size:16px;color:rgb(62,62,62);line-height:1.6;letter-spacing:0px;font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"></pre>
+   <p style="text-align:center;"><img class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_gif/K1sI6IqaK7a9yqzqNrGQzz5syNFibkOyD7yYoxCh1oSMicCpIWZs4Tf8pCgH1Lq5o2gcuDG2QazJs5vo4QB6ibnhw/640?wx_fmt=gif" alt="640?wx_fmt=gif"></p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">V语言今天正式，欢迎访问V语言中文网：https://vlang-zh.cn/<br></p>
+   <p style="text-align:center;"><img class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/K1sI6IqaK7Yf0SicCXaVh9Qic3kTIMgdXGvpfY5pCFTricDRaRMGsI0EdR176z7AlazGuHNXHlehhNWmRDloicOX3g/640?wx_fmt=png" alt="640?wx_fmt=png"></p>
+   <h2 style="color:inherit;line-height:inherit;font-weight:bold;font-size:1.4em;"><span style="font-size:inherit;color:inherit;line-height:inherit;">Hello, world</span></h2>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">在线运行：https://vlang.io/play</p>
+   <pre><code class="rust language-rust" style="margin-left:2px;color:rgb(233,105,0);background:rgb(248,248,248);line-height:18px;font-size:14px;letter-spacing:0px;font-family:Consolas, Inconsolata, Courier, monospace;">fn&nbsp;main()&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;areas&nbsp;:=&nbsp;['game',&nbsp;'web',&nbsp;'tools',&nbsp;'science',&nbsp;'systems',&nbsp;'GUI',&nbsp;'mobile']&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;area&nbsp;in&nbsp;areas&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println('Hello,&nbsp;$area&nbsp;developers!')&nbsp;&nbsp;&nbsp;&nbsp;}}<br>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;area&nbsp;in&nbsp;areas&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;println('Hello,&nbsp;$area&nbsp;developers!')<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br></code></pre>
+   <h2 style="font-weight:bold;font-size:1.4em;color:rgb(62,62,62);line-height:inherit;font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"><span style="font-size:inherit;color:inherit;line-height:inherit;">扫码加入V语言微信群</span></h2>
+   <p style="font-size:16px;color:rgb(62,62,62);line-height:inherit;font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"><img class="rich_pages" style="text-align:center;letter-spacing:0px;" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/K1sI6IqaK7Yf0SicCXaVh9Qic3kTIMgdXGC4LO2YRWo9C1ibFQ0K7h10XCibibniar7zuSDbBoJiaT7SE4JZEa9PBUoOQ/640?wx_fmt=jpeg" alt="640?wx_fmt=jpeg"><br></p>
+   <p style="font-size:16px;color:rgb(62,62,62);line-height:inherit;font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align:center;"><strong><span style="color:rgb(255,41,65);">注：如果二维码过期，可以通过“光谷码农”微信公众号底部菜单扫码进入。</span></strong></p>
+   <h2 style="color:inherit;line-height:inherit;font-weight:bold;font-size:1.4em;text-align:left;"><span style="font-size:inherit;color:inherit;line-height:inherit;">开发状态</span><br></h2>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;text-align:left;">V语言还处于非常早期的开发阶段。很多特性都标记为开发中状态（WIP，work in progress）。不过此页面相关的内容和代码都会在2019年6月22号开源。如果所有的WIP开发工作都完成，那么将是发布V1.0的时候。</p>
+   <h2 style="color:inherit;line-height:inherit;font-weight:bold;font-size:1.4em;"><span style="font-size:inherit;color:inherit;line-height:inherit;">V语言的特色</span></h2>
+   <h3 style="line-height:inherit;font-weight:bold;font-size:1.3em;letter-spacing:2px;color:rgb(255,255,255);border-left:10px solid rgb(51,51,51);"><span style="font-size:inherit;color:inherit;line-height:inherit;">快速编译</span></h3>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">在Intel i5-7500 @ 3.40GHz, SM0256L SSD没有优化的环境，每秒钟可以编译120万行V代码。这是通过模块化和直接输出机器码来实现快速编译的。</p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">V语言编译器也可以直接输出C语言代码，但是输出的性能将下降到10行每秒钟。</p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;"><em style="font-size:inherit;color:inherit;line-height:inherit;">注：直接输出机器码还处于非常早期的阶段，目前只支持X64环境的Mach-O格式的目标文件。因此目前必须先输出C代码再进行编译。</em></p>
+   <h3 style="line-height:inherit;font-weight:bold;font-size:1.3em;letter-spacing:2px;color:rgb(255,255,255);border-left:10px solid rgb(51,51,51);"><span style="font-size:inherit;color:inherit;line-height:inherit;">安全</span></h3>
+   <hr style="font-size:inherit;color:inherit;line-height:inherit;border-right:none;border-bottom:none;border-left:none;border-top-style:dashed;border-top-color:rgb(165,165,165);">
+   <h2 style="color:inherit;line-height:inherit;font-weight:bold;font-size:1.4em;"><span style="font-size:inherit;color:inherit;line-height:inherit;">性能</span></h2>
+   <h2 style="color:inherit;line-height:inherit;font-weight:bold;font-size:1.4em;"><span style="font-size:inherit;color:inherit;line-height:inherit;">用于构建可维护程序的简洁语言</span></h2>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">你可以在半个小说读完全部的自带文档。虽然简洁，但是不简单！你可以用V语言做任何其它语言可以做的事情！</p>
+   <hr style="font-size:inherit;color:inherit;line-height:inherit;border-right:none;border-bottom:none;border-left:none;border-top-style:dashed;border-top-color:rgb(165,165,165);">
+   <h2 style="color:inherit;line-height:inherit;font-weight:bold;font-size:1.4em;"><span style="font-size:inherit;color:inherit;line-height:inherit;">编译器400KB，零依赖</span></h2>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">语言的标准库小雨400KB。V语言已经自举，用V语言编写，可以在0.4秒内构建（到今年地，时间继续降到0.15秒）。</p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">时间对比：</p>
+   <pre><code class="hljs css" style="margin-left:2px;line-height:18px;font-size:14px;letter-spacing:0px;font-family:Consolas, Inconsolata, Courier, monospace;color:rgb(169,183,198);background:rgb(40,43,46);">语言&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内存大小&nbsp;&nbsp;&nbsp;&nbsp;编译时间Go&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;525&nbsp;MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1m&nbsp;33sRust&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;GB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45mGCC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;GB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50mClang&nbsp;&nbsp;&nbsp;90&nbsp;GB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25mSwift&nbsp;&nbsp;&nbsp;70&nbsp;GB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90mV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.4&nbsp;MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.4s<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">Go</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;525&nbsp;<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">MB</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">m</span>&nbsp;33<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">s</span><br><span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">Rust</span>&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">GB</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;45<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">m</span><br><span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">GCC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">GB</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">m</span><br><span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">Clang</span>&nbsp;&nbsp;&nbsp;90&nbsp;<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">GB</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">m</span><br><span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">Swift</span>&nbsp;&nbsp;&nbsp;70&nbsp;<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">GB</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">m</span><br><span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">V</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<span class="hljs-selector-class" style="font-size:inherit;line-height:inherit;color:rgb(165,218,45);">.4</span>&nbsp;<span class="hljs-selector-tag" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">MB</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<span class="hljs-selector-class" style="font-size:inherit;line-height:inherit;color:rgb(165,218,45);">.4s</span><br></code></pre>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">目前V语言只依赖C语言编译器，用于启动。一旦语言完备，就可以不再需要C语言编译器。</p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">先在0.4秒内构建V，然后使用生成的编译器再次构建自己：</p>
+   <figure style="font-size:inherit;color:inherit;line-height:inherit;"></figure>
+   <hr style="font-size:inherit;color:inherit;line-height:inherit;border-right:none;border-bottom:none;border-left:none;border-top-style:dashed;border-top-color:rgb(165,165,165);">
+   <h2 style="color:inherit;line-height:inherit;font-weight:bold;font-size:1.4em;"><span style="font-size:inherit;color:inherit;line-height:inherit;">C/C++代码到V代码</span></h2>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">V可以翻译整个C/C++代码到V代码，以享受带来的安全性、简单性和高达400x的编译速度。</p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">比如C++代码：</p>
+   <pre><code class="c++ language-c++ hljs cpp" style="margin-left:2px;line-height:18px;font-size:14px;letter-spacing:0px;font-family:Consolas, Inconsolata, Courier, monospace;color:rgb(169,183,198);background:rgb(40,43,46);">std::vector&lt;std::string&gt;&nbsp;s;s.push_back("V&nbsp;is&nbsp;");s.push_back("awesome");std::cout&nbsp;&lt;&lt;&nbsp;s.size();<span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">vector</span>&lt;<span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">std</span>::<span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">string</span>&gt;&nbsp;s;<br>s.push_back(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">"V&nbsp;is&nbsp;"</span>);<br>s.push_back(<span class="hljs-string" style="font-size:inherit;line-height:inherit;color:rgb(238,220,112);">"awesome"</span>);<br><span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">std</span>::<span class="hljs-built_in" style="font-size:inherit;line-height:inherit;color:rgb(248,35,117);">cout</span>&nbsp;&lt;&lt;&nbsp;s.size();<br></code></pre>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">将翻译为以下V代码：</p>
+   <pre><code class="rust language-rust" style="margin-left:2px;color:rgb(233,105,0);background:rgb(248,248,248);line-height:18px;font-size:14px;letter-spacing:0px;font-family:Consolas, Inconsolata, Courier, monospace;">mut&nbsp;s&nbsp;:=&nbsp;[]s&nbsp;&lt;&lt;&nbsp;'V&nbsp;is&nbsp;'s&nbsp;&lt;&lt;&nbsp;'awesome'println(s.len)<br>s&nbsp;&lt;&lt;&nbsp;'awesome'<br>println(s.len)<br></code></pre>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">关于翻译DOOM的博客文章即将发布。</p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;"><em style="font-size:inherit;color:inherit;line-height:inherit;">翻译几乎支持全部的C语言标准，但是对C++对支持还处于早期阶段。上面是简单的例子，复杂的C++代码可能有困难。C++是一个比较复杂的语言，我们希望今年年底能完成这个工作。</em></p>
+   <p style="font-size:inherit;color:inherit;line-height:inherit;">更多的信息请访问V语言中文网：https://vlang-zh.cn/</p>
+   <hr style="border-style:solid;border-width:1px 0 0;border-color:rgba(0,0,0,.1);">
+   <p style="text-align:center;"><img class="rich_pages" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/K1sI6IqaK7a9yqzqNrGQzz5syNFibkOyDxRn4uEFpsricnNLBiaefqqgxlB9wDibGHhHiaM5PVtBHaY2obIhpSCnicdg/640?wx_fmt=png" alt="640?wx_fmt=png"></p>
+   <p><br></p> 
+  </div> 
+ </div> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/06/23/wyyyh9458_93377612.html" class="pre-post btn btn-default" title='vlang,v语言'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">vlang,v语言</span>
+        </a>
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">Hello, world</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">扫码加入V语言微信群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">开发状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">V语言的特色</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js_content"><span class="toc-text">快速编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js_content"><span class="toc-text">安全</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">用于构建可维护程序的简洁语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">编译器400KB，零依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js_content"><span class="toc-text">C/C++代码到V代码</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

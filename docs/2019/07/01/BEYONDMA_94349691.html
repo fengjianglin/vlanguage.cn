@@ -1,0 +1,510 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+  
+  &nbsp; &nbsp; 最近&nbsp;V 语言-一个GO语言最吸晴的项目，在千呼万唤之后，终于迎来开源，并正式发布了首个可用版本，其一经推出，便强势登顶&nbs...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块 | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块">
+            
+	            GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/01</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/BEYONDMA/article/details/94349691&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/BEYONDMA/article/details/94349691&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div class="htmledit_views" id="content_views"> 
+  <p>&nbsp; &nbsp; 最近&nbsp;V 语言-一个GO语言最吸晴的项目，在千呼万唤之后，终于迎来开源，并正式发布了首个可用版本，其一经推出，便强势登顶&nbsp;GitHub的榜首，引来各方热议。目前V已经可以实现自我编译迭代，笔者大致了解了一下V语言，主要有如下一些特性。</p> 
+  <p>&nbsp; &nbsp; 1.<strong>快速编译</strong>：&nbsp; V每CPU核心每秒编译约120万行代码。&nbsp; V也可以调用C，编译速度下降到≈100k行/秒/CPU。安全<br> &nbsp; &nbsp; 2.<strong>安全策略</strong>：没有空；没有全局变量(意味着变量都是在函数体中声明)&nbsp;没有未定义的行为&nbsp;<br> &nbsp; &nbsp; <strong>3.性能：</strong>和C一样快，操作C没有任何成本，不支持运行时反射，编译器只有400K,整个语言及其标准库都小于400kb。V目前是用V写的，你可以在0。4秒内完成。(到今年年底，这个数字将降至≈0.15秒。)</p> 
+  <p>&nbsp; &nbsp; <strong>4.强大的图形能力:</strong>支持在GDI+/Cocoa绘图之上的跨平台绘图库，以及一个基于OpenGL的图形库，以支持加载复杂的三维对象与纹理</p> 
+  <p>&nbsp; &nbsp;由于曾经做过一段时间的DIRECTX的开发，V语言对于图形能力的特性宣传最吸引笔者的注意。所以我到其官网及Github上学习了一下相关内容，按照编译运行了一下俄罗斯 方块的例程，接下来向大家做一下分享。</p> 
+  <p style="text-align:center;"><img alt class="has" height="326" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190630204304439.gif" width="164"></p> 
+  <h3>&nbsp; &nbsp;安装V语言</h3> 
+  <p>&nbsp; &nbsp; 如果只是HELLO WORLD程序是非常简单的，只需要按照<a href="https://vlang.io/" rel="noopener" data-token="107e37084de697409ebce5fc3cf714fa" target="_blank">https://vlang.io</a>官网的标准步骤来执行即可。而如果使用其图形处理能力笔者目前只在UBANTU平台测试成功。下面均是以UBANTU为例来说明</p> 
+  <p>&nbsp; &nbsp;首先将整个项目克隆下来，再make即可</p> 
+  <pre class="has">
+<code> git clone https://github.com/vlang/v
+ cd v
+ make</code></pre> 
+  <p>&nbsp; &nbsp; 如果报curl command not found，则执行以下命令安装curl</p> 
+  <pre class="has">
+<code>sudo apt install curl</code></pre> 
+  <p>&nbsp; &nbsp; 接下来在建立软链接</p> 
+  <pre class="has">
+<code>sudo ln -s /home/machao/v/v /usr/local/bin/v</code></pre> 
+  <p>&nbsp; 然后运行v就能进到v语言的命令行了。而如果要运行俄罗斯方块还需要以下这些库的支持，</p> 
+  <pre class="has">
+<code> sudo apt install libglfw3 libglfw3-dev libfreetype6-dev libcurl3-dev</code></pre> 
+  <h3>&nbsp; &nbsp; &nbsp; &nbsp; 运行俄罗斯方块<br> &nbsp; &nbsp;&nbsp;</h3> 
+  <p>&nbsp; &nbsp; &nbsp; 接下来cd tetris,进入到俄罗斯方块的目录，先使用gedit tetris.v,来看一下v语言的代码样例，其主要部分如下：</p> 
+  <p>&nbsp; &nbsp;&nbsp;</p> 
+  <pre class="has">
+<code>fn main() {
+	glfw.init()//实始化类
+	mut game := &amp;Game{gg: 0} // TODO
+	game.parse_tetros()
+	game.init_game()
+	mut window := glfw.create_window(glfw.WinCfg {
+		width: WinWidth
+		height: WinHeight
+		title: 'V Tetris'
+		ptr: game // glfw user pointer
+	})
+	window.make_context_current()
+	window.onkeydown(key_down)//注册事件
+	gg.init()
+	game.gg = gg.new_context(gg.Cfg {
+		width: WinWidth
+		height: WinHeight
+		use_ortho: true // This is needed for 2D drawing
+	})
+	go game.run() // Run the game loop in a new thread
+	gl.clear() // For some reason this is necessary to avoid an intial flickering
+	gl.clear_color(255, 255, 255, 255)
+	for {
+		gl.clear()
+		gl.clear_color(255, 255, 255, 255)
+		game.draw_scene()
+		window.swap_buffers()
+		glfw.wait_events()
+		if window.should_close() {
+			window.destroy()
+			glfw.terminate()
+			exit(0)
+		}
+	}
+}
+
+fn (g mut Game) move_right(dx int) {
+	// Reached left/right edge or another tetro?
+	for i := 0; i &lt; TetroSize; i++ {
+		tetro := g.tetro[i]
+		y := tetro.y + g.pos_y
+		x := tetro.x + g.pos_x + dx
+		row := g.field[y]
+		if row[x] != 0 {
+			// Do not move
+			return
+		}
+	}
+	g.pos_x += dx
+}
+
+fn (g mut Game) delete_completed_lines() {
+	for y := FieldHeight; y &gt;= 1; y-- {
+		g.delete_completed_line(y)
+	}
+}
+
+fn (g mut Game) delete_completed_line(y int) {
+	for x := 1; x &lt;= FieldWidth; x++ {
+		f := g.field[y]
+		if f[x] == 0 {
+			return
+		}
+	}
+	// Move everything down by 1 position
+	for yy := y - 1; yy &gt;= 1; yy-- {
+		for x := 1; x &lt;= FieldWidth; x++ {
+			mut a := g.field[yy + 1]
+			mut b := g.field[yy]
+			a[x] = b[x]
+		}
+	}
+}
+
+// Place a new tetro on top
+fn (g mut Game) generate_tetro() {
+	g.pos_y = 0
+	g.pos_x = FieldWidth / 2 - TetroSize / 2
+	g.tetro_idx = rand.next(BTetros.len)
+	g.rotation_idx = 0
+	g.get_tetro()
+}
+
+// Get the right tetro from cache
+fn (g mut Game) get_tetro() {
+	idx := g.tetro_idx * TetroSize * TetroSize + g.rotation_idx * TetroSize
+	g.tetro = g.tetros_cache.slice(idx, idx + TetroSize)
+}
+
+fn (g mut Game) drop_tetro() {
+	for i := 0; i &lt; TetroSize; i++ {
+		tetro := g.tetro[i]
+		x := tetro.x + g.pos_x
+		y := tetro.y + g.pos_y
+		// Remember the color of each block
+		// TODO: g.field[y][x] = g.tetro_idx + 1
+		mut row := g.field[y]
+		row[x] = g.tetro_idx + 1
+	}
+}
+
+fn (g &amp;Game) draw_tetro() {
+	for i := 0; i &lt; TetroSize; i++ {
+		tetro := g.tetro[i]
+		g.draw_block(g.pos_y + tetro.y, g.pos_x + tetro.x, g.tetro_idx + 1)
+	}
+}
+
+fn (g &amp;Game) draw_block(i, j, color_idx int) {
+	g.gg.draw_rect((j - 1) * BlockSize, (i - 1) * BlockSize,
+		BlockSize - 1, BlockSize - 1, Colors[color_idx])
+}
+
+fn (g &amp;Game) draw_field() {
+	for i := 1; i &lt; FieldHeight + 1; i++ {
+		for j := 1; j &lt; FieldWidth + 1; j++ {
+			f := g.field[i]
+			if f[j] &gt; 0 {
+				g.draw_block(i, j, f[j])
+			}
+		}
+	}
+}
+
+fn (g &amp;Game) draw_scene() {
+	g.draw_tetro()
+	g.draw_field()
+}
+
+fn parse_binary_tetro(t int) []Block {
+	res := [Block{} ; 4]
+	mut cnt := 0
+	horizontal := t == 9// special case for the horizontal line
+	for i := 0; i &lt;= 3; i++ {
+		// Get ith digit of t
+		p := int(math.pow(10, 3 - i))
+		mut digit := int(t / p)
+		t %= p
+		// Convert the digit to binary
+		for j := 3; j &gt;= 0; j-- {
+			bin := digit % 2
+			digit /= 2
+			if bin == 1 || (horizontal &amp;&amp; i == TetroSize - 1) {
+				// TODO: res[cnt].x = j
+				// res[cnt].y = i
+				mut point := &amp;res[cnt]
+				point.x = j
+				point.y = i
+				cnt++
+			}
+		}
+	}
+	return res
+}
+
+// TODO: this exposes the unsafe C interface, clean up
+fn key_down(wnd voidptr, key, code, action, mods int) {
+	if action != 2 &amp;&amp; action != 1 {
+		return
+	}
+	// Fetch the game object stored in the user pointer
+	mut game := &amp;Game(glfw.get_window_user_pointer(wnd))
+	switch key {
+	case glfw.KEY_ESCAPE:
+		glfw.set_should_close(wnd, true)
+	case glfw.KeyUp:
+		// Rotate the tetro
+		game.rotation_idx++
+		if game.rotation_idx == TetroSize {
+			game.rotation_idx = 0
+		}
+		game.get_tetro()
+		if game.pos_x &lt; 0 {
+			game.pos_x = 1
+		}
+	case glfw.KeyLeft:
+		game.move_right(-1)
+	case glfw.KeyRight:
+		game.move_right(1)
+	case glfw.KeyDown:
+		game.move_tetro() // drop faster when the player presses &lt;down&gt;
+	}
+}
+</code></pre> 
+  <p>&nbsp; &nbsp;我们看到这个程序是在这行代码<strong>window.onkeydown(key_down)来进行事件注册的，其渲染是在draw_scene函数进行渲染的。</strong></p> 
+  <p>使用v run tetris.v命令就能看到以下的效果了。左边是debug窗口，右边是程序效果。</p> 
+  <p style="text-align:center;"><img alt class="has" height="326" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190630205432121.gif" width="793"></p> 
+  <p>&nbsp;</p> 
+  <p>&nbsp; &nbsp; &nbsp;后面笔者还会继续关注V语言的发展，为大家带来第一手的教程分享。</p> 
+ </div> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/04/u013604145_94598562.html" class="pre-post btn btn-default" title='V 语言中文文档'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V 语言中文文档</span>
+        </a>
+    
+    
+        <a href="/2019/06/28/qq_32394351_93966947.html" class="next-post btn btn-default" title='V语言环境部署教程-linux'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V语言环境部署教程-linux</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">   安装V语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">        运行俄罗斯方块     </span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

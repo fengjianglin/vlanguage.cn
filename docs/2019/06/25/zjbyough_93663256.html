@@ -1,0 +1,690 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+   
+   
+    
+   
+  V语言极限学习 
+  我听说V语言看文档半小时就能完全掌握？？？？以我的智商一小时掌握不了我就给各位科普一下广告法？？？ 
+  宇宙惯例h...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>年轻人的第一篇V语言笔记 | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="年轻人的第一篇V语言笔记">
+            
+	            年轻人的第一篇V语言笔记
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/06/25</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/zjbyough/article/details/93663256&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/zjbyough/article/details/93663256&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> 
+  <!-- flowchart 箭头图标 勿删 --> 
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> 
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/> 
+  </svg> 
+  <h1><a id="V_0"></a>V语言极限学习</h1> 
+  <p>我听说V语言看文档半小时就能完全掌握？？？？以我的智商一小时掌握不了我就给各位科普一下广告法？？？</p> 
+  <h2><a id="hello_world_4"></a>宇宙惯例hello world</h2> 
+  <pre><code class="prism language-v">// first v code
+fn main(){
+    printIn("hello world")
+}
+</code></pre> 
+  <ul> 
+   <li>不需要行结束符</li> 
+   <li>v函数使用<code>fn</code>声明，和其他语言一样，main函数是程序入口</li> 
+   <li>注释规则和c一样</li> 
+   <li>输出使用内置函数 <code>printIn()</code></li> 
+  </ul> 
+  <h2><a id="2_11_18"></a>宇宙惯例2. 1+1</h2> 
+  <pre><code class="prism language-v">fn main(){
+    a := 1
+    b := 2
+    mut name := "v langue"
+    name = "v"
+    printIn(add(a,b))
+}
+fn add(a int,b int) int {
+    return a+b
+}
+</code></pre> 
+  <ul> 
+   <li>变量名在类型名之前（反人类）</li> 
+   <li>函数和变量都可以提前，也就是可以“先调用，再声明”</li> 
+   <li>变量用<code>:=</code>声明并初始化，变量默认不允许修改，要修改必须加 <code>mut</code></li> 
+   <li>修改变量用 <code>=</code></li> 
+   <li>v没有全局变量，变量只能在函数中定义</li> 
+   <li>定义的变量必须使用，不允许只定义，不使用，和go像</li> 
+   <li>子代码块中不允许使用父代码块中已经定义的变量,如下面的代码会编译出错</li> 
+  </ul> 
+  <pre><code class="prism language-v">fn main(){
+    a := 20
+    if true{
+        a := 30
+    }
+}
+</code></pre> 
+  <h2><a id="_50"></a>基本数据类型</h2> 
+  <h3><a id="string_52"></a>string</h3> 
+  <p>在V中，字符串是只读字节数组。 字符串数据使用UTF-8编码。</p> 
+  <p>单引号和双引号都可用于表示字符串（TODO：尚不支持双引号）。 为保持一致性，vfmt将双引号转换为单引号，除非该字符串包含单引号字符。</p> 
+  <p>字符串是不可变的。 这意味着子字符串函数非常有效：不执行复制，不需要额外的分配。</p> 
+  <blockquote> 
+   <p>All operators in V must have values of the same type on both sides. This code will not compile if age is an int:<br> println('age = ’ + age)<br> We have to either convert age to a string:<br> println('age = ’ + age.str())<br> or use string interpolation (preferred):<br> println(‘age = $age’)</p> 
+   <p>翻译<br> V中的所有运算符必须在两边都具有相同类型的值。如果age是int: println(‘age = ’ + age’)，这段代码将无法编译。我们必须将age转换为一个字符串:println('age = ’ + age.str())或使用字符串插值(preferred): println(‘age = ’ $age’)</p> 
+  </blockquote> 
+  <h3><a id="_70"></a>数组</h3> 
+  <pre><code class="prism language-v">fn main(){
+    a := [1,2,3]
+    printIn(a)
+}
+</code></pre> 
+  <ul> 
+   <li>数组类型由数组第一个元素决定</li> 
+   <li>数组中元素类型必须相同</li> 
+   <li>使用<code>&lt;&lt;</code>在数组末尾插入元素</li> 
+   <li>使用<code>.len</code>返回数组长度</li> 
+   <li><code>val in array</code>,如果数组array包含val，返回true</li> 
+  </ul> 
+  <h3><a id="_85"></a>字典</h3> 
+  <pre><code class="prism language-v">mut m := map[string]int{} // Only maps with string keys are allowed for now  
+m['one'] = 1
+println(m['one']) // ==&gt; "1" 
+</code></pre> 
+  <p>这个字典人家似乎还没有写好，emmmm，一堆TODO，你先写着，咱不急，看下一个</p> 
+  <h2><a id="_95"></a>流程控制</h2> 
+  <h3><a id="if_97"></a>if</h3> 
+  <pre><code class="prism language-v">a := 10 
+b := 20 
+if a &lt; b { 
+	println('$a &lt; $b') 
+} else if a &gt; b { 
+	println('$a &gt; $b') 
+} else { 
+	println('$a == $b') 
+} 
+</code></pre> 
+  <ul> 
+   <li>条件没有小括号</li> 
+   <li>始终有大括号</li> 
+   <li>if语句可以作为一个表达式</li> 
+  </ul> 
+  <pre><code class="prism language-v">num := 777
+s := if num % 2 == 0 {
+	'even'
+}
+else {
+	'odd'
+}
+println(s) // ==&gt; "odd"
+</code></pre> 
+  <h3><a id="in_126"></a>in</h3> 
+  <p>作用：</p> 
+  <ol> 
+   <li>检查数组中是否含有某个元素</li> 
+   <li>布尔表达式，如：</li> 
+  </ol> 
+  <pre><code class="prism language-v">if parser.token == .plus || parser.token == .minus || parser.token == .div || parser.token == .mult {
+	... 
+} 
+
+if parser.token in [.plus, .minus, .div, .mult] {
+	... 
+} 
+</code></pre> 
+  <p>上下两个是等价的，使用下面的语法时，v不会创建数组</p> 
+  <h3><a id="for_145"></a>for</h3> 
+  <p>for比较牛逼，因为我看他文档写的比之前的都多…(狗头)，知道为啥吗，应为v只有一种循环，就是for，哈哈哈哈</p> 
+  <p>虽然只有一种循环，但人家for有好几种啊~~~</p> 
+  <h4><a id="for_in_151"></a>for in</h4> 
+  <pre><code class="prism language-v">fn main(){
+    list := ['a','b','c']
+    for value in list{
+        printIn(value)
+    }
+}
+
+</code></pre> 
+  <p>value-in</p> 
+  <p>如果需要数据的索引，可以用另一种方法</p> 
+  <pre><code class="prism language-v">names := ['Sam', 'Peter']
+for i, name in names {
+    println('$i) $name')  // Output: 0) Sam
+}                         //         1) Peter
+
+</code></pre> 
+  <h4><a id="forwhile_175"></a>第二种for(类似于while)</h4> 
+  <pre><code class="prism language-v">mut sum := 0
+mut i := 0
+for i &lt;= 100 {
+	sum += i
+	i++
+}
+println(sum) // ==&gt; "5050"
+</code></pre> 
+  <ul> 
+   <li>不写条件将导致死循环</li> 
+  </ul> 
+  <h4><a id="forc_189"></a>第三种for(类似c)</h4> 
+  <pre><code class="prism language-v">for i := 0; i &lt; 10; i++ {
+	println(i)
+}
+</code></pre> 
+  <ul> 
+   <li>为啥这儿的i不用加mut而可以变化？？别问，文档这么写的！！！</li> 
+  </ul> 
+  <blockquote> 
+   <p>Here i doesn’t need to be declared with mut since it’s always going to be mutable by definition.</p> 
+  </blockquote> 
+  <h3><a id="switch_201"></a>switch</h3> 
+  <pre><code class="prism language-v">os := 'windows' 
+print('V is running on ')
+switch os {
+case 'darwin':
+	println('macOS.')
+case 'linux':
+	println('Linux.')
+default:
+	println(os) 
+}
+</code></pre> 
+  <p>这里的switch和c里的差不多，只不过v中不需要在每个case后面加break</p> 
+  <h2><a id="_218"></a>结构体</h2> 
+  <p>结构体？？？你可别告诉我你面向过程啊</p> 
+  <pre><code class="prism language-v">struct Point {
+	x int
+	y int 
+} 
+
+p := Point{
+	x: 10 
+	y: 20 
+} 
+println(p.x) // Struct fields are accessed using a dot 
+
+</code></pre> 
+  <ul> 
+   <li>属性访问用.</li> 
+   <li>结构是在堆栈上分配的。若要在堆上分配结构并获取指向它的指针，请使用&amp;,如</li> 
+  </ul> 
+  <pre><code class="prism language-v">pointer := &amp;Point{10, 10}  // 有三个或更少字段的结构体可使用这种替代写法
+println(pointer.x) // 用指针访问值和其他一样，都用.  
+</code></pre> 
+  <ul> 
+   <li>结构体嵌套，目前还不支持，不过快了</li> 
+  </ul> 
+  <pre><code class="prism language-v">// 就直接复制了，他支持了再说（到时候我也不一定看）
+V doesn't have subclassing, but it supports embedded structs:
+
+// TODO: this will be implemented later in June
+struct Button {
+	Widget
+	title string
+}
+
+button := new_button('Click me')
+button.set_pos(x, y)
+
+// Without embedding we'd have to do
+button.widget.set_pos(x,y)
+</code></pre> 
+  <h2><a id="_263"></a>访问修饰符</h2> 
+  <p>默认的结构体是私有的，不可变的，可以使用访问修饰符pub 和 mut 修改，pub和mut有五种组合（不明白了吧，还有一种pub mut mut）,先把文档复制过来再看是个什么妖魔</p> 
+  <pre><code class="prism language-v">struct Foo {
+	a int     // private immutable (default) 
+mut: 
+	b int     // private mutable 
+	c int     // (you can list multiple fields with the same access modifier)   
+pub: 
+	d int     // public immmutable (readonly) 
+pub mut: 
+	e int     // public, but mutable only in parent module  
+pub mut mut: 
+	f int 	  // public and mutable both inside and outside parent module  
+}                 // (not recommended to use, that's why it's so verbose) 
+</code></pre> 
+  <table> 
+   <thead> 
+    <tr> 
+     <th>访问修饰符</th> 
+     <th>作用</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td>不写（默认）</td> 
+     <td>私有，不可变</td> 
+    </tr> 
+    <tr> 
+     <td>mut</td> 
+     <td>私有，可变</td> 
+    </tr> 
+    <tr> 
+     <td>pub</td> 
+     <td>公有，不可变</td> 
+    </tr> 
+    <tr> 
+     <td>pub mut</td> 
+     <td>公有，仅在父模块可变</td> 
+    </tr> 
+    <tr> 
+     <td>pub mut mut</td> 
+     <td>公有，父模块内部外部都可变</td> 
+    </tr> 
+   </tbody> 
+  </table>
+  <p>一脸懵逼是吧，哈哈哈，依老衲看来，这和c++中的public，private啥的一样，只不过他的变量（不能叫变量吧，先这样叫）默认是常量（const）你定义时需要加一个mut才能变成其他语言的“变量”，加一个pub这个变量就变成公有变量，从结构体外部可以访问了，加一个pub mut他就在结构体内外可以访问，而只能在结构体内部能改变，如字符串结构体中的len，外部可以访问他，但不能改变它，内部才能改变，最后pub mut mut 就是内外都可以访问，都可以修改。</p> 
+  <h2><a id="Methods_292"></a>Methods，方法</h2> 
+  <p>v没有class 吓死我了，辛亏有方法</p> 
+  <p>一个方法就是一个函数，它带一个特殊的参数（接收器）</p> 
+  <pre><code class="prism language-v">// 继续粘贴文档代码，CV工程师，年薪百万，啊啊啊啊啊啊啊啊
+struct User {
+	age int 
+} 
+
+fn (u User) can_register() bool {
+	return u.age &gt; 16 
+} 
+
+user := User{age: 10} 
+println(user.can_register()) // ==&gt; "false"  
+
+user2 := User{age: 20} 
+println(user2.can_register()) // ==&gt; "true"
+</code></pre> 
+  <ul> 
+   <li>这里的can_register就是一个方法，他的接收器是u，类型是User，官方说接收器名字最好用简短的，别用self，this啥的，一个字母最好（要不然没特色，开玩笑的）</li> 
+  </ul> 
+  <h2><a id="Pure_functions_by_default_317"></a>Pure functions by default</h2> 
+  <p>英语捉急，无法翻译，大概就是默认的纯函数，应为V没有全局变量，加上变量默认不能改变，哪怕是传参时也一样，</p> 
+  <p><strong>后面开始赋值粘贴了</strong></p> 
+  <pre><code>struct User {
+mut:
+	is_registered bool 
+} 
+
+fn (u mut User) register() {
+	u.is_registered = true 
+} 
+
+mut user := User{} 
+println(user.is_registered) // ==&gt; "false"  
+user.register() 
+println(user.is_registered) // ==&gt; "true"  
+</code></pre> 
+  <pre><code class="prism language-v">fn multiply_by_2(arr mut []int) {
+	for i := 0; i &lt; arr.len; i++ {
+		arr[i] *= 2
+	}
+}
+
+mut nums := [1, 2, 3]
+multiply_by_2(mut nums)
+println(nums) // ==&gt; "[2, 4, 6]"
+
+</code></pre> 
+  <ul> 
+   <li>注意，在调用此函数时，必须在nums之前添加mut。 这清楚地表明被调用的函数将修改该值。</li> 
+   <li>最好返回值而不是修改参数。修改参数应该只在应用程序的性能关键部分执行，以减少分配和复制。</li> 
+   <li>使用user.register()或user = register(user)代替register(mut user)。</li> 
+   <li>V可以很容易地返回对象的修改版本：</li> 
+  </ul> 
+  <pre><code class="prism language-v">fn register(u User) User { 
+	return { u | is_registered: true } 
+}
+
+user = register(user) 
+</code></pre> 
+  <h2><a id="const_365"></a>常量const</h2> 
+  <pre><code class="prism language-v">const (
+	PI    = 3.14
+	World = '世界'
+) 
+
+println(PI)
+println(World)
+</code></pre> 
+  <ul> 
+   <li>常量使用const声明。</li> 
+   <li>它们只能在模块级别(函数之外)定义。</li> 
+   <li>常量名称必须大写。这有助于将它们与变量区分开来。</li> 
+   <li>常数永远不会改变。</li> 
+   <li>V常量比大多数语言更灵活。您可以分配更复杂的值</li> 
+  </ul> 
+  <pre><code class="prism language-v">struct Color {
+        r int
+        g int
+        b int
+}
+
+fn (c Color) str() string { return '{$c.r, $c.g, $c.b}' }
+
+fn rgb(r, g, b int) Color { return Color{r: r, g: g, b: b} }
+
+const (
+        Numbers = [1, 2, 3]
+
+        Red  = Color{r: 255, g: 0, b: 0}
+        Blue = rgb(0, 0, 255)
+)
+
+println(Numbers)
+println(Red)
+println(Blue)
+</code></pre> 
+  <ul> 
+   <li>不允许使用全局变量，因此这非常有用。</li> 
+  </ul> 
+  <h2><a id="_408"></a>模块化</h2> 
+  <p>V是一种非常模块化的语言。鼓励创建可重用模块，而且非常简单。要创建一个新模块，请创建一个目录，其中包含模块的名称和.v文件</p> 
+  <pre><code class="prism language-v">cd ~/code/modules
+mkdir mymodule
+vim mymodule/mymodule.v
+
+// mymodule.v
+module mymodule
+
+// To export a function we have to use `pub`
+pub fn say_hi() {
+	println('hello from mymodule!')
+}
+</code></pre> 
+  <p>你可以在mymodule /中拥有尽可能多的.v文件。<br> 使用v -lib~ / code / modules / mymodule构建它。<br> 就是这样，您现在可以在代码中使用它</p> 
+  <pre><code class="prism language-v">module main
+
+import mymodule
+
+fn main() {
+	mymodule.say_hi()
+}
+</code></pre> 
+  <ul> 
+   <li>注意，每次调用外部函数时都必须指定模块。</li> 
+   <li>模块名称应该简短，不超过10个字符。</li> 
+   <li>不允许循环导入。</li> 
+   <li>您可以在任何地方创建模块。</li> 
+   <li>所有模块都被静态地编译成一个可执行文件。</li> 
+  </ul> 
+  <hr> 
+  <p>看了两个小时了，还没看完，以我的智商，算是告别代码界了，再见各位，我自闭了</p> 
+ </div> 
+ <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet"> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/06/27/yihuliunian_93874487.html" class="pre-post btn btn-default" title='V 语言强势登顶 GitHub TOP1，难道要取 Go 而代之？'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V 语言强势登顶 GitHub TOP1，难道要取 Go 而代之？</span>
+        </a>
+    
+    
+        <a href="/2019/06/23/wyyyh9458_93377612.html" class="next-post btn btn-default" title='vlang,v语言'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">vlang,v语言</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-text">V语言极限学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">宇宙惯例hello world</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">宇宙惯例2. 1+1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">string</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">字典</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">in</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">for</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">for in</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">第二种for(类似于while)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content_views"><span class="toc-text">第三种for(类似c)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">switch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">结构体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">访问修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">Methods，方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">Pure functions by default</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">常量const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">模块化</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="V语言中文社区">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://vlanguage.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="V语言">
+
+
+    <meta name="description" content="
+ 
+  
+  
+  
+  在linux系统上，目前有两种搭建V语言环境的方法: 
+  &nbsp; 
+  一:git 下载源码并编译出可执行文件，然后创建软链接 
+  二:直接下载别人编译好的...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>V语言环境部署教程-linux | V语言中文社区</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="V语言中文社区" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?623969e39431ed8038c14723604877f6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!--
+<header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title=''>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+-->
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://vlanguage.cn">V语言中文社区</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>V语言中文社区</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/docs/"><i class="fa "></i>Docs文档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="V语言环境部署教程-linux">
+            
+	            V语言环境部署教程-linux
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/博文/">博文</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/v语言/">V语言</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/06/28</span>
+        </span>
+        
+    
+</div>
+    </div>
+    
+    <div class="post-body post-content">
+        
+<div id="article_content" class="article_content clearfix" data-report-view="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/qq_32394351/article/details/93966947&quot;}" data-report-click="{&quot;mod&quot;:&quot;popu_307&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/qq_32394351/article/details/93966947&quot;}"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-3019150162.css"> 
+ <div class="htmledit_views" id="content_views"> 
+  <h2>在linux系统上，目前有两种搭建V语言环境的方法:</h2> 
+  <p>&nbsp;</p> 
+  <h3>一:git 下载源码并编译出可执行文件，然后创建软链接</h3> 
+  <h3>二:直接下载别人编译好的可执行文件v&nbsp; ，然后改权限为可执行文件，再创建软链接</h3> 
+  <p>&nbsp;</p> 
+  <p>下面用ubuntu为例来讲解。centos类似操作。</p> 
+  <p>&nbsp;</p> 
+  <h1>方法一:</h1> 
+  <p>先请求临时管理员权限吧，后面懒得输sudo前缀</p> 
+  <pre class="has">
+<code>sudo -s su</code></pre> 
+  <p>&nbsp;等会儿，然后输入当前用户的密码，那么就会发现路径用户名有了root前缀了</p> 
+  <p><img alt class="has" height="58" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628090716909.png" width="317"></p> 
+  <p>好了，接下来按步骤操作&nbsp;</p> 
+  <p>1.如果是ubuntu desktop系统。那么先得安装git。命令:</p> 
+  <pre class="has">
+<code>apt install git</code></pre> 
+  <p>也许还没有gcc,还得安装</p> 
+  <pre class="has">
+<code>apt install gcc</code></pre> 
+  <p>如果是ubuntu server 系统，什么也不用安，直接干。</p> 
+  <p>好了，默认你已经把git和gcc安装好了。然后随便到一个路径克隆一下源码</p> 
+  <p>比如我在当前用户的根目录创建一个v目录,然后切换到里面再git</p> 
+  <pre class="has">
+<code>mkdir v
+cd v
+git clone https://github.com/vlang/v</code></pre> 
+  <p>等克隆完毕，然后输入&nbsp; ls&nbsp;&nbsp;发现路径里面躺着一个v路径了</p> 
+  <p><img alt class="has" height="79" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628091735774.png" width="522"></p> 
+  <p>那么接着进这个目录看看</p> 
+  <pre class="has">
+<code>cd v
+ls -alt</code></pre> 
+  <p>&nbsp;<img alt class="has" height="551" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628091903129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMzk0MzUx,size_16,color_FFFFFF,t_70" width="490"></p> 
+  <p>&nbsp;可以看到这个完整的项目结构了，现在我们需要进去编译一下源码:</p> 
+  <pre class="has">
+<code>cd compiler
+make
+ls</code></pre> 
+  <p>&nbsp;<img alt class="has" height="160" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628092112895.png" width="710"></p> 
+  <p>弄完发现已经有一个编译好的绿色的可执行文件躺在这路径里面了。</p> 
+  <p>接着在当前路径执行一下这个文件试试:</p> 
+  <pre class="has">
+<code>./v</code></pre> 
+  <p><img alt class="has" height="152" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628092245812.png" width="703"></p> 
+  <p>发现进入这个解释器了。我这刚编译的0.1.7版本</p> 
+  <p>接着退出这个编译环境，按ctrl-d然后回车</p> 
+  <p><img alt class="has" height="54" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628092353283.png" width="398"></p> 
+  <p>&nbsp;接着创建一个软链接。首先看下当前目录的绝对路径</p> 
+  <pre class="has">
+<code>pwd</code></pre> 
+  <p><img alt class="has" height="63" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628092445119.png" width="415"></p> 
+  <p>看出来绝对路径是/home/dashen/cp/v/compiler,那么创建软链接的命令是:</p> 
+  <pre class="has">
+<code>ln -s /home/dashen/cp/v/compiler/v /usr/local/bin/v</code></pre> 
+  <p><img alt class="has" height="51" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628092703402.png" width="745"></p> 
+  <p>我这里是因为之前创建过了，我先删除之前那个文件再来</p> 
+  <pre class="has">
+<code>rm /usr/local/bin/v
+ln -s /home/dashen/cp/v/compiler/v /usr/local/bin/v</code></pre> 
+  <p>&nbsp;弄完了再输入一个v看看</p> 
+  <p><img alt class="has" height="140" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628092925739.png" width="779"></p> 
+  <p>&nbsp;ok。成功了。这里需要注意的是，创建软链接的命令是</p> 
+  <p>ln -s 你的可执行文件路径 /usr/local/bin/v</p> 
+  <p>注意空格，然后不要那么死板敲成我的路径了，敲你们自己的。哈哈。方法一到此结束。</p> 
+  <p>&nbsp;</p> 
+  <h1>方法二：</h1> 
+  <p>直接下载别人编译好了的可执行文件v。比如你现在在windows下载好了v文件，然后要把windows里的v文件搞到linux里面去</p> 
+  <p>&nbsp;</p> 
+  <p>默认你用xshell通过ssh连接的linux主机。然后需要安装一个上传下载的包</p> 
+  <pre class="has">
+<code>apt install lrzsz</code></pre> 
+  <p><img alt class="has" height="287" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/2019062809392553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMzk0MzUx,size_16,color_FFFFFF,t_70" width="560"></p> 
+  <p>然后弄完了，因为是现在是root用户，直接从windows上把文件拖到xshell里面就能上传到linux主机当前路径了</p> 
+  <p>&nbsp;然后输入ls查看一下路径:</p> 
+  <p><img alt class="has" height="36" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628094056462.png" width="313"></p> 
+  <p>发现有个白色的v文件躺在路径里面了。接下来很关键，我们要把它变成绿色的可执行文件</p> 
+  <p>&nbsp;执行以下命令:</p> 
+  <pre class="has">
+<code>chmod +x v
+ls</code></pre> 
+  <p><img alt class="has" height="51" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628094232933.png" width="377"></p> 
+  <p>一个绿色的可执行文件已经躺在这儿了。</p> 
+  <p>然后输入:</p> 
+  <pre class="has">
+<code>./v</code></pre> 
+  <p>&nbsp;<img alt class="has" height="145" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628094314328.png" width="587"></p> 
+  <p>&nbsp;没毛病。已经进去了。接着返回第一种方法，然后创建软链接。就完了。。</p> 
+  <p>&nbsp;</p> 
+  <p>最后写在这儿，新手可能在windows与linux之间传输文件比较麻烦，可以不用命令，用可视化的工具，他的名字叫做:</p> 
+  <p>&nbsp;</p> 
+  <p>FileZilla</p> 
+  <p>在电脑管家软件中心就能下载安装了，完了起来看起来长这样的:</p> 
+  <p><img alt class="has" height="843" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628094541998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMzk0MzUx,size_16,color_FFFFFF,t_70" width="1187"></p> 
+  <p>左边windows，右边linux，然后自己随便玩玩就会了。最后我再演示一下怎么在刚弄好的v环境编写个程序测试一下:</p> 
+  <p>&nbsp;</p> 
+  <p>在linux下找到一个干净的路径创建一个c.v文件，千万别弄在v源码里面，具体代码看图参考:</p> 
+  <p><img alt class="has" height="136" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628094840495.png" width="428"></p> 
+  <p>&nbsp;然后就进入了vim编辑器里面了，咱们编译一下c.v文件。先按字母键i,让vim编辑器处于insert状态</p> 
+  <p><img alt class="has" height="80" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628094931641.png" width="194"></p> 
+  <p>&nbsp;然后在里面写代码:</p> 
+  <p><img alt class="has" height="252" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628095536678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMzk0MzUx,size_16,color_FFFFFF,t_70" width="465"></p> 
+  <p>完了按ESC键，再按冒号（shift+分号键），输入wq,回车</p> 
+  <p><img alt class="has" height="78" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628095322146.png" width="163"></p> 
+  <p>&nbsp;这是保存并退出的意思。然后再输入v run c.v</p> 
+  <p><img alt class="has" height="81" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190628095557261.png" width="406"></p> 
+  <p>成功了，随便happy吧，这里只是演示了一下mut的用法，用了mut申明的变量，后面就能够直接通过=改变它的值</p> 
+  <p>如果不用mut申明的变量，初始化完了后面就不能再用=改变它的值了。&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p>附录:<a href rel="nofollow" data-token="8039543bbed82e65f5d6a5a2b4938ff6">&nbsp;</a><a href="https://www.cnblogs.com/zj233/p/5888325.html" rel="noopener" data-token="f6bfab12ef8e81340c9c3a45aa706bb5" target="_blank">Linux常用的50个命令</a></p> 
+ </div> 
+</div>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/01/BEYONDMA_94349691.html" class="pre-post btn btn-default" title='GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块</span>
+        </a>
+    
+    
+        <a href="/2019/06/27/qq_32394351_93883296.html" class="next-post btn btn-default" title='V语言关键字解读'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs" style="display: inline-block;max-width: 180px;text-overflow: ellipsis;overflow: hidden;vertical-align: top;">V语言关键字解读</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'uFC9mlhO3Jd96bb4sRXWioWJ-gzGzoHsz',
+            appKey: '9tesfAyKxVDYSsnkWUl4rdt2',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4 sidebar">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#content_views"><span class="toc-text">在linux系统上，目前有两种搭建V语言环境的方法:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">一:git 下载源码并编译出可执行文件，然后创建软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#content_views"><span class="toc-text">二:直接下载别人编译好的可执行文件v  ，然后改权限为可执行文件，再创建软链接</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-text">方法一:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content_views"><span class="toc-text">方法二：</span></a>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
