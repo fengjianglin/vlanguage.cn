@@ -1,0 +1,4 @@
+User-agent: *
+
+Sitemap: https://vlanguage.cn/sitemap.xml
+Sitemap: https://vlangeage.cn/docs/sitemap.xml
