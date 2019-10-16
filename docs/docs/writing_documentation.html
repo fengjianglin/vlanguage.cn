@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>枚举 · V语言中文文档</title>
+        <title>writing_documentation · V语言中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,10 +66,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="option-types.html" />
+    <link rel="next" href="call-c-functions-from-v.html" />
     
     
-    <link rel="prev" href="interfaces.html" />
+    <link rel="prev" href="vfmt.html" />
     
 
     
@@ -402,7 +402,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.23" data-path="enums.html">
+        <li class="chapter " data-level="1.23" data-path="enums.html">
             
                 <a href="enums.html">
             
@@ -519,7 +519,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.32" data-path="writing_documentation.html">
+        <li class="chapter active" data-level="1.32" data-path="writing_documentation.html">
             
                 <a href="writing_documentation.html">
             
@@ -680,7 +680,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >枚举</a>
+        <a href="." >writing_documentation</a>
     </h1>
 </div>
 
@@ -695,18 +695,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x679A;&#x4E3E;enums"><b></b>&#x679A;&#x4E3E;(Enums)</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x679A;&#x4E3E;enums"><a name="&#x679A;&#x4E3E;enums" class="anchor-navigation-ex-anchor" href="#&#x679A;&#x4E3E;enums"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x679A;&#x4E3E;enums" class="plugin-anchor" href="#&#x679A;&#x4E3E;enums"><i class="fa fa-link" aria-hidden="true"></i></a>&#x679A;&#x4E3E;(Enums)</h2>
-<hr>
-<pre><code>enum Color {
-    red, green, blue 
-} 
-
-fn main() {
-    mut color := red  // TODO: color := Color.green  
-    color = green  // TODO: color = .green 
-    println(color) // ==&gt; &quot;1&quot;  TODO: print &quot;green&quot;?  
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#writingdocumentation"><b></b>writing_documentation</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="writingdocumentation"><a name="writingdocumentation" class="anchor-navigation-ex-anchor" href="#writingdocumentation"><i class="fa fa-link" aria-hidden="true"></i></a><a name="writingdocumentation" class="plugin-anchor" href="#writingdocumentation"><i class="fa fa-link" aria-hidden="true"></i></a>writing_documentation</h2>
+<p>The way it works is very similar to Go. It&apos;s very simple: there&apos;s no need to write documentation for your code, vdoc will generate it from the source code.</p>
+<p>Documentation for each function/type/const must be placed right before the declaration:</p>
+<pre><code>// clearall clears all bits in the array
+fn clearall() {
 }
-</code></pre>
+</code></pre><p>The comment must start with the name of the definition.</p>
+<p>An overview of the module must be placed in the first comment right after the module&apos;s name.</p>
+<p>To generate documentation, run <code>v doc path/to/module</code> (TODO this is temporarily disabled).</p>
+
                                 
                                 </section>
                             
@@ -733,12 +731,12 @@ fn main() {
 
             
                 
-                <a href="interfaces.html" class="navigation navigation-prev " aria-label="Previous page: 接口">
+                <a href="vfmt.html" class="navigation navigation-prev " aria-label="Previous page: vfmt">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="option-types.html" class="navigation navigation-next " aria-label="Next page: 可选类型">
+                <a href="call-c-functions-from-v.html" class="navigation navigation-next " aria-label="Next page: 调用C函数">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -749,7 +747,7 @@ fn main() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"枚举","level":"1.23","depth":1,"next":{"title":"可选类型","level":"1.24","depth":1,"path":"option-types.md","ref":"option-types.md","articles":[]},"previous":{"title":"接口","level":"1.22","depth":1,"path":"interfaces.md","ref":"interfaces.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon","sitemap3"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"sitemap3":{"hostname":"https://vlanguage.cn/docs"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"enums.md","mtime":"2019-10-16T00:48:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T03:03:00.987Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"writing_documentation","level":"1.32","depth":1,"next":{"title":"调用C函数","level":"2.1","depth":1,"path":"call-c-functions-from-v.md","ref":"call-c-functions-from-v.md","articles":[]},"previous":{"title":"vfmt","level":"1.31","depth":1,"path":"vfmt.md","ref":"vfmt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","sharing-plus","anchor-navigation-ex","baidu-nfer","favicon","sitemap3"],"root":"docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"baidu-nfer":{"token":"623969e39431ed8038c14723604877f6"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"sitemap3":{"hostname":"https://vlanguage.cn/docs"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V语言中文文档","language":"zh-hans","links":{"sidebar":{"V语言中文社区":"/"}},"gitbook":"*","description":"V编程语言 - 简洁、快速、安全的编译型语言，用于开发易维护的软件"},"file":{"path":"writing_documentation.md","mtime":"2019-10-16T02:50:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T03:03:00.987Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
