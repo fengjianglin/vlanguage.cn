@@ -9,6 +9,7 @@
 <url> <loc>https://vlanguage.cn/docs/strings.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://vlanguage.cn/docs/arrays.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://vlanguage.cn/docs/maps.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://vlanguage.cn/docs/if-statement.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://vlanguage.cn/docs/in-operator.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://vlanguage.cn/docs/for-loop.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://vlanguage.cn/docs/match.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
