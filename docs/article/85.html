@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上） – V语言中文社区</title>
+<link rel="dns-prefetch" href="https://vlanguage.cn">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="tortuga-custom-fonts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/custom-fonts.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://vlanguage.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tortuga-stylesheet-css" href="https://vlanguage.cn/wp-content/themes/tortuga/style.css" type="text/css" media="all">
+<style id="tortuga-stylesheet-inline-css" type="text/css">
+.site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow: hidden; }
+</style>
+<link rel="stylesheet" id="genericons-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/genericons/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="themezee-related-posts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/themezee-related-posts.css" type="text/css" media="all">
+
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-content/themes/tortuga/assets/js/navigation.js"></script>
+
+
+
+
+
+
+
+
+
+		<style type="text/css" id="wp-custom-css">
+			.header-main {
+	display: none;
+}		</style>
+			
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?d293c49e1e4bfe8f276695a5aa953300";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	</head>
+
+<body class="post-template-default single single-post postid-85 single-format-standard wp-embed-responsive">
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		
+		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<div class="header-main container clearfix">
+
+				<div id="logo" class="site-branding clearfix">
+
+										
+			<p class="site-title"><a href="https://vlanguage.cn/" rel="home">V语言中文社区</a></p>
+
+							
+				</div>
+
+				<div class="header-widgets clearfix">
+
+					
+				</div>
+
+			</div>
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap">
+
+				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+
+					
+					<ul id="menu-daohang" class="main-navigation-menu"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/">V语言中文社区</a></li>
+<li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121"><a target="_blank" rel="noopener noreferrer" href="/index2.html">历史文章</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a target="_blank" rel="noopener noreferrer" href="/docs/">Docs文档</a></li>
+</ul>				</nav>
+
+			</div>
+
+		</header>
+
+		
+		
+		<div id="content" class="site-content container clearfix">
+
+	<section id="primary" class="content-single content-area">
+		<main id="main" class="site-main" role="main">
+				
+		<div id="magazine-homepage-widgets" class="widget-area clearfix">
+
+			<div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+		</div>
+
+<article id="post-85" class="post-85 post type-post status-publish format-standard hentry category-risc-v">
+
+	
+	<header class="entry-header">
+
+		<h1 class="entry-title">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上）</h1>
+		<div class="entry-meta"><span class="meta-date"><a href="https://vlanguage.cn/article/85.html" title="下午3:02" rel="bookmark"><time class="entry-date published updated" datetime="2018-11-01T15:02:53+08:00">2018/11/1</time></a></span><span class="meta-category"> <a href="https://vlanguage.cn/category/risc-v" rel="category tag">RISC-V</a></span></div>
+	</header>
+
+	<div class="entry-content clearfix">
+
+		<div id="article_content" class="article_content clearfix">
+ <br>
+ 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+<div id="content_views" class="markdown_views prism-atom-one-dark">
+  <br>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+  </svg> 
+<p>原文出处：<a href="https://mp.weixin.qq.com/s/jyI-SSm_5Gg-KQyjKsIj5Q" rel="nofollow">https://mp.weixin.qq.com/s/jyI-SSm_5Gg-KQyjKsIj5Q</a></p>
+<blockquote>
+<p>随着国内第一本RISC-V中文书籍《手把手教你设计CPU——RISC-V处理器篇》正式上市，越来越多的爱好者开始使用开源的蜂鸟E203 RISC-V处理核，很多初学者留言询问有关RISC-V工具链使用的问题，因此本公众号将开始陆续发表若干篇有关RISC-V软件工具链使用的文章，包括：</p>
+<ul>
+<li><a href="https://blog.csdn.net/zoomdy/article/details/83614651" rel="nofollow">RISC-V嵌入式开发准备篇1：编译过程简介</a></li>
+<li><a href="https://blog.csdn.net/zoomdy/article/details/83614703" rel="nofollow">RISC-V嵌入式开发准备篇2：嵌入式开发的特点介绍</a></li>
+<li><a href="https://blog.csdn.net/zoomdy/article/details/83620254" rel="nofollow">RISC-V嵌入式开发入门篇1：RISC-V GCC工具链的介绍</a></li>
+<li><a href="https://blog.csdn.net/zoomdy/article/details/83620580" rel="nofollow">RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（上）</a></li>
+<li>RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（中）</li>
+<li>RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（下）</li>
+<li>RISC-V嵌入式开发上手篇：基于HBird-E-SDK平台的软件开发与运行</li>
+<li>RISC-V嵌入式开发实践篇：运行开源蜂鸟E200 MCU更多示例程序</li>
+<li>RISC-V嵌入式开发新奇篇：基于Windows Eclipse IDE的软件开发与运行</li>
+<li>RISC-V嵌入式开发升华篇：基于开源蜂鸟E200 MCU移植RTOS</li>
+</ul>
+</blockquote>
+<p>在本号之前发表的文章<a href="https://blog.csdn.net/zoomdy/article/details/83614651" rel="nofollow">《编译过程简介》</a>中介绍了C/C++语言如何被编译成为汇编语言，而本文将介绍如何直接使用RISC-V架构的汇编语言进行程序设计。</p>
+<p>《RISC-V汇编语言程序设计》——分成上中下三篇，本篇是上篇。继续关注公众号可查询中下两篇的内容。</p>
+<p>注：本文节选自《RISC-V架构与嵌入式开发快速入门》（即将出版）。</p>
+<h1><a id="11___20"></a>1.1 汇编语言简介</h1>
+<p>汇编语言（Assembly Language）是一种“低级”语言，汇编语言一听就不高兴了：凭什么说我是低级语言，我哪里低级了。</p>
+<p>其实此“低级”非彼“低级”，之所以说汇编语言是一种低级的语言，是因为其面向的是最底层的硬件，直接使用的是处理器的基本指令。因此，相对于抽象层次更高的C/C++语言，汇编语言确实是一门“低级”的语言，此“低级”是指其抽象层次比较低。</p>
+<p>由于汇编语言的“低级”属性，它有如下缺点：</p>
+<ul>
+<li>
+<p>由于汇编语言直接接触最底层的硬件，需要对底层硬件非常熟悉才能编写出高效的汇编程序，因此，汇编语言是一门比较难以使用的语言，故而有“汇编语言不会编”的说法。</p>
+</li>
+<li>
+<p>由于汇编语言的抽象层次很低，因此使用汇编语言设计程序无法像高级语言那样写出灵活多样的程序，并且其程序代码很难阅读和维护。</p>
+</li>
+<li>
+<p>由于汇编语言使用的是处理器的基本指令，而处理器指令与其处理器架构一一对应，所以，不同架构处理器的汇编程序必然是无法直接移植，所以汇编程序的可移植性和通用性很差。</p>
+</li>
+</ul>
+<p>但是每一枚硬币皆有其两面，汇编语言也有其优点：</p>
+<ul>
+<li>
+<p>由于汇编的过程即为汇编器将汇编指令直接翻译成二进制的机器码（处理器指令），因此程序员可以对生成的二进制代码进行完全的掌控，不会受到编译器的影响。</p>
+</li>
+<li>
+<p>由于汇编语言直接面向最底层的硬件，因此其可以对处理器进行直接的控制，可以最大化的挖掘硬件的特性和潜能，可以开发出最佳优化的代码。</p>
+</li>
+</ul>
+<p>综上，虽然现在大多数的程序设计已经不再使用汇编语言，但是在一些特殊的场合，譬如底层驱动、引导程序、高性能算法库等领域，汇编语言还经常扮演着重要的角色。尤其对于嵌入式软件开发人员而言，即便无法娴熟地编写复杂的汇编语言，但是能够阅读理解并且编写简单地汇编程序可以说是嵌入式软件人员必备的技能。</p>
+<h2><a id="12__RISCV_42"></a>1.2 RISC-V汇编程序概述</h2>
+<p>汇编程序的最基本元素是指令，指令集是处理器架构的最基本要素。因此RISC-V汇编语言的最基本元素自然是一条条的RISC-V指令。</p>
+<p>除了指令之外，由于本号之前发表文章<a href="https://blog.csdn.net/zoomdy/article/details/83620254" rel="nofollow">《RISC-V嵌入式开发入门篇1：RISC-V GCC工具链的介绍》</a>介绍的RISC-V工具链是GCC工具链，因此，一般的GNU汇编语法也能够被GCC的汇编器识别，所以GNU汇编语法中定义的伪操作、操作符、标签等语法规则均可以在RISC-V汇编语言中使用。因此，一个完整的RISC-V汇编程序由RISC-V指令和GNU汇编规则定义的伪操作、操作符、标签等组成。</p>
+<p>一条典型的RISC-V汇编语句由4部分组成，包含如下字段：</p>
+<p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/201811011451053.jpg" alt="在这里插入图片描述"></p>
+<ul>
+<li>
+<p>标签：表示当前指令的位置标记，请参见第1.5.1节了解具体使用实例 。</p>
+</li>
+<li>
+<p>操作码：操作码可以是如下任意一种：</p>
+<ol>
+<li>RISC-V指令的指令名称，譬如addi指令、lw指令等。有关RISC-V指令的完整列表和详情请参见中文书<a href="https://item.jd.com/12360850.html" rel="nofollow">《手把手教你设计CPU——RISC-V处理器篇》</a>附录A。</li>
+<li>汇编语言的伪操作，请参见第1.4节了解更多信息。</li>
+<li>用户自定义的宏，请参见第1.5.2节了解具体使用实例。</li>
+<li>操作数：操作数是操作码所需的参数，与操作码之间以空格分开。</li>
+<li>操作数：可以是符号、常量、或者由符号和常量组成的表达式。</li>
+<li>注释：注释即为了使的程序代码便于理解而添加的信息，注释并不发挥实际功能，仅仅起到注解作用。注释是可选的，如果添加注释，需要：</li>
+<li>以“；”或者“#”作为分隔号，以分隔号开始的本行之后部分到本行结束都会被当做注释。</li>
+<li>或者使用类似C语言的注释语法//和/* */对单行或者大段程序进行注释。</li>
+</ol>
+</li>
+</ul>
+<p>一段典型的RISC-V汇编程序如下所示：<br> <img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181101145224636.jpg" alt="在这里插入图片描述"></p>
+<p>上述汇编程序中使用到的汇编语法将在本文后续章节分别进行介绍。</p>
+<h2><a id="13__RISCV_70"></a>1.3 RISC-V汇编指令</h2>
+<p>汇编程序的最基本元素是指令，指令集是处理器架构的最基本要素。因此RISC-V汇编语言的最基本元素便是一条条的RISC-V指令。请参见中文书<a href="https://item.jd.com/12360850.html" rel="nofollow">《手把手教你设计CPU——RISC-V处理器篇》</a>的附录A了解RISC-V指令集的详细信息。</p>
+<p>除了普通的指令，RISC-V还定义了伪指令以便于用户编写汇编程序，本文第1.5.3和1.5.4节给出了使用伪指令的汇编程序实例。请参见中文书<a href="https://item.jd.com/12360850.html" rel="nofollow">《手把手教你设计CPU——RISC-V处理器篇》</a>的附录A.15节了解RISC-V伪指令的详细信息。</p>
+<h2><a id="14__RISCV_77"></a>1.4 RISC-V汇编程序伪操作</h2>
+<p>在汇编语言中，有一些特殊的操作助记符，这些操作的助记符通常被称为伪操作（Pseudo Ops），伪操作在汇编程序中的作用是指导汇编器处理汇编程序的行为，这些伪操作仅在汇编过程中起作用，一旦汇编结束，伪操作的使命就此结束。</p>
+<p>由于本文介绍的RISC-V工具链是GCC工具链，因此，一般的GNU汇编语法中定义的伪操作均可在RISC-V汇编语言中使用。经过不断的增加，目前GNU汇编中定义的伪操作数目众多，感兴趣的读者可以自行查阅完整的GNU汇编语法手册了解详情。本节将仅简介若干常见的伪操作。</p>
+<ul>
+<li>.file filename</li>
+</ul>
+<p>.file伪操作用指示汇编器该汇编程序的逻辑文件名。</p>
+<ul>
+<li>.global symbol_name或者.globl symbol_name</li>
+</ul>
+<p>.global和.globl伪操作用于定义一个全局的符号，使得链接器能够全局识别它，即一个程序文件中定义的符号能够被所有其他程序文件可见。</p>
+<ul>
+<li>.local symbol_name</li>
+</ul>
+<p>.local伪操作用于定义局部符号，使得此符号不能够被其他程序文件可见。</p>
+<ul>
+<li>
+<p>.weak symbol_name</p>
+<ol>
+<li>
+<p>在汇编程序中，符号的默认属性为强（strong），.weak伪操作则用于设置符号的属性为弱（weak），如果此符号之前没有定义过，则同时创建此符号并定义其属性为weak。</p>
+</li>
+<li>
+<p>如果符号的属性为weak，那么它无需定义具体的内容。在链接的过程中，另外一个属性为strong的同名符号可以将此weak符号的内容强制覆盖。利用此特性，.weak伪操作常用于预先预留一个空符号，使得其能够通过汇编器语法检查，但是在后续的程序中定义符号的真正实体，并且在链接阶段将空符号覆盖并链接。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>.type name , type description</p>
+</li>
+</ul>
+<p>.type伪操作用于定义符号的类型。譬如“.type symbol,@function”即将名为symbol的符号定义为一个函数（function）。</p>
+<ul>
+<li>.align integer</li>
+</ul>
+<p>.align伪操作用于将当前PC地址推进到“2的integer次方个字节”对齐的位置。譬如“.align 3”即表示将当前PC地址推进到8个字节对齐的位置处。</p>
+<ul>
+<li>.balign integer</li>
+</ul>
+<p>.balign伪操作用于将当前PC地址推进到“integer个字节”对齐的位置。</p>
+<ul>
+<li>.zero integer</li>
+</ul>
+<p>.zero伪操作将从当前PC地址处开始分配integer个字节空间并且用0值填充。譬如“.zero 3”即表示分配三个字节的0值。</p>
+<ul>
+<li>.byte expression [, expression]*</li>
+</ul>
+<p>.byte伪操作将从当前PC地址处开始分配若干个字节（byte）的空间，每个字节填充的值由分号分隔开的expression指定。</p>
+<ul>
+<li>.2byte expression [, expression]*</li>
+</ul>
+<p>.2byte伪操作将从当前PC地址处开始分配若干个双字节（2 bytes）的空间，每个双字节填充的值由分号分隔开的expression指定。空间分配的地址可以与双字节非对齐。</p>
+<ul>
+<li>.4byte expression [, expression]*</li>
+</ul>
+<p>.4byte伪操作将从当前PC地址处开始分配若干个四字节（4 bytes）的空间，每个四字节填充的值由分号分隔开的expression指定。空间分配的地址可以与四字节非对齐。</p>
+<ul>
+<li>.8byte expression [, expression]*</li>
+</ul>
+<p>.8byte伪操作将从当前PC地址处开始分配若干个八字节（8 bytes）的空间，每个八字节填充的值由分号分隔开的expression指定。空间分配的地址可以与八字节非对齐。</p>
+<ul>
+<li>.half expression [, expression]*</li>
+</ul>
+<p>.half伪操作将从当前PC地址处开始分配若干个半字（half-word）的空间，每个半字填充的值由分号分隔开的expression指定。空间分配的地址一定与半字对齐（half-word aligned）。</p>
+<ul>
+<li>.word expression [, expression]*</li>
+</ul>
+<p>.word伪操作将从当前PC地址处开始分配若干个字（word）的空间，每个字填充的值由分号分隔开的expression指定。空间分配的地址一定与字对齐（word aligned）。</p>
+<ul>
+<li>.dword expression [, expression]*</li>
+</ul>
+<p>.dword伪操作将从当前PC地址处开始分配若干个双字（double-word）的空间，每个双字填充的值由分号分隔开的expression指定。空间分配的地址一定与双字对齐（double-word aligned）。</p>
+<ul>
+<li>.string “string”</li>
+</ul>
+<p>.string伪操作将从当前PC地址处开始分配若干个字节空间用于存放“string”字符串。字节的个数取决于字符串的长度。</p>
+<ul>
+<li>
+<p>.float 或者 .double expression [, expression]*</p>
+<ol>
+<li>
+<p>.float伪操作将从当前PC地址处开始分配若干个单精度浮点数（32位）的空间，每个单精度浮点数填充的值由分号分隔开的expression指定。空间分配的地址一定与32位对齐。</p>
+</li>
+<li>
+<p>.double伪操作将从当前PC地址处开始分配若干个双精度浮点数（64位）的空间，每个双精度浮点数填充的值由分号分隔开的expression指定。空间分配的地址一定与64位对齐。</p>
+</li>
+<li>
+<p>若干.float和.double伪操作的示例如下：</p>
+</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181101145536153.jpg" alt="在这里插入图片描述"></p>
+<ul>
+<li>.comm或者.common name, length</li>
+</ul>
+<p>.comm和.common伪操作用于声明一个名为name的未初始化存储区间，区间大小为length个字节。由于是未初始化存储区间，在链接阶段会将其链接到.bss段中。有关链接后ELF文件常见段.text、.data、.rodata、.bss请参见本号之前发表文章<a href="https://blog.csdn.net/zoomdy/article/details/83614651" rel="nofollow">《编译过程简介》</a>节了解更多信息。</p>
+<ul>
+<li>.option {rvc,norvc,push,pop}</li>
+</ul>
+<ol>
+<li>
+<p>.option伪操作用于设定某些架构特定的选项，使得汇编器能够识别此选项并按照选项的定义采取相应的行为。</p>
+</li>
+<li>
+<p>rvc、norvc是RISC-V架构特有的选项，用于控制是否生成16位宽的压缩指令：</p>
+<ul>
+<li>
+<p>“.option rvc”伪操作表示接下来的汇编程序可以被汇编生成16位宽的压缩指令。</p>
+</li>
+<li>
+<p>“.option norvc”伪操作表示接下来的汇编程序不可以被汇编生成16位宽的压缩指令。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>push、pop用于临时性的保存或者恢复.option伪操作指定的选项：</p>
+<ul>
+<li>
+<p>“.option push”伪操作暂时将当前的选项设置保存起来，从而允许之后使用.option伪操作指定新的选项；而“.option pop”伪操作将最近保存的选项设置恢复出来重新生效。</p>
+</li>
+<li>
+<p>通过“.option push”和“.option pop”的组合，便可以在汇编程序中在不影响全局选项设置的情况下，为其中嵌入的某一段代码特别地设置不同的选项。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>.section name [, subsection]</li>
+</ul>
+<p>.section伪操作指明将接下来的代码汇编链接到名为name的段（Section）当中，还可以指定可选的子段（Subsection）。常见的段如.text、.data、.rodata、.bss：</p>
+<ol>
+<li>
+<p>“.section .text”伪操作将接下来的代码汇编链接到.text段。</p>
+</li>
+<li>
+<p>“.section .data”伪操作将接下来的代码汇编链接到.data段。</p>
+</li>
+<li>
+<p>“.section .rodata”伪操作将接下来的代码汇编链接到.rodata段。</p>
+</li>
+<li>
+<p>“.section .bss”伪操作将接下来的代码汇编链接到.bss段。</p>
+</li>
+</ol>
+<ul>
+<li>.text</li>
+</ul>
+<p>.text伪操作基本等效于“.section .text”。</p>
+<ul>
+<li>.data</li>
+</ul>
+<p>.data伪操作基本等效于“.section .data”。</p>
+<ul>
+<li>.rodata</li>
+</ul>
+<p>.rodata伪操作基本等效于“.section .rodata”。</p>
+<ul>
+<li>.bss</li>
+</ul>
+<p>.bss伪操作基本等效于“.section .bss”。</p>
+<ul>
+<li>
+<p>.pushsection name 和.popsection</p>
+<ol>
+<li>
+<p>.pushsection伪操作将之前的段设置保存起来，并且将当前的段设置改为名为name的段。即，指明将接下来的代码汇编链接到名为name的段中。</p>
+</li>
+<li>
+<p>.popsection伪操作将最近保存的段设置恢复出来。</p>
+</li>
+<li>
+<p>通过“.pushsection”和“.popsection”的组合，便可以在汇编程序的编写过程中，在某一个段的汇编代码中特别的插入另外一个段的代码。这种编写方式在某些情况下会给代码编写带来极大的方便，示例代码如下：</p>
+</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20181101145839922.jpg" alt="在这里插入图片描述"></p>
+<ul>
+<li>
+<p>.macro和.endm</p>
+<ol>
+<li>
+<p>.macro和.emdm伪操作用于将一串汇编代码定义成为一个宏。</p>
+</li>
+<li>
+<p>“.macro name arg1 [, argn]”用于定义名为name的宏，并且可以传入若干由分号分隔的参数。</p>
+</li>
+<li>
+<p>“.endm”用于结束宏定义。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>.equ name, value</p>
+</li>
+</ul>
+<p>.equ伪操作用于将名为name的符号赋值为value的值。</p>
+<p>《RISC-V汇编语言程序设计》——分成上中下三篇，本篇是上篇。继续关注公众号可查询中下两篇的内容。</p>
+<p>（未完待续：请参见《RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（中）、《RISC-V嵌入式开发入门篇2：RISC-V汇编语言程序设计（下）》）</p>
+<h1><a id="_232"></a>更多信息</h1>
+<p>感兴趣的读者可以通过下面二维码关注公众号“硅农亚历山大”，了解Verilog、IC设计、CPU、RISC-V和人工智能AI相关的更多设计技巧和经验分享，注意：由于干货太多，请自备茶水。</p>
+<p><img src="https://uzshare.com/_p?https://img-blog.csdn.net/20180316133249635" alt="在这里插入图片描述"></p>
+</div>
+<link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-b6c3c6d139.css" rel="stylesheet">
+</div>
+
+		
+	</div>
+
+	<footer class="entry-footer">
+
+						
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://vlanguage.cn/article/94.html" rel="prev"><span class="screen-reader-text">Previous Post:</span>西门子scl语言</a></div><div class="nav-next"><a href="https://vlanguage.cn/article/88.html" rel="next"><span class="screen-reader-text">Next Post:</span>Atitit 编程语言的分类 v2 目录 1.1. 基于代数划分 第一代。。。第三代。。4gl。。5gl自然语言 1 1.2. 按照编程范式分类 . 命令式语言 .函数式语言…逻辑式语言</a></div></div>
+	</nav>
+	</footer>
+
+</article>
+			
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">	</script>
+			<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-8889449066804352" data-ad-slot="1928667997"></ins>
+			<script>
+				 (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		</main>
+	</section>
+	
+	
+	<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+
+		<div class="widget_text widget-wrap"><aside id="custom_html-3" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://cse.google.com/cse.js?cx=004431708863642777669:dt5gmztovfo"></script>
+<div class="gcse-search"></div>
+<style>
+td.gsc-search-button {
+    width: 90px;
+}
+.gsc-control-cse table{
+	margin: 0;
+}
+.gsc-control-cse th, td {
+	border: none;
+}
+	
+	td.gsib_b {
+		
+    width: 36px;
+
+	}
+	.gscb_a {
+		width: 94%;
+    line-height: 20px;
+		font-size: 20px;
+}
+	.gsst_b {
+		font-size: 12px;
+	}
+	#custom_html-5 {
+		padding: 0;
+	}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    border: none;
+}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 4px 4px 0px 4px;
+}
+</style></div></aside></div>		<div class="widget-wrap"><aside id="recent-posts-2" class="widget widget_recent_entries clearfix">		<div class="widget-header"><h3 class="widget-title">近期文章</h3></div>		<ul>
+											<li>
+					<a href="https://vlanguage.cn/article/35.html">【GitHub探索】v语言上手，用vlang写一个聊天应用</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/97.html">v-if/v-if-else/v-show</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/75.html">又一编程语言开源上线了</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/81.html">V-REP 机器人语言解释器集成教程</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/68.html">三小时学会V语言到放弃（第二小时）</a>
+									</li>
+					</ul>
+		</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-5" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix"><div class="widget-header"><h3 class="widget-title">标签</h3></div><div class="tagcloud"><a href="https://vlanguage.cn/tag/blog" class="tag-cloud-link tag-link-35 tag-link-position-1" style="font-size: 8pt;" aria-label="blog (1个项目)">blog<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/c" class="tag-cloud-link tag-link-39 tag-link-position-2" style="font-size: 8pt;" aria-label="c (1个项目)">c<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/dyuyan" class="tag-cloud-link tag-link-45 tag-link-position-3" style="font-size: 8pt;" aria-label="d语言 (1个项目)">d语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/eclipse" class="tag-cloud-link tag-link-30 tag-link-position-4" style="font-size: 8pt;" aria-label="eclipse (1个项目)">eclipse<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/google" class="tag-cloud-link tag-link-51 tag-link-position-5" style="font-size: 8pt;" aria-label="google (1个项目)">google<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/java" class="tag-cloud-link tag-link-33 tag-link-position-6" style="font-size: 8pt;" aria-label="java (1个项目)">java<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/shingekinov" class="tag-cloud-link tag-link-14 tag-link-position-7" style="font-size: 8pt;" aria-label="shingekinov (1个项目)">shingekinov<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/spir-v" class="tag-cloud-link tag-link-24 tag-link-position-8" style="font-size: 8pt;" aria-label="SPIR-V (1个项目)">SPIR-V<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/vyuyan" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 8pt;" aria-label="v语言 (1个项目)">v语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/houduan" class="tag-cloud-link tag-link-13 tag-link-position-10" style="font-size: 8pt;" aria-label="后端 (1个项目)">后端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/gongju" class="tag-cloud-link tag-link-32 tag-link-position-11" style="font-size: 8pt;" aria-label="工具 (1个项目)">工具<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/pingtai" class="tag-cloud-link tag-link-38 tag-link-position-12" style="font-size: 14.3pt;" aria-label="平台 (2个项目)">平台<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/minjie" class="tag-cloud-link tag-link-41 tag-link-position-13" style="font-size: 8pt;" aria-label="敏捷 (1个项目)">敏捷<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wendang" class="tag-cloud-link tag-link-42 tag-link-position-14" style="font-size: 14.3pt;" aria-label="文档 (2个项目)">文档<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/fuwuduan" class="tag-cloud-link tag-link-12 tag-link-position-15" style="font-size: 8pt;" aria-label="服务端 (1个项目)">服务端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/kuangjia" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 8pt;" aria-label="框架 (1个项目)">框架<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/biancheng" class="tag-cloud-link tag-link-36 tag-link-position-17" style="font-size: 8pt;" aria-label="编程 (1个项目)">编程<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wangluo" class="tag-cloud-link tag-link-37 tag-link-position-18" style="font-size: 8pt;" aria-label="网络 (1个项目)">网络<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/liaotianfuwuqi" class="tag-cloud-link tag-link-11 tag-link-position-19" style="font-size: 8pt;" aria-label="聊天服务器 (1个项目)">聊天服务器<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/yuyan" class="tag-cloud-link tag-link-31 tag-link-position-20" style="font-size: 22pt;" aria-label="语言 (4个项目)">语言<span class="tag-link-count"> (4)</span></a></div>
+</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-6" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="categories-2" class="widget widget_categories clearfix"><div class="widget-header"><h3 class="widget-title">分类目录</h3></div>		<ul>
+				<li class="cat-item cat-item-53"><a href="https://vlanguage.cn/category/c-c-c">C/C++/C#</a> (3)
+</li>
+	<li class="cat-item cat-item-44"><a href="https://vlanguage.cn/category/dyuyankaifa">D语言开发</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://vlanguage.cn/category/fpga">FPGA</a> (1)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://vlanguage.cn/category/githubtansuo">GitHub探索</a> (1)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://vlanguage.cn/category/googlemap">GoogleMap</a> (1)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://vlanguage.cn/category/gozixuezhilu">GO自学之路</a> (2)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://vlanguage.cn/category/graphics">Graphics</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://vlanguage.cn/category/linux">Linux</a> (1)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://vlanguage.cn/category/nodejs">Nodejs</a> (1)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://vlanguage.cn/category/phpcms">phpcms</a> (2)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://vlanguage.cn/category/phpcmsjiaocheng">phpcms教程</a> (1)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://vlanguage.cn/category/risc-v">RISC-V</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://vlanguage.cn/category/spir">SPIR</a> (1)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://vlanguage.cn/category/vue">Vue</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://vlanguage.cn/category/vulkan">Vulkan</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://vlanguage.cn/category/vyuyan">V语言</a> (14)
+</li>
+	<li class="cat-item cat-item-46"><a href="https://vlanguage.cn/category/jieshaolei">介绍类</a> (1)
+</li>
+	<li class="cat-item cat-item-47"><a href="https://vlanguage.cn/category/qukuailian">区块链</a> (1)
+</li>
+	<li class="cat-item cat-item-48"><a href="https://vlanguage.cn/category/botuv14">博途V14</a> (1)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://vlanguage.cn/category/yuanchuangxiaoruanjian">原创小软件</a> (1)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://vlanguage.cn/category/kaifa">开发</a> (1)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://vlanguage.cn/category/ganwuzongjie">感悟总结</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://vlanguage.cn/category/wendangbiji">文档笔记</a> (1)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://vlanguage.cn/category/jiqirenfangzhenv-rep">机器人仿真V-REP</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://vlanguage.cn/category/shenghuoleyuan">生活乐园</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://vlanguage.cn/category/biancheng">编程</a> (1)
+</li>
+		</ul>
+			</aside></div><div class="widget-wrap"><aside id="archives-2" class="widget widget_archive clearfix"><div class="widget-header"><h3 class="widget-title">文章归档</h3></div>		<ul>
+				<li><a href="https://vlanguage.cn/article/date/2019/11">2019年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/09">2019年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/08">2019年八月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/07">2019年七月</a> (12)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/06">2019年六月</a> (13)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/05">2019年五月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/03">2019年三月</a> (3)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/02">2019年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/11">2018年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/03">2018年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/02">2018年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/10">2017年十月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/07">2017年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/09">2016年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/04">2016年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/02">2016年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/12">2015年十二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/04">2015年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/07">2012年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/03">2012年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/11">2010年十一月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/02">2010年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2007/07">2007年七月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2005/12">2005年十二月</a> (1)</li>
+		</ul>
+			</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-7" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div>
+	</section>
+
+	
+
+	</div>
+
+	
+	<div id="footer" class="footer-wrap">
+
+		<footer id="colophon" class="site-footer container clearfix" role="contentinfo">
+
+			
+			<div id="footer-text" class="site-info">
+				
+	<span class="credit-link">
+		Copyright ©️V语言中文社区	</span>
+
+				</div>
+
+		</footer>
+
+	</div>
+
+</div>
+
+
+</body>
+</html>

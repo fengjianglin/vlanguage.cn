@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>V 语言 — 数据结构.Map – V语言中文社区</title>
+<link rel="dns-prefetch" href="https://vlanguage.cn">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="tortuga-custom-fonts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/custom-fonts.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://vlanguage.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tortuga-stylesheet-css" href="https://vlanguage.cn/wp-content/themes/tortuga/style.css" type="text/css" media="all">
+<style id="tortuga-stylesheet-inline-css" type="text/css">
+.site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow: hidden; }
+</style>
+<link rel="stylesheet" id="genericons-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/genericons/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="themezee-related-posts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/themezee-related-posts.css" type="text/css" media="all">
+
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-content/themes/tortuga/assets/js/navigation.js"></script>
+
+
+
+
+
+
+
+
+
+		<style type="text/css" id="wp-custom-css">
+			.header-main {
+	display: none;
+}		</style>
+			
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?d293c49e1e4bfe8f276695a5aa953300";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	</head>
+
+<body class="post-template-default single single-post postid-42 single-format-standard wp-embed-responsive">
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		
+		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<div class="header-main container clearfix">
+
+				<div id="logo" class="site-branding clearfix">
+
+										
+			<p class="site-title"><a href="https://vlanguage.cn/" rel="home">V语言中文社区</a></p>
+
+							
+				</div>
+
+				<div class="header-widgets clearfix">
+
+					
+				</div>
+
+			</div>
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap">
+
+				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+
+					
+					<ul id="menu-daohang" class="main-navigation-menu"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/">V语言中文社区</a></li>
+<li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121"><a target="_blank" rel="noopener noreferrer" href="/index2.html">历史文章</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a target="_blank" rel="noopener noreferrer" href="/docs/">Docs文档</a></li>
+</ul>				</nav>
+
+			</div>
+
+		</header>
+
+		
+		
+		<div id="content" class="site-content container clearfix">
+
+	<section id="primary" class="content-single content-area">
+		<main id="main" class="site-main" role="main">
+				
+		<div id="magazine-homepage-widgets" class="widget-area clearfix">
+
+			<div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+		</div>
+
+<article id="post-42" class="post-42 post type-post status-publish format-standard hentry category-vyuyan">
+
+	
+	<header class="entry-header">
+
+		<h1 class="entry-title">V 语言 — 数据结构.Map</h1>
+		<div class="entry-meta"><span class="meta-date"><a href="https://vlanguage.cn/article/42.html" title="下午2:08" rel="bookmark"><time class="entry-date published updated" datetime="2019-07-02T14:08:55+08:00">2019/7/2</time></a></span><span class="meta-category"> <a href="https://vlanguage.cn/category/vyuyan" rel="category tag">V语言</a></span></div>
+	</header>
+
+	<div class="entry-content clearfix">
+
+		<div id="article_content" class="article_content clearfix">
+ <br>
+ 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+<div id="content_views" class="markdown_views prism-atom-one-dark">
+  <br>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+  </svg> 
+<h1><a id="V____Map_0"></a>V 语言 – 数据结构.Map</h1>
+<p>V语言现在还在开发阶段，所以还有很多不成熟的地方。比如其中的map，还只是一个原型。下面我做一个简单的分析。</p>
+<h2><a id="_4"></a>结构体定义</h2>
+<pre><code class="prism language-go">module builtin
+
+<span class="token keyword">struct</span> <span class="token keyword">map</span> <span class="token punctuation">{</span>
+	<span class="token comment">// cap int</span>
+	<span class="token comment">// keys []string</span>
+	<span class="token comment">// table byteptr</span>
+	<span class="token comment">// keys_table *string</span>
+	<span class="token comment">// table *Entry</span>
+	element_size <span class="token builtin">int</span>
+	<span class="token comment">// collisions []Entry</span>
+pub<span class="token punctuation">:</span>
+	entries      <span class="token punctuation">[</span><span class="token punctuation">]</span>Entry
+	is_sorted    <span class="token builtin">bool</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> Entry <span class="token punctuation">{</span>
+pub<span class="token punctuation">:</span>
+	key <span class="token builtin">string</span>
+	val voidptr
+	<span class="token comment">// linked list for collisions</span>
+	<span class="token comment">// next *Entry</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>可以看到，map的结构十分简单，只包含三个成员</p>
+<ul>
+<li>element_size: 元素大小</li>
+<li>entries: 实体集合</li>
+<li>is_sorted: 是否排序</li>
+</ul>
+<p>其中的is_sorted这个属性比较有意思，说明在方法里面会排序，用到排序则很有可能与提高查找效率有关。</p>
+<p>下面再来看方法。</p>
+<h2><a id="_41"></a>方法</h2>
+<p>对于一个map来说，用的最多的无非是插入元素和获取元素。</p>
+<h3><a id="_44"></a>插入元素</h3>
+<pre><code class="prism language-go"><span class="token comment">// 插入一个元素</span>
+fn <span class="token punctuation">(</span>m mut <span class="token keyword">map</span><span class="token punctuation">)</span> <span class="token function">_set</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">,</span> val voidptr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	e <span class="token operator">:=</span> m<span class="token punctuation">.</span><span class="token function">new_entry</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> val<span class="token punctuation">)</span> 
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator"><</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		entry <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+		<span class="token keyword">if</span> entry<span class="token punctuation">.</span>key <span class="token operator">==</span> key <span class="token punctuation">{</span>
+			<span class="token comment">// e := Entry2{key: key, val: val}</span>
+			m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> e
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	m<span class="token punctuation">.</span>entries <span class="token operator"><<</span> e<span class="token comment">// m.new_entry(key, val)</span>
+	m<span class="token punctuation">.</span>is_sorted <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>插入元素的过程可以描述为：</p>
+<ol>
+<li>创建一个元素</li>
+<li>遍历查找键是否重复</li>
+<li>如果重复，则赋值</li>
+<li>如果没重复，则添加到末尾</li>
+</ol>
+<p>不难看出，插入用到了遍历，其时间复杂度为O(n)，是一种很低效的算法。在后续有很大的优化空间。</p>
+<h3><a id="_72"></a>查找元素</h3>
+<pre><code class="prism language-go"><span class="token comment">// 获取元素</span>
+fn <span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">)</span> <span class="token function">get</span><span class="token punctuation">(</span>key <span class="token builtin">string</span><span class="token punctuation">,</span> out voidptr<span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> m<span class="token punctuation">.</span>is_sorted <span class="token punctuation">{</span>
+		<span class="token comment">// println('\n\nget "$key" sorted')</span>
+		m<span class="token punctuation">.</span><span class="token function">bs</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span><span class="token punctuation">,</span> out<span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token boolean">true</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator"><</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		entry <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+		<span class="token keyword">if</span> entry<span class="token punctuation">.</span>key <span class="token operator">==</span> key <span class="token punctuation">{</span>
+			C<span class="token punctuation">.</span><span class="token function">memcpy</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> entry<span class="token punctuation">.</span>val<span class="token punctuation">,</span> m<span class="token punctuation">.</span>element_size<span class="token punctuation">)</span>
+			<span class="token keyword">return</span> <span class="token boolean">true</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 二分查找</span>
+fn <span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">)</span> <span class="token function">bs</span><span class="token punctuation">(</span>query <span class="token builtin">string</span><span class="token punctuation">,</span> start<span class="token punctuation">,</span> end <span class="token builtin">int</span><span class="token punctuation">,</span> out voidptr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// println('bs "$query" $start -> $end')</span>
+	mid <span class="token operator">:=</span> start <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>end <span class="token operator">-</span> start<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> end <span class="token operator">-</span> start <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		last <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>end<span class="token punctuation">]</span>
+		C<span class="token punctuation">.</span><span class="token function">memcpy</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> last<span class="token punctuation">.</span>val<span class="token punctuation">,</span> m<span class="token punctuation">.</span>element_size<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> end <span class="token operator">-</span> start <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+		first <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>start<span class="token punctuation">]</span>
+		C<span class="token punctuation">.</span><span class="token function">memcpy</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> first<span class="token punctuation">.</span>val<span class="token punctuation">,</span> m<span class="token punctuation">.</span>element_size<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> mid <span class="token operator">>=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">.</span><span class="token builtin">len</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	mid_msg <span class="token operator">:=</span> m<span class="token punctuation">.</span>entries<span class="token punctuation">[</span>mid<span class="token punctuation">]</span>
+	<span class="token comment">// println('mid.key=$mid_msg.key')</span>
+	<span class="token keyword">if</span> query <span class="token operator"><</span> mid_msg<span class="token punctuation">.</span>key <span class="token punctuation">{</span>
+		m<span class="token punctuation">.</span><span class="token function">bs</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> start<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> out<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	m<span class="token punctuation">.</span><span class="token function">bs</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> end<span class="token punctuation">,</span> out<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>查找的流程可以描述为：</p>
+<ul>
+<li>判断是否已经排序</li>
+<li>如果未排序则遍历查找</li>
+<li>如果已排序则二分查找(排序方法需要显式调用)</li>
+</ul>
+<p>查找过程用到了二分查找(O(lgn))，和遍历(O(n))，但是大部分时候，开发者不会对map显式排序，所以真正起作用的是遍历操作，也是十分低效。</p>
+<h2><a id="_127"></a>改进及评价</h2>
+<ol>
+<li>map模块显然很不成熟，其结构和算法有很大改进空间。</li>
+<li>如果采用数组作为存储容器，则至少也可以达到查找： O(lgn) -> 排序O(lgn) + 二分查找 O(lgn)， 插入O(lgn) -> 查重O(lgn) + 插入O(1)。否则数据量稍大会非常慢。</li>
+<li>如果采用Hash实现，则可达到O(1) + O(1)的速度，不过这要看v语言的开发者如何取舍。</li>
+<li>v语言当前还无法用于生产环境，尝鲜可以，但正式环境还不可用。其语言特性很有吸引力，但现在的完成度还不高，到稳定可用估计还需要些时日。</li>
+</ol></div>
+<link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-b6c3c6d139.css" rel="stylesheet">
+</div>
+
+		
+	</div>
+
+	<footer class="entry-footer">
+
+						
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://vlanguage.cn/article/70.html" rel="prev"><span class="screen-reader-text">Previous Post:</span>v语言初体验</a></div><div class="nav-next"><a href="https://vlanguage.cn/article/65.html" rel="next"><span class="screen-reader-text">Next Post:</span>GitHub 排行榜 C 位出道：手把手教你玩转 V 语言版的俄罗斯方块！｜CSDN 博文精选…</a></div></div>
+	</nav>
+	</footer>
+
+</article>
+			
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">	</script>
+			<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-8889449066804352" data-ad-slot="1928667997"></ins>
+			<script>
+				 (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		</main>
+	</section>
+	
+	
+	<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+
+		<div class="widget_text widget-wrap"><aside id="custom_html-3" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://cse.google.com/cse.js?cx=004431708863642777669:dt5gmztovfo"></script>
+<div class="gcse-search"></div>
+<style>
+td.gsc-search-button {
+    width: 90px;
+}
+.gsc-control-cse table{
+	margin: 0;
+}
+.gsc-control-cse th, td {
+	border: none;
+}
+	
+	td.gsib_b {
+		
+    width: 36px;
+
+	}
+	.gscb_a {
+		width: 94%;
+    line-height: 20px;
+		font-size: 20px;
+}
+	.gsst_b {
+		font-size: 12px;
+	}
+	#custom_html-5 {
+		padding: 0;
+	}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    border: none;
+}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 4px 4px 0px 4px;
+}
+</style></div></aside></div>		<div class="widget-wrap"><aside id="recent-posts-2" class="widget widget_recent_entries clearfix">		<div class="widget-header"><h3 class="widget-title">近期文章</h3></div>		<ul>
+											<li>
+					<a href="https://vlanguage.cn/article/35.html">【GitHub探索】v语言上手，用vlang写一个聊天应用</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/97.html">v-if/v-if-else/v-show</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/75.html">又一编程语言开源上线了</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/81.html">V-REP 机器人语言解释器集成教程</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/68.html">三小时学会V语言到放弃（第二小时）</a>
+									</li>
+					</ul>
+		</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-5" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix"><div class="widget-header"><h3 class="widget-title">标签</h3></div><div class="tagcloud"><a href="https://vlanguage.cn/tag/blog" class="tag-cloud-link tag-link-35 tag-link-position-1" style="font-size: 8pt;" aria-label="blog (1个项目)">blog<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/c" class="tag-cloud-link tag-link-39 tag-link-position-2" style="font-size: 8pt;" aria-label="c (1个项目)">c<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/dyuyan" class="tag-cloud-link tag-link-45 tag-link-position-3" style="font-size: 8pt;" aria-label="d语言 (1个项目)">d语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/eclipse" class="tag-cloud-link tag-link-30 tag-link-position-4" style="font-size: 8pt;" aria-label="eclipse (1个项目)">eclipse<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/google" class="tag-cloud-link tag-link-51 tag-link-position-5" style="font-size: 8pt;" aria-label="google (1个项目)">google<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/java" class="tag-cloud-link tag-link-33 tag-link-position-6" style="font-size: 8pt;" aria-label="java (1个项目)">java<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/shingekinov" class="tag-cloud-link tag-link-14 tag-link-position-7" style="font-size: 8pt;" aria-label="shingekinov (1个项目)">shingekinov<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/spir-v" class="tag-cloud-link tag-link-24 tag-link-position-8" style="font-size: 8pt;" aria-label="SPIR-V (1个项目)">SPIR-V<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/vyuyan" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 8pt;" aria-label="v语言 (1个项目)">v语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/houduan" class="tag-cloud-link tag-link-13 tag-link-position-10" style="font-size: 8pt;" aria-label="后端 (1个项目)">后端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/gongju" class="tag-cloud-link tag-link-32 tag-link-position-11" style="font-size: 8pt;" aria-label="工具 (1个项目)">工具<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/pingtai" class="tag-cloud-link tag-link-38 tag-link-position-12" style="font-size: 14.3pt;" aria-label="平台 (2个项目)">平台<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/minjie" class="tag-cloud-link tag-link-41 tag-link-position-13" style="font-size: 8pt;" aria-label="敏捷 (1个项目)">敏捷<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wendang" class="tag-cloud-link tag-link-42 tag-link-position-14" style="font-size: 14.3pt;" aria-label="文档 (2个项目)">文档<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/fuwuduan" class="tag-cloud-link tag-link-12 tag-link-position-15" style="font-size: 8pt;" aria-label="服务端 (1个项目)">服务端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/kuangjia" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 8pt;" aria-label="框架 (1个项目)">框架<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/biancheng" class="tag-cloud-link tag-link-36 tag-link-position-17" style="font-size: 8pt;" aria-label="编程 (1个项目)">编程<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wangluo" class="tag-cloud-link tag-link-37 tag-link-position-18" style="font-size: 8pt;" aria-label="网络 (1个项目)">网络<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/liaotianfuwuqi" class="tag-cloud-link tag-link-11 tag-link-position-19" style="font-size: 8pt;" aria-label="聊天服务器 (1个项目)">聊天服务器<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/yuyan" class="tag-cloud-link tag-link-31 tag-link-position-20" style="font-size: 22pt;" aria-label="语言 (4个项目)">语言<span class="tag-link-count"> (4)</span></a></div>
+</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-6" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="categories-2" class="widget widget_categories clearfix"><div class="widget-header"><h3 class="widget-title">分类目录</h3></div>		<ul>
+				<li class="cat-item cat-item-53"><a href="https://vlanguage.cn/category/c-c-c">C/C++/C#</a> (3)
+</li>
+	<li class="cat-item cat-item-44"><a href="https://vlanguage.cn/category/dyuyankaifa">D语言开发</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://vlanguage.cn/category/fpga">FPGA</a> (1)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://vlanguage.cn/category/githubtansuo">GitHub探索</a> (1)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://vlanguage.cn/category/googlemap">GoogleMap</a> (1)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://vlanguage.cn/category/gozixuezhilu">GO自学之路</a> (2)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://vlanguage.cn/category/graphics">Graphics</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://vlanguage.cn/category/linux">Linux</a> (1)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://vlanguage.cn/category/nodejs">Nodejs</a> (1)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://vlanguage.cn/category/phpcms">phpcms</a> (2)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://vlanguage.cn/category/phpcmsjiaocheng">phpcms教程</a> (1)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://vlanguage.cn/category/risc-v">RISC-V</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://vlanguage.cn/category/spir">SPIR</a> (1)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://vlanguage.cn/category/vue">Vue</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://vlanguage.cn/category/vulkan">Vulkan</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://vlanguage.cn/category/vyuyan">V语言</a> (14)
+</li>
+	<li class="cat-item cat-item-46"><a href="https://vlanguage.cn/category/jieshaolei">介绍类</a> (1)
+</li>
+	<li class="cat-item cat-item-47"><a href="https://vlanguage.cn/category/qukuailian">区块链</a> (1)
+</li>
+	<li class="cat-item cat-item-48"><a href="https://vlanguage.cn/category/botuv14">博途V14</a> (1)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://vlanguage.cn/category/yuanchuangxiaoruanjian">原创小软件</a> (1)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://vlanguage.cn/category/kaifa">开发</a> (1)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://vlanguage.cn/category/ganwuzongjie">感悟总结</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://vlanguage.cn/category/wendangbiji">文档笔记</a> (1)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://vlanguage.cn/category/jiqirenfangzhenv-rep">机器人仿真V-REP</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://vlanguage.cn/category/shenghuoleyuan">生活乐园</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://vlanguage.cn/category/biancheng">编程</a> (1)
+</li>
+		</ul>
+			</aside></div><div class="widget-wrap"><aside id="archives-2" class="widget widget_archive clearfix"><div class="widget-header"><h3 class="widget-title">文章归档</h3></div>		<ul>
+				<li><a href="https://vlanguage.cn/article/date/2019/11">2019年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/09">2019年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/08">2019年八月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/07">2019年七月</a> (12)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/06">2019年六月</a> (13)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/05">2019年五月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/03">2019年三月</a> (3)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/02">2019年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/11">2018年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/03">2018年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/02">2018年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/10">2017年十月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/07">2017年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/09">2016年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/04">2016年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/02">2016年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/12">2015年十二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/04">2015年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/07">2012年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/03">2012年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/11">2010年十一月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/02">2010年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2007/07">2007年七月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2005/12">2005年十二月</a> (1)</li>
+		</ul>
+			</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-7" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div>
+	</section>
+
+	
+
+	</div>
+
+	
+	<div id="footer" class="footer-wrap">
+
+		<footer id="colophon" class="site-footer container clearfix" role="contentinfo">
+
+			
+			<div id="footer-text" class="site-info">
+				
+	<span class="credit-link">
+		Copyright ©️V语言中文社区	</span>
+
+				</div>
+
+		</footer>
+
+	</div>
+
+</div>
+
+
+</body>
+</html>

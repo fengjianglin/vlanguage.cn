@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>go语言基础语法 – V语言中文社区</title>
+<link rel="dns-prefetch" href="https://vlanguage.cn">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="tortuga-custom-fonts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/custom-fonts.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://vlanguage.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tortuga-stylesheet-css" href="https://vlanguage.cn/wp-content/themes/tortuga/style.css" type="text/css" media="all">
+<style id="tortuga-stylesheet-inline-css" type="text/css">
+.site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow: hidden; }
+</style>
+<link rel="stylesheet" id="genericons-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/genericons/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="themezee-related-posts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/themezee-related-posts.css" type="text/css" media="all">
+
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-content/themes/tortuga/assets/js/navigation.js"></script>
+
+
+
+
+
+
+
+
+
+		<style type="text/css" id="wp-custom-css">
+			.header-main {
+	display: none;
+}		</style>
+			
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?d293c49e1e4bfe8f276695a5aa953300";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	</head>
+
+<body class="post-template-default single single-post postid-93 single-format-standard wp-embed-responsive">
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		
+		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<div class="header-main container clearfix">
+
+				<div id="logo" class="site-branding clearfix">
+
+										
+			<p class="site-title"><a href="https://vlanguage.cn/" rel="home">V语言中文社区</a></p>
+
+							
+				</div>
+
+				<div class="header-widgets clearfix">
+
+					
+				</div>
+
+			</div>
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap">
+
+				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+
+					
+					<ul id="menu-daohang" class="main-navigation-menu"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/">V语言中文社区</a></li>
+<li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121"><a target="_blank" rel="noopener noreferrer" href="/index2.html">历史文章</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a target="_blank" rel="noopener noreferrer" href="/docs/">Docs文档</a></li>
+</ul>				</nav>
+
+			</div>
+
+		</header>
+
+		
+		
+		<div id="content" class="site-content container clearfix">
+
+	<section id="primary" class="content-single content-area">
+		<main id="main" class="site-main" role="main">
+				
+		<div id="magazine-homepage-widgets" class="widget-area clearfix">
+
+			<div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+		</div>
+
+<article id="post-93" class="post-93 post type-post status-publish format-standard hentry category-qukuailian">
+
+	
+	<header class="entry-header">
+
+		<h1 class="entry-title">go语言基础语法</h1>
+		<div class="entry-meta"><span class="meta-date"><a href="https://vlanguage.cn/article/93.html" title="下午5:52" rel="bookmark"><time class="entry-date published updated" datetime="2018-02-22T17:52:54+08:00">2018/2/22</time></a></span><span class="meta-category"> <a href="https://vlanguage.cn/category/qukuailian" rel="category tag">区块链</a></span></div>
+	</header>
+
+	<div class="entry-content clearfix">
+
+		<div id="article_content" class="article_content clearfix">
+ <br>
+ 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+<div id="content_views" class="markdown_views prism-atom-one-dark">
+  <br>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+  </svg> 
+<h1 id="go语言笔记">go语言笔记</h1>
+<h2 id="go语法">go语法</h2>
+<h3 id="变量定义">变量定义</h3>
+<p>关键字var，而类型信息放在变量名之后，变量声明语句不需要使用分号作为结束符。示例如下：</p>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">var</span> v1 <span class="hljs-typename">int</span>
+<span class="hljs-keyword">var</span> v2 <span class="hljs-typename">string</span>
+<span class="hljs-keyword">var</span> v3 <span class="hljs-number">[10</span>]<span class="hljs-typename">int</span> <span class="hljs-comment">// 数组</span>
+<span class="hljs-keyword">var</span> v4 []<span class="hljs-typename">int</span> <span class="hljs-comment">// 数组切片</span>
+<span class="hljs-keyword">var</span> v5 <span class="hljs-keyword">struct</span> {
+    f <span class="hljs-typename">int</span>
+}
+<span class="hljs-keyword">var</span> v6 *<span class="hljs-typename">int</span> <span class="hljs-comment">// 指针</span>
+<span class="hljs-keyword">var</span> v7 <span class="hljs-keyword">map</span>[<span class="hljs-typename">string</span>]<span class="hljs-typename">int</span> <span class="hljs-comment">// map，key为string类型，value为int类型</span>
+<span class="hljs-keyword">var</span> v8 <span class="hljs-keyword">func</span>(a <span class="hljs-typename">int</span>) <span class="hljs-typename">int</span>
+<span class="hljs-keyword">var</span> (
+    v1 <span class="hljs-typename">int</span>
+    v2 <span class="hljs-typename">string</span>
+)</code></pre>
+<h3 id="变量初始化">变量初始化</h3>
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">var</span> v1 <span class="hljs-keyword">int</span> = <span class="hljs-number">10</span> <span class="hljs-comment">// 正确的使用方式1</span>
+<span class="hljs-keyword">var</span> v2 = <span class="hljs-number">10</span>     <span class="hljs-comment">// 正确的使用方式2，编译器可以自动推导出v2的类型</span>
+v3 := <span class="hljs-number">10</span>        <span class="hljs-comment">// 正确的使用方式3，编译器可以自动推导出v3的类型</span></code></pre>
+<p>错误写法：</p>
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">var</span> i <span class="hljs-keyword">int</span>
+i := <span class="hljs-number">2</span></code></pre>
+<h3 id="变量赋值">变量赋值</h3>
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">var</span> v10 <span class="hljs-keyword">int</span>
+v10 = <span class="hljs-number">123</span>
+i, j = j, i <span class="hljs-comment">//支持变量直接交换</span></code></pre>
+<h3 id="匿名变量">匿名变量</h3>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">func</span> GetName() (firstName, lastName, nickName <span class="hljs-typename">string</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"May"</span>, <span class="hljs-string">"Chan"</span>, <span class="hljs-string">"Chibi Maruko"</span>
+}
+_, _, nickName := GetName() <span class="hljs-comment">//_接受返回内容，但无法使用</span></code></pre>
+<h3 id="常量">常量</h3>
+<h4 id="字面常量">字面常量：</h4>
+<p>常量无类型，比如常量-12，它可以赋值给int、uint、int32、int64、float32、float64、complex64、complex128等类型的变量。</p>
+<h4 id="常量定义">常量定义：</h4>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">const</span> Pi <span class="hljs-typename">float64</span> =<span class="hljs-number"> 3.14159265358979323846</span>
+<span class="hljs-keyword">const</span> zero =<span class="hljs-number"> 0.0</span> <span class="hljs-comment">// 无类型浮点常量</span>
+<span class="hljs-keyword">const</span> (
+size <span class="hljs-typename">int64</span> =<span class="hljs-number"> 1024</span>
+eof =<span class="hljs-number"> -1</span> <span class="hljs-comment">// 无类型整型常量</span>
+)
+<span class="hljs-keyword">const</span> u, v <span class="hljs-typename">float32</span> =<span class="hljs-number"> 0</span>,<span class="hljs-number"> 3</span> <span class="hljs-comment">// u = 0.0, v = 3.0，常量的多重赋值</span>
+<span class="hljs-keyword">const</span> a, b, c =<span class="hljs-number"> 3</span>,<span class="hljs-number"> 4</span>, <span class="hljs-string">"foo"</span>
+<span class="hljs-comment">// a = 3, b = 4, c = "foo", 无类型整型和字符串常量</span></code></pre>
+<h4 id="预定义常量iota">预定义常量iota</h4>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">const</span> ( <span class="hljs-comment">// iota被重设为0</span>
+    c0 = <span class="hljs-constant">iota</span> <span class="hljs-comment">// c0 == 0</span>
+    c1 = <span class="hljs-constant">iota</span> <span class="hljs-comment">// c1 == 1</span>
+    c2 = <span class="hljs-constant">iota</span> <span class="hljs-comment">// c2 == 2</span>
+)
+<span class="hljs-keyword">const</span> (
+    a =<span class="hljs-number"> 1</span> << <span class="hljs-constant">iota</span> <span class="hljs-comment">// a == 1 (iota在每个const开头被重设为0)</span>
+    b =<span class="hljs-number"> 1</span> << <span class="hljs-constant">iota</span> <span class="hljs-comment">// b == 2</span>
+    c =<span class="hljs-number"> 1</span> << <span class="hljs-constant">iota</span> <span class="hljs-comment">// c == 4</span>
+)
+<span class="hljs-keyword">const</span> (
+    u = <span class="hljs-constant">iota</span> *<span class="hljs-number"> 42</span> <span class="hljs-comment">// u == 0</span>
+    v <span class="hljs-typename">float64</span> = <span class="hljs-constant">iota</span> *<span class="hljs-number"> 42</span> <span class="hljs-comment">// v == 42.0</span>
+    w = <span class="hljs-constant">iota</span> *<span class="hljs-number"> 42</span> <span class="hljs-comment">// w == 84</span>
+)
+<span class="hljs-keyword">const</span> x = <span class="hljs-constant">iota</span> <span class="hljs-comment">// x == 0 (因为iota又被重设为0了)</span>
+<span class="hljs-keyword">const</span> y = <span class="hljs-constant">iota</span> <span class="hljs-comment">// y == 0 (同上)</span>
+<span class="hljs-keyword">const</span> ( <span class="hljs-comment">// iota被重设为0</span>
+    c0 = <span class="hljs-constant">iota</span> <span class="hljs-comment">// c0 == 0</span>
+    c1 <span class="hljs-comment">// c1 == 1</span>
+    c2 <span class="hljs-comment">// c2 == 2</span>
+)
+<span class="hljs-keyword">const</span> (
+    a =<span class="hljs-number"> 1</span> <<<span class="hljs-constant">iota</span> <span class="hljs-comment">// a == 1 (iota在每个const开头被重设为0)</span>
+    b <span class="hljs-comment">// b == 2</span>
+    c <span class="hljs-comment">// c == 4</span>
+)</code></pre>
+<h4 id="枚举">枚举</h4>
+<p>go语言没有类似java的枚举，只有常量，例如：</p>
+<pre class="prettyprint"><code class=" hljs mathematica">const (
+    <span class="hljs-keyword">Sunday</span> = iota
+    <span class="hljs-keyword">Monday</span>
+    <span class="hljs-keyword">Tuesday</span>
+    <span class="hljs-keyword">Wednesday</span>
+    <span class="hljs-keyword">Thursday</span>
+    <span class="hljs-keyword">Friday</span>
+    <span class="hljs-keyword">Saturday</span>
+    numberOfDays // 这个常量没有导出
+)</code></pre>
+<h3 id="类型">类型</h3>
+<h4 id="基础类型">基础类型</h4>
+<p>布尔类型：bool。 <br> 整型：int8、byte、int16、int、uint、uintptr等。 <br> 浮点类型：float32、float64。 <br> 复数类型：complex64、complex128。 <br> 字符串：string。 <br> 字符类型：rune。 <br> 错误类型：error。</p>
+<h4 id="结构类型">结构类型</h4>
+<p>指针（pointer） <br> 数组（array） <br> 切片（slice） <br> 字典（map） <br> 通道（chan） <br> 结构体（struct） <br> 接口（interface）</p>
+<p>布尔类型：不能接受其他类型的赋值，不支持自动或强制的类型转换：</p>
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">var</span> b <span class="hljs-keyword">bool</span>
+b = <span class="hljs-number">1</span> <span class="hljs-comment">// 编译错误</span>
+b = <span class="hljs-keyword">bool</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">// 编译错误 </span></code></pre>
+<p>整形：分为int ，int8，int16，int32，int64 和无符号的uint ，uint8，uint16，uint32，uint64 <br> int和int32在Go语言里被认为是两种不同的类型,不能相互赋值，不能相互比较，但和常量可以赋值和比较：</p>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">var</span> value2 <span class="hljs-typename">int32</span>
+value1 :=<span class="hljs-number"> 64</span> <span class="hljs-comment">// value1将会被自动推导为int类型</span>
+value2 = value1 <span class="hljs-comment">// 编译错误 </span>
+value2 = <span class="hljs-typename">int32</span>(value1) <span class="hljs-comment">// 通过强制转换后可以赋值，编译通过</span>
+
+<span class="hljs-keyword">var</span> i <span class="hljs-typename">int32</span>
+<span class="hljs-keyword">var</span> j <span class="hljs-typename">int64</span>
+i, j =<span class="hljs-number"> 1</span>,<span class="hljs-number"> 2</span>
+<span class="hljs-keyword">if</span> i == j { <span class="hljs-comment">// 编译错误</span>
+    fmt.Println(<span class="hljs-string">"i and j are equal."</span>)
+}
+<span class="hljs-keyword">if</span> i ==<span class="hljs-number"> 1</span> || j ==<span class="hljs-number"> 2</span> { <span class="hljs-comment">// 编译通过</span>
+    fmt.Println(<span class="hljs-string">"i and j are equal."</span>)
+}</code></pre>
+<p>位运算：Go语言支持位运算。左移，右移，异或，与，或，取反 <br> x << y 左移 等于乘2 <br> x >> y 右移 等于除以2</p>
+<p>浮点型：Go语言定义了两个类型float32和float64。默认不带小数点的数值被自动推断为整形，带小数点的数被自动推导为float64. <br> 浮点数不是一种精确的表达方式，不能直接==比较，推荐的替代方案：</p>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">import</span> <span class="hljs-string">"math"</span>
+<span class="hljs-comment">// p为用户自定义的比较精度，比如0.00001</span>
+<span class="hljs-keyword">func</span> IsEqual(f1, f2, p <span class="hljs-typename">float64</span>) <span class="hljs-typename">bool</span> {
+    <span class="hljs-keyword">return</span> math.Fdim(f1, f2) < p
+}</code></pre>
+<p>复数实际上由两个实数（在计算机中用浮点数表示）构成，一个表示实部（real），一个表示虚部（imag）。 <br> 对于一个复数z = complex(x, y)，就可以通过Go语言内置函数real(z)获得该复数的实 <br> 部，也就是x，通过imag(z)获得该复数的虚部，也就是y。</p>
+<p>字符串的内容可以用类似于数组下标的方式获取，但与数组不同，字符串的内容不能在初始 <br> 化后被修改：</p>
+<pre class="prettyprint"><code class=" hljs rust">var <span class="hljs-keyword">str</span> string <span class="hljs-comment">// 声明一个字符串变量</span>
+<span class="hljs-keyword">str</span> = <span class="hljs-string">"Hello world"</span> <span class="hljs-comment">// 字符串赋值</span>
+ch := <span class="hljs-keyword">str</span>[<span class="hljs-number">0</span>] <span class="hljs-comment">// 取字符串的第一个字符</span>
+fmt.Printf(<span class="hljs-string">"The length of \"%s\" is %d \n"</span>, <span class="hljs-keyword">str</span>, len(<span class="hljs-keyword">str</span>))
+fmt.Printf(<span class="hljs-string">"The first character of \"%s\" is %c.\n"</span>, <span class="hljs-keyword">str</span>, ch)
+<span class="hljs-keyword">str</span> := <span class="hljs-string">"Hello world"</span> <span class="hljs-comment">// 字符串也支持声明时进行初始化的做法</span>
+<span class="hljs-keyword">str</span>[<span class="hljs-number">0</span>] = <span class="hljs-string">'X'</span> <span class="hljs-comment">// 编译错误</span></code></pre>
+<p>字符串操作有：x + y 字符串连接，len(s) 字符串长度，s[i] 取字符 <br> Go语言支持两种方式遍历字符串。一种是以字节数组的方式遍历，一种是是以Unicode字符遍历</p>
+<pre class="prettyprint"><code class=" hljs rust"><span class="hljs-keyword">str</span> := <span class="hljs-string">"Hello,世界"</span>
+n := len(<span class="hljs-keyword">str</span>)
+<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i < n; i++ {
+    ch := <span class="hljs-keyword">str</span>[i] <span class="hljs-comment">// 依据下标取字符串中的字符，类型为byte</span>
+    fmt.Println(i, ch)
+}<span class="hljs-comment">//该方法获取的字符数量是13个</span>
+
+<span class="hljs-keyword">str</span> := <span class="hljs-string">"Hello,世界"</span>
+    <span class="hljs-keyword">for</span> i, ch := range <span class="hljs-keyword">str</span> {
+    fmt.Println(i, ch)<span class="hljs-comment">//ch的类型为rune</span>
+}<span class="hljs-comment">//该方法获取的字符数量是9个</span></code></pre>
+<p>在Go语言中支持两个字符类型，一个是byte（实际上是uint8的别名），代表UTF-8字符串的单个字节的值；另一个是rune，代表单个Unicode字符。</p>
+<p>数组：</p>
+<pre class="prettyprint"><code class=" hljs markdown">//数组定义
+[32]byte // 长度为32的数组，每个元素为一个字节
+[2*N] struct { x, y int32 } // 复杂类型数组
+[1000]*float64 // 指针数组
+[<span class="hljs-link_label">3</span>][<span class="hljs-link_reference">5</span>]int // 二维数组
+[<span class="hljs-link_label">2</span>][<span class="hljs-link_reference">2</span>][<span class="hljs-link_label">2</span>]float64 // 等同于[<span class="hljs-link_label">2</span>](<span class="hljs-link_url">[2]([2]float64</span>))
+
+//数组的两种遍历方法
+for i := 0; i <span class="xml"><span class="hljs-tag">< <span class="hljs-attribute">len</span>(<span class="hljs-attribute">array</span>); <span class="hljs-attribute">i</span>++ { <span class="hljs-attribute">fmt.Println</span>("<span class="hljs-attribute">Element</span>", <span class="hljs-attribute">i</span>, "<span class="hljs-attribute">of</span> <span class="hljs-attribute">array</span> <span class="hljs-attribute">is</span>", <span class="hljs-attribute">array</span>[<span class="hljs-attribute">i</span>]) } <span class="hljs-attribute">for</span> <span class="hljs-attribute">i</span>, <span class="hljs-attribute">v</span> <span class="hljs-attribute">:</span>= <span class="hljs-attribute">range</span> <span class="hljs-attribute">array</span> { <span class="hljs-attribute">fmt.Println</span>("<span class="hljs-attribute">Array</span> <span class="hljs-attribute">element</span>[", <span class="hljs-attribute">i</span>, "]=<span class="hljs-value">", v) }</span></span></span></code></pre>
+<p>数组是一个值类型（value type），所有的值类型变量在赋值和作为参数传递时都将产生一次复制动作。因此，在函数体中无法修改传入的数组的内容，因为函数内操作的只是所传入数组的一个副本。</p>
+<p>数组切片的创建方法主要有两种——基于数组和直接创建。 <br> 基于数组的创建：</p>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">package</span> main
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+<span class="hljs-keyword">func</span> main() {
+    <span class="hljs-comment">// 先定义一个数组</span>
+    <span class="hljs-keyword">var</span> myArray <span class="hljs-number">[10</span>]<span class="hljs-typename">int</span> = <span class="hljs-number">[10</span>]<span class="hljs-typename">int</span><span class="hljs-number">{1</span>,<span class="hljs-number"> 2</span>,<span class="hljs-number"> 3</span>,<span class="hljs-number"> 4</span>,<span class="hljs-number"> 5</span>,<span class="hljs-number"> 6</span>,<span class="hljs-number"> 7</span>,<span class="hljs-number"> 8</span>,<span class="hljs-number"> 9</span>,<span class="hljs-number"> 10</span>}
+    <span class="hljs-comment">// 基于数组创建一个数组切片</span>
+    <span class="hljs-keyword">var</span> mySlice []<span class="hljs-typename">int</span> = myArray[<span class="hljs-number">:5</span>]
+    fmt.Println(<span class="hljs-string">"Elements of myArray: "</span>)
+    <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> myArray {
+        fmt.Print(v, <span class="hljs-string">" "</span>)
+    }
+    fmt.Println(<span class="hljs-string">"\nElements of mySlice: "</span>)
+    <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> mySlice {
+        fmt.Print(v, <span class="hljs-string">" "</span>)
+    }
+    fmt.Println()
+}</code></pre>
+<p>直接创建：</p>
+<pre class="prettyprint"><code class=" hljs go">mySlice1 := <span class="hljs-built_in">make</span>([]<span class="hljs-typename">int</span>,<span class="hljs-number"> 5</span>) <span class="hljs-comment">//创建一个初始元素个数为5的数组切片，元素初始值为0</span>
+
+mySlice2 := <span class="hljs-built_in">make</span>([]<span class="hljs-typename">int</span>,<span class="hljs-number"> 5</span>,<span class="hljs-number"> 10</span>)<span class="hljs-comment">//创建一个初始元素个数为5的数组切片，元素初始值为0，并预留10个元素的存储空间</span>
+
+mySlice3 := []<span class="hljs-typename">int</span><span class="hljs-number">{1</span>,<span class="hljs-number"> 2</span>,<span class="hljs-number"> 3</span>,<span class="hljs-number"> 4</span>,<span class="hljs-number"> 5</span>}<span class="hljs-comment">//直接创建并初始化包含5个元素的数组切片</span></code></pre>
+<p>事实上还会有一个匿名数组被创建出来了。 <br> 数组切片可以动态增减元素。 <br> 数组切片支持Go语言内置的cap()函数和len()函数，append()函数，copy()函数</p>
+<p>map是一堆键值对的未排序集合。</p>
+<p>var myMap map[string] PersonInfo //map声明 <br> myMap = make(map[string] PersonInfo) //map创建 <br> myMap = make(map[string] PersonInfo, 100) //map创建时指定初始存储能力 <br> //创建并初始化 <br> myMap = map[string] PersonInfo{ <br> “1234”: PersonInfo{“1”, “Jack”, “Room 101,…”}, <br> } <br> myMap[“1234”] = PersonInfo{“1”, “Jack”, “Room 101,…”} //元素赋值 <br> delete(myMap, “1234”) //元素删除.如果“1234”这个键不存在，那么这个调用将什么都不发生，也不会有什么副作用</p>
+<p>value, ok := myMap[“1234”]//元素查找 <br> if ok { // 找到了 <br> // 处理找到的value <br> }</p>
+<h3 id="流程控制">流程控制</h3>
+<h4 id="条件语句">条件语句</h4>
+<p>关于条件语句，需要注意以下几点： <br>  条件语句不需要使用括号将条件包含起来()； <br>  无论语句体内有几条语句，花括号{}都是必须存在的； <br>  左花括号{必须与if或者else处于同一行； <br>  在if之后，条件语句之前，可以添加变量初始化语句，使用;间隔； <br>  在有返回值的函数中，不允许将“最终的”return语句包含在if…else…结构中， <br> 否则会编译失败：</p>
+<h4 id="选择语句">选择语句</h4>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-keyword">switch</span> i {
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 0</span>:
+        fmt.Printf(<span class="hljs-string">"0"</span>)
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 1</span>:
+        fmt.Printf(<span class="hljs-string">"1"</span>)
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 2</span>:
+        <span class="hljs-keyword">fallthrough</span><span class="hljs-comment">//执行接下来的条件下的内容（这个例子中执行case 3 中的内容）</span>
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 3</span>:
+        fmt.Printf(<span class="hljs-string">"3"</span>)
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 4</span>,<span class="hljs-number"> 5</span>,<span class="hljs-number"> 6</span>:
+        fmt.Printf(<span class="hljs-string">"4, 5, 6"</span>)
+    <span class="hljs-keyword">default</span>:
+        fmt.Printf(<span class="hljs-string">"Default"</span>)
+}
+<span class="hljs-keyword">switch</span> {
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 0</span> <= Num && Num <=<span class="hljs-number"> 3</span>:
+        fmt.Printf(<span class="hljs-string">"0-3"</span>)
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 4</span> <= Num && Num <=<span class="hljs-number"> 6</span>:
+        fmt.Printf(<span class="hljs-string">"4-6"</span>)
+    <span class="hljs-keyword">case</span><span class="hljs-number"> 7</span> <= Num && Num <=<span class="hljs-number"> 9</span>:
+        fmt.Printf(<span class="hljs-string">"7-9"</span>)
+}</code></pre>
+<h4 id="循环语句">循环语句</h4>
+<p>Go语言中的循环语句只支持for关键字</p>
+<pre class="prettyprint"><code class=" hljs matlab">sum := <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> := <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> < <span class="hljs-number">10</span>; <span class="hljs-built_in">i</span>++ <span class="hljs-cell">{ sum += i }</span>
+
+sum := <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> <span class="hljs-cell">{ sum++ if sum > <span class="hljs-number">100</span> { break }</span>
+}
+
+a := <span class="hljs-matrix">[]</span>int<span class="hljs-cell">{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>}</span>
+<span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>, <span class="hljs-built_in">j</span> := <span class="hljs-number">0</span>, len(a) – <span class="hljs-number">1</span>; <span class="hljs-built_in">i</span> < <span class="hljs-built_in">j</span>; <span class="hljs-built_in">i</span>, <span class="hljs-built_in">j</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>, <span class="hljs-built_in">j</span> – <span class="hljs-number">1</span> <span class="hljs-cell">{ a[i], a[j] = a[j], a[i] }</span></code></pre>
+<h4 id="函数">函数</h4>
+<p>函数支持多返回值，不定参数（语法糖），闭包</p>
+<h4 id="错误处理">错误处理</h4>
+<p>Go语言引入了一个关于错误处理的标准模式，即error接口</p>
+<pre class="prettyprint"><code class=" hljs haskell"><span class="hljs-typedef"><span class="hljs-keyword">type</span> error interface <span class="hljs-container">{ <span class="hljs-type">Error</span>() <span class="hljs-title">string</span> }</span></span></code></pre>
+<p>调用时的代码建议按如下方式处理错误情况：</p>
+<pre class="prettyprint"><code class=" hljs ruby">n, err <span class="hljs-symbol">:</span>= <span class="hljs-constant">Foo</span>(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">if</span> err != <span class="hljs-keyword">nil</span> {
+    <span class="hljs-regexp">//</span> 错误处理
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-regexp">//</span> 使用返回值n
+}</code></pre>
+<h4 id="defer">defer</h4>
+<p>defer可以定义语句或者函数，会在所属函数退出的时候执行。 <br> 一个函数中可以存在多个defer语句，因此需要注意的是，defer语句的调用是遵照先进后出的原则，即最后一个defer语句将最先被执行</p>
+<h4 id="panic和recover">panic()和recover()</h4>
+<p>panic()类似于java中的throw <br> recover类似于java中的try catch</p>
+<pre class="prettyprint"><code class=" hljs go"><span class="hljs-built_in">panic</span><span class="hljs-number">(404</span>)
+<span class="hljs-built_in">panic</span>(<span class="hljs-string">"network broken"</span>)
+<span class="hljs-built_in">panic</span>(Error(<span class="hljs-string">"file not exists"</span>))
+<span class="hljs-keyword">defer</span> <span class="hljs-keyword">func</span>() {
+    <span class="hljs-keyword">if</span> r := <span class="hljs-built_in">recover</span>(); r != <span class="hljs-constant">nil</span> {
+        log.Printf(<span class="hljs-string">"Runtime error caught: %v"</span>, r)
+    }
+}()</code></pre>
+</div>
+<link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-b6c3c6d139.css" rel="stylesheet">
+</div>
+
+		
+	</div>
+
+	<footer class="entry-footer">
+
+						
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://vlanguage.cn/article/82.html" rel="prev"><span class="screen-reader-text">Previous Post:</span>【C语言】【unix c】信号量集（system v ipc）</a></div><div class="nav-next"><a href="https://vlanguage.cn/article/94.html" rel="next"><span class="screen-reader-text">Next Post:</span>西门子scl语言</a></div></div>
+	</nav>
+	</footer>
+
+</article>
+			
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">	</script>
+			<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-8889449066804352" data-ad-slot="1928667997"></ins>
+			<script>
+				 (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		</main>
+	</section>
+	
+	
+	<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+
+		<div class="widget_text widget-wrap"><aside id="custom_html-3" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://cse.google.com/cse.js?cx=004431708863642777669:dt5gmztovfo"></script>
+<div class="gcse-search"></div>
+<style>
+td.gsc-search-button {
+    width: 90px;
+}
+.gsc-control-cse table{
+	margin: 0;
+}
+.gsc-control-cse th, td {
+	border: none;
+}
+	
+	td.gsib_b {
+		
+    width: 36px;
+
+	}
+	.gscb_a {
+		width: 94%;
+    line-height: 20px;
+		font-size: 20px;
+}
+	.gsst_b {
+		font-size: 12px;
+	}
+	#custom_html-5 {
+		padding: 0;
+	}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    border: none;
+}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 4px 4px 0px 4px;
+}
+</style></div></aside></div>		<div class="widget-wrap"><aside id="recent-posts-2" class="widget widget_recent_entries clearfix">		<div class="widget-header"><h3 class="widget-title">近期文章</h3></div>		<ul>
+											<li>
+					<a href="https://vlanguage.cn/article/35.html">【GitHub探索】v语言上手，用vlang写一个聊天应用</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/97.html">v-if/v-if-else/v-show</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/75.html">又一编程语言开源上线了</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/81.html">V-REP 机器人语言解释器集成教程</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/68.html">三小时学会V语言到放弃（第二小时）</a>
+									</li>
+					</ul>
+		</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-5" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix"><div class="widget-header"><h3 class="widget-title">标签</h3></div><div class="tagcloud"><a href="https://vlanguage.cn/tag/blog" class="tag-cloud-link tag-link-35 tag-link-position-1" style="font-size: 8pt;" aria-label="blog (1个项目)">blog<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/c" class="tag-cloud-link tag-link-39 tag-link-position-2" style="font-size: 8pt;" aria-label="c (1个项目)">c<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/dyuyan" class="tag-cloud-link tag-link-45 tag-link-position-3" style="font-size: 8pt;" aria-label="d语言 (1个项目)">d语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/eclipse" class="tag-cloud-link tag-link-30 tag-link-position-4" style="font-size: 8pt;" aria-label="eclipse (1个项目)">eclipse<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/google" class="tag-cloud-link tag-link-51 tag-link-position-5" style="font-size: 8pt;" aria-label="google (1个项目)">google<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/java" class="tag-cloud-link tag-link-33 tag-link-position-6" style="font-size: 8pt;" aria-label="java (1个项目)">java<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/shingekinov" class="tag-cloud-link tag-link-14 tag-link-position-7" style="font-size: 8pt;" aria-label="shingekinov (1个项目)">shingekinov<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/spir-v" class="tag-cloud-link tag-link-24 tag-link-position-8" style="font-size: 8pt;" aria-label="SPIR-V (1个项目)">SPIR-V<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/vyuyan" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 8pt;" aria-label="v语言 (1个项目)">v语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/houduan" class="tag-cloud-link tag-link-13 tag-link-position-10" style="font-size: 8pt;" aria-label="后端 (1个项目)">后端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/gongju" class="tag-cloud-link tag-link-32 tag-link-position-11" style="font-size: 8pt;" aria-label="工具 (1个项目)">工具<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/pingtai" class="tag-cloud-link tag-link-38 tag-link-position-12" style="font-size: 14.3pt;" aria-label="平台 (2个项目)">平台<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/minjie" class="tag-cloud-link tag-link-41 tag-link-position-13" style="font-size: 8pt;" aria-label="敏捷 (1个项目)">敏捷<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wendang" class="tag-cloud-link tag-link-42 tag-link-position-14" style="font-size: 14.3pt;" aria-label="文档 (2个项目)">文档<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/fuwuduan" class="tag-cloud-link tag-link-12 tag-link-position-15" style="font-size: 8pt;" aria-label="服务端 (1个项目)">服务端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/kuangjia" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 8pt;" aria-label="框架 (1个项目)">框架<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/biancheng" class="tag-cloud-link tag-link-36 tag-link-position-17" style="font-size: 8pt;" aria-label="编程 (1个项目)">编程<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wangluo" class="tag-cloud-link tag-link-37 tag-link-position-18" style="font-size: 8pt;" aria-label="网络 (1个项目)">网络<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/liaotianfuwuqi" class="tag-cloud-link tag-link-11 tag-link-position-19" style="font-size: 8pt;" aria-label="聊天服务器 (1个项目)">聊天服务器<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/yuyan" class="tag-cloud-link tag-link-31 tag-link-position-20" style="font-size: 22pt;" aria-label="语言 (4个项目)">语言<span class="tag-link-count"> (4)</span></a></div>
+</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-6" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="categories-2" class="widget widget_categories clearfix"><div class="widget-header"><h3 class="widget-title">分类目录</h3></div>		<ul>
+				<li class="cat-item cat-item-53"><a href="https://vlanguage.cn/category/c-c-c">C/C++/C#</a> (3)
+</li>
+	<li class="cat-item cat-item-44"><a href="https://vlanguage.cn/category/dyuyankaifa">D语言开发</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://vlanguage.cn/category/fpga">FPGA</a> (1)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://vlanguage.cn/category/githubtansuo">GitHub探索</a> (1)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://vlanguage.cn/category/googlemap">GoogleMap</a> (1)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://vlanguage.cn/category/gozixuezhilu">GO自学之路</a> (2)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://vlanguage.cn/category/graphics">Graphics</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://vlanguage.cn/category/linux">Linux</a> (1)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://vlanguage.cn/category/nodejs">Nodejs</a> (1)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://vlanguage.cn/category/phpcms">phpcms</a> (2)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://vlanguage.cn/category/phpcmsjiaocheng">phpcms教程</a> (1)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://vlanguage.cn/category/risc-v">RISC-V</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://vlanguage.cn/category/spir">SPIR</a> (1)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://vlanguage.cn/category/vue">Vue</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://vlanguage.cn/category/vulkan">Vulkan</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://vlanguage.cn/category/vyuyan">V语言</a> (14)
+</li>
+	<li class="cat-item cat-item-46"><a href="https://vlanguage.cn/category/jieshaolei">介绍类</a> (1)
+</li>
+	<li class="cat-item cat-item-47"><a href="https://vlanguage.cn/category/qukuailian">区块链</a> (1)
+</li>
+	<li class="cat-item cat-item-48"><a href="https://vlanguage.cn/category/botuv14">博途V14</a> (1)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://vlanguage.cn/category/yuanchuangxiaoruanjian">原创小软件</a> (1)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://vlanguage.cn/category/kaifa">开发</a> (1)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://vlanguage.cn/category/ganwuzongjie">感悟总结</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://vlanguage.cn/category/wendangbiji">文档笔记</a> (1)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://vlanguage.cn/category/jiqirenfangzhenv-rep">机器人仿真V-REP</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://vlanguage.cn/category/shenghuoleyuan">生活乐园</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://vlanguage.cn/category/biancheng">编程</a> (1)
+</li>
+		</ul>
+			</aside></div><div class="widget-wrap"><aside id="archives-2" class="widget widget_archive clearfix"><div class="widget-header"><h3 class="widget-title">文章归档</h3></div>		<ul>
+				<li><a href="https://vlanguage.cn/article/date/2019/11">2019年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/09">2019年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/08">2019年八月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/07">2019年七月</a> (12)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/06">2019年六月</a> (13)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/05">2019年五月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/03">2019年三月</a> (3)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/02">2019年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/11">2018年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/03">2018年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/02">2018年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/10">2017年十月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/07">2017年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/09">2016年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/04">2016年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/02">2016年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/12">2015年十二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/04">2015年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/07">2012年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/03">2012年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/11">2010年十一月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/02">2010年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2007/07">2007年七月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2005/12">2005年十二月</a> (1)</li>
+		</ul>
+			</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-7" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div>
+	</section>
+
+	
+
+	</div>
+
+	
+	<div id="footer" class="footer-wrap">
+
+		<footer id="colophon" class="site-footer container clearfix" role="contentinfo">
+
+			
+			<div id="footer-text" class="site-info">
+				
+	<span class="credit-link">
+		Copyright ©️V语言中文社区	</span>
+
+				</div>
+
+		</footer>
+
+	</div>
+
+</div>
+
+
+</body>
+</html>

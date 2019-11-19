@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>FPGA笔记之verilog语言（基础语法篇） – V语言中文社区</title>
+<link rel="dns-prefetch" href="https://vlanguage.cn">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="tortuga-custom-fonts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/custom-fonts.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://vlanguage.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tortuga-stylesheet-css" href="https://vlanguage.cn/wp-content/themes/tortuga/style.css" type="text/css" media="all">
+<style id="tortuga-stylesheet-inline-css" type="text/css">
+.site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow: hidden; }
+</style>
+<link rel="stylesheet" id="genericons-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/genericons/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="themezee-related-posts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/themezee-related-posts.css" type="text/css" media="all">
+
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-content/themes/tortuga/assets/js/navigation.js"></script>
+
+
+
+
+
+
+
+
+
+		<style type="text/css" id="wp-custom-css">
+			.header-main {
+	display: none;
+}		</style>
+			
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?d293c49e1e4bfe8f276695a5aa953300";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	</head>
+
+<body class="post-template-default single single-post postid-95 single-format-standard wp-embed-responsive">
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		
+		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<div class="header-main container clearfix">
+
+				<div id="logo" class="site-branding clearfix">
+
+										
+			<p class="site-title"><a href="https://vlanguage.cn/" rel="home">V语言中文社区</a></p>
+
+							
+				</div>
+
+				<div class="header-widgets clearfix">
+
+					
+				</div>
+
+			</div>
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap">
+
+				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+
+					
+					<ul id="menu-daohang" class="main-navigation-menu"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/">V语言中文社区</a></li>
+<li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121"><a target="_blank" rel="noopener noreferrer" href="/index2.html">历史文章</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a target="_blank" rel="noopener noreferrer" href="/docs/">Docs文档</a></li>
+</ul>				</nav>
+
+			</div>
+
+		</header>
+
+		
+		
+		<div id="content" class="site-content container clearfix">
+
+	<section id="primary" class="content-single content-area">
+		<main id="main" class="site-main" role="main">
+				
+		<div id="magazine-homepage-widgets" class="widget-area clearfix">
+
+			<div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+		</div>
+
+<article id="post-95" class="post-95 post type-post status-publish format-standard hentry category-fpga">
+
+	
+	<header class="entry-header">
+
+		<h1 class="entry-title">FPGA笔记之verilog语言（基础语法篇）</h1>
+		<div class="entry-meta"><span class="meta-date"><a href="https://vlanguage.cn/article/95.html" title="下午3:58" rel="bookmark"><time class="entry-date published updated" datetime="2019-07-07T15:58:57+08:00">2019/7/7</time></a></span><span class="meta-category"> <a href="https://vlanguage.cn/category/fpga" rel="category tag">FPGA</a></span></div>
+	</header>
+
+	<div class="entry-content clearfix">
+
+		<div id="article_content" class="article_content clearfix">
+ <br>
+ 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+<div id="content_views" class="markdown_views prism-atom-one-dark">
+  <br>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+   <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+  </svg> 
+<div class="toc">
+<h3>文章目录</h3>
+<ul>
+<li><a href="#FPGAverilog_2" rel="nofollow">FPGA笔记之verilog语言（基础语法篇）</a></li>
+<ul>
+<li><a href="#1_verilog__6" rel="nofollow">1. verilog 的基础结构</a></li>
+<ul>
+<li><a href="#11_verilogmodule_7" rel="nofollow">1.1 verilog设计的基本单元——module</a></li>
+<li><a href="#12_module_70" rel="nofollow">1.2 module的使用</a></li>
+<li><a href="#13_IO_83" rel="nofollow">1.3 I/O的说明</a></li>
+<li><a href="#13__109" rel="nofollow">1.3 内部信号的声明</a></li>
+<li><a href="#14__117" rel="nofollow">1.4 模块功能的实现</a></li>
+<li><a href="#15__151" rel="nofollow">1.5 第一章学习笔记</a></li>
+</ul>
+<li><a href="#2_verilog__157" rel="nofollow">2. verilog 的数据类型</a></li>
+<ul>
+<li><a href="#21__161" rel="nofollow">2.1 整数型</a></li>
+<ul>
+<li><a href="#211__163" rel="nofollow">2.1.1 数制</a></li>
+<li><a href="#212__223" rel="nofollow">2.1.2 负数</a></li>
+<li><a href="#213_XZ_252" rel="nofollow">2.1.3 X和Z</a></li>
+</ul>
+<li><a href="#22__270" rel="nofollow">2.2 实数型和字符型</a></li>
+<ul>
+<li><a href="#221__273" rel="nofollow">2.2.1 实数</a></li>
+</ul>
+</ul>
+<li><a href="#3_verilog__284" rel="nofollow">3. verilog 的变量类型</a></li>
+<li><a href="#4_verilog__288" rel="nofollow">4. verilog 的运算符</a></li>
+<li><a href="#5_verilog__292" rel="nofollow">5. verilog 的语句块</a></li>
+</ul>
+</ul></div>
+
+<h1><a id="FPGAverilog_2"></a>FPGA笔记之verilog语言（基础语法篇）</h1>
+<p>写在前面：<br> verilogHDL语言是面向硬件的语言，换句话说，就是用语言的形式来描述硬件线路。因此与C语言等软件语言不同，如果想要在实际的电路中实现，那么在进行verilog语言编写时，就需要提前有个硬件电路的构思和想法，同时，在编写verilog语言时，应该采用可综合的语句和结构。</p>
+<h2><a id="1_verilog__6"></a>1. verilog 的基础结构</h2>
+<h3><a id="11_verilogmodule_7"></a>1.1 verilog设计的基本单元——module</h3>
+<p>在数字电路中，我们常常把一些复杂的电路或者具有特定功能的电路封装起来作为一个模块使用。以后在运用这种模块化的封装时，我们只需要知道：1.模块的输入是什么；2.模块的输出是什么；3.什么样的输入对应什么样的输出。而中间输入是经过什么样的电路转化为输出就不是我们在使用时需要特别重视的问题。当很多个这样的模块相互组合，就能构成一个系统，解决一些复杂的问题。verilog语言的基础结构就是基于这种思想。verilog中最基本的模块是module，就可以看做是一个封装好的模块，我们用verilog来写很多个基本模块，然后再用verilog描述多个模块之间的接线方式等，将多个模块组合得到一个系统。<br> 那么一个module应该具有哪些要素呢？首先对于一个module，我们应该设计好其各个I/O，以及每个I/O的性质，用于与模块外部的信号相联系，让使用者知道如何连线。其次，作为开发者，我们需要自己设计模块内部的线路来实现所需要的功能。因此需要对模块内部出现的变量进行声明，同时通过语句、代码块等实现模块的功能。综上所述，我们把一个module分成以下五个部分：</p>
+<ol>
+<li>模块名</li>
+<li>端口定义</li>
+<li>I/O说明</li>
+<li>内部信号的声明</li>
+<li>模块功能实现<br> 例：</li>
+</ol>
+<pre><code>/////////////////////////////////////////////////////////////////
+//module    模块名 (端口1,端口2,端口3)；
+//I/O说明 
+//内部信号说明
+//模块功能实现
+//endmodule
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////
+//module    模块名 (端口1,端口2,端口3)；
+////////////////////////////////////
+module      FreDevider    (                  
+                                        Clock,
+                                        rst,
+                                        Clkout
+                                        );
+                                        
+                                        
+////////////////////////////////////
+//I/O说明 
+////////////////////////////////////
+input Clock;
+input rst;
+output Clkout;
+
+
+////////////////////////////////////
+//内部信号说明
+////////////////////////////////////
+reg Clkout;
+
+
+////////////////////////////////////
+//模块功能实现
+////////////////////////////////////
+    always@(posedge Clock or posedge rst)
+    begin
+        if(rst)
+            Clkout<=0;
+        else
+            Clkout<=~Clkout;
+    end
+
+
+////////////////////////////////////
+//endmodule
+////////////////////////////////////
+endmodule
+
+
+</code></pre>
+<h3><a id="12_module_70"></a>1.2 module的使用</h3>
+<p>当我们已经写好了一种类型的module，那我们在使用的时候，就可以直接调用module。使用方法是 模块名+实例名+端口声明+信号声明。一个模块可以定义多个实例。<br> 例如：使用上述已经写好的module</p>
+<pre><code>//已经定义过一个叫FreDevider的module
+FreDevider    uut1(                                            //模块名：FreDevider    实例名：uut1
+                  .Clock(clock_signal),           // 端口声明： .端口名     信号声明：  (信号名)
+                  .rst(rst_signal),
+                  .Clkout(clkout_signal)
+                  );                                
+</code></pre>
+<p>这里涉及到了之前module定义和变量声明等问题，首先module的定义决定了模块名和端口名，其次module中的信号的处理方式决定了这里的信号名是reg还是wire型。信号可以看做是一个大的模块的输入输出或中间变量。</p>
+<h3><a id="13_IO_83"></a>1.3 I/O的说明</h3>
+<p>I/O的类型共有3类：input，output，inout<br> 前两个比较好理解，分别是输入和输出<br> 而inout则是双向端口，既可以当做输入，也可以当做输出，这种双向端口具有双向传输的能力，比较节约端口，同时适合作为总线等需要但是要保证在某一时刻，其只进行某一方向的传输，也就是说，应避免两个方向由需要传输这种情况。因此在实际工程实例中，我们在比较底层的模块编写时，是比较少的用inout端口，而是在较高一层的模块，通过控制信号来实现inout端口的使用。同时inout端口在实际使用时还有许多问题，对于初学者，先理解整个架构，再对细节补充，所以这部分内容放在高级语法篇讲述。<br> I/O说明的形式：<br> I/O的说明可以放在端口定义后，也可以在端口定义时同时说明。例：</p>
+<pre><code>module   FreDevider    (                  
+                       input  Clock,
+                       input  rst,
+                       output  Clkout
+                       );
+</code></pre>
+<p>同时，也可以在说明I/O口的时候，同时说明信号的位数<br> 例：</p>
+<pre><code>module    FreDevider    (                  
+                        input  Clock,
+                        input  rst,
+                        input    [15:0]     x;      //16位输入
+                        output  [31:0]     y;      //32位输出
+                        );
+                                        
+</code></pre>
+<h3><a id="13__109"></a>1.3 内部信号的声明</h3>
+<p>如果说端口的定义连接了模块与外部世界，是一个模块世界中可进可出的若干个大门，那么信号就是一个个行人。要实现模块的功能，就要对各个信号进行处理和变换。有些信号是外部输入的，有些信号是要输出给外部的，还有些信号是信号变换的中间变量。就像行人有些是外面进来的，有些是要去往外面世界的，有些是住在模块世界里的。这些参与到模块功能实现的所有信号，都要对其信号的属性进行规定，就像每个行人都有各自的身份。总而言之，分清楚端口和信号的区别，端口是固定的，信号是变化的。端口是门，信号是人。<br> 信号的属性有reg、wire、paramater三种种，其中reg又称为寄存器型，wire又称为线性，每个信号都要定义其属性，但是对于模块的输入信号，其属性必须不是reg型，一般为wire型。又因为对于没有声明的信号，其默认为wire型，因此在定义时，我们只需要定义输出信号的类型和中间变量的类型即可。</p>
+<pre><code>reg   a;
+wire  b;
+</code></pre>
+<h3><a id="14__117"></a>1.4 模块功能的实现</h3>
+<p>对于一个硬件电路来说，已经有了模块名，端口和端口名，信号与信号属性，剩下的就是通过硬件电路来实现各个信号之间的逻辑功能。这比部分的知识就和我们在大学时期学的数电的知识联系紧密，通常可以分为没有时间，只有逻辑转换的逻辑电路和有时间和状态转换的时序逻辑电路两种形式，再加上通过调用已经模块化的实例元件来参与更高一级的模块设计。所以在一个模块功能的实现方法中，通常有三种类型：</p>
+<ol>
+<li>用assign声明语句<br> assign语句用于驱动线网型的变量，声明语句右边表达式的变量是敏感信号，当右边的值发生改变时，立即计算左边的结果，并进行表达。也就是说，当输入变化时，输出也随之变化。这种特性就像是数字电路里的组合逻辑电路。</li>
+</ol>
+<pre><code>assign   a_not=~a;
+assign   c=a&b;
+</code></pre>
+<ol start="2">
+<li>采用实例化的元件<br> 采用实例的元件方法已经在前面讲过，除了采用module的实例化元件以外，还可以采用IP核的形式来实现。</li>
+<li>采用always语句块<br> always语句块既能描述组合逻辑电路，又能描述时序逻辑电路。与assign不同的是，always语句后面的触发条件是持续敏感，也就是每时每刻都在执行或者判断的。后面也会更加详细的区别assign和always语句块。</li>
+</ol>
+<pre><code>//生成时钟信号
+always #5 clk=~clk；
+
+//组合逻辑电路：二选一多路器
+reg c_out;
+always @(a_in or b_in or sel)
+    if(sel)
+        c_out=a_in;
+    else
+        c_out=b_in;
+ 
+ //时序逻辑电路：二分频模块
+ reg d;
+ always @(posedge clk or posedge rst)
+ begin
+     if(rst)
+         d<=1'b0;
+     else
+         d=~d;
+</code></pre>
+<h3><a id="15__151"></a>1.5 第一章学习笔记</h3>
+<ol>
+<li>verilog是一门描述硬件电路的语言，在语言结构上和C语言有相同的地方，所以学习起来比较容易，但是verilog终究还是要最终用硬件的方法去实现，因此在编程时，不能空想内部的逻辑，而是通过电路图、时序图等方式，将功能先用硬件的方法表示出来，然后再用软件的语言来实现。</li>
+<li>verilog的使用离不开对数字电路基础知识的掌握，所以在进行verilog的学习的同时，应该建立在对数字电路基础知识的学习之上。语言是描述思想的工具，思想才是解决问题的关键。</li>
+<li>…</li>
+</ol>
+<h2><a id="2_verilog__157"></a>2. verilog 的数据类型</h2>
+<p>verilog的数据类型主要分为四类，整数型、实数型、字符串型、参数型，这四种类型都可以在编程中出现，但是在实际硬件层面综合时，却并不能保证我们所写的数据类型能够被表达。因为在实际的电路中，无论是哪种类型的数据，最后都要转化为1、0、X、Z（X、Z分别是未知态和高阻态）这四种信号状态。因此掌握verilog的数据类型，最根本的就是掌握各种数据类型在实际电路中的表达。</p>
+<h3><a id="21__161"></a>2.1 整数型</h3>
+<h4><a id="211__163"></a>2.1.1 数制</h4>
+<p>在verilog中，整数有四种数制，分别是<br> 十进制：代号d/D<br> 二进制：代号b/B<br> 八进制：代号o/O<br> 十六进制：代号h/H<br> 一个整数对于进制的不同表达，只是数的表达形式不同，但是数字本身代表的数学含义是相同的。而在硬件电路中，所有的数字都是通过二进制来进行表达的。因此在编程过程中，对于数字的数学表示，我们可以采用不同的进制，但是对于数字的物理实现，我们一定是采用二进制的方式来进行硬件上的实现。因此在实际编程过程中出现的数字，我们应该从二进制的表达中理解其变化的规律。<br> 这种思想可以在verilog的数字表达中得到体现，一般来说，我们通过以下的方式来表示一个整数：<br> <span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"></span></span></span></span></p>
+<math>
+        <semantics><br>
+         <mrow><br>
+          <mo><br>
+           <<br>
+          </mo><br>
+          <mi mathvariant="normal"><br>
+           位<br>
+          </mi><br>
+          <mi mathvariant="normal"><br>
+           宽<br>
+          </mi><br>
+          <mo><br>
+           ><br>
+          </mo><br>
+          <msup><br>
+           <mo><br>
+            <<br>
+           </mo><br>
+           <mo mathvariant="normal"><br>
+            ′<br>
+           </mo><br>
+          </msup><br>
+          <mo><br>
+           ><br>
+          </mo><br>
+          <mo><br>
+           <<br>
+          </mo><br>
+          <mi mathvariant="normal"><br>
+           进<br>
+          </mi><br>
+          <mi mathvariant="normal"><br>
+           制<br>
+          </mi><br>
+          <mo><br>
+           ><br>
+          </mo><br>
+          <mo><br>
+           <<br>
+          </mo><br>
+          <mi mathvariant="normal"><br>
+           数<br>
+          </mi><br>
+          <mi mathvariant="normal"><br>
+           字<br>
+          </mi><br>
+          <mo><br>
+           ><br>
+          </mo><br>
+         </mrow><br>
+         <annotation encoding="application/x-tex"><br>
+          <位宽><'><进制><数字><br>
+         </annotation><br>
+        </semantics><br>
+       </math>
+<p><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mrel"><</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">宽</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height: 0.840992em; vertical-align: -0.0391em;"></span><span class="mrel"><span class="mrel"><</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.801892em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mrel"><</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mord cjk_fallback">进</span><span class="mord cjk_fallback">制</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">></span></span><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mrel"><</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">字</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">></span></span></span><br> 举例说明：</p>
+<pre><code>8'd23                                          //位宽8  十进制  数字23
+8'b00010111                                    //位宽8  二进制  数字23  
+8'o27                                          //位宽8  八进制  数字23
+8'h17                                          //位宽8  十六进制  数字23
+</code></pre>
+<p>对于任何一个数字，无论其后面是什么进制，什么数字，最后都要转化为指定位宽的二进制数字来表达。因此有可能在进制表达时，出现实际的二进制数字和我们编程所写的二进制数字不同。或者其他非标准的表达方法。下面我们说明几种常见的情况：</p>
+<ol>
+<li>位宽大于实际数字二进制的宽度<br> 位宽大于实际二进制的宽度时，有四种可能：<br> 1.二进制数字最高位为1，高位部分用0补全<br> 2.二进制数字最高位为0，高位部分用0补全<br> 3.二进制数字最高位为X，高位部分用X补全<br> 4.二进制数字最高位为Z，高位部分用Z补全<br> 例如：</li>
+</ol>
+<pre><code>6'b101      //实际上是  000101
+6'b001      //实际上是  000001
+6'bx11      //实际上是  xxxx11
+6'bz11      //实际上是  zzzz11
+</code></pre>
+<ol start="2">
+<li>位宽小于实际二进制的宽度<br> 当位宽小于实际二进制宽度时，一般情况下是将超过的位数舍去，只保留给定位宽内的数，例如：</li>
+</ol>
+<pre><code>4'b101011        //实际上是  1011
+</code></pre>
+<ol start="3">
+<li>位宽省略不写<br> 一般情况下，位宽省略不写，默认为是32位宽的数，或者根据操作系统和编程软件的设定来定义。例如：</li>
+</ol>
+<pre><code>'b10111     //位宽为32的二进制数 代表数字23
+</code></pre>
+<ol start="4">
+<li>数制位宽都省略不写<br> 这种情况下，默认为数字是32位宽的十进制数。例如</li>
+</ol>
+<pre><code>23          //位宽为32的十进制数 代表数字23
+</code></pre>
+<ol start="5">
+<li>下划线表达法<br> 当需要表达的数字位数较多时，为了书写和观察方便，常常使用下划线符号来辅助表达。采用下划线将相邻若干个数字分隔开，使其表达更清晰。但是注意下划线只能出现在数字中，不能出现在位宽和进制中，并且数字的第一位不能是下划线。例如：</li>
+</ol>
+<pre><code>16'b0100_1011_1101_0110                      //正确
+16'b_1110_1101_0101_0001                     //错误
+</code></pre>
+<h4><a id="212__223"></a>2.1.2 负数</h4>
+<p>负数在verilog中的表达是很简单的，直接在数字的前面添加符号就表示负数。但是在实际的二进制编码中，负数是通过其正数的补码的形式进行实现的。</p>
+<pre><code>-8'd23      //就是-23，但是在二进制代码中 是用8'b11101001来表示
+</code></pre>
+<p>此时对于一个8位的二进制数，其第一位为符号位，后7位才为有效的数字位。<br> 由此可见，一个二进制，当首位为1时，有可能表示的是一个正数，也有可能表示的是一个负数，那么在实际硬件电路中，如何区分这两种情况呢？<br> 一般来说，对于硬件中的信号，硬件处理时是默认为正整数的，因此当我们输入一个负值，实际上产生的是我们输入的值的正数部分的补码所表示的正值（这里有点绕，距离来说，我输入-8’d23，得到的是23的补码8’b11101001，这个补码被硬件默认是正数，即8’d233）。那么我们在进行二进制的数据的变换时，就应该回归其硬件中的表达，然后在此基础上通过自己的程序来实现当为负数时的转化。<br> 例如：我之前写过的粗插补算法</p>
+<pre><code>		    if(x_rough[15]==0)                //当插补数据为正数时，将粗插补数据进行四分，并将余数添加到第一个精插补结果中
+	            begin
+	                lx[1:0]=x_rough[1:0];
+		            x4=(x_rough>>2);
+		            x3=(x_rough>>2);
+		            x2=(x_rough>>2);
+		            x1=((x_rough>>2)+lx);
+		        end
+	       else                              //当插补数据为负数时，将插补数据求补码，进行四分等操作后，再将结果求补码得到负数（对绝对值进行操作）
+	            begin
+	                x_complement[15:0]=(~(x_rough[15:0]-8'b0000000000000001));
+	                lx[1:0]=x_complement[1:0];
+		            x4=((~(x_complement>>2))+8'b0000000000000001);
+		            x3=((~(x_complement>>2))+8'b0000000000000001);
+	            	x2=((~(x_complement>>2))+8'b0000000000000001);
+		            x1=((~((x_complement>>2)+lx))+8'b0000000000000001);
+</code></pre>
+<p>这里就是根据最高位是1和0来决定进行什么样的数据处理。总而言之，我们要明白，数据在硬件中的储存是默认为正整数的二进制储存方式，但是如何取理解这个数，却是使用这个数据的人自己规定的。这种思想不仅在处理负数时是这样的，在碰到小数、字符等都是这么一个思想。0和1的世界是死的，但是解读他们的规则却是活的。</p>
+<h4><a id="213_XZ_252"></a>2.1.3 X和Z</h4>
+<p>我们都知道0和1代表的含义，但是对于verilog语言来说，还有X和Z两种独立于0和1之外的状态。这两种状态分别是未知态和高阻态。<br> 未知态X是指，无法确定此时信号的状态是1还是0，但是能确定信号是有状态的，不是1就是0，且这个状态是能够影响到与其相连的后续电路的，当我们用电表测量时，其值可能是1，可能是0，取决于被测当时硬件电路的当前状态。而高阻态Z是指，当前的信号状态既不是1，也不是0，而是没有状态，或者可以认为是断开，即此时信号的状态已经无法再影响到后续的电路。<br> 而在实际电路中，某一时刻时只有1、0、高阻态三种状态。<br> 尽管X和Z表示的状态不是传统的1和0，但是X和Z也能参与到二进制的逻辑运算中来。在逻辑运算中，X和Z满足如下的规律：</p>
+<pre><code>0 && X = 0 ;
+1 && X = X ;
+0 || X = X ;
+1 || X = 1 ;
+
+0 && Z = 0 ;
+1 && Z = X ;
+0 || Z = X ;
+1 || Z = 1 ;
+</code></pre>
+<h3><a id="22__270"></a>2.2 实数型和字符型</h3>
+<p>实数型和字符型放在一起，因为这两种数据的表达有相似的地方。那就是实数型或者字符型的数据可以在verilog语言中出现，但是却不能通过硬件表达出来。而是常常出现在命令、显示等非硬件参与的操作中。这与上面的整数的表达方式和意义是不同的。</p>
+<h4><a id="221__273"></a>2.2.1 实数</h4>
+<p>实数可以用十进制来表示，也可以用科学计数法来表示，例如：</p>
+<pre><code>12          //表示12
+23e-3       //表示0.0023
+23E4        //表示230000
+</code></pre>
+<p>虽然我们可以在verilog中写出这些数据，但是并不是所有我们写出来的数据都能在硬件中表达。在实际的仿真过程中，所有的科学计数的表达例如23e-3或者23E4，在硬件中都是0，而硬件中也不能直接表达小数。也就是直接在verilog中写出来的小数，会被硬件识别为0。<br> 但是小数或者指数的表达，可以通过使用者自己规定来获得。例如我们常听说的浮点数等，就是通过一些算法转换，来将二进制的代码表达成带有小数或者指数的数字。</p>
+<h2><a id="3_verilog__284"></a>3. verilog 的变量类型</h2>
+<h2><a id="4_verilog__288"></a>4. verilog 的运算符</h2>
+<h2><a id="5_verilog__292"></a>5. verilog 的语句块</h2>
+</div>
+<link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-b6c3c6d139.css" rel="stylesheet">
+</div>
+
+		
+	</div>
+
+	<footer class="entry-footer">
+
+						
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://vlanguage.cn/article/26.html" rel="prev"><span class="screen-reader-text">Previous Post:</span>V 语言中文文档</a></div><div class="nav-next"><a href="https://vlanguage.cn/article/44.html" rel="next"><span class="screen-reader-text">Next Post:</span>半小时学会V语言</a></div></div>
+	</nav>
+	</footer>
+
+</article>
+			
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">	</script>
+			<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-8889449066804352" data-ad-slot="1928667997"></ins>
+			<script>
+				 (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		</main>
+	</section>
+	
+	
+	<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+
+		<div class="widget_text widget-wrap"><aside id="custom_html-3" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://cse.google.com/cse.js?cx=004431708863642777669:dt5gmztovfo"></script>
+<div class="gcse-search"></div>
+<style>
+td.gsc-search-button {
+    width: 90px;
+}
+.gsc-control-cse table{
+	margin: 0;
+}
+.gsc-control-cse th, td {
+	border: none;
+}
+	
+	td.gsib_b {
+		
+    width: 36px;
+
+	}
+	.gscb_a {
+		width: 94%;
+    line-height: 20px;
+		font-size: 20px;
+}
+	.gsst_b {
+		font-size: 12px;
+	}
+	#custom_html-5 {
+		padding: 0;
+	}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    border: none;
+}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 4px 4px 0px 4px;
+}
+</style></div></aside></div>		<div class="widget-wrap"><aside id="recent-posts-2" class="widget widget_recent_entries clearfix">		<div class="widget-header"><h3 class="widget-title">近期文章</h3></div>		<ul>
+											<li>
+					<a href="https://vlanguage.cn/article/35.html">【GitHub探索】v语言上手，用vlang写一个聊天应用</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/97.html">v-if/v-if-else/v-show</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/75.html">又一编程语言开源上线了</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/81.html">V-REP 机器人语言解释器集成教程</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/68.html">三小时学会V语言到放弃（第二小时）</a>
+									</li>
+					</ul>
+		</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-5" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix"><div class="widget-header"><h3 class="widget-title">标签</h3></div><div class="tagcloud"><a href="https://vlanguage.cn/tag/blog" class="tag-cloud-link tag-link-35 tag-link-position-1" style="font-size: 8pt;" aria-label="blog (1个项目)">blog<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/c" class="tag-cloud-link tag-link-39 tag-link-position-2" style="font-size: 8pt;" aria-label="c (1个项目)">c<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/dyuyan" class="tag-cloud-link tag-link-45 tag-link-position-3" style="font-size: 8pt;" aria-label="d语言 (1个项目)">d语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/eclipse" class="tag-cloud-link tag-link-30 tag-link-position-4" style="font-size: 8pt;" aria-label="eclipse (1个项目)">eclipse<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/google" class="tag-cloud-link tag-link-51 tag-link-position-5" style="font-size: 8pt;" aria-label="google (1个项目)">google<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/java" class="tag-cloud-link tag-link-33 tag-link-position-6" style="font-size: 8pt;" aria-label="java (1个项目)">java<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/shingekinov" class="tag-cloud-link tag-link-14 tag-link-position-7" style="font-size: 8pt;" aria-label="shingekinov (1个项目)">shingekinov<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/spir-v" class="tag-cloud-link tag-link-24 tag-link-position-8" style="font-size: 8pt;" aria-label="SPIR-V (1个项目)">SPIR-V<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/vyuyan" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 8pt;" aria-label="v语言 (1个项目)">v语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/houduan" class="tag-cloud-link tag-link-13 tag-link-position-10" style="font-size: 8pt;" aria-label="后端 (1个项目)">后端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/gongju" class="tag-cloud-link tag-link-32 tag-link-position-11" style="font-size: 8pt;" aria-label="工具 (1个项目)">工具<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/pingtai" class="tag-cloud-link tag-link-38 tag-link-position-12" style="font-size: 14.3pt;" aria-label="平台 (2个项目)">平台<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/minjie" class="tag-cloud-link tag-link-41 tag-link-position-13" style="font-size: 8pt;" aria-label="敏捷 (1个项目)">敏捷<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wendang" class="tag-cloud-link tag-link-42 tag-link-position-14" style="font-size: 14.3pt;" aria-label="文档 (2个项目)">文档<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/fuwuduan" class="tag-cloud-link tag-link-12 tag-link-position-15" style="font-size: 8pt;" aria-label="服务端 (1个项目)">服务端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/kuangjia" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 8pt;" aria-label="框架 (1个项目)">框架<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/biancheng" class="tag-cloud-link tag-link-36 tag-link-position-17" style="font-size: 8pt;" aria-label="编程 (1个项目)">编程<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wangluo" class="tag-cloud-link tag-link-37 tag-link-position-18" style="font-size: 8pt;" aria-label="网络 (1个项目)">网络<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/liaotianfuwuqi" class="tag-cloud-link tag-link-11 tag-link-position-19" style="font-size: 8pt;" aria-label="聊天服务器 (1个项目)">聊天服务器<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/yuyan" class="tag-cloud-link tag-link-31 tag-link-position-20" style="font-size: 22pt;" aria-label="语言 (4个项目)">语言<span class="tag-link-count"> (4)</span></a></div>
+</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-6" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="categories-2" class="widget widget_categories clearfix"><div class="widget-header"><h3 class="widget-title">分类目录</h3></div>		<ul>
+				<li class="cat-item cat-item-53"><a href="https://vlanguage.cn/category/c-c-c">C/C++/C#</a> (3)
+</li>
+	<li class="cat-item cat-item-44"><a href="https://vlanguage.cn/category/dyuyankaifa">D语言开发</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://vlanguage.cn/category/fpga">FPGA</a> (1)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://vlanguage.cn/category/githubtansuo">GitHub探索</a> (1)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://vlanguage.cn/category/googlemap">GoogleMap</a> (1)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://vlanguage.cn/category/gozixuezhilu">GO自学之路</a> (2)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://vlanguage.cn/category/graphics">Graphics</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://vlanguage.cn/category/linux">Linux</a> (1)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://vlanguage.cn/category/nodejs">Nodejs</a> (1)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://vlanguage.cn/category/phpcms">phpcms</a> (2)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://vlanguage.cn/category/phpcmsjiaocheng">phpcms教程</a> (1)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://vlanguage.cn/category/risc-v">RISC-V</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://vlanguage.cn/category/spir">SPIR</a> (1)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://vlanguage.cn/category/vue">Vue</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://vlanguage.cn/category/vulkan">Vulkan</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://vlanguage.cn/category/vyuyan">V语言</a> (14)
+</li>
+	<li class="cat-item cat-item-46"><a href="https://vlanguage.cn/category/jieshaolei">介绍类</a> (1)
+</li>
+	<li class="cat-item cat-item-47"><a href="https://vlanguage.cn/category/qukuailian">区块链</a> (1)
+</li>
+	<li class="cat-item cat-item-48"><a href="https://vlanguage.cn/category/botuv14">博途V14</a> (1)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://vlanguage.cn/category/yuanchuangxiaoruanjian">原创小软件</a> (1)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://vlanguage.cn/category/kaifa">开发</a> (1)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://vlanguage.cn/category/ganwuzongjie">感悟总结</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://vlanguage.cn/category/wendangbiji">文档笔记</a> (1)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://vlanguage.cn/category/jiqirenfangzhenv-rep">机器人仿真V-REP</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://vlanguage.cn/category/shenghuoleyuan">生活乐园</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://vlanguage.cn/category/biancheng">编程</a> (1)
+</li>
+		</ul>
+			</aside></div><div class="widget-wrap"><aside id="archives-2" class="widget widget_archive clearfix"><div class="widget-header"><h3 class="widget-title">文章归档</h3></div>		<ul>
+				<li><a href="https://vlanguage.cn/article/date/2019/11">2019年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/09">2019年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/08">2019年八月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/07">2019年七月</a> (12)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/06">2019年六月</a> (13)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/05">2019年五月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/03">2019年三月</a> (3)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/02">2019年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/11">2018年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/03">2018年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/02">2018年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/10">2017年十月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/07">2017年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/09">2016年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/04">2016年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/02">2016年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/12">2015年十二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/04">2015年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/07">2012年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/03">2012年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/11">2010年十一月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/02">2010年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2007/07">2007年七月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2005/12">2005年十二月</a> (1)</li>
+		</ul>
+			</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-7" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div>
+	</section>
+
+	
+
+	</div>
+
+	
+	<div id="footer" class="footer-wrap">
+
+		<footer id="colophon" class="site-footer container clearfix" role="contentinfo">
+
+			
+			<div id="footer-text" class="site-info">
+				
+	<span class="credit-link">
+		Copyright ©️V语言中文社区	</span>
+
+				</div>
+
+		</footer>
+
+	</div>
+
+</div>
+
+
+</body>
+</html>

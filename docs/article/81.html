@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>V-REP 机器人语言解释器集成教程 – V语言中文社区</title>
+<link rel="dns-prefetch" href="https://vlanguage.cn">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="tortuga-custom-fonts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/custom-fonts.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://vlanguage.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tortuga-stylesheet-css" href="https://vlanguage.cn/wp-content/themes/tortuga/style.css" type="text/css" media="all">
+<style id="tortuga-stylesheet-inline-css" type="text/css">
+.site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow: hidden; }
+</style>
+<link rel="stylesheet" id="genericons-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/genericons/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="themezee-related-posts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/themezee-related-posts.css" type="text/css" media="all">
+
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-content/themes/tortuga/assets/js/navigation.js"></script>
+
+
+
+
+
+
+
+
+
+		<style type="text/css" id="wp-custom-css">
+			.header-main {
+	display: none;
+}		</style>
+			
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?d293c49e1e4bfe8f276695a5aa953300";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	</head>
+
+<body class="post-template-default single single-post postid-81 single-format-standard wp-embed-responsive">
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		
+		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<div class="header-main container clearfix">
+
+				<div id="logo" class="site-branding clearfix">
+
+										
+			<p class="site-title"><a href="https://vlanguage.cn/" rel="home">V语言中文社区</a></p>
+
+							
+				</div>
+
+				<div class="header-widgets clearfix">
+
+					
+				</div>
+
+			</div>
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap">
+
+				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+
+					
+					<ul id="menu-daohang" class="main-navigation-menu"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/">V语言中文社区</a></li>
+<li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121"><a target="_blank" rel="noopener noreferrer" href="/index2.html">历史文章</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a target="_blank" rel="noopener noreferrer" href="/docs/">Docs文档</a></li>
+</ul>				</nav>
+
+			</div>
+
+		</header>
+
+		
+		
+		<div id="content" class="site-content container clearfix">
+
+	<section id="primary" class="content-single content-area">
+		<main id="main" class="site-main" role="main">
+				
+		<div id="magazine-homepage-widgets" class="widget-area clearfix">
+
+			<div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+		</div>
+
+<article id="post-81" class="post-81 post type-post status-publish format-standard hentry category-jiqirenfangzhenv-rep">
+
+	
+	<header class="entry-header">
+
+		<h1 class="entry-title">V-REP 机器人语言解释器集成教程</h1>
+		<div class="entry-meta"><span class="meta-date"><a href="https://vlanguage.cn/article/81.html" title="上午10:56" rel="bookmark"><time class="entry-date published updated" datetime="2019-08-27T10:56:49+08:00">2019/8/27</time></a></span><span class="meta-category"> <a href="https://vlanguage.cn/category/jiqirenfangzhenv-rep" rel="category tag">机器人仿真V-REP</a></span></div>
+	</header>
+
+	<div class="entry-content clearfix">
+
+		<div id="article_content" class="article_content clearfix">
+ <br>
+ 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+<div class="htmledit_views" id="content_views">
+<p style="text-indent:33px;">本教程将尝试解决如何将机器人语言解释器集成或嵌入到 V-REP 中。 该过程与将仿真器（例如特定的微控制器仿真器）集成到 V-REP 中非常相似。 扩展 V-REP 的功能需要大部分时间来开发插件。 在继续本教程之前，请确保已阅读插件教程和外部控制器教程。</p>
+<p style="text-indent:33px;">与本教程相关的 V-REP 场景文件位于 V-REP 的安装文件夹<em> scenes\robotLanguageControl.ttt </em>中。 你可以在此处找到插件项目文件，以及服务器应用程序项目文件。</p>
+<p style="text-indent:33px;">首先，让我们首先加载相关的场景文件 scenes\robotLanguageControl.ttt:</p>
+<p style="text-align:center;"><img alt="" class="has" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190826085355644.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NBS1VSQVNBTk4=,size_16,color_FFFFFF,t_70"></p>
+<p style="text-indent:33px;">MTB 机器人是一个虚构的机器人（MTB 代表 Machine Type B），将使用虚构的机器人语言进行控制。</p>
+<p style="text-indent:33px;">如前所述，使用的机器人语言是虚构的，非常简单。 支持以下命令（每行一个命令，输入区分大小写）：</p>
+<pre class="has">
+<code>"REM" starts a comment line
+"SETLINVEL v": sets the prismatic joint velocity for next movements (v is in m/s)
+"SETROTVEL v": sets the revolute joint velocity for next movements (v is in degrees/s)
+"MOVE p1 p2 p3 p4": moves to joint positions (p1;p2;p3;p4) (in degrees except for p3 in meters)
+"WAIT x": waits x milliseconds
+"SETBIT y": sets the bit at position y (1-32) in the robot output port
+"CLEARBIT y": clears the bit at position y (1-32) in the robot output port
+"IFBITGOTO y label": if bit at position y (1-32) in the robot input port is set, jump to "label"
+"IFNBITGOTO y label": if bit at position y (1-32) in the robot input port is not set, jump to "label"
+"GOTO label": jumps to "label"</code></pre>
+<p style="text-indent:33px;">除了 “REM”，“SETLINVEL”，“SETROTVEL”，“MOVE”，“WAIT”，“SETBIT”，“CLEARBIT”，“IFBITGOTO”，“IFNBITGOTO” 和 “GOTO” 的任何单词都被视为标签。 现在运行模拟。 如果未找到相关插件，则显示以下消息（消息的显示在附加到对象 MTB_Robot 和MTB_Robot＃0 的子脚本中处理）：</p>
+<p style="text-align:center;"><img alt="" class="has" height="128" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190826085727436.jpg" width="320"></p>
+<p style="text-indent:33px;">如果找到相关插件，则 MTB 插件将启动基本上代表机器人语言解释器和控制器的服务器应用程序（即 mtbServer）。不需要直接使用服务器应用程序，mtbServer 功能也可以直接在 MTB 插件内运行。在服务器应用程序中使用该功能的主要优点是：</p>
+<p style="text-indent:33px;"><strong>MTB插件可以根据需要作为许多不同语言的中间体，也可以作为尚未开发的语言：MTB 插件将根据使用的 robot/language 简单地启动相应的服务器。</strong></p>
+<p style="text-indent:33px;"><strong>如果机器人语言解释器/控制器崩溃，V-REP 将不会崩溃，因为这两者是不同且独立的进程。</strong></p>
+<p style="text-indent:33px;">目前，MTB 服务器主要负责两项任务：</p>
+<p style="text-indent:33px;"><strong>从 MTB 插件接收程序代码（即缓冲区），编译它，并初始化机器人控制器。</strong></p>
+<p style="text-indent:33px;"><strong>应用输入信号，逐步执行程序代码（不同步骤的步进持续时间可以不同），并返回输出信号和关节角度。</strong></p>
+<p style="text-indent:33px;">如果 MTB 服务器在编译程序代码期间检测到错误，它将向插件返回一条错误消息，该消息将交给调用子脚本（即在我们的例子中，附加到对象的子脚本 MTB_Robot 和 MTB_Robot#0.），将显示（例如）：</p>
+<p style="text-align:center;"><img alt="" class="has" height="112" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190826090548624.jpg" width="480"></p>
+<p style="text-indent:33px;">如果编译成功，则机器人开始执行其各自的程序。 模拟是最大速度模拟，但可以通过切换相关工具栏按钮切换到实时模拟：</p>
+<p style="text-align:center;"><img alt="" class="has" height="37" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190826090634425.jpg" width="38"></p>
+<p> </p>
+<p style="text-indent:33px;">通过多次按相应的工具栏按钮可以进一步加快执行速度：</p>
+<p style="text-align:center;"><img alt="" class="has" height="37" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190826090720404.jpg" width="38"></p>
+<p style="text-indent:33px;">每个 MTB 机器人程序可以通过其显示的自定义对话框随时单独暂停，停止或重新启动，这些自定义对话框是自定义用户界面：</p>
+<p style="text-align:center;"><img alt="" class="has" src="https://uzshare.com/_p?https://img-blog.csdnimg.cn/20190826090804388.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NBS1VSQVNBTk4=,size_16,color_FFFFFF,t_70"></p>
+<p> </p>
+<p style="text-indent:33px;">以上自定义 UI 是 MTB 机器人的用户界面，可以完全自定义。如果要复制 MTB 机器人，那么它的自定义 UI 也将被复制。除了能够控制程序执行状态之外，自定义 UI 还显示当前程序行（Command）和 MTB 的当前关节值。用户还可以更改机器人的输入端口位，并读取机器人的输出端口位。输入和输出端口可以由机器人语言程序读取和分别写入。输入和输出端口也可以通过使用适当的函数调用由外部设备（例如机器人的夹子或吸盘）写入和读取（参见下面的内容）。</p>
+<p style="text-indent:33px;">有两个子脚本附加到 MTB_Robot 和 MTB_Robot#0 对象。他们负责处理自定义对话框并与 MTB 插件进行通信。子脚本中的大部分代码也可以由插件处理。打开连接到两个 MTB 机器人之一的子脚本（例如，双击场景层次结构中机器人模型旁边的脚本图标）。在脚本的顶部，您将看到机器人语言代码。</p>
+<p style="text-indent:33px;">尝试修改 MTB 机器人程序，使其执行不同的运动顺序。实验一下。</p>
+<p style="text-indent:33px;">MTB机器人按以下方式处理：</p>
+<p style="text-indent:33px;"><strong>实际的机器人语言程序由“mtbServer”应用程序编译和执行。 该应用程序还包含 MTB 机器人的状态变量。 对于模拟场景中的每个MTB 机器人，都将有一个由 v_repExtMtb 插件启动的 mtbServer 应用程序实例。</strong></p>
+<p style="text-indent:33px;"><strong>v_repExtMtb 插件负责提供自定义 Lua 功能，并在需要时启动 mtbServer 应用程序，并通过套接字通信与之通信。</strong></p>
+<p style="text-indent:33px;"><strong>附加到 MTB_Robot 和 MTB_Robot#0 的子脚本检查是否加载了 v_repExtMtb 插件，更新每个机器人的基于 OpenGl 的自定义 UI，并处理与插件的通信。</strong></p>
+<p style="text-indent:33px;">MTB 机器人及其简单的机器人语言是一个简单的原型，旨在演示如何将机器人语言解释器集成到V-REP中。 为更复杂的机器人或机器人语言扩展当前功能非常容易。 所需要的只是：</p>
+<p style="text-indent:33px;"><strong>建立机器人的模型。这包括导入 CAD 数据，添加关节等。此步骤可以完全在 V-REP 中完成。</strong></p>
+<p style="text-indent:33px;"><strong>编写插件以本机处理新机器人，即通过解释其自己的机器人语言来处理新机器人。任何能够访问 C-API 的函数并且能够包装在 dll 中的语言都可以用于创建插件（但首选 c/c ++）。机器人语言解释器可以直接嵌入到插件中，也可以像本教程中一样作为外部应用程序（mtbServer）启动。</strong></p>
+<p style="text-indent:33px;"><strong>编写一个小子脚本，负责处理自定义对话框并将机器人与插件链接。该步骤可以完全在 V-REP 中完成。</strong></p>
+<p style="text-indent:33px;">现在让我们来看看 MTB 的插件项目。将机器人语言解释器（或其他仿真器）嵌入到 V-REP 中有一个先决条件：</p>
+<p style="text-indent:33px;"><strong>机器人语言解释器应该能够并行执行几次。这意味着应支持多个解释器实例，以支持多个相同的并行操作机器人。通过为每个新机器人启动一个新的解释器，可以最简单地处理这个问题，如本教程中所做的那样。</strong></p>
+<p style="text-indent:33px;">在编写任何插件时，请确保插件仅从主线程（或从 V-REP 创建的线程）访问 V-REP 的常规 API。插件可以启动新线程，但在这种情况下，这些新线程不应该用于访问V-REP（但它们可以用于与服务器应用程序通信，与某些硬件通信，执行后台计算等） 。</p>
+<p>Now let’s have a look at the child script that is attached to the MTB robot. The code might seem quite long or complicated. However most functionality handled in the child script could also be directly handled in the plugin, making the child script much smaller/cleaner. The advantage in handling most functionality in the child script is that modifications can be performed without having to recompile the plugin!</p>
+<p>Following is the MTB robot’s child script main functionality:</p>
+<ul>
+<li>Checking whether the plugin was loaded. If not, an error message is output.</li>
+<li>Communicating with the plugin. This means that information is sent to and received from the MTB plugin with custom Lua functions.</li>
+<li>Applying the newly calculated joint values to the MTB robot model. This could also be handled in the MTB’s plugin.</li>
+<li>Reacting to events on the custom dialogs, like button presses.</li>
+<li>Updating the state of the custom dialogs.</li>
+</ul>
+<p>Following 3 custom Lua functions are of main interest (others are exported by the plugin): </p>
+<p style="text-indent:33px;">现在让我们看看附加到MTB机器人的子脚本。 代码可能看起来很长或很复杂。 但是，子脚本中处理的大多数功能也可以直接在插件中处理，从而使子脚本更小/更清晰。 处理子脚本中的大多数功能的优点是可以执行修改而无需重新编译插件！</p>
+<p style="text-indent:33px;">以下是MTB机器人的子脚本主要功能：</p>
+<p style="text-indent:33px;"><strong>检查插件是否已加载。 如果不是，则输出错误消息。</strong></p>
+<p style="text-indent:33px;"><strong>与插件通信。 这意味着使用自定义 Lua 函数向 MTB 插件发送信息和从 MTB 插件接收信息。</strong></p>
+<p style="text-indent:33px;"><strong>将新计算的关节值应用于 MTB 机器人模型。 这也可以在 MTB 的插件中处理。</strong></p>
+<p style="text-indent:33px;"><strong>对自定义对话框中的事件做出反应，例如按下按钮。</strong></p>
+<p style="text-indent:33px;"><strong>更新自定义对话框的状态。</strong></p>
+<p style="text-indent:33px;">以下3个自定义Lua函数是主要关注点（其他函数由插件导出）：</p>
+<pre class="has">
+<code>number mtbServerHandle,string message=simMTB.startServer(string mtbServerExecutable,
+    number portNumber,charBuffer program,table_4 jointPositions, table_2 velocities)</code></pre>
+<pre class="has">
+<code>number result,string message=simMTB.step(number mtbServerHandle,number timeStep)</code></pre>
+<pre class="has">
+<code>table_4 jointValues=simMTB.getJoints(number mtbServerHandle)</code></pre>
+<p style="text-indent:33px;"><strong>simMTB.startServer：</strong>在指定端口上启动服务器应用程序（例如 mtbServer），连接到它，并向其发送机器人语言代码，初始关节位置和初始速度。 作为回报，该函数返回服务器句柄（如果成功）和消息（通常是编译错误消息）。</p>
+<p style="text-indent:33px;"><strong>simMTB.step：</strong>使用指定的 timeStep 逐步执行机器人语言程序，并返回结果值和消息（通常是当前正在执行的代码）。</p>
+<p style="text-indent:33px;"><strong>simMTB.getJoints：</strong>检索当前的关节位置。 调用 simMTB.step 时，关节位置会自动更新。</p>
+<p style="text-indent:33px;">您还可以想象稍微修改步骤函数，并添加一个附加函数，以便能够处理由机器人语言程序执行触发的中间事件。 在这种情况下，每个模拟步骤都必须执行以下脚本代码（在非线程子脚本中）：</p>
+<pre class="has">
+<code>local dt=sim.getSimulationTimeStep()
+while (dt>0) do
+    result,dt,cmdMessage=simMTB.step(mtbServerHandle,dt) -- where the returned dt is the remaining dt
+    local event=simMTB.getEvent()
+    while event~=-1 do
+        -- handle events here
+        event=simMTB.getEvent()
+    end
+end</code></pre>
+<h1>参考资料</h1>
+<blockquote>
+<p>1.V-REP官方文档：<a href="http://www.coppeliarobotics.com/helpFiles/" rel="nofollow">http://www.coppeliarobotics.com/helpFiles/</a></p>
+</blockquote></div>
+</div>
+
+		
+	</div>
+
+	<footer class="entry-footer">
+
+						
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://vlanguage.cn/article/68.html" rel="prev"><span class="screen-reader-text">Previous Post:</span>三小时学会V语言到放弃（第二小时）</a></div><div class="nav-next"><a href="https://vlanguage.cn/article/75.html" rel="next"><span class="screen-reader-text">Next Post:</span>又一编程语言开源上线了</a></div></div>
+	</nav>
+	</footer>
+
+</article>
+			
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">	</script>
+			<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-8889449066804352" data-ad-slot="1928667997"></ins>
+			<script>
+				 (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		</main>
+	</section>
+	
+	
+	<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+
+		<div class="widget_text widget-wrap"><aside id="custom_html-3" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://cse.google.com/cse.js?cx=004431708863642777669:dt5gmztovfo"></script>
+<div class="gcse-search"></div>
+<style>
+td.gsc-search-button {
+    width: 90px;
+}
+.gsc-control-cse table{
+	margin: 0;
+}
+.gsc-control-cse th, td {
+	border: none;
+}
+	
+	td.gsib_b {
+		
+    width: 36px;
+
+	}
+	.gscb_a {
+		width: 94%;
+    line-height: 20px;
+		font-size: 20px;
+}
+	.gsst_b {
+		font-size: 12px;
+	}
+	#custom_html-5 {
+		padding: 0;
+	}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    border: none;
+}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 4px 4px 0px 4px;
+}
+</style></div></aside></div>		<div class="widget-wrap"><aside id="recent-posts-2" class="widget widget_recent_entries clearfix">		<div class="widget-header"><h3 class="widget-title">近期文章</h3></div>		<ul>
+											<li>
+					<a href="https://vlanguage.cn/article/35.html">【GitHub探索】v语言上手，用vlang写一个聊天应用</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/97.html">v-if/v-if-else/v-show</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/75.html">又一编程语言开源上线了</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/81.html">V-REP 机器人语言解释器集成教程</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/68.html">三小时学会V语言到放弃（第二小时）</a>
+									</li>
+					</ul>
+		</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-5" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix"><div class="widget-header"><h3 class="widget-title">标签</h3></div><div class="tagcloud"><a href="https://vlanguage.cn/tag/blog" class="tag-cloud-link tag-link-35 tag-link-position-1" style="font-size: 8pt;" aria-label="blog (1个项目)">blog<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/c" class="tag-cloud-link tag-link-39 tag-link-position-2" style="font-size: 8pt;" aria-label="c (1个项目)">c<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/dyuyan" class="tag-cloud-link tag-link-45 tag-link-position-3" style="font-size: 8pt;" aria-label="d语言 (1个项目)">d语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/eclipse" class="tag-cloud-link tag-link-30 tag-link-position-4" style="font-size: 8pt;" aria-label="eclipse (1个项目)">eclipse<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/google" class="tag-cloud-link tag-link-51 tag-link-position-5" style="font-size: 8pt;" aria-label="google (1个项目)">google<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/java" class="tag-cloud-link tag-link-33 tag-link-position-6" style="font-size: 8pt;" aria-label="java (1个项目)">java<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/shingekinov" class="tag-cloud-link tag-link-14 tag-link-position-7" style="font-size: 8pt;" aria-label="shingekinov (1个项目)">shingekinov<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/spir-v" class="tag-cloud-link tag-link-24 tag-link-position-8" style="font-size: 8pt;" aria-label="SPIR-V (1个项目)">SPIR-V<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/vyuyan" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 8pt;" aria-label="v语言 (1个项目)">v语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/houduan" class="tag-cloud-link tag-link-13 tag-link-position-10" style="font-size: 8pt;" aria-label="后端 (1个项目)">后端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/gongju" class="tag-cloud-link tag-link-32 tag-link-position-11" style="font-size: 8pt;" aria-label="工具 (1个项目)">工具<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/pingtai" class="tag-cloud-link tag-link-38 tag-link-position-12" style="font-size: 14.3pt;" aria-label="平台 (2个项目)">平台<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/minjie" class="tag-cloud-link tag-link-41 tag-link-position-13" style="font-size: 8pt;" aria-label="敏捷 (1个项目)">敏捷<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wendang" class="tag-cloud-link tag-link-42 tag-link-position-14" style="font-size: 14.3pt;" aria-label="文档 (2个项目)">文档<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/fuwuduan" class="tag-cloud-link tag-link-12 tag-link-position-15" style="font-size: 8pt;" aria-label="服务端 (1个项目)">服务端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/kuangjia" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 8pt;" aria-label="框架 (1个项目)">框架<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/biancheng" class="tag-cloud-link tag-link-36 tag-link-position-17" style="font-size: 8pt;" aria-label="编程 (1个项目)">编程<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wangluo" class="tag-cloud-link tag-link-37 tag-link-position-18" style="font-size: 8pt;" aria-label="网络 (1个项目)">网络<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/liaotianfuwuqi" class="tag-cloud-link tag-link-11 tag-link-position-19" style="font-size: 8pt;" aria-label="聊天服务器 (1个项目)">聊天服务器<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/yuyan" class="tag-cloud-link tag-link-31 tag-link-position-20" style="font-size: 22pt;" aria-label="语言 (4个项目)">语言<span class="tag-link-count"> (4)</span></a></div>
+</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-6" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="categories-2" class="widget widget_categories clearfix"><div class="widget-header"><h3 class="widget-title">分类目录</h3></div>		<ul>
+				<li class="cat-item cat-item-53"><a href="https://vlanguage.cn/category/c-c-c">C/C++/C#</a> (3)
+</li>
+	<li class="cat-item cat-item-44"><a href="https://vlanguage.cn/category/dyuyankaifa">D语言开发</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://vlanguage.cn/category/fpga">FPGA</a> (1)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://vlanguage.cn/category/githubtansuo">GitHub探索</a> (1)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://vlanguage.cn/category/googlemap">GoogleMap</a> (1)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://vlanguage.cn/category/gozixuezhilu">GO自学之路</a> (2)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://vlanguage.cn/category/graphics">Graphics</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://vlanguage.cn/category/linux">Linux</a> (1)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://vlanguage.cn/category/nodejs">Nodejs</a> (1)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://vlanguage.cn/category/phpcms">phpcms</a> (2)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://vlanguage.cn/category/phpcmsjiaocheng">phpcms教程</a> (1)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://vlanguage.cn/category/risc-v">RISC-V</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://vlanguage.cn/category/spir">SPIR</a> (1)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://vlanguage.cn/category/vue">Vue</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://vlanguage.cn/category/vulkan">Vulkan</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://vlanguage.cn/category/vyuyan">V语言</a> (14)
+</li>
+	<li class="cat-item cat-item-46"><a href="https://vlanguage.cn/category/jieshaolei">介绍类</a> (1)
+</li>
+	<li class="cat-item cat-item-47"><a href="https://vlanguage.cn/category/qukuailian">区块链</a> (1)
+</li>
+	<li class="cat-item cat-item-48"><a href="https://vlanguage.cn/category/botuv14">博途V14</a> (1)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://vlanguage.cn/category/yuanchuangxiaoruanjian">原创小软件</a> (1)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://vlanguage.cn/category/kaifa">开发</a> (1)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://vlanguage.cn/category/ganwuzongjie">感悟总结</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://vlanguage.cn/category/wendangbiji">文档笔记</a> (1)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://vlanguage.cn/category/jiqirenfangzhenv-rep">机器人仿真V-REP</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://vlanguage.cn/category/shenghuoleyuan">生活乐园</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://vlanguage.cn/category/biancheng">编程</a> (1)
+</li>
+		</ul>
+			</aside></div><div class="widget-wrap"><aside id="archives-2" class="widget widget_archive clearfix"><div class="widget-header"><h3 class="widget-title">文章归档</h3></div>		<ul>
+				<li><a href="https://vlanguage.cn/article/date/2019/11">2019年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/09">2019年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/08">2019年八月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/07">2019年七月</a> (12)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/06">2019年六月</a> (13)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/05">2019年五月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/03">2019年三月</a> (3)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/02">2019年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/11">2018年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/03">2018年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/02">2018年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/10">2017年十月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/07">2017年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/09">2016年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/04">2016年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/02">2016年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/12">2015年十二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/04">2015年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/07">2012年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/03">2012年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/11">2010年十一月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/02">2010年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2007/07">2007年七月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2005/12">2005年十二月</a> (1)</li>
+		</ul>
+			</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-7" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div>
+	</section>
+
+	
+
+	</div>
+
+	
+	<div id="footer" class="footer-wrap">
+
+		<footer id="colophon" class="site-footer container clearfix" role="contentinfo">
+
+			
+			<div id="footer-text" class="site-info">
+				
+	<span class="credit-link">
+		Copyright ©️V语言中文社区	</span>
+
+				</div>
+
+		</footer>
+
+	</div>
+
+</div>
+
+
+</body>
+</html>

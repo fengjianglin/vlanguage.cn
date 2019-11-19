@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>v语言初体验 – V语言中文社区</title>
+<link rel="dns-prefetch" href="https://vlanguage.cn">
+<link rel="dns-prefetch" href="//s.w.org">
+
+
+
+<link rel="stylesheet" id="tortuga-custom-fonts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/custom-fonts.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://vlanguage.cn/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tortuga-stylesheet-css" href="https://vlanguage.cn/wp-content/themes/tortuga/style.css" type="text/css" media="all">
+<style id="tortuga-stylesheet-inline-css" type="text/css">
+.site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow: hidden; }
+</style>
+<link rel="stylesheet" id="genericons-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/genericons/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="themezee-related-posts-css" href="https://vlanguage.cn/wp-content/themes/tortuga/assets/css/themezee-related-posts.css" type="text/css" media="all">
+
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://vlanguage.cn/wp-content/themes/tortuga/assets/js/navigation.js"></script>
+
+
+
+
+
+
+
+
+
+		<style type="text/css" id="wp-custom-css">
+			.header-main {
+	display: none;
+}		</style>
+			
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?d293c49e1e4bfe8f276695a5aa953300";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<script data-ad-client="ca-pub-8889449066804352" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	</head>
+
+<body class="post-template-default single single-post postid-70 single-format-standard wp-embed-responsive">
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		
+		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<div class="header-main container clearfix">
+
+				<div id="logo" class="site-branding clearfix">
+
+										
+			<p class="site-title"><a href="https://vlanguage.cn/" rel="home">V语言中文社区</a></p>
+
+							
+				</div>
+
+				<div class="header-widgets clearfix">
+
+					
+				</div>
+
+			</div>
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap">
+
+				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+
+					
+					<ul id="menu-daohang" class="main-navigation-menu"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="/">V语言中文社区</a></li>
+<li id="menu-item-121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121"><a target="_blank" rel="noopener noreferrer" href="/index2.html">历史文章</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a target="_blank" rel="noopener noreferrer" href="/docs/">Docs文档</a></li>
+</ul>				</nav>
+
+			</div>
+
+		</header>
+
+		
+		
+		<div id="content" class="site-content container clearfix">
+
+	<section id="primary" class="content-single content-area">
+		<main id="main" class="site-main" role="main">
+				
+		<div id="magazine-homepage-widgets" class="widget-area clearfix">
+
+			<div id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+		</div>
+
+<article id="post-70" class="post-70 post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+		<h1 class="entry-title">v语言初体验</h1>
+		<div class="entry-meta"><span class="meta-date"><a href="https://vlanguage.cn/article/70.html" title="下午10:12" rel="bookmark"><time class="entry-date published updated" datetime="2019-07-01T22:12:00+08:00">2019/7/1</time></a></span><span class="meta-category"> 未分类</span></div>
+	</header>
+
+	<div class="entry-content clearfix">
+
+		<div id="article_content" class="article_content clearfix">
+<div class="article-source-link">
+   原文链接：<br>
+  <a href="http://www.cnblogs.com/wang-li/p/11116166.html" target="_blank" rel="noopener noreferrer">http://www.cnblogs.com/wang-li/p/11116166.html</a>
+ </div>
+<p> <br>
+ 
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+ <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css">
+</p><div class="htmledit_views" id="content_views">
+<div id="cnblogs_post_body" class="blogpost-body">
+<blockquote>
+<p>最近github上开源了一个”新语言”vlang，火的不得了，我不信，于是乎，尝试了一下，真香。</p>
+<p><em>以下内存均来自<span class="Apple-converted-space"> <a href="https://www.v-lang.cn/" rel="nofollow">https://www.v-lang.cn</a><span class="Apple-converted-space"> v语言文档 by 20190701</span></span></em></p>
+</blockquote>
+<h1>ubuntu安装vlang</h1>
+<p><img src="https://img2018.cnblogs.com/blog/942709/201907/942709-20190701221859371-1620211926.png" alt=""></p>
+<p> </p>
+<h2>依赖安装</h2>
+<p>这里采用的是ubuntu的机器，centos的会报错，暂时没有去操作</p>
+<h3>查看机器型号</h3>
+<div class="cnblogs_code">
+<pre>$ <span style="color:#0000ff;">uname</span> -<span style="color:#000000;">a
+Linux liwang </span><span style="color:#800080;">4.15</span>.<span style="color:#800080;">0</span>-<span style="color:#800080;">54</span>-generic #<span style="color:#800080;">58</span>-Ubuntu SMP Mon Jun <span style="color:#800080;">24</span> <span style="color:#800080;">10</span>:<span style="color:#800080;">55</span>:<span style="color:#800080;">24</span> UTC <span style="color:#800080;">2019</span> x86_64 x86_64 x86_64 GNU/<span style="color:#000000;">Linux
+$</span></pre>
+</div>
+<h3>安装必要依赖 gcc 和 make</h3>
+<div class="cnblogs_code">
+<pre>$ <span style="color:#0000ff;">sudo</span> apt <span style="color:#0000ff;">install</span> <span style="color:#0000ff;">gcc</span> <span style="color:#0000ff;">make</span> -<span style="color:#000000;">y
+$</span></pre>
+</div>
+<h3>下载编译安装v</h3>
+<div class="cnblogs_code">
+<pre>$ git clone https:<span style="color:#008000;">//</span><span style="color:#008000;">github.com/vlang/v</span>
+$ cd v/<span style="color:#000000;">
+$ </span><span style="color:#0000ff;">make</span><span style="color:#000000;">
+$ </span><span style="color:#0000ff;">sudo</span> <span style="color:#0000ff;">ln</span> -s ~/v/v /usr/local/bin/</pre>
+</div>
+<h3>测试</h3>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ v
+V </span><span style="color:#800080;">0.1</span>.<span style="color:#800080;">10</span><span style="color:#000000;">
+Use Ctrl</span>-<span style="color:#000000;">D or `exit` to exit
+For now you have to use println() to print values, this will be fixed soon
+
+</span>>>> print (<span style="color:#800000;">'</span><span style="color:#800000;">hello world</span><span style="color:#800000;">'</span><span style="color:#000000;">)
+hello world
+</span>>>><span style="color:#000000;"> $
+$</span></pre>
+</div>
+<p> </p>
+<h1>Hello world</h1>
+<h2>代码</h2>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ cat hello.v
+fn main() {
+        </span><span style="color:#008000;">/*</span><span style="color:#008000;">
+        * 注意: v 语言中 字符串不允许 使用双引号，至少在 v1.0版本不行
+        </span><span style="color:#008000;">*/</span><span style="color:#000000;">
+        println(</span><span style="color:#800000;">'</span><span style="color:#800000;">Hello World</span><span style="color:#800000;">'</span><span style="color:#000000;">)
+}
+$</span></pre>
+</div>
+<p> </p>
+<h2>编译运行</h2>
+<h3>编译.v文件</h3>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ v hello.v
+$ .</span>/hello && <span style="color:#0000ff;">rm</span> -<span style="color:#000000;">f hello
+Hello World
+$</span></pre>
+</div>
+<h3>编译运行</h3>
+<p>直接使用 v run file.v 可以编译并且运行二进制文件</p>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ v run hello.v
+</span>============ running hello ============<span style="color:#000000;">
+Hello World
+$</span></pre>
+</div>
+<h1>函数</h1>
+<h2>语法/案例</h2>
+<p>函数和golang类似 语法</p>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">fn 函数名称 (形参) 返回值 {
+函数体
+}</span></pre>
+</div>
+<p>例子</p>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ cat func1.v
+
+fn v_add(x,y </span><span style="color:#0000ff;">int</span>) <span style="color:#0000ff;">int</span><span style="color:#000000;"> {
+        z :</span>= x +<span style="color:#000000;"> y
+        </span><span style="color:#0000ff;">return</span><span style="color:#000000;"> z
+}
+
+fn main() {
+        a :</span>= <span style="color:#800080;">1</span><span style="color:#000000;">
+        b :</span>= <span style="color:#800080;">2</span><span style="color:#000000;">
+
+        c :</span>=<span style="color:#000000;"> v_add(a,b)
+        println(c)
+}
+$</span></pre>
+</div>
+<h2>编译运行</h2>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ v run func1.v
+</span>============ running func1 ============
+<span style="color:#800080;">3</span><span style="color:#000000;">
+$</span></pre>
+</div>
+<h1>数组</h1>
+<h2>数组基本用法</h2>
+<p>代码</p>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ cat arrays.v
+fn main() {
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 定义数组</span>
+        test_array := [<span style="color:#800080;">1</span>,<span style="color:#800080;">2</span>,<span style="color:#800080;">3</span><span style="color:#000000;">]
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 打印数组</span>
+<span style="color:#000000;">        println(test_array)
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 输出数组长度</span>
+<span style="color:#000000;">        println(test_array.len)
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 判断数组是否包含 1</span>
+        println(test_array.contains(<span style="color:#800080;">1</span><span style="color:#000000;">))
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 判断数组是否包含 4</span>
+        println(test_array.contains(<span style="color:#800080;">4</span><span style="color:#000000;">))
+}
+$</span></pre>
+</div>
+<p>编译执行</p>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ v run arrays.v
+</span>============ running arrays ============<span style="color:#000000;">
+[</span><span style="color:#800080;">1</span>, <span style="color:#800080;">2</span>, <span style="color:#800080;">3</span><span style="color:#000000;">]
+</span><span style="color:#800080;">3</span>
+<span style="color:#0000ff;">true</span>
+<span style="color:#0000ff;">false</span><span style="color:#000000;">
+$</span></pre>
+</div>
+<h2>可变数组</h2>
+<p>默认数组定义好之后，是不能修改其长度的，而在其前面加上关键字 mut ,则可以实现变长数组，例如</p>
+<p>代码</p>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ cat arrays_1.v
+fn main() {
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 定义可变数组</span>
+        mut other_arrays := [<span style="color:#800080;">1</span>,<span style="color:#800080;">2</span>,<span style="color:#800080;">3</span><span style="color:#000000;">]
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 打印数组长度</span>
+        println(<span style="color:#800000;">'</span><span style="color:#800000;">数组变化前长度</span><span style="color:#800000;">'</span><span style="color:#000000;">)
+        println(other_arrays.len)
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 打印数组内容</span>
+        println(<span style="color:#800000;">'</span><span style="color:#800000;">数组内容</span><span style="color:#800000;">'</span><span style="color:#000000;">)
+        println(other_arrays)
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 追加数组值</span>
+        other_arrays << <span style="color:#800080;">4</span>
+
+        <span style="color:#008000;">//</span><span style="color:#008000;"> 打印数组长度</span>
+        println(<span style="color:#800000;">'</span><span style="color:#800000;">数组追加后长度</span><span style="color:#800000;">'</span><span style="color:#000000;">)
+        println(other_arrays.len)
+
+        </span><span style="color:#008000;">//</span><span style="color:#008000;"> 打印数组内容</span>
+        println(<span style="color:#800000;">'</span><span style="color:#800000;">数组内容</span><span style="color:#800000;">'</span><span style="color:#000000;">)
+        println(other_arrays)
+
+}
+$</span></pre>
+</div>
+<p> </p>
+<p>编译运行</p>
+<p>ps: 目前的方法我只找到了追加，还未找到删除，[尴尬–]</p>
+<div class="cnblogs_code">
+<pre><span style="color:#000000;">$ v run arrays_1.v
+</span>============ running arrays_1 ============<span style="color:#000000;">
+数组变化前长度
+</span><span style="color:#800080;">3</span><span style="color:#000000;">
+数组内容
+[</span><span style="color:#800080;">1</span>, <span style="color:#800080;">2</span>, <span style="color:#800080;">3</span><span style="color:#000000;">]
+数组追加后长度
+</span><span style="color:#800080;">4</span><span style="color:#000000;">
+数组内容
+[</span><span style="color:#800080;">1</span>, <span style="color:#800080;">2</span>, <span style="color:#800080;">3</span>, <span style="color:#800080;">4</span><span style="color:#000000;">]
+$</span></pre>
+</div>
+<p> </p>
+<p>未完待续。。。</p>
+</div>
+<p>转载于:https://www.cnblogs.com/wang-li/p/11116166.html</p>
+</div>
+</div>
+
+		
+	</div>
+
+	<footer class="entry-footer">
+
+						
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://vlanguage.cn/article/30.html" rel="prev"><span class="screen-reader-text">Previous Post:</span>GITHUB排行榜C位出道-手把手教你玩转V语言版的俄罗斯方块</a></div><div class="nav-next"><a href="https://vlanguage.cn/article/42.html" rel="next"><span class="screen-reader-text">Next Post:</span>V 语言 — 数据结构.Map</a></div></div>
+	</nav>
+	</footer>
+
+</article>
+			
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">	</script>
+			<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-8889449066804352" data-ad-slot="1928667997"></ins>
+			<script>
+				 (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		</main>
+	</section>
+	
+	
+	<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+
+		<div class="widget_text widget-wrap"><aside id="custom_html-3" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://cse.google.com/cse.js?cx=004431708863642777669:dt5gmztovfo"></script>
+<div class="gcse-search"></div>
+<style>
+td.gsc-search-button {
+    width: 90px;
+}
+.gsc-control-cse table{
+	margin: 0;
+}
+.gsc-control-cse th, td {
+	border: none;
+}
+	
+	td.gsib_b {
+		
+    width: 36px;
+
+	}
+	.gscb_a {
+		width: 94%;
+    line-height: 20px;
+		font-size: 20px;
+}
+	.gsst_b {
+		font-size: 12px;
+	}
+	#custom_html-5 {
+		padding: 0;
+	}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    border: none;
+}
+	.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 4px 4px 0px 4px;
+}
+</style></div></aside></div>		<div class="widget-wrap"><aside id="recent-posts-2" class="widget widget_recent_entries clearfix">		<div class="widget-header"><h3 class="widget-title">近期文章</h3></div>		<ul>
+											<li>
+					<a href="https://vlanguage.cn/article/35.html">【GitHub探索】v语言上手，用vlang写一个聊天应用</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/97.html">v-if/v-if-else/v-show</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/75.html">又一编程语言开源上线了</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/81.html">V-REP 机器人语言解释器集成教程</a>
+									</li>
+											<li>
+					<a href="https://vlanguage.cn/article/68.html">三小时学会V语言到放弃（第二小时）</a>
+									</li>
+					</ul>
+		</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-5" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix"><div class="widget-header"><h3 class="widget-title">标签</h3></div><div class="tagcloud"><a href="https://vlanguage.cn/tag/blog" class="tag-cloud-link tag-link-35 tag-link-position-1" style="font-size: 8pt;" aria-label="blog (1个项目)">blog<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/c" class="tag-cloud-link tag-link-39 tag-link-position-2" style="font-size: 8pt;" aria-label="c (1个项目)">c<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/dyuyan" class="tag-cloud-link tag-link-45 tag-link-position-3" style="font-size: 8pt;" aria-label="d语言 (1个项目)">d语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/eclipse" class="tag-cloud-link tag-link-30 tag-link-position-4" style="font-size: 8pt;" aria-label="eclipse (1个项目)">eclipse<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/google" class="tag-cloud-link tag-link-51 tag-link-position-5" style="font-size: 8pt;" aria-label="google (1个项目)">google<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/java" class="tag-cloud-link tag-link-33 tag-link-position-6" style="font-size: 8pt;" aria-label="java (1个项目)">java<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/shingekinov" class="tag-cloud-link tag-link-14 tag-link-position-7" style="font-size: 8pt;" aria-label="shingekinov (1个项目)">shingekinov<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/spir-v" class="tag-cloud-link tag-link-24 tag-link-position-8" style="font-size: 8pt;" aria-label="SPIR-V (1个项目)">SPIR-V<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/vyuyan" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 8pt;" aria-label="v语言 (1个项目)">v语言<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/houduan" class="tag-cloud-link tag-link-13 tag-link-position-10" style="font-size: 8pt;" aria-label="后端 (1个项目)">后端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/gongju" class="tag-cloud-link tag-link-32 tag-link-position-11" style="font-size: 8pt;" aria-label="工具 (1个项目)">工具<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/pingtai" class="tag-cloud-link tag-link-38 tag-link-position-12" style="font-size: 14.3pt;" aria-label="平台 (2个项目)">平台<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/minjie" class="tag-cloud-link tag-link-41 tag-link-position-13" style="font-size: 8pt;" aria-label="敏捷 (1个项目)">敏捷<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wendang" class="tag-cloud-link tag-link-42 tag-link-position-14" style="font-size: 14.3pt;" aria-label="文档 (2个项目)">文档<span class="tag-link-count"> (2)</span></a>
+<a href="https://vlanguage.cn/tag/fuwuduan" class="tag-cloud-link tag-link-12 tag-link-position-15" style="font-size: 8pt;" aria-label="服务端 (1个项目)">服务端<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/kuangjia" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 8pt;" aria-label="框架 (1个项目)">框架<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/biancheng" class="tag-cloud-link tag-link-36 tag-link-position-17" style="font-size: 8pt;" aria-label="编程 (1个项目)">编程<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/wangluo" class="tag-cloud-link tag-link-37 tag-link-position-18" style="font-size: 8pt;" aria-label="网络 (1个项目)">网络<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/liaotianfuwuqi" class="tag-cloud-link tag-link-11 tag-link-position-19" style="font-size: 8pt;" aria-label="聊天服务器 (1个项目)">聊天服务器<span class="tag-link-count"> (1)</span></a>
+<a href="https://vlanguage.cn/tag/yuyan" class="tag-cloud-link tag-link-31 tag-link-position-20" style="font-size: 22pt;" aria-label="语言 (4个项目)">语言<span class="tag-link-count"> (4)</span></a></div>
+</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-6" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div><div class="widget-wrap"><aside id="categories-2" class="widget widget_categories clearfix"><div class="widget-header"><h3 class="widget-title">分类目录</h3></div>		<ul>
+				<li class="cat-item cat-item-53"><a href="https://vlanguage.cn/category/c-c-c">C/C++/C#</a> (3)
+</li>
+	<li class="cat-item cat-item-44"><a href="https://vlanguage.cn/category/dyuyankaifa">D语言开发</a> (1)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://vlanguage.cn/category/fpga">FPGA</a> (1)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://vlanguage.cn/category/githubtansuo">GitHub探索</a> (1)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://vlanguage.cn/category/googlemap">GoogleMap</a> (1)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://vlanguage.cn/category/gozixuezhilu">GO自学之路</a> (2)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://vlanguage.cn/category/graphics">Graphics</a> (1)
+</li>
+	<li class="cat-item cat-item-28"><a href="https://vlanguage.cn/category/linux">Linux</a> (1)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://vlanguage.cn/category/nodejs">Nodejs</a> (1)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://vlanguage.cn/category/phpcms">phpcms</a> (2)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://vlanguage.cn/category/phpcmsjiaocheng">phpcms教程</a> (1)
+</li>
+	<li class="cat-item cat-item-34"><a href="https://vlanguage.cn/category/risc-v">RISC-V</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://vlanguage.cn/category/spir">SPIR</a> (1)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://vlanguage.cn/category/vue">Vue</a> (1)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://vlanguage.cn/category/vulkan">Vulkan</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://vlanguage.cn/category/vyuyan">V语言</a> (14)
+</li>
+	<li class="cat-item cat-item-46"><a href="https://vlanguage.cn/category/jieshaolei">介绍类</a> (1)
+</li>
+	<li class="cat-item cat-item-47"><a href="https://vlanguage.cn/category/qukuailian">区块链</a> (1)
+</li>
+	<li class="cat-item cat-item-48"><a href="https://vlanguage.cn/category/botuv14">博途V14</a> (1)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://vlanguage.cn/category/yuanchuangxiaoruanjian">原创小软件</a> (1)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://vlanguage.cn/category/kaifa">开发</a> (1)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://vlanguage.cn/category/ganwuzongjie">感悟总结</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://vlanguage.cn/category/wendangbiji">文档笔记</a> (1)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://vlanguage.cn/category/jiqirenfangzhenv-rep">机器人仿真V-REP</a> (1)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://vlanguage.cn/category/shenghuoleyuan">生活乐园</a> (1)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://vlanguage.cn/category/biancheng">编程</a> (1)
+</li>
+		</ul>
+			</aside></div><div class="widget-wrap"><aside id="archives-2" class="widget widget_archive clearfix"><div class="widget-header"><h3 class="widget-title">文章归档</h3></div>		<ul>
+				<li><a href="https://vlanguage.cn/article/date/2019/11">2019年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/09">2019年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/08">2019年八月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/07">2019年七月</a> (12)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/06">2019年六月</a> (13)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/05">2019年五月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/03">2019年三月</a> (3)</li>
+	<li><a href="https://vlanguage.cn/article/date/2019/02">2019年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/11">2018年十一月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/03">2018年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2018/02">2018年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/10">2017年十月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2017/07">2017年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/09">2016年九月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/04">2016年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2016/02">2016年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/12">2015年十二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2015/04">2015年四月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/07">2012年七月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2012/03">2012年三月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/11">2010年十一月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2010/02">2010年二月</a> (1)</li>
+	<li><a href="https://vlanguage.cn/article/date/2007/07">2007年七月</a> (2)</li>
+	<li><a href="https://vlanguage.cn/article/date/2005/12">2005年十二月</a> (1)</li>
+		</ul>
+			</aside></div><div class="widget_text widget-wrap"><aside id="custom_html-7" class="widget_text widget widget_custom_html clearfix"><div class="textwidget custom-html-widget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8889449066804352" data-ad-slot="6054387901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></aside></div>
+	</section>
+
+	
+
+	</div>
+
+	
+	<div id="footer" class="footer-wrap">
+
+		<footer id="colophon" class="site-footer container clearfix" role="contentinfo">
+
+			
+			<div id="footer-text" class="site-info">
+				
+	<span class="credit-link">
+		Copyright ©️V语言中文社区	</span>
+
+				</div>
+
+		</footer>
+
+	</div>
+
+</div>
+
+
+</body>
+</html>
