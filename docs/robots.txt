@@ -1,4 +1,3 @@
 User-agent: *
-
-Sitemap: https://vlanguage.cn/sitemap.xml
-Sitemap: https://vlanguage.cn/docs/sitemap.xml
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
